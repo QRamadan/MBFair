@@ -1,1 +1,3 @@
 # Analyzing Individual Fairness Based on System Models
+
+In this file, we present the artifact used in our paper. The submission includes our proposed UMLfair profile and three UML models annotated with the UMLfair profile. The UML models featuring three system namely, a School Management System based on an artificail case study, Delivery Serivice Management System based on the incedent describtion of [Amazon's delivery-free service](https://www.bloomberg.com/graphics/2016-amazon-same-day/), and a Loan Management System based on [business process model](https://link.springer.com/chapter/10.1007/978-3-319-92901-9_19) from an [event log](https://www.win.tue.nl/bpi/doku.php?id=2012:challenge) recording the loan management process of a Dutch financial institute. 
