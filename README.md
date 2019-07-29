@@ -1,1 +1,1 @@
-# A System Architecture Model-based Individual-Fairness Analysis
+# Analyzing Individual Fairness Based on System Design Models
