@@ -1,1 +1,1 @@
-# Analyzing Individual Fairness Based on System Design Models
+# Analyzing Individual Fairness Based on System Models
