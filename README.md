@@ -10,6 +10,6 @@ In addition to the UML models, we provide a data table that represents the sourc
 
 # Resources 
 
-* **The input and output artifacts of applying our approach on the case study of the school management system:** 
-* **The input and output artifacts of applying our approach on the case study of the delivery management system:** 
-* **The input and output artifacts of applying our approach on the case study of the loan management system:** 
+* **The artifacts of the school management system:** 
+* **The artifacts of the delivery management system:** 
+* **The artifacts of the loan management system:** 
