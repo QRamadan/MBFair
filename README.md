@@ -6,3 +6,10 @@ In addition to the UML models, we provide a data table that represents the sourc
 * a file contains PROMELA specifications that represents the result of transforming a UML model into formal specifications, using [Hugo/RT](https://www.informatik.uni-augsburg.de/en/chairs/swt/sse/hugort/).
 * a file incudles the generated baches of temporal logic claims, based on a system model and its data table. 
 * a file contains the results of verifying the generated claims against the PROMELA specifications of a system model by using the [SPIN](http://spinroot.com/spin/whatispin.html) model checker.
+
+
+# Resources 
+
+* **The input and output artifacts of applying our approach on the case study of the school management system:** 
+* **The input and output artifacts of applying our approach on the case study of the delivery management system:** 
+* **The input and output artifacts of applying our approach on the case study of the loan management system:** 
