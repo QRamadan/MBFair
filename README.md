@@ -8,8 +8,9 @@ In addition to the UML models, we provide a data table that represents the sourc
 * a file contains the results of verifying the generated claims against the PROMELA specifications of a system model by using the [SPIN](http://spinroot.com/spin/whatispin.html) model checker.
 
 
-# Resources 
+# The artifacts of the school management system: 
 
-* **The artifacts of the school management system:** 
-* **The artifacts of the delivery management system:** 
-* **The artifacts of the loan management system:** 
+* **[The UML model of the school system]** 
+* **The dataset of the school system:** 
+* **The school system model in PROMELA** 
+* **The generated batches of claims from the UML model of the school system together with their verifications results** 
