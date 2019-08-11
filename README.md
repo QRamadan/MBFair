@@ -10,7 +10,7 @@ In addition to the UML models, we provide a data table that represents the sourc
 
 # The artifacts of the school management system: 
 
-* **[The UML model of the school system]** 
-* **The dataset of the school system:** 
-* **The school system model in PROMELA** 
-* **The generated batches of claims from the UML model of the school system together with their verifications results** 
+* [The UML model of the school system] 
+* [The dataset of the school system] 
+* [The school system model in PROMELA]
+* [The generated batches of claims together with their verifications results]
