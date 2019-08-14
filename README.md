@@ -12,7 +12,7 @@ In this file, we present the artifact used in our paper. The submission includes
 * **Pseudocode: the pseudocode of generating temporal logic claims:**
 * **Pseudocode: the pseudocode of checking individual-fairness:**
 * **Artifacts: The school management system case study:** https://figshare.com/s/c9812d35226244625436
-* **Artifacts: The delivery management system case study:**
+* **Artifacts: The delivery management system case study:** https://figshare.com/s/87a5c5e571c4019b78fd
 * **Artifacts: The loan management system case study:**
 
 The artifacts of each each case study contains: 
