@@ -11,9 +11,9 @@ In this file, we present the artifact used in our paper. The submission includes
 * **Profile: The UMLfair Profile:**
 * **Pseudocode: the pseudocode of generating temporal logic claims:**
 * **Pseudocode: the pseudocode of checking individual-fairness:**
-* **Artifacts: The artifacts of the school management system case study:** https://figshare.com/s/c9812d35226244625436
-* **Artifacts: The artifacts of the delivery management system case study:**
-* **Artifacts: The artifacts of the loan management system case study:**
+* **Artifacts: The school management system case study:** https://figshare.com/s/c9812d35226244625436
+* **Artifacts: The delivery management system case study:**
+* **Artifacts: The loan management system case study:**
 
 The artifacts of each each case study contains: 
 * A (*.uml*) file: the UML model of the system annotated with the UMLfair profile.
