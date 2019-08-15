@@ -8,7 +8,7 @@ In this file, we present the artifact used in our paper. The submission includes
 # Recources
 
 * **Profile: The UMLfair Profile:** https://figshare.com/s/2dceb22e2c7c18d9c02e
-* **Algorithms: the algorithms of generating temporal logic claims and checking individual-fairness:**
+* **Algorithms: the algorithms of generating temporal logic claims and checking individual-fairness:** https://figshare.com/s/c26bb503f1b6bdd96199
 * **Artifacts: The school management system case study:** https://figshare.com/s/c9812d35226244625436
 * **Artifacts: The delivery management system case study:** https://figshare.com/s/87a5c5e571c4019b78fd
 * **Artifacts: The loan management system case study:** https://figshare.com/s/992818463798f2f0ce50
