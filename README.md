@@ -7,11 +7,11 @@ In this file, we present the artifact used in our paper. The submission includes
 
 # Recources
 
-* **Profile: The UMLfair Profile:** https://figshare.com/s/2dceb22e2c7c18d9c02e
-* **Algorithms: the algorithms of generating temporal logic claims and checking individual-fairness:** https://figshare.com/s/c26bb503f1b6bdd96199
-* **Artifacts: The school management system case study:** https://figshare.com/s/c9812d35226244625436
+* **Profile: The UMLfair Profile:** https://github.com/confFair/project/blob/master/profile.zip
+* **Algorithms: the algorithms of generating temporal logic claims and checking individual-fairness:** https://github.com/confFair/project/blob/master/algorithms.zip
+* **Artifacts: The school management system case study:** https://github.com/confFair/project/blob/master/SchoolManagementSystem.zip
 * **Artifacts: The delivery management system case study:** https://github.com/confFair/project/blob/master/DeliveryManagementSystem.zip
-* **Artifacts: The loan management system case study:** https://figshare.com/s/992818463798f2f0ce50
+* **Artifacts: The loan management system case study:** https://github.com/confFair/project/blob/master/LoanManagementSystem.zip
 
 The artifacts of each each case study contains: 
 * A (*.uml*) file: the UML model of the system annotated with the UMLfair profile.
