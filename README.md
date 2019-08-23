@@ -1,4 +1,4 @@
-# Analyzing Individual Fairness by Incorporating System Design Models
+# Analyzing Individual Fairness based on System Design Models
 
 In this file, we present the artifact used in our paper. The submission includes:
 * the *UMLfair profile*.
