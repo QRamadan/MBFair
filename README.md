@@ -9,7 +9,7 @@ In this file, we present the artifact used in our paper. The submission includes
 
 * **Profile: The UMLfair Profile:** https://github.com/confFair/project/blob/master/profile.zip
 * **Lunch configuration: The lucn configuration to the transformation tool hugo/RT:** https://github.com/confFair/project/blob/master/hugort.launch
-* **Algorithms: the algorithms of generating temporal logic claims and checking individual-fairness:** https://github.com/confFair/project/blob/master/algorithms.pdf
+
 * **Artifacts: The school management system case study:** https://github.com/confFair/project/blob/master/SchoolManagementSystem.zip
 * **Artifacts: The delivery management system case study:** https://github.com/confFair/project/blob/master/DeliveryManagementSystem.zip
 * **Artifacts: The loan management system case study:** https://github.com/confFair/project/blob/master/LoanManagementSystem.zip
