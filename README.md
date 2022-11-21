@@ -10,7 +10,7 @@ In this file, we present the artifact used in our paper. The submission includes
 # Recources
 
 * **Profile: The UMLfair Profile:** https://github.com/confFair/project/blob/master/profile.zip
-* **Source code of our MBFair tool
+* **Source code of our MBFair tool**
 * **Artifacts: The bank management system case study:** 
 * **Artifacts: The delivery management system case study:** 
 * **Artifacts: The loan management system case study:** 
