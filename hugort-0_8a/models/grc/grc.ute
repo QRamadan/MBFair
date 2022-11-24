@@ -1,0 +1,283 @@
+model GRC {
+  class Control {
+    signature {
+      const d1 : int = Track.ta-10-(Gate.gd+10)-(Gate.gu+11); // 100;
+      const d2 : int = Gate.gu+Gate.go+1; // 40;
+
+      attr tracks : Track[2];
+      attr gate : Gate;
+      attr trains : int = 0;
+
+      reception entering(track : int);
+      reception exiting(track : int);
+      reception doClose();
+      reception doOpen();
+    }
+
+    behaviour {
+      states {
+        initial top_initial0;
+        concurrent Controller {
+          composite Control1 {
+            simple Away1;
+            simple Entered1;
+            simple Nearby1;
+            simple Critical1;
+          }
+          composite Control2 {
+            simple Away2;
+            simple Entered2;
+            simple Nearby2;
+            simple Critical2;
+          }
+          composite ControlGate {
+            simple Open;
+            simple Closed;
+            junction ControlGate_junction0;
+          }
+        }
+        fork top_fork0;
+      }
+
+      transitions {
+        // Initialisation
+        top_initial0 -> top_fork0;
+        top_fork0 -> Controller.Control1.Away1;
+        top_fork0 -> Controller.Control2.Away2;
+        top_fork0 -> Controller.ControlGate.Open;
+
+        // First track
+        Controller.Control1.Away1 -> Controller.Control1.Entered1 {
+          trigger entering;
+          guard track == 0;
+        }
+        Controller.Control1.Entered1 -> Controller.Control1.Nearby1 {
+          trigger after [d1, d1];
+          effect trains = trains+1;
+        }
+        Controller.Control1.Nearby1 -> Controller.Control1.Critical1 {
+          trigger after [d2, d2];
+          effect doClose();
+        }
+        Controller.Control1.Critical1 -> Controller.Control1.Away1 {
+          trigger exiting;
+          guard track == 0;
+          effect trains = trains-1; doOpen();
+        }
+        Controller.Control1.Critical1 -> Controller.Control1.Entered1 {
+          trigger entering;
+          guard track == 0;
+          effect trains = trains-1; doOpen();
+        }
+
+        // Second track
+        Controller.Control2.Away2 -> Controller.Control2.Entered2 {
+          trigger entering;
+          guard track == 1;
+        }
+        Controller.Control2.Entered2 -> Controller.Control2.Nearby2 {
+          trigger after [d1, d1];
+          effect trains = trains+1;
+        }
+        Controller.Control2.Nearby2 -> Controller.Control2.Critical2 {
+          trigger after [d2, d2];
+          effect doClose();
+        }
+        Controller.Control2.Critical2 -> Controller.Control2.Away2 {
+          trigger exiting;
+          guard track == 1;
+          effect trains = trains-1; doOpen();
+        }
+        Controller.Control2.Critical2 -> Controller.Control2.Entered2 {
+          trigger entering;
+          guard track == 1;
+          effect trains = trains-1; doOpen();
+        }
+
+        // Controller
+        Controller.ControlGate.Open -> Controller.ControlGate.Closed {
+          trigger doClose;
+          effect gate.closeGate();
+        }
+        Controller.ControlGate.Closed -> Controller.ControlGate.ControlGate_junction0 {
+          trigger doOpen;
+        }
+        Controller.ControlGate.ControlGate_junction0 -> Controller.ControlGate.Closed {
+          guard trains > 0;
+        }
+        Controller.ControlGate.ControlGate_junction0 -> Controller.ControlGate.Open {
+          guard trains == 0;
+          effect gate.openGate();
+        }
+      }
+    }
+  }
+
+  class Track {
+    signature {
+      static const ta : int = 200;
+      static const Ta : int = 400;
+      static const tg : int = 50;
+      static const Tg : int = 100;
+
+      attr number : int;
+      attr ctl : Control;
+    }
+
+    behaviour {
+      states {
+        initial top_initial0;
+        simple NoTrain;
+        simple Approach;
+        simple Crossing;
+      }
+
+      transitions {
+        top_initial0 -> NoTrain;
+        NoTrain -> Approach {
+          trigger wait; // after [0, 10];
+          effect ctl.entering(number);
+        }
+        Approach -> Crossing {
+          trigger after [ta, Ta];
+        }
+        Crossing -> NoTrain {
+          trigger after [tg, Tg];
+          effect ctl.exiting(number);
+        }
+      }
+    }
+  }
+
+  class Gate {
+    signature {
+      static const gd : int = 30;
+      static const gu : int = 30;
+      static const go : int = 10;
+
+      attr control : Control;
+
+      reception closeGate();
+      reception openGate();
+    }
+
+    behaviour {
+      states {
+        initial top_initial0;
+        simple Open;
+        simple Closing;
+        simple Closed;
+        simple Opening;
+      }
+
+      transitions {
+        top_initial0 -> Open {
+          guard true;
+          effect ;
+        }
+        Open -> Closing {
+          trigger closeGate;
+        }
+        Closing -> Closed {
+          trigger after [gd, gd];
+        }
+        Closed -> Opening {
+          trigger openGate;
+        }
+        Opening -> Open {
+          trigger after [gu, gu];
+        }
+      }
+    }
+  }
+
+  collaboration TwoTracks {
+    object track1 : Track {
+  	  number = 0;
+      ctl = ctl;
+    }
+
+    object track2 : Track {
+      number = 1;
+      ctl = ctl;
+    }
+
+    object gate : Gate {
+      control = ctl;
+    }
+
+    object ctl : Control {
+      tracks = { track1, track2 };
+      gate = gate;
+    }
+
+    interaction test {
+      enter1 : track1 -> ctl  : entering(0);
+      enter2 : track2 -> ctl  : entering(1);
+       close :    ctl -> gate : closeGate();
+       exit1 : track1 -> ctl  : exiting(0);
+       exit2 : track2 -> ctl  : exiting(1);
+        open :    ctl -> gate : openGate();
+
+      basic {
+        track1 {
+          snd(enter1);
+          snd(exit1);
+        }
+
+        track2 {
+          snd(enter2);
+          snd(exit2);
+        }
+
+        ctl {
+          rcv(enter1);
+          rcv(enter2);
+          snd(close);
+          rcv(exit1);
+          rcv(exit2);
+          snd(open);
+        }
+
+        gate {
+          rcv(close);
+          rcv(open);
+        }
+      }
+
+      timing {
+        rcv(close)-rcv(enter1) <= Track.ta-Gate.gd;
+        rcv(open)-rcv(exit2) <= 10;
+      }
+    }
+
+    interaction utility {
+      open : ctl -> gate : openGate();
+      close : ctl -> gate : closeGate();
+
+      basic {
+        ctl {
+          snd(open);
+          snd(close);
+        }
+
+        gate {
+          rcv(open);
+          rcv(close);
+        }
+      }
+
+      timing {
+        rcv(close)-rcv(open) < Gate.gu+Gate.go-9;
+      }
+    }
+
+    assertion safety {
+      G (track1.inState(Crossing) or track2.inState(Crossing)) implies gate.inState(Closed);
+    }
+		
+    assertion failing {
+      AG not fail;
+    }
+  }
+}

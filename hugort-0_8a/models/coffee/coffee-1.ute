@@ -1,0 +1,413 @@
+model coffee {
+  properties {
+    networkCapacity = 2;
+    centralNetwork = false;
+    networkDelay = 10;
+    externalQueueCapacity = 5;
+    internalQueueCapacity = 2;
+    deferredQueueCapacity = 2;
+    intMin = -32768;
+    intMax = 32767;
+    mutex = false;
+    smileMachine = true;
+    phaseBased = true;
+    fixedOrderRegions = true;
+    fixedOrderTransitionFiring = true;
+  }
+
+  class LED {
+    signature {
+      reception on();
+      reception off();
+    }
+
+    behaviour {
+      states {
+        initial Initial0;
+        simple On;
+        simple Off;
+      }
+
+      transitions {
+        On -> Off {
+          trigger off;
+          guard true;
+          effect ;
+        }
+        Off -> On {
+          trigger on;
+          guard true;
+          effect ;
+        }
+        Initial0 -> Off {
+          guard true;
+          effect ;
+        }
+      }
+    }
+  }
+
+  class Grinder {
+    signature {
+      attr control : Control;
+
+      operation setLevel(gl : int);
+
+      reception on();
+    }
+
+    behaviour {
+      states {
+        initial Initial0;
+        simple Off;
+        simple On;
+      }
+
+      transitions {
+        Off -> Off {
+          trigger setLevel;
+          guard true;
+          effect ;
+        }
+        Off -> On {
+          trigger on;
+          guard true;
+          effect ;
+        }
+        On -> Off {
+          guard true;
+          effect control.ground();
+        }
+        Initial0 -> Off {
+          guard true;
+          effect ;
+        }
+      }
+    }
+  }
+
+  class WaterTank {
+    signature {
+      attr control : Control;
+
+      operation check(wl : int);
+
+      reception open();
+      reception close();
+    }
+
+    behaviour {
+      states {
+        initial Initial0;
+        simple Closed;
+        simple Open;
+      }
+
+      transitions {
+        Closed -> Open {
+          trigger open;
+          guard true;
+          effect ;
+        }
+        Open -> Closed {
+          trigger close;
+          guard true;
+          effect ;
+        }
+        Closed -> Closed {
+          trigger check;
+          guard true;
+          effect ;
+        }
+        Initial0 -> Closed {
+          guard true;
+          effect ;
+        }
+      }
+    }
+  }
+
+  class Control {
+    signature {
+      attr grinder : Grinder;
+      attr heater : Heater;
+      attr waterTank : WaterTank;
+      attr data : Data;
+      attr ui : UserInterface;
+
+      reception notEnoughBeans();
+      reception notEnoughWater();
+      reception enoughWater();
+      reception brew();
+      reception ground();
+      reception heated();
+    }
+
+    behaviour {
+      states {
+        initial Initial0;
+        concurrent Brewing {
+          composite Region0region1 {
+            simple Grinding;
+            initial Initial0;
+            final FinalState0;
+            simple SetGrindingLevel;
+            simple TurnOnGrinder;
+          }
+          composite Region1region2 {
+            simple Heating;
+            initial Initial0;
+            final FinalState0;
+            simple TurnOnHeater;
+          }
+        }
+        composite Dispensing {
+          simple CheckWater;
+          simple Pouring;
+          final FinalState0;
+          simple Checking;
+          initial Initial0;
+        }
+        simple Idle;
+      }
+
+      transitions {
+        Dispensing.CheckWater -> Dispensing.Checking {
+          guard true;
+          effect waterTank.check(data.wl);
+        }
+        Brewing.Region0region1.Grinding -> Brewing.Region0region1.FinalState0 {
+          trigger ground;
+          guard true;
+          effect ;
+        }
+        Brewing.Region1region2.Initial0 -> Brewing.Region1region2.TurnOnHeater {
+          guard true;
+          effect ;
+        }
+        Dispensing.Initial0 -> Dispensing.CheckWater {
+          guard true;
+          effect ;
+        }
+        Dispensing -> Idle {
+          guard true;
+          effect ui.enjoy();
+        }
+        Brewing.Region1region2.TurnOnHeater -> Brewing.Region1region2.Heating {
+          guard true;
+          effect heater.on();
+        }
+        Dispensing -> Idle {
+          trigger notEnoughWater;
+          guard true;
+          effect ui.refillWater();
+        }
+        Dispensing.Checking -> Dispensing.Pouring {
+          trigger enoughWater;
+          guard true;
+          effect waterTank.open();
+        }
+        Brewing.Region0region1.SetGrindingLevel -> Brewing.Region0region1.TurnOnGrinder {
+          guard true;
+          effect grinder.setLevel(data.gl);
+        }
+        Brewing.Region1region2.Heating -> Brewing.Region1region2.FinalState0 {
+          trigger heated;
+          guard true;
+          effect ;
+        }
+        Initial0 -> Idle {
+          guard true;
+          effect ;
+        }
+        Brewing -> Dispensing {
+          guard true;
+          effect ;
+        }
+        Brewing -> Idle {
+          trigger notEnoughBeans;
+          guard true;
+          effect ui.refillBeans();
+        }
+        Idle -> Brewing {
+          trigger brew;
+          guard true;
+          effect ;
+        }
+        Brewing.Region0region1.TurnOnGrinder -> Brewing.Region0region1.Grinding {
+          guard true;
+          effect grinder.on();
+        }
+        Dispensing.Initial0 -> Dispensing.Pouring {
+          guard true;
+          effect ;
+        }
+        Dispensing.Pouring -> Dispensing.FinalState0 {
+          trigger after [data.wl, data.wl];
+          guard true;
+          effect waterTank.close();
+        }
+        Brewing.Region0region1.Initial0 -> Brewing.Region0region1.TurnOnGrinder {
+          guard true;
+          effect ;
+        }
+        Brewing.Region0region1.Initial0 -> Brewing.Region0region1.SetGrindingLevel {
+          guard true;
+          effect ;
+        }
+      }
+    }
+  }
+
+  class Data {
+    signature {
+      static const wl : int = 3;
+      static const gl : int = 2;
+      static const SMALL : int = 3;
+      static const LARGE : int = 5;
+    }
+  }
+
+  class Heater {
+    signature {
+      attr control : Control;
+
+      reception on();
+    }
+
+    behaviour {
+      states {
+        initial Initial0;
+        simple Off;
+        simple On;
+      }
+
+      transitions {
+        Off -> On {
+          trigger on;
+          guard true;
+          effect ;
+        }
+        On -> Off {
+          guard true;
+          effect control.heated();
+        }
+        Initial0 -> Off {
+          guard true;
+          effect ;
+        }
+      }
+    }
+  }
+
+  class UserInterface {
+    signature {
+      attr data : Data;
+      attr leds : LED[3];
+      attr control : Control;
+
+      reception enjoy();
+      reception refillBeans();
+      reception refillWater();
+      reception small();
+      reception large();
+    }
+
+    behaviour {
+      states {
+        composite Menu {
+          simple Ready;
+          initial Initial0;
+        }
+        simple Working;
+        initial Initial0;
+      }
+
+      transitions {
+        Menu.Ready -> Working {
+          trigger large;
+          guard true;
+          effect leds[1].off(); leds[2].off(); leds[0].on(); data.wl = data.LARGE; control.brew();
+        }
+        Menu.Ready -> Working {
+          trigger small;
+          guard true;
+          effect leds[1].off(); leds[2].off(); leds[0].on(); data.wl = data.SMALL; control.brew();
+        }
+        Working -> Menu.Ready {
+          trigger refillWater;
+          guard true;
+          effect leds[0].off(); leds[2].on();
+        }
+        Working -> Menu.Ready {
+          trigger enjoy;
+          guard true;
+          effect leds[0].off();
+        }
+        Working -> Menu.Ready {
+          trigger refillBeans;
+          guard true;
+          effect leds[0].off(); leds[1].on();
+        }
+        Menu.Initial0 -> Menu.Ready {
+          guard true;
+          effect ;
+        }
+        Initial0 -> Menu {
+          guard true;
+          effect ;
+        }
+      }
+    }
+  }
+
+  collaboration setup {
+    object ui : UserInterface {
+      leds = { led0, led1, led2 };
+      control = ctrl;
+    }
+
+    object grinder : Grinder {
+      control = ctrl;
+    }
+
+    object heater : Heater {
+      control = ctrl;
+    }
+
+    object waterTank : WaterTank {
+      control = ctrl;
+    }
+
+    object ctrl : Control {
+      ui = ui;
+      grinder = grinder;
+      heater = heater;
+      waterTank = waterTank;
+    }
+
+    object led0 : LED {
+    }
+
+    object led2 : LED {
+    }
+
+    object led1 : LED {
+    }
+
+    test case Test {
+      observables {
+        snd(small),
+        rcv(small),
+        snd(brew),
+        rcv(brew)
+      }
+
+      sequence {
+        snd(tester, small, ui),
+        rcv(tester, small, ui),
+        snd(ui, brew, ctrl)
+      }
+    }
+  }
+}

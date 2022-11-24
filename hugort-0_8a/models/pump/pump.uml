@@ -1,0 +1,593 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20110701" xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xmi:id="_50BFQMnHEeKlfbaqgTBe4Q" name="pump">
+  <packagedElement xmi:type="uml:Class" xmi:id="_NV7wQMnJEeKlfbaqgTBe4Q" name="COMController" classifierBehavior="_vY3DEMnJEeKlfbaqgTBe4Q">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_VtDzQMnJEeKlfbaqgTBe4Q" name="drives" type="_TsQZIMnJEeKlfbaqgTBe4Q" association="_VtEaUMnJEeKlfbaqgTBe4Q">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_VtDzQcnJEeKlfbaqgTBe4Q" value="2"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_VtDzQsnJEeKlfbaqgTBe4Q" value="2"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_isNKQcnJEeKlfbaqgTBe4Q" name="user" type="_hVEYMMnJEeKlfbaqgTBe4Q" association="_isNKQMnJEeKlfbaqgTBe4Q">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_isNKQsnJEeKlfbaqgTBe4Q" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_isNKQ8nJEeKlfbaqgTBe4Q" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_ZtwRcM6_EeKiguMxf6Qoog" name="newRate" visibility="public" type="_5U8i8MrgEeKzvsgC4zqatA" isUnique="false">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_bdqv4M6_EeKiguMxf6Qoog" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_bdtzMM6_EeKiguMxf6Qoog" value="1"/>
+      <defaultValue xmi:type="uml:LiteralString" xmi:id="_bd4yUM6_EeKiguMxf6Qoog">
+        <value xsi:nil="true"/>
+      </defaultValue>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_cQ6KsM6_EeKiguMxf6Qoog" name="newOther" visibility="public" type="_5U8i8MrgEeKzvsgC4zqatA" isUnique="false">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_dYPmMM6_EeKiguMxf6Qoog" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_dYSpgM6_EeKiguMxf6Qoog" value="1"/>
+      <defaultValue xmi:type="uml:LiteralString" xmi:id="_dYdBkM6_EeKiguMxf6Qoog">
+        <value xsi:nil="true"/>
+      </defaultValue>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_d21msM6_EeKiguMxf6Qoog" name="setRate" visibility="public" type="_5U8i8MrgEeKzvsgC4zqatA" isUnique="false">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_endLUM6_EeKiguMxf6Qoog" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eng1sM6_EeKiguMxf6Qoog" value="1"/>
+      <defaultValue xmi:type="uml:LiteralString" xmi:id="_enrNwM6_EeKiguMxf6Qoog">
+        <value xsi:nil="true"/>
+      </defaultValue>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_fPGaIM6_EeKiguMxf6Qoog" name="setOther" visibility="public" type="_5U8i8MrgEeKzvsgC4zqatA" isUnique="false">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_gTiSoM6_EeKiguMxf6Qoog" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_gTlV8M6_EeKiguMxf6Qoog" value="1"/>
+      <defaultValue xmi:type="uml:LiteralString" xmi:id="_gTw8IM6_EeKiguMxf6Qoog">
+        <value xsi:nil="true"/>
+      </defaultValue>
+    </ownedAttribute>
+    <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_vY3DEMnJEeKlfbaqgTBe4Q" name="Controller behaviour">
+      <region xmi:type="uml:Region" xmi:id="_wfBZ4MnJEeKlfbaqgTBe4Q" name="Region1">
+        <transition xmi:type="uml:Transition" xmi:id="_-qCHEMnJEeKlfbaqgTBe4Q" name="Idle2WaitForSettings" source="_4hOVwMnJEeKlfbaqgTBe4Q" target="_89iwEMnJEeKlfbaqgTBe4Q">
+          <effect xmi:type="uml:OpaqueBehavior" xmi:id="_7JoF8MnKEeKlfbaqgTBe4Q" name="user_setStartUpAck">
+            <language>C</language>
+            <body>user.setStartUpAck()</body>
+          </effect>
+          <trigger xmi:type="uml:Trigger" xmi:id="_fnqlwMnKEeKlfbaqgTBe4Q" event="_bWwxQMnKEeKlfbaqgTBe4Q"/>
+        </transition>
+        <transition xmi:type="uml:Transition" xmi:id="_s64IQMnKEeKlfbaqgTBe4Q" name="WaitForSettings2Idle" source="_89iwEMnJEeKlfbaqgTBe4Q" target="_4hOVwMnJEeKlfbaqgTBe4Q">
+          <trigger xmi:type="uml:Trigger" xmi:id="_ubSyI8nKEeKlfbaqgTBe4Q" event="_ubSyIMnKEeKlfbaqgTBe4Q"/>
+        </transition>
+        <transition xmi:type="uml:Transition" xmi:id="_W9enYMnLEeKlfbaqgTBe4Q" name="WaitForParameters2SettingParameters" source="_89iwEMnJEeKlfbaqgTBe4Q" target="_U6SnoMnLEeKlfbaqgTBe4Q">
+          <trigger xmi:type="uml:Trigger" xmi:id="_7MahQcroEeKzvsgC4zqatA" event="_7MahQMroEeKzvsgC4zqatA"/>
+        </transition>
+        <transition xmi:type="uml:Transition" xmi:id="_t7-UAMrqEeKzvsgC4zqatA" name="SettingParameters2Idle" source="_U6SnoMnLEeKlfbaqgTBe4Q" target="_4hOVwMnJEeKlfbaqgTBe4Q">
+          <effect xmi:type="uml:OpaqueBehavior" xmi:id="_x55iIMrqEeKzvsgC4zqatA" name="user_setPumpParametersAck">
+            <language>C</language>
+            <body>user.setPumpParametersAck()</body>
+          </effect>
+        </transition>
+        <transition xmi:type="uml:Transition" xmi:id="_Isd7AMrrEeKzvsgC4zqatA" name="Initial2Idle" source="_ALAKkMnKEeKlfbaqgTBe4Q" target="_4hOVwMnJEeKlfbaqgTBe4Q"/>
+        <subvertex xmi:type="uml:State" xmi:id="_4hOVwMnJEeKlfbaqgTBe4Q" name="Idle"/>
+        <subvertex xmi:type="uml:State" xmi:id="_89iwEMnJEeKlfbaqgTBe4Q" name="WaitForParameters"/>
+        <subvertex xmi:type="uml:Pseudostate" xmi:id="_ALAKkMnKEeKlfbaqgTBe4Q" name="Initial0"/>
+        <subvertex xmi:type="uml:State" xmi:id="_U6SnoMnLEeKlfbaqgTBe4Q" name="SettingParameters">
+          <region xmi:type="uml:Region" xmi:id="_-o1B8MrhEeKzvsgC4zqatA" name="Region0">
+            <transition xmi:type="uml:Transition" xmi:id="_Actk8MrjEeKzvsgC4zqatA" name="Transition0" source="_Twc78MriEeKzvsgC4zqatA" target="_ST-QMMnMEeKlfbaqgTBe4Q"/>
+            <transition xmi:type="uml:Transition" xmi:id="_2VCNgMrmEeKzvsgC4zqatA" name="Transition1" guard="_OOwC8NUfEeK278qap4QruQ" source="_ST-QMMnMEeKlfbaqgTBe4Q" target="_xJFGAMrmEeKzvsgC4zqatA">
+              <ownedRule xmi:type="uml:Constraint" xmi:id="_OOwC8NUfEeK278qap4QruQ" name="id_0">
+                <specification xmi:type="uml:OpaqueExpression" xmi:id="_OOwC8dUfEeK278qap4QruQ" name="id_1">
+                  <language>C</language>
+                  <body>id = #right</body>
+                </specification>
+              </ownedRule>
+              <effect xmi:type="uml:OpaqueBehavior" xmi:id="_Y8Wm0MrnEeKzvsgC4zqatA" name="">
+                <language>C</language>
+                <body>user.setRateAck(setRate)</body>
+              </effect>
+              <trigger xmi:type="uml:Trigger" xmi:id="_EoK78MrnEeKzvsgC4zqatA" event="_c35Z4MroEeKzvsgC4zqatA"/>
+            </transition>
+            <transition xmi:type="uml:Transition" xmi:id="_iinWcMrnEeKzvsgC4zqatA" name="Transition2" guard="_XC9DgNUfEeK278qap4QruQ" source="_ST-QMMnMEeKlfbaqgTBe4Q" target="_z0bR8MrmEeKzvsgC4zqatA">
+              <ownedRule xmi:type="uml:Constraint" xmi:id="_XC9DgNUfEeK278qap4QruQ" name="id_0">
+                <specification xmi:type="uml:OpaqueExpression" xmi:id="_XC9DgdUfEeK278qap4QruQ" name="id_0">
+                  <language>C</language>
+                  <body>id = #left</body>
+                </specification>
+              </ownedRule>
+              <effect xmi:type="uml:OpaqueBehavior" xmi:id="_ieq1IMroEeKzvsgC4zqatA">
+                <language>C</language>
+                <body>user.setRateAck(setRate)</body>
+              </effect>
+              <trigger xmi:type="uml:Trigger" xmi:id="_c35Z4croEeKzvsgC4zqatA" event="_c35Z4MroEeKzvsgC4zqatA"/>
+            </transition>
+            <transition xmi:type="uml:Transition" xmi:id="_YPg5gMroEeKzvsgC4zqatA" name="Transition3" source="_xJFGAMrmEeKzvsgC4zqatA" target="_2G28MM6XEeKiguMxf6Qoog">
+              <trigger xmi:type="uml:Trigger" xmi:id="_n8K_oMroEeKzvsgC4zqatA" event="_c35Z4MroEeKzvsgC4zqatA"/>
+            </transition>
+            <transition xmi:type="uml:Transition" xmi:id="_ot-QAMroEeKzvsgC4zqatA" name="Transition4" source="_z0bR8MrmEeKzvsgC4zqatA" target="_2G28MM6XEeKiguMxf6Qoog">
+              <trigger xmi:type="uml:Trigger" xmi:id="_qYkwoMroEeKzvsgC4zqatA" event="_c35Z4MroEeKzvsgC4zqatA"/>
+            </transition>
+            <transition xmi:type="uml:Transition" xmi:id="_kRKRAMrpEeKzvsgC4zqatA" name="Transition5" guard="_dMRLINUfEeK278qap4QruQ" source="__XP_cMrnEeKzvsgC4zqatA" target="_Pq3icMrpEeKzvsgC4zqatA">
+              <ownedRule xmi:type="uml:Constraint" xmi:id="_dMRLINUfEeK278qap4QruQ" name="id_1">
+                <specification xmi:type="uml:OpaqueExpression" xmi:id="_dMRLIdUfEeK278qap4QruQ" name="id_1">
+                  <language>C</language>
+                  <body>id = #right</body>
+                </specification>
+              </ownedRule>
+              <effect xmi:type="uml:OpaqueBehavior" xmi:id="_vlvWINQJEeKiguMxf6Qoog" name="user_setOtherParamsAck">
+                <language>C</language>
+                <body>user.setOtherParamsAck(setOtherParams)</body>
+              </effect>
+              <trigger xmi:type="uml:Trigger" xmi:id="_vluvENQJEeKiguMxf6Qoog" event="_tV0eMMnSEeKlfbaqgTBe4Q"/>
+            </transition>
+            <transition xmi:type="uml:Transition" xmi:id="_0YgIAMrpEeKzvsgC4zqatA" name="Transition6" guard="_hxY8INUfEeK278qap4QruQ" source="__XP_cMrnEeKzvsgC4zqatA" target="_SZqD8MrpEeKzvsgC4zqatA">
+              <ownedRule xmi:type="uml:Constraint" xmi:id="_hxY8INUfEeK278qap4QruQ" name="id_0">
+                <specification xmi:type="uml:OpaqueExpression" xmi:id="_hxY8IdUfEeK278qap4QruQ" name="id_0">
+                  <language>C</language>
+                  <body>id = #left</body>
+                </specification>
+              </ownedRule>
+              <effect xmi:type="uml:OpaqueBehavior" xmi:id="_weIWsNQJEeKiguMxf6Qoog" name="user_setOtherParamsAck">
+                <language>C</language>
+                <body>user.setOtherParamsAck(setOtherParams)</body>
+              </effect>
+              <trigger xmi:type="uml:Trigger" xmi:id="_weHvoNQJEeKiguMxf6Qoog" event="_tV0eMMnSEeKlfbaqgTBe4Q"/>
+            </transition>
+            <transition xmi:type="uml:Transition" xmi:id="_HXBngMrqEeKzvsgC4zqatA" name="Transition7" source="_Pq3icMrpEeKzvsgC4zqatA" target="_FBpEgMrqEeKzvsgC4zqatA">
+              <trigger xmi:type="uml:Trigger" xmi:id="_xW4joNQJEeKiguMxf6Qoog" event="_tV0eMMnSEeKlfbaqgTBe4Q"/>
+            </transition>
+            <transition xmi:type="uml:Transition" xmi:id="_LFXhgMrqEeKzvsgC4zqatA" name="Transition8" source="_SZqD8MrpEeKzvsgC4zqatA" target="_FBpEgMrqEeKzvsgC4zqatA">
+              <trigger xmi:type="uml:Trigger" xmi:id="_x0FdANQJEeKiguMxf6Qoog" event="_tV0eMMnSEeKlfbaqgTBe4Q"/>
+            </transition>
+            <transition xmi:type="uml:Transition" xmi:id="_9pK3EM6XEeKiguMxf6Qoog" name="Transition9" source="_2G28MM6XEeKiguMxf6Qoog" target="__XP_cMrnEeKzvsgC4zqatA">
+              <trigger xmi:type="uml:Trigger" xmi:id="_zNkcEM6xEeKiguMxf6Qoog" event="_zNj1AM6xEeKiguMxf6Qoog"/>
+            </transition>
+            <subvertex xmi:type="uml:State" xmi:id="_ST-QMMnMEeKlfbaqgTBe4Q" name="SettingRate">
+              <entry xmi:type="uml:OpaqueBehavior" xmi:id="_LONYoMrjEeKzvsgC4zqatA" name="drivers[0].canSetRate(newRate); drivers[1].canSetRate(newRate)">
+                <language>C</language>
+                <body>drives[0].canSetRate(newRate); drives[1].canSetRate(newRate)</body>
+              </entry>
+            </subvertex>
+            <subvertex xmi:type="uml:Pseudostate" xmi:id="_Twc78MriEeKzvsgC4zqatA" name="Initial0"/>
+            <subvertex xmi:type="uml:State" xmi:id="_xJFGAMrmEeKzvsgC4zqatA" name="WaitForRateAckLeft"/>
+            <subvertex xmi:type="uml:State" xmi:id="_z0bR8MrmEeKzvsgC4zqatA" name="WaitForRateAckRight"/>
+            <subvertex xmi:type="uml:State" xmi:id="__XP_cMrnEeKzvsgC4zqatA" name="SettingOther">
+              <entry xmi:type="uml:OpaqueBehavior" xmi:id="_LSV4cMroEeKzvsgC4zqatA" name="drivers[0].canSetOtherParams(newOther); drivers[1].canSetOtherParams(newOther)">
+                <language>C</language>
+                <body>drives[0].canSetOtherParams(newOther);
+drives[1].canSetOtherParams(newOther)</body>
+              </entry>
+            </subvertex>
+            <subvertex xmi:type="uml:State" xmi:id="_Pq3icMrpEeKzvsgC4zqatA" name="WaitForOtherLeft"/>
+            <subvertex xmi:type="uml:State" xmi:id="_SZqD8MrpEeKzvsgC4zqatA" name="WaitForOtherRight"/>
+            <subvertex xmi:type="uml:FinalState" xmi:id="_FBpEgMrqEeKzvsgC4zqatA" name="FinalState0"/>
+            <subvertex xmi:type="uml:State" xmi:id="_2G28MM6XEeKiguMxf6Qoog" name="Wait"/>
+          </region>
+        </subvertex>
+      </region>
+    </ownedBehavior>
+    <ownedReception xmi:type="uml:Reception" xmi:id="_PvJN4MnKEeKlfbaqgTBe4Q" name="setStartUp" signal="_MusUoMnKEeKlfbaqgTBe4Q"/>
+    <ownedReception xmi:type="uml:Reception" xmi:id="_ciw04MnLEeKlfbaqgTBe4Q" name="setPumpParameters" signal="_G8AH0MnLEeKlfbaqgTBe4Q">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_iyOHcMrhEeKzvsgC4zqatA" name="newRate" type="_5U8i8MrgEeKzvsgC4zqatA"/>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_vNPdsMrhEeKzvsgC4zqatA" name="newOther" type="_5U8i8MrgEeKzvsgC4zqatA"/>
+    </ownedReception>
+    <ownedReception xmi:type="uml:Reception" xmi:id="_oMMgsMnMEeKlfbaqgTBe4Q" name="canSetRateAck" signal="_HOGuUMrlEeKzvsgC4zqatA">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_7sp1UM6-EeKiguMxf6Qoog" name="setRate" type="_5U8i8MrgEeKzvsgC4zqatA"/>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_-TrtYNUeEeK278qap4QruQ" name="id" type="_5U8i8MrgEeKzvsgC4zqatA"/>
+    </ownedReception>
+    <ownedReception xmi:type="uml:Reception" xmi:id="_ZZFqAMnSEeKlfbaqgTBe4Q" name="canSetOtherParamsAck" signal="_WJzDgMnSEeKlfbaqgTBe4Q">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_48roEM6-EeKiguMxf6Qoog" name="setOtherParams" type="_5U8i8MrgEeKzvsgC4zqatA"/>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_CPro4NUfEeK278qap4QruQ" name="id" type="_5U8i8MrgEeKzvsgC4zqatA"/>
+    </ownedReception>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_TsQZIMnJEeKlfbaqgTBe4Q" name="Drive" classifierBehavior="_o5bEAM63EeKiguMxf6Qoog">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_VtEaUcnJEeKlfbaqgTBe4Q" name="ctrl" type="_NV7wQMnJEeKlfbaqgTBe4Q" association="_VtEaUMnJEeKlfbaqgTBe4Q">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_VtEaUsnJEeKlfbaqgTBe4Q" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_VtEaU8nJEeKlfbaqgTBe4Q" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_hZQlcNUeEeK278qap4QruQ" name="loc" visibility="public" type="_Z8V2ANUgEeK278qap4QruQ" isUnique="false">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_jlPU0NUeEeK278qap4QruQ" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_jlRKANUeEeK278qap4QruQ" value="1"/>
+      <defaultValue xmi:type="uml:LiteralString" xmi:id="_jlWpkNUeEeK278qap4QruQ">
+        <value xsi:nil="true"/>
+      </defaultValue>
+    </ownedAttribute>
+    <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_o5bEAM63EeKiguMxf6Qoog" name="Drive behaviour">
+      <region xmi:type="uml:Region" xmi:id="_poQf8M63EeKiguMxf6Qoog" name="Region1">
+        <transition xmi:type="uml:Transition" xmi:id="_6s7h4M63EeKiguMxf6Qoog" name="Transition0" source="_5Zwp0M63EeKiguMxf6Qoog" target="_0cWUoM63EeKiguMxf6Qoog"/>
+        <transition xmi:type="uml:Transition" xmi:id="_NypOgM64EeKiguMxf6Qoog" name="Transition1" source="_0cWUoM63EeKiguMxf6Qoog" target="_AgNvIM64EeKiguMxf6Qoog">
+          <trigger xmi:type="uml:Trigger" xmi:id="_OyJjsM64EeKiguMxf6Qoog" event="_wHoGMMnMEeKlfbaqgTBe4Q"/>
+        </transition>
+        <transition xmi:type="uml:Transition" xmi:id="_QPVTYM64EeKiguMxf6Qoog" name="Transition2" source="_0cWUoM63EeKiguMxf6Qoog" target="_J75mcM64EeKiguMxf6Qoog">
+          <trigger xmi:type="uml:Trigger" xmi:id="_clbG4NQJEeKiguMxf6Qoog" event="_claf0NQJEeKiguMxf6Qoog"/>
+        </transition>
+        <transition xmi:type="uml:Transition" xmi:id="_bk3BMM64EeKiguMxf6Qoog" name="Transition3" source="_AgNvIM64EeKiguMxf6Qoog" target="_0cWUoM63EeKiguMxf6Qoog">
+          <effect xmi:type="uml:OpaqueBehavior" xmi:id="_o_834M65EeKiguMxf6Qoog" name="ctrl_canSetRateAck">
+            <language>C</language>
+            <body>ctrl.canSetRateAck(100)</body>
+          </effect>
+        </transition>
+        <transition xmi:type="uml:Transition" xmi:id="_fic4IM64EeKiguMxf6Qoog" name="Transition4" source="_J75mcM64EeKiguMxf6Qoog" target="_0cWUoM63EeKiguMxf6Qoog">
+          <effect xmi:type="uml:OpaqueBehavior" xmi:id="_rnXmEM65EeKiguMxf6Qoog" name="ctrl_canSetOtherParamsAck">
+            <language>C</language>
+            <body>ctrl.canSetOtherParamsAck(100)</body>
+          </effect>
+        </transition>
+        <subvertex xmi:type="uml:State" xmi:id="_0cWUoM63EeKiguMxf6Qoog" name="Idle"/>
+        <subvertex xmi:type="uml:Pseudostate" xmi:id="_5Zwp0M63EeKiguMxf6Qoog" name="Initial0"/>
+        <subvertex xmi:type="uml:State" xmi:id="_AgNvIM64EeKiguMxf6Qoog" name="SetRate"/>
+        <subvertex xmi:type="uml:State" xmi:id="_J75mcM64EeKiguMxf6Qoog" name="SetOther"/>
+      </region>
+    </ownedBehavior>
+    <ownedReception xmi:type="uml:Reception" xmi:id="_KJ5KsMnMEeKlfbaqgTBe4Q" name="canSetRate" signal="_PAiJgMnMEeKlfbaqgTBe4Q">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="__1Lw8M6-EeKiguMxf6Qoog" name="newRate" type="_5U8i8MrgEeKzvsgC4zqatA"/>
+    </ownedReception>
+    <ownedReception xmi:type="uml:Reception" xmi:id="_ugiy8MrlEeKzvsgC4zqatA" name="canSetOtherParams" signal="_TcrkAMrlEeKzvsgC4zqatA">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_Bv2G0M6_EeKiguMxf6Qoog" name="newOther" type="_5U8i8MrgEeKzvsgC4zqatA"/>
+    </ownedReception>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_hVEYMMnJEeKlfbaqgTBe4Q" name="User" classifierBehavior="_95oWIM6xEeKiguMxf6Qoog">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_isMjMMnJEeKlfbaqgTBe4Q" name="ctrl" type="_NV7wQMnJEeKlfbaqgTBe4Q" association="_isNKQMnJEeKlfbaqgTBe4Q">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_isMjMcnJEeKlfbaqgTBe4Q" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_isMjMsnJEeKlfbaqgTBe4Q" value="1"/>
+    </ownedAttribute>
+    <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_95oWIM6xEeKiguMxf6Qoog" name="User behaviour">
+      <region xmi:type="uml:Region" xmi:id="_-zgkcM6xEeKiguMxf6Qoog" name="Region1">
+        <transition xmi:type="uml:Transition" xmi:id="_IJyXUM6yEeKiguMxf6Qoog" name="Transition0" source="_BtUDIM6yEeKiguMxf6Qoog" target="_D6S4EM6yEeKiguMxf6Qoog"/>
+        <transition xmi:type="uml:Transition" xmi:id="_MWaIwM6yEeKiguMxf6Qoog" name="Transition1" source="_ivUaINQFEeKiguMxf6Qoog" target="_FZDVEM6yEeKiguMxf6Qoog">
+          <effect xmi:type="uml:OpaqueBehavior" xmi:id="_zN8vwNQFEeKiguMxf6Qoog" name="ctrl_setPumpParameters">
+            <language>C</language>
+            <body>ctrl.setPumpParameters(100, 200)</body>
+          </effect>
+          <trigger xmi:type="uml:Trigger" xmi:id="_zN8IsdQFEeKiguMxf6Qoog" event="_zN8IsNQFEeKiguMxf6Qoog"/>
+        </transition>
+        <transition xmi:type="uml:Transition" xmi:id="_ljwiAM6yEeKiguMxf6Qoog" name="Transition2" source="_FZDVEM6yEeKiguMxf6Qoog" target="_D6S4EM6yEeKiguMxf6Qoog">
+          <trigger xmi:type="uml:Trigger" xmi:id="_nJhl8c6yEeKiguMxf6Qoog" event="_nJhl8M6yEeKiguMxf6Qoog"/>
+        </transition>
+        <transition xmi:type="uml:Transition" xmi:id="_tz1h0M6yEeKiguMxf6Qoog" name="Transition3" source="_FZDVEM6yEeKiguMxf6Qoog" target="_FZDVEM6yEeKiguMxf6Qoog">
+          <trigger xmi:type="uml:Trigger" xmi:id="_u7250c6yEeKiguMxf6Qoog" event="_u7250M6yEeKiguMxf6Qoog"/>
+        </transition>
+        <transition xmi:type="uml:Transition" xmi:id="_HTdW0M6zEeKiguMxf6Qoog" name="Transition4" source="_FZDVEM6yEeKiguMxf6Qoog" target="_FZDVEM6yEeKiguMxf6Qoog">
+          <trigger xmi:type="uml:Trigger" xmi:id="_IeiC0c6zEeKiguMxf6Qoog" event="_IeiC0M6zEeKiguMxf6Qoog"/>
+        </transition>
+        <transition xmi:type="uml:Transition" xmi:id="_r1bqENQFEeKiguMxf6Qoog" name="Transition5" source="_D6S4EM6yEeKiguMxf6Qoog" target="_ivUaINQFEeKiguMxf6Qoog">
+          <effect xmi:type="uml:OpaqueBehavior" xmi:id="_wyfZ8NQFEeKiguMxf6Qoog" name="ctrl_setStartUp">
+            <language>C</language>
+            <body>ctrl.setStartUp</body>
+          </effect>
+        </transition>
+        <subvertex xmi:type="uml:Pseudostate" xmi:id="_BtUDIM6yEeKiguMxf6Qoog" name="Initial0"/>
+        <subvertex xmi:type="uml:State" xmi:id="_D6S4EM6yEeKiguMxf6Qoog" name="Idle"/>
+        <subvertex xmi:type="uml:State" xmi:id="_FZDVEM6yEeKiguMxf6Qoog" name="Setting"/>
+        <subvertex xmi:type="uml:State" xmi:id="_ivUaINQFEeKiguMxf6Qoog" name="Request"/>
+      </region>
+    </ownedBehavior>
+    <ownedReception xmi:type="uml:Reception" xmi:id="_Zaro8MrkEeKzvsgC4zqatA" name="setStartUpAck" signal="_yj-ewMnKEeKlfbaqgTBe4Q"/>
+    <ownedReception xmi:type="uml:Reception" xmi:id="_GEVOEMnNEeKlfbaqgTBe4Q" name="setRateAck" signal="_Ehp6YMnNEeKlfbaqgTBe4Q">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_EM5_IM6_EeKiguMxf6Qoog" name="setRate" type="_5U8i8MrgEeKzvsgC4zqatA"/>
+    </ownedReception>
+    <ownedReception xmi:type="uml:Reception" xmi:id="_d0tWMMnREeKlfbaqgTBe4Q" name="setOtherParamsAck" signal="_XFrD8MrlEeKzvsgC4zqatA">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_GQp_kM6_EeKiguMxf6Qoog" name="setOther" type="_5U8i8MrgEeKzvsgC4zqatA"/>
+    </ownedReception>
+    <ownedReception xmi:type="uml:Reception" xmi:id="_hl-Z8MrlEeKzvsgC4zqatA" name="setPumpParametersAck" signal="_a0V8gMnREeKlfbaqgTBe4Q"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_isNKQMnJEeKlfbaqgTBe4Q" name="panelPC_cOMController_1" memberEnd="_isNKQcnJEeKlfbaqgTBe4Q _isMjMMnJEeKlfbaqgTBe4Q"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_VtEaUMnJEeKlfbaqgTBe4Q" name="cOMController_nPADrive_1" memberEnd="_VtEaUcnJEeKlfbaqgTBe4Q _VtDzQMnJEeKlfbaqgTBe4Q"/>
+  <packagedElement xmi:type="uml:Package" xmi:id="_I9kzcMnKEeKlfbaqgTBe4Q" name="signals">
+    <packagedElement xmi:type="uml:Signal" xmi:id="_MusUoMnKEeKlfbaqgTBe4Q" name="setStartUp"/>
+    <packagedElement xmi:type="uml:Signal" xmi:id="_yj-ewMnKEeKlfbaqgTBe4Q" name="setStartUpAck"/>
+    <packagedElement xmi:type="uml:Signal" xmi:id="_G8AH0MnLEeKlfbaqgTBe4Q" name="setPumpParameters">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_xyAV8MrgEeKzvsgC4zqatA" name="newRate" visibility="public" type="_5U8i8MrgEeKzvsgC4zqatA">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_xyEAUMrgEeKzvsgC4zqatA" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_xyEnYMrgEeKzvsgC4zqatA" value="1"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_-rNdAMrgEeKzvsgC4zqatA">
+          <value xsi:nil="true"/>
+        </defaultValue>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_P5cDkMrhEeKzvsgC4zqatA" name="newOther" visibility="public" type="_5U8i8MrgEeKzvsgC4zqatA">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_P5cqoMrhEeKzvsgC4zqatA" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_P5cqocrhEeKzvsgC4zqatA" value="1"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_T_DOEMrhEeKzvsgC4zqatA">
+          <value xsi:nil="true"/>
+        </defaultValue>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Signal" xmi:id="_a0V8gMnREeKlfbaqgTBe4Q" name="setPumpParametersAck"/>
+    <packagedElement xmi:type="uml:Signal" xmi:id="_PAiJgMnMEeKlfbaqgTBe4Q" name="canSetRate">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_JMwg8M6WEeKiguMxf6Qoog" name="newRate" visibility="public" type="_5U8i8MrgEeKzvsgC4zqatA" isUnique="false">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_JM31sM6WEeKiguMxf6Qoog" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_JM5D0M6WEeKiguMxf6Qoog" value="1"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_L--J4M6WEeKiguMxf6Qoog">
+          <value xsi:nil="true"/>
+        </defaultValue>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Signal" xmi:id="_HOGuUMrlEeKzvsgC4zqatA" name="canSetRateAck">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_T0NB8M6wEeKiguMxf6Qoog" name="setRate" visibility="public" type="_5U8i8MrgEeKzvsgC4zqatA" isUnique="false">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_T0NpAM6wEeKiguMxf6Qoog" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_T0O3IM6wEeKiguMxf6Qoog" value="1"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_V2BvwM6wEeKiguMxf6Qoog">
+          <value xsi:nil="true"/>
+        </defaultValue>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_xvzWENUeEeK278qap4QruQ" name="loc" visibility="public" type="_Z8V2ANUgEeK278qap4QruQ" isUnique="false">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_xvz9INUeEeK278qap4QruQ" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_xv0kMNUeEeK278qap4QruQ" value="1"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_y6p_oNUeEeK278qap4QruQ">
+          <value xsi:nil="true"/>
+        </defaultValue>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Signal" xmi:id="_Ehp6YMnNEeKlfbaqgTBe4Q" name="setRateAck">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_Z6Mv0M6wEeKiguMxf6Qoog" name="setRate" visibility="public" type="_5U8i8MrgEeKzvsgC4zqatA" isUnique="false">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Z6N98M6wEeKiguMxf6Qoog" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Z6OlAM6wEeKiguMxf6Qoog" value="1"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_bW4wQM6wEeKiguMxf6Qoog">
+          <value xsi:nil="true"/>
+        </defaultValue>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Signal" xmi:id="_TcrkAMrlEeKzvsgC4zqatA" name="canSetOtherParams">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_pvp94M62EeKiguMxf6Qoog" name="newOtherParams" visibility="public" type="_5U8i8MrgEeKzvsgC4zqatA" isUnique="false">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_pvqk8M62EeKiguMxf6Qoog" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_pvrMAM62EeKiguMxf6Qoog" value="1"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_sZwzsM62EeKiguMxf6Qoog">
+          <value xsi:nil="true"/>
+        </defaultValue>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Signal" xmi:id="_WJzDgMnSEeKlfbaqgTBe4Q" name="canSetOtherParamsAck">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_s9MQ4M62EeKiguMxf6Qoog" name="setOtherParams" visibility="public" type="_5U8i8MrgEeKzvsgC4zqatA" isUnique="false">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_s9NfAM62EeKiguMxf6Qoog" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_s9OtIM62EeKiguMxf6Qoog" value="1"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_ug-X0M62EeKiguMxf6Qoog">
+          <value xsi:nil="true"/>
+        </defaultValue>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_1D-ckNUeEeK278qap4QruQ" name="loc" visibility="public" type="_Z8V2ANUgEeK278qap4QruQ" isUnique="false">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_1D_DoNUeEeK278qap4QruQ" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_1D_qsNUeEeK278qap4QruQ" value="1"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_13x4ENUeEeK278qap4QruQ">
+          <value xsi:nil="true"/>
+        </defaultValue>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Signal" xmi:id="_XFrD8MrlEeKzvsgC4zqatA" name="setOtherParamsAck">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_wAkiUM62EeKiguMxf6Qoog" name="setOtherParams" visibility="public" type="_5U8i8MrgEeKzvsgC4zqatA" isUnique="false">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_wAlwcM62EeKiguMxf6Qoog" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_wAm-kM62EeKiguMxf6Qoog" value="1"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_w1rlYM62EeKiguMxf6Qoog">
+          <value xsi:nil="true"/>
+        </defaultValue>
+      </ownedAttribute>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_Y0rPAMnKEeKlfbaqgTBe4Q" name="events">
+    <packagedElement xmi:type="uml:TimeEvent" xmi:id="_ubSyIMnKEeKlfbaqgTBe4Q" name="TE - 30s" isRelative="true">
+      <when xmi:type="uml:TimeExpression" xmi:id="_ubSyIcnKEeKlfbaqgTBe4Q">
+        <expr xmi:type="uml:OpaqueExpression" xmi:id="_ubSyIsnKEeKlfbaqgTBe4Q">
+          <language>Natural language</language>
+          <body>30s</body>
+        </expr>
+      </when>
+    </packagedElement>
+    <packagedElement xmi:type="uml:TimeEvent" xmi:id="_zNj1AM6xEeKiguMxf6Qoog" name="TE - 100ms" isRelative="true">
+      <when xmi:type="uml:TimeExpression" xmi:id="_zNj1Ac6xEeKiguMxf6Qoog">
+        <expr xmi:type="uml:OpaqueExpression" xmi:id="_zNj1As6xEeKiguMxf6Qoog">
+          <language>Natural language</language>
+          <body>100ms</body>
+        </expr>
+      </when>
+    </packagedElement>
+    <packagedElement xmi:type="uml:SignalEvent" xmi:id="_bWwxQMnKEeKlfbaqgTBe4Q" name="SE - setStartUp" signal="_MusUoMnKEeKlfbaqgTBe4Q"/>
+    <packagedElement xmi:type="uml:SignalEvent" xmi:id="_wHoGMMnMEeKlfbaqgTBe4Q" name="SE - canSetRate" signal="_PAiJgMnMEeKlfbaqgTBe4Q"/>
+    <packagedElement xmi:type="uml:SignalEvent" xmi:id="_tV0eMMnSEeKlfbaqgTBe4Q" name="SE - canSetOtherParamsAck" signal="_WJzDgMnSEeKlfbaqgTBe4Q"/>
+    <packagedElement xmi:type="uml:SignalEvent" xmi:id="_c35Z4MroEeKzvsgC4zqatA" name="SE - canSetRateAck" signal="_HOGuUMrlEeKzvsgC4zqatA"/>
+    <packagedElement xmi:type="uml:SignalEvent" xmi:id="_7MahQMroEeKzvsgC4zqatA" name="SE - setPumpParameters" signal="_G8AH0MnLEeKlfbaqgTBe4Q"/>
+    <packagedElement xmi:type="uml:SignalEvent" xmi:id="_nJhl8M6yEeKiguMxf6Qoog" name="SE - setPumpParametersAck" signal="_a0V8gMnREeKlfbaqgTBe4Q"/>
+    <packagedElement xmi:type="uml:SignalEvent" xmi:id="_u7250M6yEeKiguMxf6Qoog" name="SE - setRateAck" signal="_Ehp6YMnNEeKlfbaqgTBe4Q"/>
+    <packagedElement xmi:type="uml:SignalEvent" xmi:id="_IeiC0M6zEeKiguMxf6Qoog" name="SE - setOtherAck" signal="_XFrD8MrlEeKzvsgC4zqatA"/>
+    <packagedElement xmi:type="uml:SignalEvent" xmi:id="_zN8IsNQFEeKiguMxf6Qoog" name="SE - setStartUpAck" signal="_yj-ewMnKEeKlfbaqgTBe4Q"/>
+    <packagedElement xmi:type="uml:SignalEvent" xmi:id="_claf0NQJEeKiguMxf6Qoog" name="SE - canSetOtherParams" signal="_TcrkAMrlEeKzvsgC4zqatA"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_3W7XEMrgEeKzvsgC4zqatA" name="datatypes">
+    <packagedElement xmi:type="uml:DataType" xmi:id="_5U8i8MrgEeKzvsgC4zqatA" name="int"/>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_Z8V2ANUgEeK278qap4QruQ" name="Location">
+      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_e-NNYNUgEeK278qap4QruQ" name="left"/>
+      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_hrUT4NUgEeK278qap4QruQ" name="right"/>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_-ir20M6IEeKiguMxf6Qoog" name="scenarios">
+    <packagedElement xmi:type="uml:Collaboration" xmi:id="_cTthgM6HEeKiguMxf6Qoog" name="setup" classifierBehavior="_dmQKoM6LEeKiguMxf6Qoog">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_og3a4M6HEeKiguMxf6Qoog" name="user" visibility="public" type="_hVEYMMnJEeKlfbaqgTBe4Q" isUnique="false">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_tJHYYM6HEeKiguMxf6Qoog" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_tJJNkM6HEeKiguMxf6Qoog" value="1"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_tJMQ4M6HEeKiguMxf6Qoog">
+          <value xsi:nil="true"/>
+        </defaultValue>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_uPWnsM6HEeKiguMxf6Qoog" name="ctrl" visibility="public" type="_NV7wQMnJEeKlfbaqgTBe4Q" isUnique="false">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_wvoMEM6HEeKiguMxf6Qoog" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_wvozIM6HEeKiguMxf6Qoog" value="1"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_wvr2cM6HEeKiguMxf6Qoog">
+          <value xsi:nil="true"/>
+        </defaultValue>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_yDLeoM6HEeKiguMxf6Qoog" name="left" visibility="public" type="_TsQZIMnJEeKlfbaqgTBe4Q" isUnique="false">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_0lCXYM6HEeKiguMxf6Qoog" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_0lDlgM6HEeKiguMxf6Qoog" value="1"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_0lGBwM6HEeKiguMxf6Qoog">
+          <value xsi:nil="true"/>
+        </defaultValue>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_1OkckM6HEeKiguMxf6Qoog" name="right" visibility="public" type="_TsQZIMnJEeKlfbaqgTBe4Q" isUnique="false">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_3HIgsM6HEeKiguMxf6Qoog" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_3HJu0M6HEeKiguMxf6Qoog" value="1"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_3HMLEM6HEeKiguMxf6Qoog">
+          <value xsi:nil="true"/>
+        </defaultValue>
+      </ownedAttribute>
+      <ownedConnector xmi:type="uml:Connector" xmi:id="_6mSIIM6HEeKiguMxf6Qoog" name="Connector1" type="_VtEaUMnJEeKlfbaqgTBe4Q">
+        <end xmi:type="uml:ConnectorEnd" xmi:id="_6mSvMM6HEeKiguMxf6Qoog" role="_uPWnsM6HEeKiguMxf6Qoog">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_6mSvMc6HEeKiguMxf6Qoog" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_6mSvMs6HEeKiguMxf6Qoog" value="1"/>
+        </end>
+        <end xmi:type="uml:ConnectorEnd" xmi:id="_6mTWQM6HEeKiguMxf6Qoog" role="_yDLeoM6HEeKiguMxf6Qoog">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_6mTWQc6HEeKiguMxf6Qoog" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_6mTWQs6HEeKiguMxf6Qoog" value="1"/>
+        </end>
+      </ownedConnector>
+      <ownedConnector xmi:type="uml:Connector" xmi:id="_7WL7EM6HEeKiguMxf6Qoog" name="Connector2" type="_VtEaUMnJEeKlfbaqgTBe4Q">
+        <end xmi:type="uml:ConnectorEnd" xmi:id="_7WMiIM6HEeKiguMxf6Qoog" role="_uPWnsM6HEeKiguMxf6Qoog">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_7WMiIc6HEeKiguMxf6Qoog" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_7WMiIs6HEeKiguMxf6Qoog" value="1"/>
+        </end>
+        <end xmi:type="uml:ConnectorEnd" xmi:id="_7WMiI86HEeKiguMxf6Qoog" role="_1OkckM6HEeKiguMxf6Qoog">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_7WMiJM6HEeKiguMxf6Qoog" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_7WMiJc6HEeKiguMxf6Qoog" value="1"/>
+        </end>
+      </ownedConnector>
+      <ownedConnector xmi:type="uml:Connector" xmi:id="_74XbEM6HEeKiguMxf6Qoog" name="Connector3" type="_isNKQMnJEeKlfbaqgTBe4Q">
+        <end xmi:type="uml:ConnectorEnd" xmi:id="_74YCIM6HEeKiguMxf6Qoog" role="_og3a4M6HEeKiguMxf6Qoog">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_74YCIc6HEeKiguMxf6Qoog" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_74YCIs6HEeKiguMxf6Qoog" value="1"/>
+        </end>
+        <end xmi:type="uml:ConnectorEnd" xmi:id="_74ZQQM6HEeKiguMxf6Qoog" role="_uPWnsM6HEeKiguMxf6Qoog">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_74ZQQc6HEeKiguMxf6Qoog" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_74ZQQs6HEeKiguMxf6Qoog" value="1"/>
+        </end>
+      </ownedConnector>
+      <ownedBehavior xmi:type="uml:Interaction" xmi:id="_dmQKoM6LEeKiguMxf6Qoog" name="Set pump parameters">
+        <ownedRule xmi:type="uml:DurationConstraint" xmi:id="_jUMzYNQGEeKiguMxf6Qoog" name="DurationConstraint0" constrainedElement="_28FxgM6LEeKiguMxf6Qoog _EPo1wM6NEeKiguMxf6Qoog">
+          <specification xmi:type="uml:DurationInterval" xmi:id="_jUNacNQGEeKiguMxf6Qoog" name="DurationInterval" max="_jUPPodQGEeKiguMxf6Qoog" min="_jUPPoNQGEeKiguMxf6Qoog"/>
+        </ownedRule>
+        <ownedRule xmi:type="uml:DurationConstraint" xmi:id="_vyankNQGEeKiguMxf6Qoog" name="DurationConstraint1" constrainedElement="_I1q30M6wEeKiguMxf6Qoog _g1tXIM61EeKiguMxf6Qoog">
+          <specification xmi:type="uml:DurationInterval" xmi:id="_vybOoNQGEeKiguMxf6Qoog" name="DurationInterval" max="_vydq4NQGEeKiguMxf6Qoog" min="_vydD0NQGEeKiguMxf6Qoog"/>
+        </ownedRule>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_28D8UM6LEeKiguMxf6Qoog" name="setStartUp_MessageSend" covered="_iV-CEM6LEeKiguMxf6Qoog" message="_27_q4M6LEeKiguMxf6Qoog"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_28FxgM6LEeKiguMxf6Qoog" name="setStartUp_MessageRecv" covered="_j7IpEM6LEeKiguMxf6Qoog" message="_27_q4M6LEeKiguMxf6Qoog"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_-2QoYM6vEeKiguMxf6Qoog" name="setStartUpAck_MessageSend" covered="_j7IpEM6LEeKiguMxf6Qoog" message="_-2PaQM6vEeKiguMxf6Qoog"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_-2RPcM6vEeKiguMxf6Qoog" name="setStartUpAck_MessageRecv" covered="_iV-CEM6LEeKiguMxf6Qoog" message="_-2PaQM6vEeKiguMxf6Qoog"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_EPoOsM6NEeKiguMxf6Qoog" name="setPumpParameters_MessageSend" covered="_iV-CEM6LEeKiguMxf6Qoog" message="_EPlycM6NEeKiguMxf6Qoog"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_EPo1wM6NEeKiguMxf6Qoog" name="setPumpParameters_MessageRecv" covered="_j7IpEM6LEeKiguMxf6Qoog" message="_EPlycM6NEeKiguMxf6Qoog"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_-ILZMM6VEeKiguMxf6Qoog" name="canSetRate_MessageSend" covered="_j7IpEM6LEeKiguMxf6Qoog" message="_-IKLEM6VEeKiguMxf6Qoog"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_-IMAQM6VEeKiguMxf6Qoog" name="canSetRate_MessageRecv" covered="_l9wBEM6LEeKiguMxf6Qoog" message="_-IKLEM6VEeKiguMxf6Qoog"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_Dw-0wM6WEeKiguMxf6Qoog" name="canSetRate_MessageSend0" covered="_j7IpEM6LEeKiguMxf6Qoog" message="_Dw9moM6WEeKiguMxf6Qoog"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_GW7kgM6wEeKiguMxf6Qoog" name="canSetRateAckLeft_MessageSend" covered="_l9wBEM6LEeKiguMxf6Qoog" message="_GW4hMM6wEeKiguMxf6Qoog"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_Dw_b0M6WEeKiguMxf6Qoog" name="canSetRate_MessageRecv0" covered="_m53EAM6LEeKiguMxf6Qoog" message="_Dw9moM6WEeKiguMxf6Qoog"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_GW8yoM6wEeKiguMxf6Qoog" name="canSetRateAckLeft_MessageRecv" covered="_j7IpEM6LEeKiguMxf6Qoog" message="_GW4hMM6wEeKiguMxf6Qoog"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_I1qQwM6wEeKiguMxf6Qoog" name="canSetRateAckRight_MessageSend" covered="_m53EAM6LEeKiguMxf6Qoog" message="_I1n0gM6wEeKiguMxf6Qoog"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_aKFJcM6xEeKiguMxf6Qoog" name="setRateAck_MessageSend" covered="_j7IpEM6LEeKiguMxf6Qoog" message="_aKDUQM6xEeKiguMxf6Qoog"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_aKFwgM6xEeKiguMxf6Qoog" name="setRateAck_MessageRecv" covered="_iV-CEM6LEeKiguMxf6Qoog" message="_aKDUQM6xEeKiguMxf6Qoog"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_I1q30M6wEeKiguMxf6Qoog" name="canSetRateAckRight_MessageRecv" covered="_j7IpEM6LEeKiguMxf6Qoog" message="_I1n0gM6wEeKiguMxf6Qoog"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_g1tXIM61EeKiguMxf6Qoog" name="canSetOther_MessageSend" covered="_j7IpEM6LEeKiguMxf6Qoog" message="_g1rh8M61EeKiguMxf6Qoog"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_g1tXIc61EeKiguMxf6Qoog" name="canSetOther_MessageRecv" covered="_l9wBEM6LEeKiguMxf6Qoog" message="_g1rh8M61EeKiguMxf6Qoog"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_jUnCgM61EeKiguMxf6Qoog" name="canSetOther_Message0Send" covered="_j7IpEM6LEeKiguMxf6Qoog" message="_jUj_MM61EeKiguMxf6Qoog"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_jUnpkM61EeKiguMxf6Qoog" name="canSetOther_Message0Recv" covered="_m53EAM6LEeKiguMxf6Qoog" message="_jUj_MM61EeKiguMxf6Qoog"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_wR1t8M61EeKiguMxf6Qoog" name="canSetOtherAckLeft_MessageSend" covered="_l9wBEM6LEeKiguMxf6Qoog" message="_wRz4wM61EeKiguMxf6Qoog"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_nkPrsM61EeKiguMxf6Qoog" name="canSetOtherAckRight_MessageSend" covered="_m53EAM6LEeKiguMxf6Qoog" message="_nkOdkM61EeKiguMxf6Qoog"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_nkQSwM61EeKiguMxf6Qoog" name="canSetOtherAckRight_MessageRecv" covered="_j7IpEM6LEeKiguMxf6Qoog" message="_nkOdkM61EeKiguMxf6Qoog"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_s39oEM61EeKiguMxf6Qoog" name="setOtherAck_MessageSend" covered="_j7IpEM6LEeKiguMxf6Qoog" message="_s37y4M61EeKiguMxf6Qoog"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_s3-PIM61EeKiguMxf6Qoog" name="setOtherAck_MessageRecv" covered="_iV-CEM6LEeKiguMxf6Qoog" message="_s37y4M61EeKiguMxf6Qoog"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_wR1t8c61EeKiguMxf6Qoog" name="canSetOtherAckLeft_MessageRecv" covered="_j7IpEM6LEeKiguMxf6Qoog" message="_wRz4wM61EeKiguMxf6Qoog"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_YLvQoM61EeKiguMxf6Qoog" name="setPumpParametersAck_MessageSend" covered="_j7IpEM6LEeKiguMxf6Qoog" message="_YLuCgM61EeKiguMxf6Qoog"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_YLv3sM61EeKiguMxf6Qoog" name="setPumpParametersAck_MessageRecv" covered="_iV-CEM6LEeKiguMxf6Qoog" message="_YLuCgM61EeKiguMxf6Qoog"/>
+        <lifeline xmi:type="uml:Lifeline" xmi:id="_iV-CEM6LEeKiguMxf6Qoog" name="user" represents="_og3a4M6HEeKiguMxf6Qoog" coveredBy="_28D8UM6LEeKiguMxf6Qoog _EPoOsM6NEeKiguMxf6Qoog _-2RPcM6vEeKiguMxf6Qoog _aKFwgM6xEeKiguMxf6Qoog _YLv3sM61EeKiguMxf6Qoog _s3-PIM61EeKiguMxf6Qoog"/>
+        <lifeline xmi:type="uml:Lifeline" xmi:id="_j7IpEM6LEeKiguMxf6Qoog" name="ctrl" represents="_uPWnsM6HEeKiguMxf6Qoog" coveredBy="_28FxgM6LEeKiguMxf6Qoog _EPo1wM6NEeKiguMxf6Qoog _-ILZMM6VEeKiguMxf6Qoog _Dw-0wM6WEeKiguMxf6Qoog _-2QoYM6vEeKiguMxf6Qoog _GW8yoM6wEeKiguMxf6Qoog _I1q30M6wEeKiguMxf6Qoog _aKFJcM6xEeKiguMxf6Qoog _YLvQoM61EeKiguMxf6Qoog _g1tXIM61EeKiguMxf6Qoog _jUnCgM61EeKiguMxf6Qoog _nkQSwM61EeKiguMxf6Qoog _s39oEM61EeKiguMxf6Qoog _wR1t8c61EeKiguMxf6Qoog"/>
+        <lifeline xmi:type="uml:Lifeline" xmi:id="_l9wBEM6LEeKiguMxf6Qoog" name="left" represents="_yDLeoM6HEeKiguMxf6Qoog" coveredBy="_-IMAQM6VEeKiguMxf6Qoog _GW7kgM6wEeKiguMxf6Qoog _g1tXIc61EeKiguMxf6Qoog _wR1t8M61EeKiguMxf6Qoog"/>
+        <lifeline xmi:type="uml:Lifeline" xmi:id="_m53EAM6LEeKiguMxf6Qoog" name="right" represents="_1OkckM6HEeKiguMxf6Qoog" coveredBy="_Dw_b0M6WEeKiguMxf6Qoog _I1qQwM6wEeKiguMxf6Qoog _jUnpkM61EeKiguMxf6Qoog _nkPrsM61EeKiguMxf6Qoog"/>
+        <message xmi:type="uml:Message" xmi:id="_27_q4M6LEeKiguMxf6Qoog" name="setStartUp_Message" messageSort="asynchSignal" receiveEvent="_28FxgM6LEeKiguMxf6Qoog" sendEvent="_28D8UM6LEeKiguMxf6Qoog" signature="_MusUoMnKEeKlfbaqgTBe4Q"/>
+        <message xmi:type="uml:Message" xmi:id="_EPlycM6NEeKiguMxf6Qoog" name="setPumpParameters_Message" messageSort="asynchSignal" receiveEvent="_EPo1wM6NEeKiguMxf6Qoog" sendEvent="_EPoOsM6NEeKiguMxf6Qoog" signature="_G8AH0MnLEeKlfbaqgTBe4Q">
+          <argument xmi:type="uml:OpaqueExpression" xmi:id="_ithzYM7AEeKiguMxf6Qoog" name="">
+            <language>C</language>
+            <body>100</body>
+          </argument>
+          <argument xmi:type="uml:OpaqueExpression" xmi:id="_mHkRUM7AEeKiguMxf6Qoog">
+            <language>C</language>
+            <body>100</body>
+          </argument>
+        </message>
+        <message xmi:type="uml:Message" xmi:id="_-IKLEM6VEeKiguMxf6Qoog" name="canSetRateLeft_Message" messageSort="asynchSignal" receiveEvent="_-IMAQM6VEeKiguMxf6Qoog" sendEvent="_-ILZMM6VEeKiguMxf6Qoog" signature="_PAiJgMnMEeKlfbaqgTBe4Q">
+          <argument xmi:type="uml:OpaqueExpression" xmi:id="_TXoAYM7AEeKiguMxf6Qoog">
+            <language>C</language>
+            <body>100</body>
+          </argument>
+        </message>
+        <message xmi:type="uml:Message" xmi:id="_Dw9moM6WEeKiguMxf6Qoog" name="canSetRateRight_Message" messageSort="asynchSignal" receiveEvent="_Dw_b0M6WEeKiguMxf6Qoog" sendEvent="_Dw-0wM6WEeKiguMxf6Qoog" signature="_PAiJgMnMEeKlfbaqgTBe4Q">
+          <argument xmi:type="uml:OpaqueExpression" xmi:id="_Z0t_oM7AEeKiguMxf6Qoog">
+            <language>C</language>
+            <body>100</body>
+          </argument>
+        </message>
+        <message xmi:type="uml:Message" xmi:id="_-2PaQM6vEeKiguMxf6Qoog" name="setStartUpAck_Message" messageSort="asynchSignal" receiveEvent="_-2RPcM6vEeKiguMxf6Qoog" sendEvent="_-2QoYM6vEeKiguMxf6Qoog" signature="_yj-ewMnKEeKlfbaqgTBe4Q"/>
+        <message xmi:type="uml:Message" xmi:id="_GW4hMM6wEeKiguMxf6Qoog" name="canSetRateAckLeft_Message" messageSort="asynchSignal" receiveEvent="_GW8yoM6wEeKiguMxf6Qoog" sendEvent="_GW7kgM6wEeKiguMxf6Qoog" signature="_HOGuUMrlEeKzvsgC4zqatA">
+          <argument xmi:type="uml:OpaqueExpression" xmi:id="_k9KCoNUhEeK278qap4QruQ">
+            <language>C</language>
+            <body>#left</body>
+          </argument>
+          <argument xmi:type="uml:OpaqueExpression" xmi:id="_oymUMM7AEeKiguMxf6Qoog">
+            <language>C</language>
+            <body>100</body>
+          </argument>
+        </message>
+        <message xmi:type="uml:Message" xmi:id="_I1n0gM6wEeKiguMxf6Qoog" name="canSetRateAckRight_Message" messageSort="asynchSignal" receiveEvent="_I1q30M6wEeKiguMxf6Qoog" sendEvent="_I1qQwM6wEeKiguMxf6Qoog" signature="_HOGuUMrlEeKzvsgC4zqatA">
+          <argument xmi:type="uml:OpaqueExpression" xmi:id="_pIVpoNUhEeK278qap4QruQ">
+            <language>C</language>
+            <body>#right</body>
+          </argument>
+          <argument xmi:type="uml:OpaqueExpression" xmi:id="_rNiFkM7AEeKiguMxf6Qoog">
+            <language>C</language>
+            <body>100</body>
+          </argument>
+        </message>
+        <message xmi:type="uml:Message" xmi:id="_aKDUQM6xEeKiguMxf6Qoog" name="setRateAck_Message" messageSort="asynchSignal" receiveEvent="_aKFwgM6xEeKiguMxf6Qoog" sendEvent="_aKFJcM6xEeKiguMxf6Qoog" signature="_Ehp6YMnNEeKlfbaqgTBe4Q">
+          <argument xmi:type="uml:OpaqueExpression" xmi:id="_e4TOQM7AEeKiguMxf6Qoog">
+            <language>C</language>
+            <body>100</body>
+          </argument>
+        </message>
+        <message xmi:type="uml:Message" xmi:id="_YLuCgM61EeKiguMxf6Qoog" name="setPumpParametersAck_Message" messageSort="asynchSignal" receiveEvent="_YLv3sM61EeKiguMxf6Qoog" sendEvent="_YLvQoM61EeKiguMxf6Qoog" signature="_a0V8gMnREeKlfbaqgTBe4Q"/>
+        <message xmi:type="uml:Message" xmi:id="_g1rh8M61EeKiguMxf6Qoog" name="canSetOtherParamsLeft_Message" messageSort="asynchSignal" receiveEvent="_g1tXIc61EeKiguMxf6Qoog" sendEvent="_g1tXIM61EeKiguMxf6Qoog" signature="_TcrkAMrlEeKzvsgC4zqatA">
+          <argument xmi:type="uml:OpaqueExpression" xmi:id="_tEyiIM7AEeKiguMxf6Qoog">
+            <language>C</language>
+            <body>100</body>
+          </argument>
+        </message>
+        <message xmi:type="uml:Message" xmi:id="_jUj_MM61EeKiguMxf6Qoog" name="canSetOtherParamsRight_Message" messageSort="asynchSignal" receiveEvent="_jUnpkM61EeKiguMxf6Qoog" sendEvent="_jUnCgM61EeKiguMxf6Qoog" signature="_TcrkAMrlEeKzvsgC4zqatA">
+          <argument xmi:type="uml:OpaqueExpression" xmi:id="_vlZdsM7AEeKiguMxf6Qoog" name="">
+            <language>C</language>
+            <body>100</body>
+          </argument>
+        </message>
+        <message xmi:type="uml:Message" xmi:id="_nkOdkM61EeKiguMxf6Qoog" name="canSetOtherAckRight_Message" messageSort="asynchSignal" receiveEvent="_nkQSwM61EeKiguMxf6Qoog" sendEvent="_nkPrsM61EeKiguMxf6Qoog" signature="_WJzDgMnSEeKlfbaqgTBe4Q">
+          <argument xmi:type="uml:OpaqueExpression" xmi:id="_r6XFUNUhEeK278qap4QruQ">
+            <language>C</language>
+            <body>#left</body>
+          </argument>
+          <argument xmi:type="uml:OpaqueExpression" xmi:id="_xuhtYM7AEeKiguMxf6Qoog">
+            <language>C</language>
+            <body>100</body>
+          </argument>
+        </message>
+        <message xmi:type="uml:Message" xmi:id="_s37y4M61EeKiguMxf6Qoog" name="setOtherParamsAck_Message" messageSort="asynchSignal" receiveEvent="_s3-PIM61EeKiguMxf6Qoog" sendEvent="_s39oEM61EeKiguMxf6Qoog" signature="_XFrD8MrlEeKzvsgC4zqatA">
+          <argument xmi:type="uml:OpaqueExpression" xmi:id="_zo69gM7AEeKiguMxf6Qoog">
+            <language>C</language>
+            <body>100</body>
+          </argument>
+        </message>
+        <message xmi:type="uml:Message" xmi:id="_wRz4wM61EeKiguMxf6Qoog" name="canSetOtherAckLeft_Message" messageSort="asynchSignal" receiveEvent="_wR1t8c61EeKiguMxf6Qoog" sendEvent="_wR1t8M61EeKiguMxf6Qoog" signature="_WJzDgMnSEeKlfbaqgTBe4Q">
+          <argument xmi:type="uml:OpaqueExpression" xmi:id="_vhHwoNUhEeK278qap4QruQ">
+            <language>C</language>
+            <body>#right</body>
+          </argument>
+          <argument xmi:type="uml:OpaqueExpression" xmi:id="_1hisAM7AEeKiguMxf6Qoog">
+            <language>C</language>
+            <body>100</body>
+          </argument>
+        </message>
+      </ownedBehavior>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Duration" xmi:id="_jUPPoNQGEeKiguMxf6Qoog" name="DurationIntervalMin0">
+      <expr xmi:type="uml:LiteralInteger" xmi:id="_jURr4NQGEeKiguMxf6Qoog"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Duration" xmi:id="_jUPPodQGEeKiguMxf6Qoog" name="DurationIntervalMax0">
+      <expr xmi:type="uml:LiteralInteger" xmi:id="_jUS6ANQGEeKiguMxf6Qoog" value="30000"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Duration" xmi:id="_vydD0NQGEeKiguMxf6Qoog" name="DurationIntervalMin1">
+      <expr xmi:type="uml:LiteralString" xmi:id="_zY7bQNQGEeKiguMxf6Qoog" value="100"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Duration" xmi:id="_vydq4NQGEeKiguMxf6Qoog" name="DurationIntervalMax1">
+      <expr xmi:type="uml:LiteralString" xmi:id="_zY8pYNQGEeKiguMxf6Qoog" value="inf"/>
+    </packagedElement>
+  </packagedElement>
+</uml:Model>

@@ -1,0 +1,25 @@
+Elements,336
+Annotated_Elements,2
+Data_Attributes,26
+Decision_Data_Attributes,'CustomerProfile_freeDelivery'
+Protected_Characteristics,'CustomerProfile_age'
+Proxy_Information,yet to be done
+Initialization_Generation_Time,2.57407403
+Trans Time [s] (Time to transform model from XML to PML),162
+LTL formulas (Number of Unique LTL formulas),4
+Check Time [s] (Time to check all the LTL formulas),438
+LTL Generation Time [s] (Time to generate all the LTL formulas),432
+TotalTime [s],459.574074
+Precondition 1,valid
+Precondition 2,not valid
+Sensitive Decisions,CustomerProfile_freeDelivery
+Violations (Number of violations of Definition 1),0
+Trans Time [s] (Time to transform model from XML to PML),92
+LTL formulas (Number of Unique LTL formulas),4
+Check Time [s] (Time to check all the LTL formulas),260
+LTL Generation Time [s] (Time to generate all the LTL formulas),186
+TotalTime [s],269.57407403
+Sensitive Decisions,CustomerProfile_freeDelivery
+Precondition 1,valid
+Precondition 2,valid
+Violations (Number of violations of Definition 1),0

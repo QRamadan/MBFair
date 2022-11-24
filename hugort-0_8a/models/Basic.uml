@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_qOv_cKa7EeKStM71JPx-nQ" name="Basic">
+  <packagedElement xmi:type="uml:Package" xmi:id="_NdPAAKnpEeKFWN9nz2h59Q" name="datatypes">
+    <packagedElement xmi:type="uml:DataType" xmi:id="_QlbgAKnpEeKFWN9nz2h59Q" name="int"/>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_bd2rwKqREeKxgplXkjo8TA" name="string"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_P2MGUKnnEeKFWN9nz2h59Q" name="signals">
+    <packagedElement xmi:type="uml:Signal" xmi:id="_Piu1QGtsEeWw_8DJ1Eo_Xg" name="a"/>
+    <packagedElement xmi:type="uml:Signal" xmi:id="_Q0pJEGtsEeWw_8DJ1Eo_Xg" name="b"/>
+    <packagedElement xmi:type="uml:Signal" xmi:id="_P0pG0Gt7EeWw_8DJ1Eo_Xg" name="start"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_svMccKg7EeKFWN9nz2h59Q" name="events">
+    <packagedElement xmi:type="uml:SignalEvent" xmi:id="_KzhLsKg8EeKFWN9nz2h59Q" name="SE - a" signal="_Piu1QGtsEeWw_8DJ1Eo_Xg"/>
+    <packagedElement xmi:type="uml:SignalEvent" xmi:id="_LhG9cGttEeWw_8DJ1Eo_Xg" name="SE - b" signal="_Q0pJEGtsEeWw_8DJ1Eo_Xg"/>
+    <packagedElement xmi:type="uml:SignalEvent" xmi:id="_ROsC8Gt7EeWw_8DJ1Eo_Xg" name="start" signal="_P0pG0Gt7EeWw_8DJ1Eo_Xg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_Unes0K9SEeK43ORQN6bM1Q" name="scenarios">
+    <packagedElement xmi:type="uml:Collaboration" xmi:id="_qtUdMG5fEeWT1tAUoP7q3A" name="Collaboration1">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_4ouBEG5fEeWT1tAUoP7q3A" name="erna" type="_Mf1kkGwzEeWw_8DJ1Eo_Xg"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_5HbWUG5fEeWT1tAUoP7q3A" name="bob" type="_uB9fMGtpEeWw_8DJ1Eo_Xg"/>
+      <ownedConnector xmi:type="uml:Connector" xmi:id="_Cap1MG5gEeWT1tAUoP7q3A" name="Connector1" type="_8sSE4Gw1EeWw_8DJ1Eo_Xg">
+        <end xmi:type="uml:ConnectorEnd" xmi:id="_CaqcQG5gEeWT1tAUoP7q3A" role="_4ouBEG5fEeWT1tAUoP7q3A"/>
+        <end xmi:type="uml:ConnectorEnd" xmi:id="_CarDUG5gEeWT1tAUoP7q3A" role="_5HbWUG5fEeWT1tAUoP7q3A"/>
+      </ownedConnector>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_uB9fMGtpEeWw_8DJ1Eo_Xg" name="Erna" classifierBehavior="_w7R1sGtpEeWw_8DJ1Eo_Xg">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_8sSE42w1EeWw_8DJ1Eo_Xg" name="bob" type="_Mf1kkGwzEeWw_8DJ1Eo_Xg" association="_8sSE4Gw1EeWw_8DJ1Eo_Xg"/>
+    <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_w7R1sGtpEeWw_8DJ1Eo_Xg" name="Erna Behav">
+      <region xmi:type="uml:Region" xmi:id="_yFzvIGtpEeWw_8DJ1Eo_Xg" name="Region1">
+        <transition xmi:type="uml:Transition" xmi:id="_42TLgGtpEeWw_8DJ1Eo_Xg" source="_xqXEEGt7EeWw_8DJ1Eo_Xg" target="_2ZVZ0GtpEeWw_8DJ1Eo_Xg">
+          <trigger xmi:type="uml:Trigger" xmi:id="_YEJe4Gt7EeWw_8DJ1Eo_Xg" event="_ROsC8Gt7EeWw_8DJ1Eo_Xg"/>
+        </transition>
+        <transition xmi:type="uml:Transition" xmi:id="_7EOboGtpEeWw_8DJ1Eo_Xg" name="b" source="_2ZVZ0GtpEeWw_8DJ1Eo_Xg" target="_mPNiQGwyEeWw_8DJ1Eo_Xg">
+          <effect xmi:type="uml:OpaqueBehavior" xmi:id="_o6mJgGt5EeWw_8DJ1Eo_Xg" name="bob.b">
+            <language>JAVA</language>
+            <body>bob.b</body>
+          </effect>
+        </transition>
+        <transition xmi:type="uml:Transition" xmi:id="_u_8egGt2EeWw_8DJ1Eo_Xg" name="a" source="_2ZVZ0GtpEeWw_8DJ1Eo_Xg" target="_mPNiQGwyEeWw_8DJ1Eo_Xg">
+          <effect xmi:type="uml:OpaqueBehavior" xmi:id="_qvJ3YGt5EeWw_8DJ1Eo_Xg" name="bob.a">
+            <language>JAVA</language>
+            <body>bob.a</body>
+          </effect>
+        </transition>
+        <transition xmi:type="uml:Transition" xmi:id="_zOZpsGt7EeWw_8DJ1Eo_Xg" source="_yzIvMGtpEeWw_8DJ1Eo_Xg" target="_xqXEEGt7EeWw_8DJ1Eo_Xg"/>
+        <subvertex xmi:type="uml:Pseudostate" xmi:id="_yzIvMGtpEeWw_8DJ1Eo_Xg" name="Initial1"/>
+        <subvertex xmi:type="uml:State" xmi:id="_2ZVZ0GtpEeWw_8DJ1Eo_Xg" name="State1"/>
+        <subvertex xmi:type="uml:State" xmi:id="_xqXEEGt7EeWw_8DJ1Eo_Xg" name="Idle"/>
+        <subvertex xmi:type="uml:FinalState" xmi:id="_mPNiQGwyEeWw_8DJ1Eo_Xg" name="FinalState1"/>
+      </region>
+    </ownedBehavior>
+    <ownedReception xmi:type="uml:Reception" xmi:id="_T-7V8Gt7EeWw_8DJ1Eo_Xg" name="start" signal="_P0pG0Gt7EeWw_8DJ1Eo_Xg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_Mf1kkGwzEeWw_8DJ1Eo_Xg" name="Bob" classifierBehavior="_WP8MsGwzEeWw_8DJ1Eo_Xg">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_8sSE5Gw1EeWw_8DJ1Eo_Xg" name="erna" type="_uB9fMGtpEeWw_8DJ1Eo_Xg" association="_8sSE4Gw1EeWw_8DJ1Eo_Xg"/>
+    <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_WP8MsGwzEeWw_8DJ1Eo_Xg" name="Bob Behav">
+      <region xmi:type="uml:Region" xmi:id="_XY5Y0GwzEeWw_8DJ1Eo_Xg" name="Region1">
+        <transition xmi:type="uml:Transition" xmi:id="_njafoGwzEeWw_8DJ1Eo_Xg" source="_kRe00GwzEeWw_8DJ1Eo_Xg" target="_lPkNsGwzEeWw_8DJ1Eo_Xg"/>
+        <transition xmi:type="uml:Transition" xmi:id="_sTu0AGwzEeWw_8DJ1Eo_Xg" name="a" source="_lPkNsGwzEeWw_8DJ1Eo_Xg" target="_cfkMIGw9EeWw_8DJ1Eo_Xg">
+          <trigger xmi:type="uml:Trigger" xmi:id="_lX9p0Gw1EeWw_8DJ1Eo_Xg" name="a" event="_KzhLsKg8EeKFWN9nz2h59Q"/>
+        </transition>
+        <transition xmi:type="uml:Transition" xmi:id="_xgoWsGwzEeWw_8DJ1Eo_Xg" name="b" source="_lPkNsGwzEeWw_8DJ1Eo_Xg" target="_cfkMIGw9EeWw_8DJ1Eo_Xg">
+          <trigger xmi:type="uml:Trigger" xmi:id="_oHgZQGw1EeWw_8DJ1Eo_Xg" name="b" event="_LhG9cGttEeWw_8DJ1Eo_Xg"/>
+        </transition>
+        <subvertex xmi:type="uml:Pseudostate" xmi:id="_kRe00GwzEeWw_8DJ1Eo_Xg" name="Initial1"/>
+        <subvertex xmi:type="uml:State" xmi:id="_lPkNsGwzEeWw_8DJ1Eo_Xg" name="Idle"/>
+        <subvertex xmi:type="uml:State" xmi:id="_cfkMIGw9EeWw_8DJ1Eo_Xg" name="State1"/>
+      </region>
+    </ownedBehavior>
+    <ownedReception xmi:type="uml:Reception" xmi:id="_tyA6cGw0EeWw_8DJ1Eo_Xg" name="a" signal="_Piu1QGtsEeWw_8DJ1Eo_Xg"/>
+    <ownedReception xmi:type="uml:Reception" xmi:id="_xr2SwGw0EeWw_8DJ1Eo_Xg" name="b" signal="_Q0pJEGtsEeWw_8DJ1Eo_Xg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_8sSE4Gw1EeWw_8DJ1Eo_Xg" memberEnd="_8sSE42w1EeWw_8DJ1Eo_Xg _8sSE5Gw1EeWw_8DJ1Eo_Xg">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_8sSE4Ww1EeWw_8DJ1Eo_Xg" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_8sSE4mw1EeWw_8DJ1Eo_Xg" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+  </packagedElement>
+  <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_9RDy8JGZEeSLXeyQDm-cjA">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_9SyRQJGZEeSLXeyQDm-cjA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+      <references xmi:type="ecore:EPackage" href="pathmap://PAPYRUS_ACTIONLANGUAGE_PROFILE/ActionLanguage-Profile.profile.uml#_sYse0YZLEeKyw49uR6nx3g"/>
+    </eAnnotations>
+    <appliedProfile xmi:type="uml:Profile" href="pathmap://PAPYRUS_ACTIONLANGUAGE_PROFILE/ActionLanguage-Profile.profile.uml#ActionLanguage"/>
+  </profileApplication>
+</uml:Model>

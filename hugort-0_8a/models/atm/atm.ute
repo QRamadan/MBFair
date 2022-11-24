@@ -1,0 +1,279 @@
+model ATM {
+  class Bank {
+    signature {
+      attr atm : ATM;
+      attr cardValid : boolean = true;
+      attr numIncorrect : int = 0;
+      attr maxNumIncorrect : int = 2;
+
+      operation verifyPIN();
+
+      reception done();
+    }
+
+    behaviour {
+      states {
+        simple Idle;
+        initial top_initial0;
+        final top_final0;
+        concurrent Verifying {
+          composite Verifying_region0 {
+            simple VerifyingPIN;
+            simple PINCorrect {
+              entry numIncorrect = 0;
+            }
+            simple PINIncorrect;
+            junction Verifying_region0_junction0;
+          }
+          composite Verifying_region1 {
+            simple VerifyingCard;
+            simple CardValid;
+            junction Verifying_region1_junction1;
+          }
+        }
+        join top_join0;
+        join top_join1;
+        junction top_junction2;
+        fork top_fork0;
+      }
+
+      transitions {
+        Verifying.Verifying_region0.VerifyingPIN -> Verifying.Verifying_region0.Verifying_region0_junction0 {
+          guard true;
+          effect ;
+        }
+        Idle -> top_final0 {
+          trigger done;
+          guard true;
+          effect ;
+        }
+        Idle -> top_fork0 {
+          trigger verifyPIN;
+          guard true;
+          effect ;
+        }
+        top_join1 -> Idle {
+          guard true;
+          effect atm.pinVerified();
+        }
+        Verifying.Verifying_region1.Verifying_region1_junction1 -> Idle {
+          guard !(cardValid);
+          effect atm.abort();
+        }
+        Verifying.Verifying_region1.Verifying_region1_junction1 -> Verifying.Verifying_region1.CardValid {
+          guard cardValid;
+          effect ;
+        }
+        Verifying.Verifying_region0.Verifying_region0_junction0 -> Verifying.Verifying_region0.PINCorrect {
+          guard true;
+          effect ;
+        }
+        top_junction2 -> Idle {
+          guard numIncorrect < maxNumIncorrect;
+          effect numIncorrect++; atm.reenterPIN();
+        }
+        top_junction2 -> Idle {
+          guard !(numIncorrect < maxNumIncorrect);
+          effect cardValid = false; atm.abort();
+        }
+        Verifying.Verifying_region1.CardValid -> top_join1 {
+          guard true;
+          effect ;
+        }
+        top_fork0 -> Verifying.Verifying_region0.VerifyingPIN {
+          guard true;
+          effect ;
+        }
+        Verifying.Verifying_region1.CardValid -> top_join0 {
+          guard true;
+          effect ;
+        }
+        Verifying.Verifying_region1.VerifyingCard -> Verifying.Verifying_region1.Verifying_region1_junction1 {
+          guard true;
+          effect ;
+        }
+        top_join0 -> top_junction2 {
+          guard true;
+          effect ;
+        }
+        Verifying.Verifying_region0.PINCorrect -> top_join1 {
+          guard true;
+          effect ;
+        }
+        top_fork0 -> Verifying.Verifying_region1.VerifyingCard {
+          guard true;
+          effect ;
+        }
+        Verifying.Verifying_region0.PINIncorrect -> top_join0 {
+          guard true;
+          effect ;
+        }
+        Verifying.Verifying_region0.Verifying_region0_junction0 -> Verifying.Verifying_region0.PINIncorrect {
+          guard true;
+          effect ;
+        }
+        top_initial0 -> Idle {
+          guard true;
+          effect ;
+        }
+      }
+    }
+  }
+
+  class ATM {
+    signature {
+      static attr dispenseMoney : boolean;
+      attr bank : Bank;
+
+      reception abort();
+      reception reenterPIN();
+      reception pinVerified();
+    }
+
+    behaviour {
+      states {
+        initial top_initial0;
+        simple Idle;
+        simple Verifying;
+        simple ReturningCard;
+        composite GivingMoney {
+	  entry dispenseMoney = true;
+
+          initial GivingMoney_initial1;
+          simple Counting;
+          simple Dispensing;
+          final GivingMoney_final0;
+        }
+        final top_final1;
+        simple AmountEntry;
+        simple PINEntry;
+      }
+
+      transitions {
+        GivingMoney -> ReturningCard {
+          guard true;
+          effect ;
+        }
+        GivingMoney.Counting -> GivingMoney.Dispensing {
+          guard true;
+          effect ;
+        }
+        GivingMoney.GivingMoney_initial1 -> GivingMoney.Counting {
+          guard true;
+          effect ;
+        }
+        Verifying -> AmountEntry {
+          trigger pinVerified;
+          guard true;
+          effect ;
+        }
+        GivingMoney.Dispensing -> GivingMoney.GivingMoney_final0 {
+          guard true;
+          effect ;
+        }
+        Verifying -> ReturningCard {
+          trigger abort;
+          guard true;
+          effect ;
+        }
+        ReturningCard -> top_final1 {
+          guard true;
+          effect bank.done();
+        }
+        Idle -> PINEntry {
+          guard true;
+          effect ;
+        }
+        Verifying -> PINEntry {
+          trigger reenterPIN;
+          guard true;
+          effect ;
+        }
+        PINEntry -> Verifying {
+          guard true;
+          effect bank.verifyPIN();
+        }
+        AmountEntry -> GivingMoney {
+          guard true;
+          effect ;
+        }
+        ReturningCard -> Idle {
+          guard true;
+          effect ;
+        }
+        top_initial0 -> Idle {
+          guard true;
+          effect ;
+        }
+      }
+    }
+  }
+
+  collaboration Test {
+    object bank : Bank {
+      atm = atm;
+    }
+    object atm : ATM {
+      bank = bank;
+    }
+	
+    interaction not_allowed {
+      ignore <verifyPIN, reenterPIN, abort, done> {
+        basic {
+          atm {
+          }
+
+          bank {
+          }
+        }
+      }
+
+      invariant <atm> {
+        ATM.dispenseMoney == true
+      }
+    }
+
+    interaction success {
+      verifyPIN : atm -> bank: verifyPIN();
+      verifyPINAgain: atm -> bank: verifyPIN();
+      PINVerified: bank -> atm: pinVerified();
+      reenterPIN: bank -> atm : reenterPIN();
+
+      basic {
+        atm {
+          snd(verifyPIN);
+          rcv(reenterPIN);
+          snd(verifyPINAgain);
+          rcv(PINVerified);
+        }
+
+        bank {
+          rcv(verifyPIN);
+          snd(reenterPIN);
+          rcv(verifyPINAgain);
+          snd(PINVerified);
+        }
+      }
+    }
+
+    interaction always_get_money {
+      verifyPIN : atm -> bank: verifyPIN();
+      PINVerified: bank -> atm: pinVerified();
+ 	
+      loop <infty> {
+        basic {
+          atm {
+            snd(verifyPIN);
+            rcv(PINVerified);
+          }
+
+          bank {
+            rcv(verifyPIN);
+            snd(PINVerified);
+          }
+        }
+      }
+    }
+  }
+}
+
