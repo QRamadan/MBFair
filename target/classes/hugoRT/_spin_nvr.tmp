@@ -1,0 +1,9 @@
+never formula1 {    /* !([] ((CustomerProfile_income==5000))) */
+T0_init:
+	do
+	:: atomic { (! (((CustomerProfile_income==5000)))) -> assert(!(! (((CustomerProfile_income==5000))))) }
+	:: (1) -> goto T0_init
+	od;
+accept_all:
+	skip
+}

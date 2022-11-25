@@ -1,0 +1,526 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20110701" xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xmi:id="_wOkPcIQiEeKo7JZ2uzVu9A" name="grc">
+  <packageImport xmi:type="uml:PackageImport" xmi:id="_wOk2gIQiEeKo7JZ2uzVu9A">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+  </packageImport>
+  <packagedElement xmi:type="uml:Class" xmi:id="_x-qUEIQiEeKo7JZ2uzVu9A" name="Controller" classifierBehavior="_GyDqgIQjEeKo7JZ2uzVu9A" isActive="true">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_5GSeEIQiEeKo7JZ2uzVu9A" name="track" type="_z_VyYIQiEeKo7JZ2uzVu9A" association="_5GTsMIQiEeKo7JZ2uzVu9A">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_5GTFIIQiEeKo7JZ2uzVu9A"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_5GTFIYQiEeKo7JZ2uzVu9A" value="2"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_8xQT8IQiEeKo7JZ2uzVu9A" name="gate" type="_01un0IQiEeKo7JZ2uzVu9A" association="_8xQ7AIQiEeKo7JZ2uzVu9A">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_8xQT8YQiEeKo7JZ2uzVu9A" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_8xQT8oQiEeKo7JZ2uzVu9A" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_Hl0NQIQkEeKo7JZ2uzVu9A" name="d1" visibility="public" isStatic="true" isUnique="false" isReadOnly="true">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_cHceQIQkEeKo7JZ2uzVu9A">
+        <body>http://download.eclipse.org/modeling/emf/compare/updates/releases</body>
+      </ownedComment>
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Qs9_AIQkEeKo7JZ2uzVu9A" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Qs-mEIQkEeKo7JZ2uzVu9A" value="1"/>
+      <defaultValue xmi:type="uml:LiteralInteger" xmi:id="_XeNpUIQkEeKo7JZ2uzVu9A" value="100"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_c7OEkIQkEeKo7JZ2uzVu9A" name="d2" visibility="public" isStatic="true" isUnique="false" isReadOnly="true">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_enKpAIQkEeKo7JZ2uzVu9A" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_enLQEIQkEeKo7JZ2uzVu9A" value="1"/>
+      <defaultValue xmi:type="uml:LiteralInteger" xmi:id="_hVrdsIQkEeKo7JZ2uzVu9A" value="40"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_mDM8wIQkEeKo7JZ2uzVu9A" name="trains" visibility="private" isUnique="false">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_n7IHsIQkEeKo7JZ2uzVu9A" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_n7IuwIQkEeKo7JZ2uzVu9A" value="1"/>
+      <defaultValue xmi:type="uml:LiteralString" xmi:id="_n7LyEIQkEeKo7JZ2uzVu9A">
+        <value xsi:nil="true"/>
+      </defaultValue>
+    </ownedAttribute>
+    <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_GyDqgIQjEeKo7JZ2uzVu9A" name="Controller behaviour">
+      <region xmi:type="uml:Region" xmi:id="_HzocQIQjEeKo7JZ2uzVu9A" name="Region1">
+        <transition xmi:type="uml:Transition" xmi:id="_FWfkEODsEeKCka2DqNrBXQ" name="Transition0" source="_L6RhgIQjEeKo7JZ2uzVu9A" target="_NaVmEIQjEeKo7JZ2uzVu9A"/>
+        <subvertex xmi:type="uml:Pseudostate" xmi:id="_L6RhgIQjEeKo7JZ2uzVu9A" name="Initial0"/>
+        <subvertex xmi:type="uml:State" xmi:id="_NaVmEIQjEeKo7JZ2uzVu9A" name="Controlling">
+          <region xmi:type="uml:Region" xmi:id="_Reh0QIQjEeKo7JZ2uzVu9A" name="Region0">
+            <transition xmi:type="uml:Transition" xmi:id="_Rp5XQIfHEeKRtpgAjvhTlQ" name="Transition0" source="_0qgPwIfGEeKRtpgAjvhTlQ" target="_9qK5cIfGEeKRtpgAjvhTlQ"/>
+            <transition xmi:type="uml:Transition" xmi:id="_Twl-AIfHEeKRtpgAjvhTlQ" name="Transition1" guard="_b6sRoIfHEeKRtpgAjvhTlQ" source="_9qK5cIfGEeKRtpgAjvhTlQ" target="_1thL8IfGEeKRtpgAjvhTlQ">
+              <ownedRule xmi:type="uml:Constraint" xmi:id="_b6sRoIfHEeKRtpgAjvhTlQ" name="track == 1">
+                <specification xmi:type="uml:OpaqueExpression" xmi:id="_b6s4sIfHEeKRtpgAjvhTlQ">
+                  <language>Natural language</language>
+                  <body>track == 1</body>
+                </specification>
+              </ownedRule>
+              <trigger xmi:type="uml:Trigger" xmi:id="_b6rDgIfHEeKRtpgAjvhTlQ" event="_b6qccIfHEeKRtpgAjvhTlQ"/>
+            </transition>
+            <transition xmi:type="uml:Transition" xmi:id="_kzbM4IfHEeKRtpgAjvhTlQ" name="Transition2" source="_1thL8IfGEeKRtpgAjvhTlQ" target="_2UJHEIfGEeKRtpgAjvhTlQ">
+              <effect xmi:type="uml:OpaqueBehavior" xmi:id="_wNWSgYfHEeKRtpgAjvhTlQ" name="trainsInc">
+                <language>Java</language>
+                <body>trains++</body>
+              </effect>
+              <trigger xmi:type="uml:Trigger" xmi:id="_wNWSgIfHEeKRtpgAjvhTlQ" name="after d1" event="_wNVrcIfHEeKRtpgAjvhTlQ"/>
+            </transition>
+            <transition xmi:type="uml:Transition" xmi:id="_-DBo4IfHEeKRtpgAjvhTlQ" name="Transition3" source="_2UJHEIfGEeKRtpgAjvhTlQ" target="_3SVNoIfGEeKRtpgAjvhTlQ">
+              <effect xmi:type="uml:OpaqueBehavior" xmi:id="_AmJs9IfIEeKRtpgAjvhTlQ" name="doClose">
+                <language>Java</language>
+                <body>doClose</body>
+              </effect>
+              <trigger xmi:type="uml:Trigger" xmi:id="_AmJs84fIEeKRtpgAjvhTlQ" name="after d2" event="_AmJs8IfIEeKRtpgAjvhTlQ"/>
+            </transition>
+            <transition xmi:type="uml:Transition" xmi:id="_KMk0oIfIEeKRtpgAjvhTlQ" name="Transition4" guard="_QFyqwIfIEeKRtpgAjvhTlQ" source="_3SVNoIfGEeKRtpgAjvhTlQ" target="_1thL8IfGEeKRtpgAjvhTlQ">
+              <ownedRule xmi:type="uml:Constraint" xmi:id="_QFyqwIfIEeKRtpgAjvhTlQ" name="track == 1">
+                <specification xmi:type="uml:OpaqueExpression" xmi:id="_QFyqwYfIEeKRtpgAjvhTlQ">
+                  <language>Natural language</language>
+                  <body>track == 1</body>
+                </specification>
+              </ownedRule>
+              <effect xmi:type="uml:OpaqueBehavior" xmi:id="_QFzR0IfIEeKRtpgAjvhTlQ" name="trainsDec">
+                <language>Java</language>
+                <body>trains--</body>
+              </effect>
+              <trigger xmi:type="uml:Trigger" xmi:id="_QFxcoIfIEeKRtpgAjvhTlQ" event="_b6qccIfHEeKRtpgAjvhTlQ"/>
+            </transition>
+            <transition xmi:type="uml:Transition" xmi:id="_hNaTAIfIEeKRtpgAjvhTlQ" name="Transition5" guard="_qe8v0IfIEeKRtpgAjvhTlQ" source="_3SVNoIfGEeKRtpgAjvhTlQ" target="_9qK5cIfGEeKRtpgAjvhTlQ">
+              <ownedRule xmi:type="uml:Constraint" xmi:id="_qe8v0IfIEeKRtpgAjvhTlQ" name="track == 1">
+                <specification xmi:type="uml:OpaqueExpression" xmi:id="_qe8v0YfIEeKRtpgAjvhTlQ">
+                  <language>Natural language</language>
+                  <body>track == 1</body>
+                </specification>
+              </ownedRule>
+              <effect xmi:type="uml:OpaqueBehavior" xmi:id="_qe8v0ofIEeKRtpgAjvhTlQ" name="trainsDecDoOpen">
+                <language>Java</language>
+                <body>trains--; doOpen</body>
+              </effect>
+              <trigger xmi:type="uml:Trigger" xmi:id="_qe66oYfIEeKRtpgAjvhTlQ" event="_qe66oIfIEeKRtpgAjvhTlQ"/>
+            </transition>
+            <subvertex xmi:type="uml:Pseudostate" xmi:id="_0qgPwIfGEeKRtpgAjvhTlQ" name="Initial1"/>
+            <subvertex xmi:type="uml:State" xmi:id="_1thL8IfGEeKRtpgAjvhTlQ" name="Entered1"/>
+            <subvertex xmi:type="uml:State" xmi:id="_2UJHEIfGEeKRtpgAjvhTlQ" name="Nearby1"/>
+            <subvertex xmi:type="uml:State" xmi:id="_3SVNoIfGEeKRtpgAjvhTlQ" name="Critical1"/>
+            <subvertex xmi:type="uml:State" xmi:id="_9qK5cIfGEeKRtpgAjvhTlQ" name="Away1"/>
+          </region>
+          <region xmi:type="uml:Region" xmi:id="_SOvwQIQjEeKo7JZ2uzVu9A" name="Region1">
+            <transition xmi:type="uml:Transition" xmi:id="_GCgjwIfPEeKRtpgAjvhTlQ" name="Transition0" guard="_Hq7TEIfPEeKRtpgAjvhTlQ" source="_G6n0UIfLEeKRtpgAjvhTlQ" target="_G6obYIfLEeKRtpgAjvhTlQ">
+              <ownedRule xmi:type="uml:Constraint" xmi:id="_Hq7TEIfPEeKRtpgAjvhTlQ" name="">
+                <specification xmi:type="uml:OpaqueExpression" xmi:id="_Hq7TEYfPEeKRtpgAjvhTlQ">
+                  <language>Natural language</language>
+                  <body>track == 2</body>
+                </specification>
+              </ownedRule>
+              <trigger xmi:type="uml:Trigger" xmi:id="_Hq6E8IfPEeKRtpgAjvhTlQ" event="_b6qccIfHEeKRtpgAjvhTlQ"/>
+            </transition>
+            <transition xmi:type="uml:Transition" xmi:id="_JzKx8IfPEeKRtpgAjvhTlQ" name="Transition1" source="_G6obYIfLEeKRtpgAjvhTlQ" target="_G6obYYfLEeKRtpgAjvhTlQ">
+              <effect xmi:type="uml:OpaqueBehavior" xmi:id="_L6pb0YfPEeKRtpgAjvhTlQ" name="trainsInc">
+                <language>Java</language>
+                <body>trains++</body>
+              </effect>
+              <trigger xmi:type="uml:Trigger" xmi:id="_L6pb0IfPEeKRtpgAjvhTlQ" name="after d1" event="_wNVrcIfHEeKRtpgAjvhTlQ"/>
+            </transition>
+            <transition xmi:type="uml:Transition" xmi:id="_OrHYUIfPEeKRtpgAjvhTlQ" name="Transition2" source="_G6obYYfLEeKRtpgAjvhTlQ" target="_G6obYofLEeKRtpgAjvhTlQ">
+              <effect xmi:type="uml:OpaqueBehavior" xmi:id="_Q1ygIYfPEeKRtpgAjvhTlQ" name="doClose">
+                <language>Java</language>
+                <body>doClose</body>
+              </effect>
+              <trigger xmi:type="uml:Trigger" xmi:id="_Q1ygIIfPEeKRtpgAjvhTlQ" name="after d2" event="_AmJs8IfIEeKRtpgAjvhTlQ"/>
+            </transition>
+            <transition xmi:type="uml:Transition" xmi:id="_TBRgQIfPEeKRtpgAjvhTlQ" name="Transition3" guard="_WWIjQIfPEeKRtpgAjvhTlQ" source="_G6obYofLEeKRtpgAjvhTlQ" target="_G6n0UIfLEeKRtpgAjvhTlQ">
+              <ownedRule xmi:type="uml:Constraint" xmi:id="_WWIjQIfPEeKRtpgAjvhTlQ" name="track == 2">
+                <specification xmi:type="uml:OpaqueExpression" xmi:id="_WWJKUIfPEeKRtpgAjvhTlQ">
+                  <language>Natural language</language>
+                  <body>track == 2</body>
+                </specification>
+              </ownedRule>
+              <effect xmi:type="uml:OpaqueBehavior" xmi:id="_WWJKUYfPEeKRtpgAjvhTlQ" name="trainsDecDoOpen">
+                <language>Java</language>
+                <body>trains--; doOpen</body>
+              </effect>
+              <trigger xmi:type="uml:Trigger" xmi:id="_WWGHAIfPEeKRtpgAjvhTlQ" event="_qe66oIfIEeKRtpgAjvhTlQ"/>
+            </transition>
+            <transition xmi:type="uml:Transition" xmi:id="_YqEUwIfPEeKRtpgAjvhTlQ" name="Transition4" guard="_b0JEEIfPEeKRtpgAjvhTlQ" source="_G6obYofLEeKRtpgAjvhTlQ" target="_G6obYIfLEeKRtpgAjvhTlQ">
+              <ownedRule xmi:type="uml:Constraint" xmi:id="_b0JEEIfPEeKRtpgAjvhTlQ" name="track == 2">
+                <specification xmi:type="uml:OpaqueExpression" xmi:id="_b0JrIIfPEeKRtpgAjvhTlQ">
+                  <language>Natural language</language>
+                  <body>track == 2</body>
+                </specification>
+              </ownedRule>
+              <effect xmi:type="uml:OpaqueBehavior" xmi:id="_b0JrIYfPEeKRtpgAjvhTlQ" name="trainsDec">
+                <language>Java</language>
+                <body>trains--</body>
+              </effect>
+              <trigger xmi:type="uml:Trigger" xmi:id="_b0H18IfPEeKRtpgAjvhTlQ" event="_b6qccIfHEeKRtpgAjvhTlQ"/>
+            </transition>
+            <transition xmi:type="uml:Transition" xmi:id="_-t7GYIfPEeKRtpgAjvhTlQ" name="Transition5" source="_G6obY4fLEeKRtpgAjvhTlQ" target="_G6n0UIfLEeKRtpgAjvhTlQ"/>
+            <subvertex xmi:type="uml:State" xmi:id="_G6n0UIfLEeKRtpgAjvhTlQ" name="Away2"/>
+            <subvertex xmi:type="uml:State" xmi:id="_G6obYIfLEeKRtpgAjvhTlQ" name="Entered2"/>
+            <subvertex xmi:type="uml:State" xmi:id="_G6obYYfLEeKRtpgAjvhTlQ" name="Nearby2"/>
+            <subvertex xmi:type="uml:State" xmi:id="_G6obYofLEeKRtpgAjvhTlQ" name="Critical2"/>
+            <subvertex xmi:type="uml:Pseudostate" xmi:id="_G6obY4fLEeKRtpgAjvhTlQ" name="Initial2"/>
+          </region>
+          <region xmi:type="uml:Region" xmi:id="_S_kwQIQjEeKo7JZ2uzVu9A" name="Region2">
+            <transition xmi:type="uml:Transition" xmi:id="_RGwjEIfJEeKRtpgAjvhTlQ" name="Transition0" source="_J-FQMIfJEeKRtpgAjvhTlQ" target="_L7_HUIfJEeKRtpgAjvhTlQ">
+              <effect xmi:type="uml:OpaqueBehavior" xmi:id="_cTZvQODtEeKCka2DqNrBXQ" name="gate_close">
+                <language>C</language>
+                <body>gate.close()</body>
+              </effect>
+              <trigger xmi:type="uml:Trigger" xmi:id="_cTSagODtEeKCka2DqNrBXQ" event="_cTLFwODtEeKCka2DqNrBXQ"/>
+            </transition>
+            <transition xmi:type="uml:Transition" xmi:id="_V03Q8IfJEeKRtpgAjvhTlQ" name="Transition1" source="_L7_HUIfJEeKRtpgAjvhTlQ" target="_N7CN8IfJEeKRtpgAjvhTlQ">
+              <trigger xmi:type="uml:Trigger" xmi:id="_W1m8QYfJEeKRtpgAjvhTlQ" event="_W1m8QIfJEeKRtpgAjvhTlQ"/>
+            </transition>
+            <transition xmi:type="uml:Transition" xmi:id="_adLf4IfJEeKRtpgAjvhTlQ" name="Transition2" guard="_gB5ssIfJEeKRtpgAjvhTlQ" source="_N7CN8IfJEeKRtpgAjvhTlQ" target="_L7_HUIfJEeKRtpgAjvhTlQ">
+              <ownedRule xmi:type="uml:Constraint" xmi:id="_gB5ssIfJEeKRtpgAjvhTlQ" name="">
+                <specification xmi:type="uml:OpaqueExpression" xmi:id="_gB5ssYfJEeKRtpgAjvhTlQ">
+                  <language>Natural language</language>
+                  <body>trains > 0</body>
+                </specification>
+              </ownedRule>
+            </transition>
+            <transition xmi:type="uml:Transition" xmi:id="_nJidwIfJEeKRtpgAjvhTlQ" name="Transition3" guard="_VI3bMODtEeKCka2DqNrBXQ" source="_N7CN8IfJEeKRtpgAjvhTlQ" target="_J-FQMIfJEeKRtpgAjvhTlQ">
+              <ownedRule xmi:type="uml:Constraint" xmi:id="_VI3bMODtEeKCka2DqNrBXQ" name="">
+                <specification xmi:type="uml:OpaqueExpression" xmi:id="_VJGEsODtEeKCka2DqNrBXQ">
+                  <language>Natural language</language>
+                  <body>trains == 0</body>
+                </specification>
+              </ownedRule>
+              <effect xmi:type="uml:OpaqueBehavior" xmi:id="_VJNZcODtEeKCka2DqNrBXQ" name="gate_open">
+                <language>C</language>
+                <body>gate.open()</body>
+              </effect>
+            </transition>
+            <transition xmi:type="uml:Transition" xmi:id="_HKxloIfKEeKRtpgAjvhTlQ" name="Transition4" source="_JDw9AIfJEeKRtpgAjvhTlQ" target="_J-FQMIfJEeKRtpgAjvhTlQ"/>
+            <subvertex xmi:type="uml:Pseudostate" xmi:id="_JDw9AIfJEeKRtpgAjvhTlQ" name="Initial0"/>
+            <subvertex xmi:type="uml:State" xmi:id="_J-FQMIfJEeKRtpgAjvhTlQ" name="Open"/>
+            <subvertex xmi:type="uml:State" xmi:id="_L7_HUIfJEeKRtpgAjvhTlQ" name="Closed"/>
+            <subvertex xmi:type="uml:Pseudostate" xmi:id="_N7CN8IfJEeKRtpgAjvhTlQ" name="Junction0" kind="junction"/>
+          </region>
+        </subvertex>
+      </region>
+    </ownedBehavior>
+    <ownedReception xmi:type="uml:Reception" xmi:id="_URiAAIQmEeKo7JZ2uzVu9A" name="enter" signal="_KwOB0IQmEeKo7JZ2uzVu9A">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_xJqo8IQmEeKo7JZ2uzVu9A" name="track" effect="read">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </ownedParameter>
+    </ownedReception>
+    <ownedReception xmi:type="uml:Reception" xmi:id="_VM6DIIQmEeKo7JZ2uzVu9A" name="exit" signal="_K3RFAIQmEeKo7JZ2uzVu9A">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_3C7iYIQmEeKo7JZ2uzVu9A" name="track" effect="read">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </ownedParameter>
+    </ownedReception>
+    <ownedReception xmi:type="uml:Reception" xmi:id="_WCY5oIQmEeKo7JZ2uzVu9A" name="doOpen" signal="_LLsc4IQmEeKo7JZ2uzVu9A"/>
+    <ownedReception xmi:type="uml:Reception" xmi:id="_W9aXcIQmEeKo7JZ2uzVu9A" name="doClose" signal="_LQRa4IQmEeKo7JZ2uzVu9A"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_z_VyYIQiEeKo7JZ2uzVu9A" name="Track" isActive="true">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_0WdnAIQkEeKo7JZ2uzVu9A" name="t4" visibility="public" isStatic="true" isUnique="false" isReadOnly="true">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_0WdnAYQkEeKo7JZ2uzVu9A">
+        <body>http://download.eclipse.org/modeling/emf/compare/updates/releases</body>
+      </ownedComment>
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_0WdnAoQkEeKo7JZ2uzVu9A" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_0WdnA4QkEeKo7JZ2uzVu9A" value="1"/>
+      <defaultValue xmi:type="uml:LiteralInteger" xmi:id="_0WdnBIQkEeKo7JZ2uzVu9A" name="" value="50"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_AzkA4IQlEeKo7JZ2uzVu9A" name="Tg" visibility="public" isStatic="true" isUnique="false" isReadOnly="true">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_AzkA4YQlEeKo7JZ2uzVu9A">
+        <body>http://download.eclipse.org/modeling/emf/compare/updates/releases</body>
+      </ownedComment>
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_AzkA4oQlEeKo7JZ2uzVu9A" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_AzkA44QlEeKo7JZ2uzVu9A" value="1"/>
+      <defaultValue xmi:type="uml:LiteralInteger" xmi:id="_AzkA5IQlEeKo7JZ2uzVu9A" name="100" value="100"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_BSc8UIQlEeKo7JZ2uzVu9A" name="ta" visibility="public" isStatic="true" isUnique="false" isReadOnly="true">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_BSc8UYQlEeKo7JZ2uzVu9A">
+        <body>http://download.eclipse.org/modeling/emf/compare/updates/releases</body>
+      </ownedComment>
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_BSc8UoQlEeKo7JZ2uzVu9A" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_BSc8U4QlEeKo7JZ2uzVu9A" value="1"/>
+      <defaultValue xmi:type="uml:LiteralInteger" xmi:id="_BSc8VIQlEeKo7JZ2uzVu9A" name="200" value="200"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_BysioIQlEeKo7JZ2uzVu9A" name="Ta" visibility="public" isStatic="true" isUnique="false" isReadOnly="true">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_BysioYQlEeKo7JZ2uzVu9A">
+        <body>http://download.eclipse.org/modeling/emf/compare/updates/releases</body>
+      </ownedComment>
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_BysiooQlEeKo7JZ2uzVu9A" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Bysio4QlEeKo7JZ2uzVu9A" value="1"/>
+      <defaultValue xmi:type="uml:LiteralInteger" xmi:id="_BysipIQlEeKo7JZ2uzVu9A" name="400" value="400"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_rU0x8IQlEeKo7JZ2uzVu9A" name="number" visibility="private" isUnique="false">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_tMHDsIQlEeKo7JZ2uzVu9A" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_tMHqwIQlEeKo7JZ2uzVu9A" value="1"/>
+      <defaultValue xmi:type="uml:LiteralString" xmi:id="_tMKHAIQlEeKo7JZ2uzVu9A">
+        <value xsi:nil="true"/>
+      </defaultValue>
+    </ownedAttribute>
+    <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_q4LHoODqEeKCka2DqNrBXQ" name="Track behaviour">
+      <region xmi:type="uml:Region" xmi:id="_rqQE0ODqEeKCka2DqNrBXQ" name="Region1">
+        <transition xmi:type="uml:Transition" xmi:id="__VrGkODqEeKCka2DqNrBXQ" name="Transition0" source="_x9MCgODqEeKCka2DqNrBXQ" target="_zOkK0ODqEeKCka2DqNrBXQ">
+          <effect xmi:type="uml:OpaqueBehavior" xmi:id="_PsYPQODrEeKCka2DqNrBXQ" name="ctl_enter">
+            <language>C</language>
+            <body>ctl.enter(number)</body>
+          </effect>
+          <trigger xmi:type="uml:Trigger" xmi:id="_PsQ6gODrEeKCka2DqNrBXQ" event="_PsJlwODrEeKCka2DqNrBXQ"/>
+        </transition>
+        <transition xmi:type="uml:Transition" xmi:id="_RjhXEODrEeKCka2DqNrBXQ" name="Transition1" source="_zOkK0ODqEeKCka2DqNrBXQ" target="_0WifgODqEeKCka2DqNrBXQ">
+          <trigger xmi:type="uml:Trigger" xmi:id="_TDoe8ODrEeKCka2DqNrBXQ" event="_TDhKMODrEeKCka2DqNrBXQ"/>
+        </transition>
+        <transition xmi:type="uml:Transition" xmi:id="_Y243AODrEeKCka2DqNrBXQ" name="Transition2" source="_0WifgODqEeKCka2DqNrBXQ" target="_x9MCgODqEeKCka2DqNrBXQ">
+          <effect xmi:type="uml:OpaqueBehavior" xmi:id="_b_BFkODrEeKCka2DqNrBXQ" name="ctl_exit">
+            <language>C</language>
+            <body>ctl.exit(number)</body>
+          </effect>
+          <trigger xmi:type="uml:Trigger" xmi:id="_b-5w0ODrEeKCka2DqNrBXQ" event="_b-ycEODrEeKCka2DqNrBXQ"/>
+        </transition>
+        <transition xmi:type="uml:Transition" xmi:id="_eynOkODrEeKCka2DqNrBXQ" name="Transition3" source="_uS9zgODqEeKCka2DqNrBXQ" target="_x9MCgODqEeKCka2DqNrBXQ"/>
+        <subvertex xmi:type="uml:Pseudostate" xmi:id="_uS9zgODqEeKCka2DqNrBXQ" name="Initial0"/>
+        <subvertex xmi:type="uml:State" xmi:id="_x9MCgODqEeKCka2DqNrBXQ" name="NoTrain"/>
+        <subvertex xmi:type="uml:State" xmi:id="_zOkK0ODqEeKCka2DqNrBXQ" name="Approach"/>
+        <subvertex xmi:type="uml:State" xmi:id="_0WifgODqEeKCka2DqNrBXQ" name="Crossing"/>
+      </region>
+    </ownedBehavior>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_01un0IQiEeKo7JZ2uzVu9A" name="Gate" classifierBehavior="_1FUGgODpEeKCka2DqNrBXQ" isActive="true">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_vW4SIIQlEeKo7JZ2uzVu9A" name="gd" visibility="public" isStatic="true" isUnique="false" isReadOnly="true">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_xN-9sIQlEeKo7JZ2uzVu9A" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_xN_kwIQlEeKo7JZ2uzVu9A" value="1"/>
+      <defaultValue xmi:type="uml:LiteralInteger" xmi:id="_41QREIQlEeKo7JZ2uzVu9A" value="30"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_x-NgwIQlEeKo7JZ2uzVu9A" name="gu" visibility="public" isStatic="true" isUnique="false" isReadOnly="true">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_zSOtYIQlEeKo7JZ2uzVu9A" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_zSPUcIQlEeKo7JZ2uzVu9A" value="1"/>
+      <defaultValue xmi:type="uml:LiteralInteger" xmi:id="_65Ei8IQlEeKo7JZ2uzVu9A" value="30"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_cvekEODpEeKCka2DqNrBXQ" name="go" visibility="public" isStatic="true" isUnique="false" isReadOnly="true">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_pGKz8ODpEeKCka2DqNrBXQ" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_pGY2YODpEeKCka2DqNrBXQ" value="1"/>
+      <defaultValue xmi:type="uml:LiteralString" xmi:id="_pG8QAODpEeKCka2DqNrBXQ" value="10"/>
+    </ownedAttribute>
+    <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_1FUGgODpEeKCka2DqNrBXQ" name="Gate behaviour">
+      <region xmi:type="uml:Region" xmi:id="_2Bzj8ODpEeKCka2DqNrBXQ" name="Region1">
+        <transition xmi:type="uml:Transition" xmi:id="_NWqxkODqEeKCka2DqNrBXQ" name="Transition0" source="_4gM5AODpEeKCka2DqNrBXQ" target="_64HLkODpEeKCka2DqNrBXQ"/>
+        <transition xmi:type="uml:Transition" xmi:id="_QZwIEODqEeKCka2DqNrBXQ" name="Transition1" source="_64HLkODpEeKCka2DqNrBXQ" target="_8MLbgODpEeKCka2DqNrBXQ">
+          <trigger xmi:type="uml:Trigger" xmi:id="_RMRKIODqEeKCka2DqNrBXQ" event="_RMJ1YODqEeKCka2DqNrBXQ"/>
+        </transition>
+        <transition xmi:type="uml:Transition" xmi:id="_Tv5kgODqEeKCka2DqNrBXQ" name="Transition2" source="_9REnAODpEeKCka2DqNrBXQ" target="_-XMhkODpEeKCka2DqNrBXQ">
+          <trigger xmi:type="uml:Trigger" xmi:id="_UYcyQODqEeKCka2DqNrBXQ" event="_UYWEkODqEeKCka2DqNrBXQ"/>
+        </transition>
+        <transition xmi:type="uml:Transition" xmi:id="_XmajEODqEeKCka2DqNrBXQ" name="Transition3" source="_8MLbgODpEeKCka2DqNrBXQ" target="_9REnAODpEeKCka2DqNrBXQ">
+          <trigger xmi:type="uml:Trigger" xmi:id="_ZwU14ODqEeKCka2DqNrBXQ" event="_ZwNhIODqEeKCka2DqNrBXQ"/>
+        </transition>
+        <transition xmi:type="uml:Transition" xmi:id="_cV1fkODqEeKCka2DqNrBXQ" name="Transition4" source="_-XMhkODpEeKCka2DqNrBXQ" target="_64HLkODpEeKCka2DqNrBXQ">
+          <trigger xmi:type="uml:Trigger" xmi:id="_c_Oa0ODqEeKCka2DqNrBXQ" event="_c_HGEODqEeKCka2DqNrBXQ"/>
+        </transition>
+        <subvertex xmi:type="uml:Pseudostate" xmi:id="_4gM5AODpEeKCka2DqNrBXQ" name="Initial0"/>
+        <subvertex xmi:type="uml:State" xmi:id="_64HLkODpEeKCka2DqNrBXQ" name="Open"/>
+        <subvertex xmi:type="uml:State" xmi:id="_8MLbgODpEeKCka2DqNrBXQ" name="Closing"/>
+        <subvertex xmi:type="uml:State" xmi:id="_9REnAODpEeKCka2DqNrBXQ" name="Closed"/>
+        <subvertex xmi:type="uml:State" xmi:id="_-XMhkODpEeKCka2DqNrBXQ" name="Opening"/>
+      </region>
+    </ownedBehavior>
+    <ownedReception xmi:type="uml:Reception" xmi:id="_YWOkgIQmEeKo7JZ2uzVu9A" name="open" signal="_FjpPQIQmEeKo7JZ2uzVu9A"/>
+    <ownedReception xmi:type="uml:Reception" xmi:id="_ZEc8cIQmEeKo7JZ2uzVu9A" name="close" signal="_H-gvMIQmEeKo7JZ2uzVu9A"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_5GTsMIQiEeKo7JZ2uzVu9A" name="controller_track_1" memberEnd="_5GTsMYQiEeKo7JZ2uzVu9A _5GSeEIQiEeKo7JZ2uzVu9A" navigableOwnedEnd="_5GTsMYQiEeKo7JZ2uzVu9A">
+    <ownedEnd xmi:type="uml:Property" xmi:id="_5GTsMYQiEeKo7JZ2uzVu9A" name="ctl" type="_x-qUEIQiEeKo7JZ2uzVu9A" association="_5GTsMIQiEeKo7JZ2uzVu9A">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_5GTsMoQiEeKo7JZ2uzVu9A" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_5GTsM4QiEeKo7JZ2uzVu9A" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_8xQ7AIQiEeKo7JZ2uzVu9A" name="controller_gate_1" memberEnd="_8xQ7AYQiEeKo7JZ2uzVu9A _8xQT8IQiEeKo7JZ2uzVu9A">
+    <ownedEnd xmi:type="uml:Property" xmi:id="_8xQ7AYQiEeKo7JZ2uzVu9A" name="ctl" type="_x-qUEIQiEeKo7JZ2uzVu9A" association="_8xQ7AIQiEeKo7JZ2uzVu9A">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_8xQ7AoQiEeKo7JZ2uzVu9A" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_8xQ7A4QiEeKo7JZ2uzVu9A" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="__WJyQIQlEeKo7JZ2uzVu9A" name="signals">
+    <packagedElement xmi:type="uml:Signal" xmi:id="_FjpPQIQmEeKo7JZ2uzVu9A" name="open"/>
+    <packagedElement xmi:type="uml:Signal" xmi:id="_H-gvMIQmEeKo7JZ2uzVu9A" name="close"/>
+    <packagedElement xmi:type="uml:Signal" xmi:id="_KwOB0IQmEeKo7JZ2uzVu9A" name="enter">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_UlZ6EODzEeKCka2DqNrBXQ" name="track">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Signal" xmi:id="_K3RFAIQmEeKo7JZ2uzVu9A" name="exit">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_YqF3gODzEeKCka2DqNrBXQ" name="track">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Signal" xmi:id="_LLsc4IQmEeKo7JZ2uzVu9A" name="doOpen"/>
+    <packagedElement xmi:type="uml:Signal" xmi:id="_LQRa4IQmEeKo7JZ2uzVu9A" name="doClose"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_COOLkIQmEeKo7JZ2uzVu9A" name="events">
+    <packagedElement xmi:type="uml:SignalEvent" xmi:id="_b6qccIfHEeKRtpgAjvhTlQ" name="SE - enter" signal="_KwOB0IQmEeKo7JZ2uzVu9A"/>
+    <packagedElement xmi:type="uml:TimeEvent" xmi:id="_wNVrcIfHEeKRtpgAjvhTlQ" name="TE - d1" isRelative="true">
+      <when xmi:type="uml:TimeExpression" xmi:id="_wNVrcYfHEeKRtpgAjvhTlQ">
+        <expr xmi:type="uml:OpaqueExpression" xmi:id="_wNVrcofHEeKRtpgAjvhTlQ">
+          <language>Natural language</language>
+          <body>d1</body>
+        </expr>
+      </when>
+    </packagedElement>
+    <packagedElement xmi:type="uml:TimeEvent" xmi:id="_AmJs8IfIEeKRtpgAjvhTlQ" name="TE - d2" isRelative="true">
+      <when xmi:type="uml:TimeExpression" xmi:id="_AmJs8YfIEeKRtpgAjvhTlQ">
+        <expr xmi:type="uml:OpaqueExpression" xmi:id="_AmJs8ofIEeKRtpgAjvhTlQ">
+          <language>Natural language</language>
+          <body>d2</body>
+        </expr>
+      </when>
+    </packagedElement>
+    <packagedElement xmi:type="uml:SignalEvent" xmi:id="_qe66oIfIEeKRtpgAjvhTlQ" name="SE - exit" signal="_K3RFAIQmEeKo7JZ2uzVu9A"/>
+    <packagedElement xmi:type="uml:SignalEvent" xmi:id="_W1m8QIfJEeKRtpgAjvhTlQ" name="SE - doOpen" signal="_LLsc4IQmEeKo7JZ2uzVu9A"/>
+    <packagedElement xmi:type="uml:SignalEvent" xmi:id="_RMJ1YODqEeKCka2DqNrBXQ" name="SE - close" signal="_H-gvMIQmEeKo7JZ2uzVu9A"/>
+    <packagedElement xmi:type="uml:SignalEvent" xmi:id="_UYWEkODqEeKCka2DqNrBXQ" name="SE - open" signal="_FjpPQIQmEeKo7JZ2uzVu9A"/>
+    <packagedElement xmi:type="uml:TimeEvent" xmi:id="_ZwNhIODqEeKCka2DqNrBXQ" name="TE - gd" isRelative="true">
+      <when xmi:type="uml:TimeExpression" xmi:id="_ZwNhIeDqEeKCka2DqNrBXQ">
+        <expr xmi:type="uml:OpaqueExpression" xmi:id="_ZwNhIuDqEeKCka2DqNrBXQ">
+          <language>Natural language</language>
+          <body>gd</body>
+        </expr>
+      </when>
+    </packagedElement>
+    <packagedElement xmi:type="uml:TimeEvent" xmi:id="_c_HGEODqEeKCka2DqNrBXQ" name="TE - gu" isRelative="true">
+      <when xmi:type="uml:TimeExpression" xmi:id="_c_HGEeDqEeKCka2DqNrBXQ">
+        <expr xmi:type="uml:OpaqueExpression" xmi:id="_c_HGEuDqEeKCka2DqNrBXQ">
+          <language>Natural language</language>
+          <body>gu</body>
+        </expr>
+      </when>
+    </packagedElement>
+    <packagedElement xmi:type="uml:TimeEvent" xmi:id="_PsJlwODrEeKCka2DqNrBXQ" name="TE - [0, 10]" isRelative="true">
+      <when xmi:type="uml:TimeExpression" xmi:id="_PsJlweDrEeKCka2DqNrBXQ">
+        <expr xmi:type="uml:OpaqueExpression" xmi:id="_PsJlwuDrEeKCka2DqNrBXQ">
+          <language>Natural language</language>
+          <body>[0, 10]</body>
+        </expr>
+      </when>
+    </packagedElement>
+    <packagedElement xmi:type="uml:TimeEvent" xmi:id="_TDhKMODrEeKCka2DqNrBXQ" name="TE - [ta, Ta]" isRelative="true">
+      <when xmi:type="uml:TimeExpression" xmi:id="_TDhKMeDrEeKCka2DqNrBXQ">
+        <expr xmi:type="uml:OpaqueExpression" xmi:id="_TDhKMuDrEeKCka2DqNrBXQ">
+          <language>Natural language</language>
+          <body>[ta, Ta]</body>
+        </expr>
+      </when>
+    </packagedElement>
+    <packagedElement xmi:type="uml:TimeEvent" xmi:id="_b-ycEODrEeKCka2DqNrBXQ" name="TE - [tg, Tg]" isRelative="true">
+      <when xmi:type="uml:TimeExpression" xmi:id="_b-ycEeDrEeKCka2DqNrBXQ">
+        <expr xmi:type="uml:OpaqueExpression" xmi:id="_b-ycEuDrEeKCka2DqNrBXQ">
+          <language>Natural language</language>
+          <body>[tg, Tg]</body>
+        </expr>
+      </when>
+    </packagedElement>
+    <packagedElement xmi:type="uml:SignalEvent" xmi:id="_cTLFwODtEeKCka2DqNrBXQ" name="SE - doClose" signal="_LQRa4IQmEeKo7JZ2uzVu9A"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_0fNL8ODtEeKCka2DqNrBXQ" name="scenarios">
+    <packagedElement xmi:type="uml:Collaboration" xmi:id="_-MtzEODtEeKCka2DqNrBXQ" name="Setup" classifierBehavior="_EJunQODyEeKCka2DqNrBXQ" collaborationRole="_rU0x8IQlEeKo7JZ2uzVu9A">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_GkhLgODuEeKCka2DqNrBXQ" name="ctl" visibility="public" type="_x-qUEIQiEeKo7JZ2uzVu9A" isUnique="false">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_I7XuIODuEeKCka2DqNrBXQ" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_I7m-sODuEeKCka2DqNrBXQ" value="1"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_I8OCsODuEeKCka2DqNrBXQ">
+          <value xsi:nil="true"/>
+        </defaultValue>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_MJuggODuEeKCka2DqNrBXQ" name="gate" visibility="public" type="_01un0IQiEeKo7JZ2uzVu9A" isUnique="false">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_POUS4ODuEeKCka2DqNrBXQ" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_POi8YODuEeKCka2DqNrBXQ" value="1"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_PPKAYODuEeKCka2DqNrBXQ">
+          <value xsi:nil="true"/>
+        </defaultValue>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_WVqJAODuEeKCka2DqNrBXQ" name="track1" visibility="public" type="_z_VyYIQiEeKo7JZ2uzVu9A" isUnique="false">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Xy_CoODuEeKCka2DqNrBXQ" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_XzOTMODuEeKCka2DqNrBXQ" value="1"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_Xz0wIODuEeKCka2DqNrBXQ">
+          <value xsi:nil="true"/>
+        </defaultValue>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_b6BwgODuEeKCka2DqNrBXQ" name="track2" visibility="public" type="_z_VyYIQiEeKo7JZ2uzVu9A" isUnique="false">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_dC-8oODuEeKCka2DqNrBXQ" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_dDONMODuEeKCka2DqNrBXQ" value="1"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_dD1RMODuEeKCka2DqNrBXQ">
+          <value xsi:nil="true"/>
+        </defaultValue>
+      </ownedAttribute>
+      <ownedConnector xmi:type="uml:Connector" xmi:id="_TSbokODuEeKCka2DqNrBXQ" name="Connector1" type="_8xQ7AIQiEeKo7JZ2uzVu9A">
+        <end xmi:type="uml:ConnectorEnd" xmi:id="_TSjkYODuEeKCka2DqNrBXQ" role="_GkhLgODuEeKCka2DqNrBXQ">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_TSjkYeDuEeKCka2DqNrBXQ" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_TSjkYuDuEeKCka2DqNrBXQ" value="1"/>
+        </end>
+        <end xmi:type="uml:ConnectorEnd" xmi:id="_TSrgMODuEeKCka2DqNrBXQ" role="_MJuggODuEeKCka2DqNrBXQ">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_TSrgMeDuEeKCka2DqNrBXQ" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_TSrgMuDuEeKCka2DqNrBXQ" value="1"/>
+        </end>
+      </ownedConnector>
+      <ownedConnector xmi:type="uml:Connector" xmi:id="_e8vTkODuEeKCka2DqNrBXQ" name="Connector2" type="_5GTsMIQiEeKo7JZ2uzVu9A">
+        <end xmi:type="uml:ConnectorEnd" xmi:id="_e82oUODuEeKCka2DqNrBXQ" role="_GkhLgODuEeKCka2DqNrBXQ">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_e82oUeDuEeKCka2DqNrBXQ" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_e82oUuDuEeKCka2DqNrBXQ" value="1"/>
+        </end>
+        <end xmi:type="uml:ConnectorEnd" xmi:id="_e8-kIODuEeKCka2DqNrBXQ" role="_WVqJAODuEeKCka2DqNrBXQ">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_e8-kIeDuEeKCka2DqNrBXQ" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_e8-kIuDuEeKCka2DqNrBXQ" value="1"/>
+        </end>
+      </ownedConnector>
+      <ownedConnector xmi:type="uml:Connector" xmi:id="_fv2ykODuEeKCka2DqNrBXQ" name="Connector3" type="_5GTsMIQiEeKo7JZ2uzVu9A">
+        <end xmi:type="uml:ConnectorEnd" xmi:id="_fv-uYODuEeKCka2DqNrBXQ" role="_GkhLgODuEeKCka2DqNrBXQ">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_fv-uYeDuEeKCka2DqNrBXQ" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_fv-uYuDuEeKCka2DqNrBXQ" value="1"/>
+        </end>
+        <end xmi:type="uml:ConnectorEnd" xmi:id="_fwGDIODuEeKCka2DqNrBXQ" role="_b6BwgODuEeKCka2DqNrBXQ">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_fwGDIeDuEeKCka2DqNrBXQ" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_fwGDIuDuEeKCka2DqNrBXQ" value="1"/>
+        </end>
+      </ownedConnector>
+      <ownedBehavior xmi:type="uml:Interaction" xmi:id="_EJunQODyEeKCka2DqNrBXQ" name="Utility">
+        <ownedRule xmi:type="uml:DurationConstraint" xmi:id="_m1tBoODzEeKCka2DqNrBXQ" name="DurationConstraint" constrainedElement="_cHbWgODyEeKCka2DqNrBXQ _fc9H4ODyEeKCka2DqNrBXQ">
+          <specification xmi:type="uml:DurationInterval" xmi:id="_m12LkODzEeKCka2DqNrBXQ" name="DurationInterval" max="_m2N_AODzEeKCka2DqNrBXQ" min="_m2GDMODzEeKCka2DqNrBXQ"/>
+        </ownedRule>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_fc9H4ODyEeKCka2DqNrBXQ" name="enter_MessageRecv0" covered="_MRpJkODyEeKCka2DqNrBXQ" message="_fb0fcODyEeKCka2DqNrBXQ"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_cG7nQODyEeKCka2DqNrBXQ" name="enter_MessageSend" covered="_Gj0EEODyEeKCka2DqNrBXQ" message="_cGSHAODyEeKCka2DqNrBXQ"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_cHbWgODyEeKCka2DqNrBXQ" name="enter_MessageRecv" covered="_MRpJkODyEeKCka2DqNrBXQ" message="_cGSHAODyEeKCka2DqNrBXQ"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_fcdYoODyEeKCka2DqNrBXQ" name="enter_MessageSend0" covered="_LV1BkODyEeKCka2DqNrBXQ" message="_fb0fcODyEeKCka2DqNrBXQ"/>
+        <lifeline xmi:type="uml:Lifeline" xmi:id="_Gj0EEODyEeKCka2DqNrBXQ" name="track1" represents="_WVqJAODuEeKCka2DqNrBXQ" coveredBy="_cG7nQODyEeKCka2DqNrBXQ"/>
+        <lifeline xmi:type="uml:Lifeline" xmi:id="_LV1BkODyEeKCka2DqNrBXQ" name="track2" represents="_b6BwgODuEeKCka2DqNrBXQ" coveredBy="_fcdYoODyEeKCka2DqNrBXQ"/>
+        <lifeline xmi:type="uml:Lifeline" xmi:id="_MRpJkODyEeKCka2DqNrBXQ" name="ctl" represents="_GkhLgODuEeKCka2DqNrBXQ" coveredBy="_cHbWgODyEeKCka2DqNrBXQ _fc9H4ODyEeKCka2DqNrBXQ"/>
+        <message xmi:type="uml:Message" xmi:id="_cGSHAODyEeKCka2DqNrBXQ" name="1:enter_Message" messageSort="asynchSignal" receiveEvent="_cHbWgODyEeKCka2DqNrBXQ" sendEvent="_cG7nQODyEeKCka2DqNrBXQ" signature="_KwOB0IQmEeKo7JZ2uzVu9A">
+          <argument xmi:type="uml:OpaqueExpression" xmi:id="_mo-CoODyEeKCka2DqNrBXQ">
+            <language>C</language>
+            <body>1</body>
+          </argument>
+        </message>
+        <message xmi:type="uml:Message" xmi:id="_fb0fcODyEeKCka2DqNrBXQ" name="2:enter_Message" messageSort="asynchSignal" receiveEvent="_fc9H4ODyEeKCka2DqNrBXQ" sendEvent="_fcdYoODyEeKCka2DqNrBXQ" signature="_KwOB0IQmEeKo7JZ2uzVu9A">
+          <argument xmi:type="uml:OpaqueExpression" xmi:id="_kM_vcODyEeKCka2DqNrBXQ">
+            <language>C</language>
+            <body>2</body>
+          </argument>
+        </message>
+      </ownedBehavior>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Duration" xmi:id="_m2GDMODzEeKCka2DqNrBXQ" name="DurationIntervalMin">
+      <expr xmi:type="uml:LiteralInteger" xmi:id="_m21qEODzEeKCka2DqNrBXQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Duration" xmi:id="_m2N_AODzEeKCka2DqNrBXQ" name="DurationIntervalMax">
+      <expr xmi:type="uml:LiteralInteger" xmi:id="_m29l4ODzEeKCka2DqNrBXQ" value="100"/>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_T3kOkODxEeKCka2DqNrBXQ" name="track1" classifier="_z_VyYIQiEeKo7JZ2uzVu9A">
+    <slot xmi:type="uml:Slot" xmi:id="_b3QB8ODxEeKCka2DqNrBXQ" definingFeature="_rU0x8IQlEeKo7JZ2uzVu9A">
+      <value xmi:type="uml:OpaqueExpression" xmi:id="_fzfOAODxEeKCka2DqNrBXQ">
+        <language>C</language>
+        <body>1</body>
+      </value>
+    </slot>
+  </packagedElement>
+  <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_iZXEEODxEeKCka2DqNrBXQ" name="track2" classifier="_z_VyYIQiEeKo7JZ2uzVu9A">
+    <slot xmi:type="uml:Slot" xmi:id="_lWVykODxEeKCka2DqNrBXQ" definingFeature="_rU0x8IQlEeKo7JZ2uzVu9A">
+      <value xmi:type="uml:OpaqueExpression" xmi:id="_n9Ub4ODxEeKCka2DqNrBXQ">
+        <language>C</language>
+        <body>2</body>
+      </value>
+    </slot>
+  </packagedElement>
+</uml:Model>

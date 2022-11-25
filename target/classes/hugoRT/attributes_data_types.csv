@@ -1,0 +1,7 @@
+Role_tries,int
+Role_validEntry,boolean
+Customer_proceedToPayment,boolean
+CustomerProfile_totalPriceOfItems,int
+CustomerProfile_primeCustomer,boolean
+CustomerProfile_billingAddress,int
+WebUser_performLoginAction,boolean
