@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.ui.externaltools.ProgramLaunchConfigurationType">
+<stringAttribute key="org.eclipse.ui.externaltools.ATTR_LOCATION" value="C:\Program Files\Java\jdk1.8.0_181\bin\java.exe"/>
+<stringAttribute key="org.eclipse.ui.externaltools.ATTR_TOOL_ARGUMENTS" value="-jar C:/Users/anonymous/Desktop/hugort-0_8a/lib/hugort.jar -opromela=C:/Users/anonymous/workspace/hugort/model.pml C:/Users/anonymous/workspace/hugort/model.xml"/>
+<stringAttribute key="org.eclipse.ui.externaltools.ATTR_WORKING_DIRECTORY" value="C:\Users\anonymous\Desktop\hugort-0_8a\lib"/>
+</launchConfiguration>
