@@ -1,0 +1,196 @@
+#!/bin/bash
+JAVA=java
+# declare -x UPPAAL_OLD_SYNTAX=1
+VERIFYTA=~/model-checking/uppaal-4.1.19/bin-Linux/verifyta
+SPIN=~/model-checking/spin-6.4.3/Bin/spin643_linux_32
+GCC="gcc -w"
+TMP=/tmp
+BASE=.
+LIB=$BASE/lib
+HUGORT="$JAVA -jar $LIB/hugort.jar"
+if [[ $HOSTNAME == "turing" ]]; then
+  JAVA=~/java/jdk1.5.0_04/bin/java
+  BASE=~/hugort/workspace/hugo-rt
+  CLASSES=$BASE/classes
+  LIBS=$BASE/lib/*
+  HUGORT="$JAVA -classpath $CLASSES:$LIBS control.Hugo"
+fi
+
+case $1 in
+  "uppaal" )
+    echo "Hugo/RT-Uppaal wrapper, v0.1"
+    shift
+    params=( $@ ) # make a copy of the parameters
+    n=$(($#-1)) # get number of parameters
+    if [[ $n < 0 ]]; then
+      echo "Usage: hugort uppaal [options] <model>"
+      exit -1;
+    fi
+    modelname=${params[$n]} # get model name
+    unset params[$n] # remove last parameter (model name)
+    tmpname=${modelname%.*} # remove suffix (file name extension)
+    tmpname=${tmpname##*/} # remove path
+    taname=$TMP/${tmpname}.ta
+    rm -f $taname
+    qname=$TMP/${tmpname}.q
+    rm -f $qname
+    tlname=$TMP/${tmpname}.tl
+    rm -f $tlname
+    trailname=$TMP/${tmpname}.utl
+    rm -f $trailname
+    logname=$TMP/${tmpname}.log
+    rm -f $logname
+    echo "Writing transcript to ${logname} ..."
+    echo "Translating model ($HUGORT -ouppaal=$taname ${params[@]} $modelname) ..." | tee -a ${logname}
+    $HUGORT -ouppaal=$taname ${params[@]} $modelname >>${logname} 2>&1
+    if [[ $? != 0 ]]; then
+      echo "Error while translating model \`$modelname', see transcript file"
+      exit -1;
+    fi
+    echo "Verifying model ($VERIFYTA -t 1 -S 2 $taname $qname) ..." | tee -a ${logname}
+    $VERIFYTA -t 1 -s -q $taname $qname 1>>${logname} 2>${tlname}
+    if [[ $? != 0 ]]; then
+      echo "Error while verifying model \`$modelname', see transcript file"
+      exit -1;
+    fi
+    if tail -3 $logname | grep "Property" | grep "NOT" >/dev/null; then
+      echo "Property is NOT satisfied";
+    elif tail -3 $logname | grep "Property" | grep "MAYBE" >/dev/null; then 
+      echo "Property is MAYBE satisfied";
+    else
+      echo "Property is satisfied"
+    fi
+    if tail -3 $logname | grep "Showing" >/dev/null; then
+      echo "Retranslating trace ($HUGORT -otrail=$trailname ${params[@]} $tlname $modelname) ..." | tee -a ${logname}
+      $HUGORT -otrail=$trailname ${params[@]} $tlname $modelname >>${logname} 2>&1
+      if [[ $? != 0 ]]; then
+        echo "Error while retranslating trace for \`$modelname', see transcript file"
+        exit -1;
+      else
+        echo "Wrote UML trail to $trailname";
+      fi
+    fi
+    ;;
+  "spin" )
+    echo "Hugo/RT-Spin wrapper, v0.1"
+    shift
+    params=( $@ ) # make a copy of the parameters
+    n=$(($#-1)) # get number of parameters
+    if [[ $n < 0 ]]; then
+      echo "Usage: hugort spin [options] <model>"
+      exit -1;
+    fi
+    modelname=${params[$n]} # get model name
+    unset params[$n] # remove last parameter (model name)
+    tmpname=${modelname%.*} # remove suffix (file name extension)
+    tmpname=${tmpname##*/} # remove path
+    pmlname=$TMP/${tmpname}.pml
+    rm -f $pmlname
+    pmlltlname=$TMP/${tmpname}.pml.ltl
+    rm -f $pmlltlname
+    ltlname=$TMP/${tmpname}.ltl
+    rm -f $ltlname
+    tlname=$TMP/${tmpname}.tl
+    rm -f $tlname
+    trailname=$TMP/${tmpname}.utl
+    rm -f $trailname
+    logname=$TMP/${tmpname}.log
+    rm -f $logname
+    echo "Writing transcript to ${logname} ..."
+    call="$HUGORT -opromela=$pmlname ${params[@]} $modelname"
+    echo "Translating model ($call) ..." | tee -a ${logname}
+    $call >>${logname} 2>&1
+    if [[ $? != 0 ]]; then
+      echo "Error while translating model \`$modelname', see transcript file"
+      exit -1;
+    fi
+    pushd $TMP >/dev/null
+    if grep "never {" $pmlname >/dev/null ||
+       grep "Observer() {" $pmlname >/dev/null; then
+      callSPIN="$SPIN -a $pmlname"
+      callGCC="$GCC -DXUSAFE -DNOREDUCE -DCOLLAPSE -o pan pan.c"
+      callPAN="./pan -a -m1000"
+      call="$callSPIN ; $callGCC ; $callPAN"
+      echo "Verifying model ($call) ..." | tee -a ${logname}
+      $callSPIN
+      $callGCC
+      $callPAN >>$logname 2>&1
+    elif [[ -r $pmlltlname ]]; then
+      checkingLTL=1
+      grep -v "^$\|^#" $pmlltlname >$ltlname
+      echo >>$pmlltlname
+      $SPIN -F $ltlname >>$pmlltlname
+      callSPIN="$SPIN -a -N $pmlltlname $pmlname"
+      callGCC="$GCC -DXUSAFE -DNOREDUCE -DCOLLAPSE -o pan pan.c"
+      callPAN="./pan -a -m1000"
+      call="$callSPIN ; $callGCC ; $callPAN"
+      echo "Verifying model ($call) ..." | tee -a ${logname}
+      $callSPIN
+      $callGCC
+      $callPAN >>$logname 2>&1
+    else
+      callSPIN="$SPIN -a $pmlname"
+      callGCC="$GCC -DXUSAFE -DNOCLAIM -DSAFETY -DCOLLAPSE -o pan pan.c"
+      callPAN="./pan -m1000"
+      call="$callSPIN ; $callGCC ; $callPAN"
+      echo "Verifying model ($call) ..." | tee -a ${logname}
+      $callSPIN
+      $callGCC
+      $callPAN >>$logname 2>&1
+    fi
+
+    if [[ $checkingLTL == 1 ]]; then
+      if grep "pan: claim violated" $logname >/dev/null; then
+        echo "Property is satisfied"
+        $SPIN -N $pmlltlname -l -g -w -v -t $pmlname >${tlname}
+        popd >/dev/null
+        echo "Retranslating trace ($HUGORT -otrail=$trailname ${params[@]} $tlname $modelname) ..." | tee -a ${logname}
+        $HUGORT -otrail=$trailname ${params[@]} $tlname $modelname >>${logname} 2>&1
+        if [[ $? != 0 ]]; then
+          echo "Error while retranslating trace for \`$modelname', see transcript file"
+          exit -1;
+        else
+          echo "Wrote UML trail to $trailname";
+        fi;
+      else
+        echo "Property is NOT satisfied"
+        popd >/dev/null
+      fi
+    else
+      if grep "pan: claim violated" $logname >/dev/null ||
+         grep "pan: assertion violated" $logname >/dev/null ||
+         grep "pan: acceptance cycle" $logname > /dev/null ||
+         grep "pan: invalid end state" $logname > /dev/null; then
+        if grep "pan: claim violated" $logname > /dev/null ||
+           grep "pan: acceptance cycle" $logname > /dev/null; then
+          echo "Property is satisfied"
+        else
+          echo "Property is NOT satisfied"
+        fi
+        if [[ -r $pmlltlname ]]; then
+          $SPIN -N $pmlltlname -l -g -w -v -t $pmlname >${tlname}
+        else
+          $SPIN -l -g -w -v -t $pmlname >${tlname}
+        fi
+        popd >/dev/null
+        echo "Retranslating trace ($HUGORT -otrail=$trailname ${params[@]} $tlname $modelname) ..." | tee -a ${logname}
+        $HUGORT -otrail=$trailname ${params[@]} $tlname $modelname >>${logname} 2>&1
+        if [[ $? != 0 ]]; then
+          echo "Error while retranslating trace for \`$modelname', see transcript file"
+          exit -1;
+        else
+          echo "Wrote UML trail to $trailname";
+        fi;
+      else
+        if grep "State-vector.*, errors: 0" $logname >/dev/null; then # Thanks to Karsten Saller
+          echo "Property is satisfied";
+        else
+          echo "Property is NOT satisfied";
+        fi;
+        popd >/dev/null
+      fi
+    fi
+    ;;
+  * )
+    $HUGORT $@
+esac

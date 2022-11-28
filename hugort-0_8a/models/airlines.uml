@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_1L8zUO8rEeSjd_SbcemYiA" name="Model">
+  <packageImport xmi:type="uml:PackageImport" xmi:id="_1L8zUe8rEeSjd_SbcemYiA">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+  </packageImport>
+  <packagedElement xmi:type="uml:Class" xmi:id="_9T1gcO8rEeSjd_SbcemYiA" name="Airline">
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_rvbZEO8sEeSjd_SbcemYiA" name="hire">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_B8QAkO8tEeSjd_SbcemYiA" name="p" type="_-vrzYO8rEeSjd_SbcemYiA"/>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_MigNkO8tEeSjd_SbcemYiA" name="return" type="_VtevYO8tEeSjd_SbcemYiA" direction="return"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_-vrzYO8rEeSjd_SbcemYiA" name="Person">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_ohuRgO8tEeSjd_SbcemYiA" name="name" visibility="public">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_yjeDQO8tEeSjd_SbcemYiA" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_yjf4cO8tEeSjd_SbcemYiA" value="1"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_FboG8O8sEeSjd_SbcemYiA" name="Pilot">
+    <generalization xmi:type="uml:Generalization" xmi:id="_IyU9AO8sEeSjd_SbcemYiA" general="_-vrzYO8rEeSjd_SbcemYiA"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_GX4T0O8sEeSjd_SbcemYiA" name="Steward">
+    <generalization xmi:type="uml:Generalization" xmi:id="_J0Y28O8sEeSjd_SbcemYiA" general="_-vrzYO8rEeSjd_SbcemYiA"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_Lkb4QO8sEeSjd_SbcemYiA" memberEnd="_Lkb4Qe8sEeSjd_SbcemYiA _LkbRMO8sEeSjd_SbcemYiA" navigableOwnedEnd="_LkbRMO8sEeSjd_SbcemYiA">
+    <name xsi:nil="true"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_Lkb4Qe8sEeSjd_SbcemYiA" name="airline" type="_9T1gcO8rEeSjd_SbcemYiA" association="_Lkb4QO8sEeSjd_SbcemYiA">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Lkb4Qu8sEeSjd_SbcemYiA" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Lkb4Q-8sEeSjd_SbcemYiA" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_LkbRMO8sEeSjd_SbcemYiA" name="employees" type="_-vrzYO8rEeSjd_SbcemYiA" isDerivedUnion="true" association="_Lkb4QO8sEeSjd_SbcemYiA">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_LkbRMe8sEeSjd_SbcemYiA"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_LkbRMu8sEeSjd_SbcemYiA" value="*"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:DataType" xmi:id="_VtevYO8tEeSjd_SbcemYiA" name="void"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_9w1TkO8tEeSjd_SbcemYiA" memberEnd="_9w1Tke8tEeSjd_SbcemYiA _9wv0AO8tEeSjd_SbcemYiA" navigableOwnedEnd="_9wv0AO8tEeSjd_SbcemYiA">
+    <name xsi:nil="true"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_9w1Tke8tEeSjd_SbcemYiA" name="airline" type="_9T1gcO8rEeSjd_SbcemYiA" association="_9w1TkO8tEeSjd_SbcemYiA">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_9w1Tku8tEeSjd_SbcemYiA" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_9w1Tk-8tEeSjd_SbcemYiA" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_9wv0AO8tEeSjd_SbcemYiA" name="pilots" type="_FboG8O8sEeSjd_SbcemYiA" subsettedProperty="_LkbRMO8sEeSjd_SbcemYiA" association="_9w1TkO8tEeSjd_SbcemYiA">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_9wwbEO8tEeSjd_SbcemYiA" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_9wwbEe8tEeSjd_SbcemYiA" value="*"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_B8O9AO8uEeSjd_SbcemYiA" memberEnd="_B8PkEO8uEeSjd_SbcemYiA _B8NH0O8uEeSjd_SbcemYiA" navigableOwnedEnd="_B8NH0O8uEeSjd_SbcemYiA">
+    <name xsi:nil="true"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_B8PkEO8uEeSjd_SbcemYiA" name="airline" type="_9T1gcO8rEeSjd_SbcemYiA" association="_B8O9AO8uEeSjd_SbcemYiA">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_B8PkEe8uEeSjd_SbcemYiA" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_B8PkEu8uEeSjd_SbcemYiA" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_B8NH0O8uEeSjd_SbcemYiA" name="steward" type="_GX4T0O8sEeSjd_SbcemYiA" subsettedProperty="_LkbRMO8sEeSjd_SbcemYiA" association="_B8O9AO8uEeSjd_SbcemYiA">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_B8NH0e8uEeSjd_SbcemYiA"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_B8NH0u8uEeSjd_SbcemYiA" value="*"/>
+    </ownedEnd>
+  </packagedElement>
+</uml:Model>

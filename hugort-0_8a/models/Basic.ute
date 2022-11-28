@@ -1,0 +1,98 @@
+model Basic {
+  properties {
+    networkCapacity = 2;
+    centralNetwork = false;
+    maxDelay = 10;
+    externalQueueCapacity = 5;
+    internalQueueCapacity = 2;
+    deferredQueueCapacity = 2;
+    minInt = -32768;
+    maxInt = 32767;
+    mutex = false;
+    smileMachine = true;
+    fixedOrderRegions = true;
+    fixedOrderTransitionFiring = true;
+    phaseBased = false;
+  }
+
+  class Bob {
+    signature {
+      attr erna : Erna;
+
+      reception a();
+      reception b();
+    }
+
+    behaviour {
+      states {
+        initial Initial1;
+        simple Idle;
+        simple State1;
+      }
+
+      transitions {
+        Idle -> State1 {
+          trigger b;
+          guard true;
+          effect ;
+        }
+        Idle -> State1 {
+          trigger a;
+          guard true;
+          effect ;
+        }
+        Initial1 -> Idle {
+          guard true;
+          effect ;
+        }
+      }
+    }
+  }
+
+  class Erna {
+    signature {
+      attr bob : Bob;
+
+      reception start();
+    }
+
+    behaviour {
+      states {
+        initial Initial1;
+        simple State1;
+        simple Idle;
+        final FinalState1;
+      }
+
+      transitions {
+        Idle -> State1 {
+          trigger start;
+          guard true;
+          effect ;
+        }
+        Initial1 -> Idle {
+          guard true;
+          effect ;
+        }
+        State1 -> FinalState1 {
+          guard true;
+          effect bob.b();
+        }
+        State1 -> FinalState1 {
+          guard true;
+          effect bob.a();
+        }
+      }
+    }
+  }
+
+  collaboration Collaboration1 {
+    object bob : Erna {
+      bob = erna;
+    }
+
+    object erna : Bob {
+      erna = bob;
+    }
+  }
+}

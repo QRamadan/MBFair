@@ -1,0 +1,683 @@
+model coffee {
+  properties {
+    networkCapacity = 2;
+    centralNetwork = false;
+    maxDelay = 10;
+    externalQueueCapacity = 5;
+    internalQueueCapacity = 2;
+    deferredQueueCapacity = 2;
+    minInt = -32768;
+    maxInt = 32767;
+    mutex = false;
+    smileMachine = true;
+    fixedOrderRegions = true;
+    fixedOrderTransitionFiring = true;
+    phaseBased = false;
+  }
+
+  class LED {
+    signature {
+      attr userInterface : UserInterface;
+
+      reception on();
+      reception off();
+    }
+
+    behaviour {
+      states {
+        initial Initial0;
+        simple On;
+        simple Off;
+      }
+
+      transitions {
+        Initial0 -> Off {
+          guard true;
+          effect ;
+        }
+        Off -> On {
+          trigger on;
+          guard true;
+          effect ;
+        }
+        On -> Off {
+          trigger off;
+          guard true;
+          effect ;
+        }
+      }
+    }
+  }
+
+  class UserInterface {
+    signature {
+      attr leds : LED[3];
+      attr lcd : LCD;
+      attr data : Data;
+      attr control : Control;
+      attr user : User;
+
+      reception select();
+      reception up();
+      reception down();
+      reception enjoy();
+      reception refillBeans();
+      reception refillWater();
+      reception small();
+      reception large();
+    }
+
+    behaviour {
+      states {
+        composite Menu {
+          simple Ready;
+          simple ChangeGrindingLevel;
+          simple ChangeWaterAmount;
+          initial Initial0;
+        }
+        simple Working;
+        simple AdjustingWaterLevel {
+          entry lcd.display(lcd.WATERAMOUNT+data.wl);
+        }
+        simple AdjustingGrindingLevel {
+          entry lcd.display(lcd.GRINDINGLEVEL+data.gl);
+        }
+        initial Initial0;
+      }
+
+      transitions {
+        AdjustingGrindingLevel -> AdjustingGrindingLevel {
+          trigger up;
+          guard data.gl <= 5;
+          effect data.gl++;
+        }
+        AdjustingGrindingLevel -> AdjustingGrindingLevel {
+          trigger down;
+          guard data.gl >= 1;
+          effect data.gl--;
+        }
+        Initial0 -> Menu {
+          guard true;
+          effect ;
+        }
+        AdjustingGrindingLevel -> Menu {
+          trigger select;
+          guard true;
+          effect ;
+        }
+        Menu.Ready -> Working {
+          trigger small;
+          guard true;
+          effect leds[1].off(); leds[2].off(); leds[0].on(); data.wl = data.SMALL; control.brew();
+        }
+        Working -> Menu.Ready {
+          trigger refillBeans;
+          guard true;
+          effect lcd.display(lcd.REFILLBEANS); leds[0].off(); leds[1].on();
+        }
+        Menu.ChangeGrindingLevel -> Menu.ChangeWaterAmount {
+          trigger up;
+          guard true;
+          effect ;
+        }
+        Working -> Menu.Ready {
+          trigger refillWater;
+          guard true;
+          effect lcd.display(lcd.REFILLWATER); leds[0].off(); leds[2].on();
+        }
+        Working -> Menu.Ready {
+          trigger enjoy;
+          guard true;
+          effect lcd.display(lcd.ENJOY); leds[0].off();
+        }
+        Menu.Ready -> Working {
+          trigger large;
+          guard true;
+          effect leds[1].off(); leds[2].off(); leds[0].on(); data.wl = data.LARGE; control.brew();
+        }
+        Menu.Ready -> Working {
+          trigger select;
+          guard true;
+          effect lcd.display(lcd.BREWING); leds[1].off(); leds[2].off(); leds[0].on(); control.brew();
+        }
+        Menu.ChangeWaterAmount -> Menu.ChangeGrindingLevel {
+          trigger down;
+          guard true;
+          effect ;
+        }
+        AdjustingWaterLevel -> Menu {
+          trigger select;
+          guard true;
+          effect ;
+        }
+        Menu.ChangeGrindingLevel -> AdjustingGrindingLevel {
+          trigger select;
+          guard true;
+          effect ;
+        }
+        Menu.ChangeWaterAmount -> Menu.Ready {
+          trigger up;
+          guard true;
+          effect ;
+        }
+        Menu.ChangeWaterAmount -> AdjustingWaterLevel {
+          trigger select;
+          guard true;
+          effect ;
+        }
+        Menu.Ready -> Menu.ChangeWaterAmount {
+          trigger down;
+          guard true;
+          effect ;
+        }
+        Menu.Initial0 -> Menu.Ready {
+          guard true;
+          effect ;
+        }
+        Menu.ChangeGrindingLevel -> Menu.Ready {
+          trigger up;
+          guard true;
+          effect ;
+        }
+        Menu.Ready -> Menu.ChangeGrindingLevel {
+          trigger down;
+          guard true;
+          effect ;
+        }
+        AdjustingWaterLevel -> AdjustingWaterLevel {
+          trigger down;
+          guard data.wl >= 3;
+          effect data.wl--;
+        }
+        AdjustingWaterLevel -> AdjustingWaterLevel {
+          trigger up;
+          guard data.wl <= 10;
+          effect data.wl++;
+        }
+      }
+    }
+  }
+
+  class Heater {
+    signature {
+      attr control : Control;
+
+      reception on();
+    }
+
+    behaviour {
+      states {
+        initial Initial0;
+        simple Off;
+        simple On;
+      }
+
+      transitions {
+        Initial0 -> Off {
+          guard true;
+          effect ;
+        }
+        On -> Off {
+          guard true;
+          effect control.heated();
+        }
+        Off -> On {
+          trigger on;
+          guard true;
+          effect ;
+        }
+      }
+    }
+  }
+
+  class WaterTank {
+    signature {
+      attr control : Control;
+
+      operation check(wl : int);
+
+      reception open();
+      reception close();
+    }
+
+    behaviour {
+      states {
+        initial Initial0;
+        simple Closed;
+        simple Open;
+      }
+
+      transitions {
+        Closed -> Open {
+          trigger open;
+          guard true;
+          effect ;
+        }
+        Open -> Closed {
+          trigger close;
+          guard true;
+          effect ;
+        }
+        Initial0 -> Closed {
+          guard true;
+          effect ;
+        }
+        Closed -> Closed {
+          trigger check;
+          guard true;
+          effect ;
+        }
+      }
+    }
+  }
+
+  class LCD {
+    signature {
+      static const BREWING : int = 1;
+      static const ENJOY : int = 2;
+      static const REFILLBEANS : int = 3;
+      static const REFILLWATER : int = 4;
+      static const WATERAMOUNT : int = 8;
+      static const GRINDINGLEVEL : int = 16;
+      attr userInterface : UserInterface;
+
+      operation display(msg : int);
+    }
+
+    behaviour {
+      states {
+        initial Initial0;
+        simple Displaying;
+      }
+
+      transitions {
+        Initial0 -> Displaying {
+          guard true;
+          effect ;
+        }
+        Displaying -> Displaying {
+          trigger display;
+          guard true;
+          effect ;
+        }
+      }
+    }
+  }
+
+  class User {
+    signature {
+      attr ui : UserInterface;
+    }
+
+    behaviour {
+      states {
+        initial Initial0;
+        simple Idle;
+        simple Selected;
+        simple Up;
+        simple Down;
+        simple Nothing;
+      }
+
+      transitions {
+        Initial0 -> Idle {
+          guard true;
+          effect ;
+        }
+        Idle -> Idle {
+          guard true;
+          effect ui.up();
+        }
+        Idle -> Idle {
+          guard true;
+          effect ui.down();
+        }
+        Idle -> Idle {
+          guard true;
+          effect ui.select();
+        }
+      }
+    }
+  }
+
+  class Control {
+    signature {
+      attr data : Data;
+      attr waterTank : WaterTank;
+      attr ui : UserInterface;
+      attr grinder : Grinder;
+      attr heater : Heater;
+
+      reception notEnoughBeans();
+      reception notEnoughWater();
+      reception enoughWater();
+      reception brew();
+      reception ground();
+      reception heated();
+    }
+
+    behaviour {
+      states {
+        initial Initial0;
+        concurrent Brewing {
+          composite Region0region1 {
+            simple Grinding;
+            initial Initial0;
+            final FinalState0;
+            simple SetGrindingLevel;
+            simple TurnOnGrinder;
+          }
+          composite Region1region2 {
+            simple Heating;
+            initial Initial0;
+            final FinalState0;
+            simple TurnOnHeater;
+          }
+        }
+        composite Dispensing {
+          simple CheckWater;
+          simple Pouring;
+          final FinalState0;
+          simple Checking;
+          initial Initial0;
+        }
+        simple Idle;
+      }
+
+      transitions {
+        Dispensing.CheckWater -> Dispensing.Checking {
+          guard true;
+          effect waterTank.check(data.wl);
+        }
+        Dispensing.Pouring -> Dispensing.FinalState0 {
+          trigger after [data.wl, data.wl];
+          guard true;
+          effect waterTank.close();
+        }
+        Brewing.Region0region1.TurnOnGrinder -> Brewing.Region0region1.Grinding {
+          guard true;
+          effect grinder.on();
+        }
+        Brewing -> Dispensing {
+          guard true;
+          effect ;
+        }
+        Initial0 -> Idle {
+          guard true;
+          effect ;
+        }
+        Brewing.Region0region1.Initial0 -> Brewing.Region0region1.TurnOnGrinder {
+          guard true;
+          effect ;
+        }
+        Dispensing.Initial0 -> Dispensing.CheckWater {
+          guard true;
+          effect ;
+        }
+        Brewing.Region1region2.Initial0 -> Brewing.Region1region2.TurnOnHeater {
+          guard true;
+          effect ;
+        }
+        Brewing.Region0region1.Initial0 -> Brewing.Region0region1.SetGrindingLevel {
+          guard true;
+          effect ;
+        }
+        Dispensing.Initial0 -> Dispensing.Pouring {
+          guard true;
+          effect ;
+        }
+        Dispensing.Checking -> Dispensing.Pouring {
+          trigger enoughWater;
+          guard true;
+          effect waterTank.open();
+        }
+        Idle -> Brewing {
+          trigger brew;
+          guard true;
+          effect ;
+        }
+        Brewing -> Idle {
+          trigger notEnoughBeans;
+          guard true;
+          effect ui.refillBeans();
+        }
+        Dispensing -> Idle {
+          trigger notEnoughWater;
+          guard true;
+          effect ui.refillWater();
+        }
+        Brewing.Region0region1.Grinding -> Brewing.Region0region1.FinalState0 {
+          trigger ground;
+          guard true;
+          effect ;
+        }
+        Brewing.Region1region2.Heating -> Brewing.Region1region2.FinalState0 {
+          trigger heated;
+          guard true;
+          effect ;
+        }
+        Dispensing -> Idle {
+          guard true;
+          effect ui.enjoy();
+        }
+        Brewing.Region0region1.SetGrindingLevel -> Brewing.Region0region1.TurnOnGrinder {
+          guard true;
+          effect grinder.setLevel(data.gl);
+        }
+        Brewing.Region1region2.TurnOnHeater -> Brewing.Region1region2.Heating {
+          guard true;
+          effect heater.on();
+        }
+      }
+    }
+  }
+
+  class Grinder {
+    signature {
+      attr control : Control;
+
+      operation setLevel(gl : int);
+
+      reception on();
+    }
+
+    behaviour {
+      states {
+        initial Initial0;
+        simple Off;
+        simple On;
+      }
+
+      transitions {
+        Off -> Off {
+          trigger setLevel;
+          guard true;
+          effect ;
+        }
+        Initial0 -> Off {
+          guard true;
+          effect ;
+        }
+        On -> Off {
+          guard true;
+          effect control.ground();
+        }
+        Off -> On {
+          trigger on;
+          guard true;
+          effect ;
+        }
+      }
+    }
+  }
+
+  class Data {
+    signature {
+      static attr wl : int;
+      static attr gl : int;
+      static const SMALL : int;
+      static const LARGE : int;
+      attr userInterface : UserInterface;
+      attr control : Control;
+    }
+  }
+
+  collaboration setup {
+    object ui : UserInterface {
+      user = user;
+      lcd = lcd;
+      leds = { led0, led1, led2 };
+      control = ctrl;
+    }
+
+    object led1 : LED {
+      userInterface = ui;
+    }
+
+    object grinder : Grinder {
+      control = ctrl;
+    }
+
+    object led2 : LED {
+      userInterface = ui;
+    }
+
+    object ctrl : Control {
+      ui = ui;
+      grinder = grinder;
+      heater = heater;
+      waterTank = waterTank;
+    }
+
+    object led0 : LED {
+      userInterface = ui;
+    }
+
+    object heater : Heater {
+      control = ctrl;
+    }
+
+    object lcd : LCD {
+      userInterface = ui;
+    }
+
+    object user : User {
+      ui = ui;
+    }
+
+    object waterTank : WaterTank {
+      control = ctrl;
+    }
+
+    interaction Brewing_full {
+      _5_on_Message: ui -> led0 : on();
+      _2_display_Message: ui -> lcd : display(LCD.BREWING);
+      _6_brew_Message: ui -> ctrl : brew();
+      _4_off_Message: ui -> led2 : off();
+      _3_off_Message: ui -> led1 : off();
+      _1_select_Message: user -> ui : select();
+
+      basic {
+        ui {
+          rcv(_1_select_Message);
+          snd(_2_display_Message);
+          snd(_3_off_Message);
+          snd(_4_off_Message);
+          snd(_5_on_Message);
+          snd(_6_brew_Message);
+        }
+
+        led1 {
+          rcv(_3_off_Message);
+        }
+
+        led2 {
+          rcv(_4_off_Message);
+        }
+
+        ctrl {
+          rcv(_6_brew_Message);
+        }
+
+        led0 {
+          rcv(_5_on_Message);
+        }
+
+        lcd {
+          rcv(_2_display_Message);
+        }
+
+        user {
+          snd(_1_select_Message);
+        }
+      }
+    }
+
+    interaction Brewing {
+      _2_brew_Message: ui -> ctrl : brew();
+      _1_select_Message: user -> ui : select();
+
+      consider <select, brew> {
+        [true]
+        basic {
+          ui {
+            snd(_2_brew_Message);
+            rcv(_1_select_Message);
+          }
+
+          ctrl {
+            rcv(_2_brew_Message);
+          }
+
+          user {
+            snd(_1_select_Message);
+          }
+        }
+      }
+    }
+
+    interaction AdjustingWaterLevel {
+      _5_select_Message: user -> ui : select();
+      _3_up_Message: user -> ui : up();
+      _7_brew_Message: ui -> ctrl : brew();
+      _4_up_Message: user -> ui : up();
+      _1_down_Message: user -> ui : down();
+      _6_select_Message: user -> ui : select();
+      _2_select_Message: user -> ui : select();
+      _8_check_Message: ctrl -> waterTank : check(5);
+
+      consider <select, check, up, down, brew> {
+        [true]
+        basic {
+          ui {
+            rcv(_1_down_Message);
+            rcv(_2_select_Message);
+            rcv(_3_up_Message);
+            rcv(_4_up_Message);
+            rcv(_5_select_Message);
+            rcv(_6_select_Message);
+            snd(_7_brew_Message);
+          }
+
+          ctrl {
+            rcv(_7_brew_Message);
+            snd(_8_check_Message);
+          }
+
+          user {
+            snd(_1_down_Message);
+            snd(_2_select_Message);
+            snd(_3_up_Message);
+            snd(_4_up_Message);
+            snd(_5_select_Message);
+            snd(_6_select_Message);
+          }
+
+          waterTank {
+            rcv(_8_check_Message);
+          }
+        }
+      }
+    }
+  }
+}

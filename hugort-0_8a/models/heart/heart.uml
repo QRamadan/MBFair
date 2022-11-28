@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20110701" xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xmi:id="_vdbV8JVcEeOGq5MrPm6sfQ" name="Model">
+  <packageImport xmi:type="uml:PackageImport" xmi:id="_vdbV8ZVcEeOGq5MrPm6sfQ">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+  </packageImport>
+  <packagedElement xmi:type="uml:Class" xmi:id="_yWi4IJVcEeOGq5MrPm6sfQ" name="Controller" classifierBehavior="_aRzQQJVdEeOGq5MrPm6sfQ">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_P2g9IJVdEeOGq5MrPm6sfQ" name="actuator" type="_LSfYUJVdEeOGq5MrPm6sfQ" association="_P2hkMJVdEeOGq5MrPm6sfQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_P2g9IZVdEeOGq5MrPm6sfQ" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_P2g9IpVdEeOGq5MrPm6sfQ" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_vyxeYJVdEeOGq5MrPm6sfQ" name="MAX" visibility="public" isStatic="true" isReadOnly="true">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_0oZJgJVdEeOGq5MrPm6sfQ" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_0oaXoJVdEeOGq5MrPm6sfQ" value="1"/>
+      <defaultValue xmi:type="uml:LiteralInteger" xmi:id="_9_4dUJVdEeOGq5MrPm6sfQ" name="Maximum waiting time [ms]" value="1200"/>
+    </ownedAttribute>
+    <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_aRzQQJVdEeOGq5MrPm6sfQ" name="Controller behaviour">
+      <region xmi:type="uml:Region" xmi:id="_bJ0dYJVdEeOGq5MrPm6sfQ" name="Region1">
+        <transition xmi:type="uml:Transition" xmi:id="_pdy5UJVdEeOGq5MrPm6sfQ" name="Transition0" source="_d7R4YJVdEeOGq5MrPm6sfQ" target="_gMdQ0JVdEeOGq5MrPm6sfQ"/>
+        <transition xmi:type="uml:Transition" xmi:id="_FPrr4JVeEeOGq5MrPm6sfQ" name="Transition1" source="_gMdQ0JVdEeOGq5MrPm6sfQ" target="_gMdQ0JVdEeOGq5MrPm6sfQ">
+          <effect xmi:type="uml:OpaqueBehavior" xmi:id="_W93vcJVfEeOGq5MrPm6sfQ" name="actuator.impulse()">
+            <language>C</language>
+            <body>actuator.impulse()</body>
+          </effect>
+          <trigger xmi:type="uml:Trigger" xmi:id="_ddmocJVeEeOGq5MrPm6sfQ" name="MAXtimeout" event="_QS5hsJVeEeOGq5MrPm6sfQ"/>
+        </transition>
+        <transition xmi:type="uml:Transition" xmi:id="_f-L5YJVfEeOGq5MrPm6sfQ" name="Transition2" source="_gMdQ0JVdEeOGq5MrPm6sfQ" target="_gMdQ0JVdEeOGq5MrPm6sfQ">
+          <trigger xmi:type="uml:Trigger" xmi:id="_QK6_gJVgEeOGq5MrPm6sfQ" event="_Bg2-0JVgEeOGq5MrPm6sfQ"/>
+        </transition>
+        <subvertex xmi:type="uml:Pseudostate" xmi:id="_d7R4YJVdEeOGq5MrPm6sfQ" name="Initial0"/>
+        <subvertex xmi:type="uml:State" xmi:id="_gMdQ0JVdEeOGq5MrPm6sfQ" name="Controlling"/>
+      </region>
+    </ownedBehavior>
+    <ownedReception xmi:type="uml:Reception" xmi:id="_BkBH4JVdEeOGq5MrPm6sfQ" name="QRS" signal="_zssEUJVfEeOGq5MrPm6sfQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_LSfYUJVdEeOGq5MrPm6sfQ" name="Actuator">
+    <ownedReception xmi:type="uml:Reception" xmi:id="_M_SRUJVdEeOGq5MrPm6sfQ" name="impulse" signal="_xi_M4JVfEeOGq5MrPm6sfQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_P2hkMJVdEeOGq5MrPm6sfQ" name="controller_actuator_1" memberEnd="_P2hkMZVdEeOGq5MrPm6sfQ _P2g9IJVdEeOGq5MrPm6sfQ">
+    <ownedEnd xmi:type="uml:Property" xmi:id="_P2hkMZVdEeOGq5MrPm6sfQ" name="controller" type="_yWi4IJVcEeOGq5MrPm6sfQ" association="_P2hkMJVdEeOGq5MrPm6sfQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_P2hkMpVdEeOGq5MrPm6sfQ" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_P2hkM5VdEeOGq5MrPm6sfQ" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_uXN0cJVfEeOGq5MrPm6sfQ" name="signals">
+    <packagedElement xmi:type="uml:Signal" xmi:id="_xi_M4JVfEeOGq5MrPm6sfQ" name="impulse"/>
+    <packagedElement xmi:type="uml:Signal" xmi:id="_zssEUJVfEeOGq5MrPm6sfQ" name="QRS"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_NTw3EJVeEeOGq5MrPm6sfQ" name="events">
+    <packagedElement xmi:type="uml:TimeEvent" xmi:id="_QS5hsJVeEeOGq5MrPm6sfQ" name="MAXtimeout" isRelative="true">
+      <when xmi:type="uml:TimeExpression" xmi:id="_JAlVMJVfEeOGq5MrPm6sfQ" name="MAX">
+        <expr xmi:type="uml:OpaqueExpression" xmi:id="_JAlVMZVfEeOGq5MrPm6sfQ" name="MAX">
+          <language>C</language>
+          <body>MAX</body>
+        </expr>
+      </when>
+    </packagedElement>
+    <packagedElement xmi:type="uml:SignalEvent" xmi:id="_l3U3AJVfEeOGq5MrPm6sfQ" name="impulse" signal="_xi_M4JVfEeOGq5MrPm6sfQ"/>
+    <packagedElement xmi:type="uml:SignalEvent" xmi:id="_Bg2-0JVgEeOGq5MrPm6sfQ" name="QRS" signal="_zssEUJVfEeOGq5MrPm6sfQ"/>
+  </packagedElement>
+</uml:Model>

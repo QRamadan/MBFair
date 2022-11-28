@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:css="http://www.eclipse.org/papyrus/infra/gmfdiag/css" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:style="http://www.eclipse.org/papyrus/infra/viewpoints/policy/style" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML">
+  <notation:Diagram xmi:id="_1SzCMO8rEeSjd_SbcemYiA" type="PapyrusUMLClassDiagram" name="Static structure" measurementUnit="Pixel">
+    <children xmi:type="notation:Shape" xmi:id="_9Um8gO8rEeSjd_SbcemYiA" type="2008">
+      <children xmi:type="notation:DecorationNode" xmi:id="_9Ur1AO8rEeSjd_SbcemYiA" type="5029"/>
+      <children xmi:type="notation:BasicCompartment" xmi:id="_9UwGcO8rEeSjd_SbcemYiA" type="7017">
+        <styles xmi:type="notation:TitleStyle" xmi:id="_9UwGce8rEeSjd_SbcemYiA"/>
+        <styles xmi:type="notation:SortingStyle" xmi:id="_9UwGcu8rEeSjd_SbcemYiA"/>
+        <styles xmi:type="notation:FilteringStyle" xmi:id="_9UwGc-8rEeSjd_SbcemYiA"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_9UwGdO8rEeSjd_SbcemYiA"/>
+      </children>
+      <children xmi:type="notation:BasicCompartment" xmi:id="_9UwGde8rEeSjd_SbcemYiA" type="7018">
+        <children xmi:type="notation:Shape" xmi:id="_rvcnMO8sEeSjd_SbcemYiA" type="3013">
+          <styles xmi:type="notation:StringListValueStyle" xmi:id="_E2VMEO8tEeSjd_SbcemYiA" name="maskLabel">
+            <stringListValue>parametersName</stringListValue>
+            <stringListValue>visibility</stringListValue>
+            <stringListValue>name</stringListValue>
+            <stringListValue>parametersType</stringListValue>
+            <stringListValue>returnType</stringListValue>
+          </styles>
+          <element xmi:type="uml:Operation" href="airlines.uml#_rvbZEO8sEeSjd_SbcemYiA"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_rvcnMe8sEeSjd_SbcemYiA"/>
+        </children>
+        <styles xmi:type="notation:TitleStyle" xmi:id="_9UwGdu8rEeSjd_SbcemYiA"/>
+        <styles xmi:type="notation:SortingStyle" xmi:id="_9UwGd-8rEeSjd_SbcemYiA"/>
+        <styles xmi:type="notation:FilteringStyle" xmi:id="_9UwGeO8rEeSjd_SbcemYiA"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_9UwGee8rEeSjd_SbcemYiA"/>
+      </children>
+      <children xmi:type="notation:BasicCompartment" xmi:id="_9UwGeu8rEeSjd_SbcemYiA" type="7019">
+        <styles xmi:type="notation:TitleStyle" xmi:id="_9UwGe-8rEeSjd_SbcemYiA"/>
+        <styles xmi:type="notation:SortingStyle" xmi:id="_9UwGfO8rEeSjd_SbcemYiA"/>
+        <styles xmi:type="notation:FilteringStyle" xmi:id="_9UwGfe8rEeSjd_SbcemYiA"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_9UwGfu8rEeSjd_SbcemYiA"/>
+      </children>
+      <element xmi:type="uml:Class" href="airlines.uml#_9T1gcO8rEeSjd_SbcemYiA"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_9Um8ge8rEeSjd_SbcemYiA" x="186" y="40"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_-vtBgO8rEeSjd_SbcemYiA" type="2008">
+      <children xmi:type="notation:DecorationNode" xmi:id="_-vtBgu8rEeSjd_SbcemYiA" type="5029"/>
+      <children xmi:type="notation:BasicCompartment" xmi:id="_-vtBg-8rEeSjd_SbcemYiA" type="7017">
+        <children xmi:type="notation:Shape" xmi:id="_ohwGsO8tEeSjd_SbcemYiA" type="3012">
+          <styles xmi:type="notation:StringListValueStyle" xmi:id="_NF9DcO8uEeSjd_SbcemYiA" name="maskLabel">
+            <stringListValue>visibility</stringListValue>
+            <stringListValue>name</stringListValue>
+            <stringListValue>type</stringListValue>
+            <stringListValue>derived</stringListValue>
+          </styles>
+          <element xmi:type="uml:Property" href="airlines.uml#_ohuRgO8tEeSjd_SbcemYiA"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_ohwGse8tEeSjd_SbcemYiA"/>
+        </children>
+        <styles xmi:type="notation:TitleStyle" xmi:id="_-vtBhO8rEeSjd_SbcemYiA"/>
+        <styles xmi:type="notation:SortingStyle" xmi:id="_-vtBhe8rEeSjd_SbcemYiA"/>
+        <styles xmi:type="notation:FilteringStyle" xmi:id="_-vtBhu8rEeSjd_SbcemYiA"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_-vtBh-8rEeSjd_SbcemYiA"/>
+      </children>
+      <children xmi:type="notation:BasicCompartment" xmi:id="_-vtBiO8rEeSjd_SbcemYiA" type="7018">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_tlOdEO8sEeSjd_SbcemYiA" source="PapyrusCSSForceValue">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_tlOdEe8sEeSjd_SbcemYiA" key="collapsed" value="true"/>
+        </eAnnotations>
+        <styles xmi:type="notation:TitleStyle" xmi:id="_-vtBie8rEeSjd_SbcemYiA"/>
+        <styles xmi:type="notation:SortingStyle" xmi:id="_-vtBiu8rEeSjd_SbcemYiA"/>
+        <styles xmi:type="notation:FilteringStyle" xmi:id="_-vtBi-8rEeSjd_SbcemYiA"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_-vtBjO8rEeSjd_SbcemYiA"/>
+      </children>
+      <children xmi:type="notation:BasicCompartment" xmi:id="_-vtBje8rEeSjd_SbcemYiA" type="7019">
+        <styles xmi:type="notation:TitleStyle" xmi:id="_-vtBju8rEeSjd_SbcemYiA"/>
+        <styles xmi:type="notation:SortingStyle" xmi:id="_-vtokO8rEeSjd_SbcemYiA"/>
+        <styles xmi:type="notation:FilteringStyle" xmi:id="_-vtoke8rEeSjd_SbcemYiA"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_-vtoku8rEeSjd_SbcemYiA"/>
+      </children>
+      <element xmi:type="uml:Class" href="airlines.uml#_-vrzYO8rEeSjd_SbcemYiA"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_-vtBge8rEeSjd_SbcemYiA" x="214" y="360"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_Fbp8IO8sEeSjd_SbcemYiA" type="2008">
+      <children xmi:type="notation:DecorationNode" xmi:id="_FbqjMO8sEeSjd_SbcemYiA" type="5029"/>
+      <children xmi:type="notation:BasicCompartment" xmi:id="_FbqjMe8sEeSjd_SbcemYiA" type="7017">
+        <styles xmi:type="notation:TitleStyle" xmi:id="_FbqjMu8sEeSjd_SbcemYiA"/>
+        <styles xmi:type="notation:SortingStyle" xmi:id="_FbqjM-8sEeSjd_SbcemYiA"/>
+        <styles xmi:type="notation:FilteringStyle" xmi:id="_FbqjNO8sEeSjd_SbcemYiA"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_FbqjNe8sEeSjd_SbcemYiA"/>
+      </children>
+      <children xmi:type="notation:BasicCompartment" xmi:id="_FbqjNu8sEeSjd_SbcemYiA" type="7018">
+        <styles xmi:type="notation:TitleStyle" xmi:id="_FbqjN-8sEeSjd_SbcemYiA"/>
+        <styles xmi:type="notation:SortingStyle" xmi:id="_FbqjOO8sEeSjd_SbcemYiA"/>
+        <styles xmi:type="notation:FilteringStyle" xmi:id="_FbqjOe8sEeSjd_SbcemYiA"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_FbqjOu8sEeSjd_SbcemYiA"/>
+      </children>
+      <children xmi:type="notation:BasicCompartment" xmi:id="_FbqjO-8sEeSjd_SbcemYiA" type="7019">
+        <styles xmi:type="notation:TitleStyle" xmi:id="_FbqjPO8sEeSjd_SbcemYiA"/>
+        <styles xmi:type="notation:SortingStyle" xmi:id="_FbqjPe8sEeSjd_SbcemYiA"/>
+        <styles xmi:type="notation:FilteringStyle" xmi:id="_FbqjPu8sEeSjd_SbcemYiA"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_FbqjP-8sEeSjd_SbcemYiA"/>
+      </children>
+      <element xmi:type="uml:Class" href="airlines.uml#_FboG8O8sEeSjd_SbcemYiA"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Fbp8Ie8sEeSjd_SbcemYiA" x="40" y="194"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_GX5h8O8sEeSjd_SbcemYiA" type="2008">
+      <children xmi:type="notation:DecorationNode" xmi:id="_GX5h8u8sEeSjd_SbcemYiA" type="5029"/>
+      <children xmi:type="notation:BasicCompartment" xmi:id="_GX5h8-8sEeSjd_SbcemYiA" type="7017">
+        <styles xmi:type="notation:TitleStyle" xmi:id="_GX5h9O8sEeSjd_SbcemYiA"/>
+        <styles xmi:type="notation:SortingStyle" xmi:id="_GX5h9e8sEeSjd_SbcemYiA"/>
+        <styles xmi:type="notation:FilteringStyle" xmi:id="_GX5h9u8sEeSjd_SbcemYiA"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GX5h9-8sEeSjd_SbcemYiA"/>
+      </children>
+      <children xmi:type="notation:BasicCompartment" xmi:id="_GX5h-O8sEeSjd_SbcemYiA" type="7018">
+        <styles xmi:type="notation:TitleStyle" xmi:id="_GX5h-e8sEeSjd_SbcemYiA"/>
+        <styles xmi:type="notation:SortingStyle" xmi:id="_GX5h-u8sEeSjd_SbcemYiA"/>
+        <styles xmi:type="notation:FilteringStyle" xmi:id="_GX5h--8sEeSjd_SbcemYiA"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GX5h_O8sEeSjd_SbcemYiA"/>
+      </children>
+      <children xmi:type="notation:BasicCompartment" xmi:id="_GX5h_e8sEeSjd_SbcemYiA" type="7019">
+        <styles xmi:type="notation:TitleStyle" xmi:id="_GX5h_u8sEeSjd_SbcemYiA"/>
+        <styles xmi:type="notation:SortingStyle" xmi:id="_GX5h_-8sEeSjd_SbcemYiA"/>
+        <styles xmi:type="notation:FilteringStyle" xmi:id="_GX5iAO8sEeSjd_SbcemYiA"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GX5iAe8sEeSjd_SbcemYiA"/>
+      </children>
+      <element xmi:type="uml:Class" href="airlines.uml#_GX4T0O8sEeSjd_SbcemYiA"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GX5h8e8sEeSjd_SbcemYiA" x="400" y="194"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_Vtf9gO8tEeSjd_SbcemYiA" type="2010">
+      <children xmi:type="notation:DecorationNode" xmi:id="_Vtf9gu8tEeSjd_SbcemYiA" type="5035"/>
+      <children xmi:type="notation:BasicCompartment" xmi:id="_Vtf9g-8tEeSjd_SbcemYiA" type="7020">
+        <styles xmi:type="notation:TitleStyle" xmi:id="_Vtf9hO8tEeSjd_SbcemYiA"/>
+        <styles xmi:type="notation:SortingStyle" xmi:id="_Vtf9he8tEeSjd_SbcemYiA"/>
+        <styles xmi:type="notation:FilteringStyle" xmi:id="_Vtf9hu8tEeSjd_SbcemYiA"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Vtf9h-8tEeSjd_SbcemYiA"/>
+      </children>
+      <children xmi:type="notation:BasicCompartment" xmi:id="_Vtf9iO8tEeSjd_SbcemYiA" type="7021">
+        <styles xmi:type="notation:TitleStyle" xmi:id="_Vtf9ie8tEeSjd_SbcemYiA"/>
+        <styles xmi:type="notation:SortingStyle" xmi:id="_Vtf9iu8tEeSjd_SbcemYiA"/>
+        <styles xmi:type="notation:FilteringStyle" xmi:id="_Vtf9i-8tEeSjd_SbcemYiA"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Vtf9jO8tEeSjd_SbcemYiA"/>
+      </children>
+      <element xmi:type="uml:DataType" href="airlines.uml#_VtevYO8tEeSjd_SbcemYiA"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Vtf9ge8tEeSjd_SbcemYiA" x="420" y="40"/>
+    </children>
+    <styles xmi:type="notation:StringValueStyle" xmi:id="_1SzCMe8rEeSjd_SbcemYiA" name="diagram_compatibility_version" stringValue="1.0.0"/>
+    <styles xmi:type="notation:DiagramStyle" xmi:id="_1SzCMu8rEeSjd_SbcemYiA"/>
+    <styles xmi:type="style:PapyrusViewStyle" xmi:id="_1SzCM-8rEeSjd_SbcemYiA">
+      <owner xmi:type="uml:Model" href="airlines.uml#_1L8zUO8rEeSjd_SbcemYiA"/>
+    </styles>
+    <element xmi:type="uml:Model" href="airlines.uml#_1L8zUO8rEeSjd_SbcemYiA"/>
+    <edges xmi:type="notation:Connector" xmi:id="_Iyxo8O8sEeSjd_SbcemYiA" type="4002" source="_Fbp8IO8sEeSjd_SbcemYiA" target="_-vtBgO8rEeSjd_SbcemYiA">
+      <children xmi:type="notation:DecorationNode" xmi:id="_IyyQAO8sEeSjd_SbcemYiA" type="6007">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_IyyQAe8sEeSjd_SbcemYiA" y="40"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_Iyxo8e8sEeSjd_SbcemYiA"/>
+      <element xmi:type="uml:Generalization" href="airlines.uml#_IyU9AO8sEeSjd_SbcemYiA"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_Iyxo8u8sEeSjd_SbcemYiA" points="[0, 0, -152, -60]$[152, 60, 0, 0]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_IzeMgO8sEeSjd_SbcemYiA" id="(0.5,1.0)"/>
+      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_QztZgO8sEeSjd_SbcemYiA" id="(0.24324324324324326,0.0)"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_J0asIO8sEeSjd_SbcemYiA" type="4002" source="_GX5h8O8sEeSjd_SbcemYiA" target="_-vtBgO8rEeSjd_SbcemYiA">
+      <children xmi:type="notation:DecorationNode" xmi:id="_J0bTMO8sEeSjd_SbcemYiA" type="6007">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_J0bTMe8sEeSjd_SbcemYiA" y="40"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_J0asIe8sEeSjd_SbcemYiA"/>
+      <element xmi:type="uml:Generalization" href="airlines.uml#_J0Y28O8sEeSjd_SbcemYiA"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_J0asIu8sEeSjd_SbcemYiA" points="[0, 0, 153, -60]$[-153, 60, 0, 0]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_J0j2EO8sEeSjd_SbcemYiA" id="(0.5,1.0)"/>
+      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_QzsycO8sEeSjd_SbcemYiA" id="(0.7477477477477478,0.0)"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_Lke7kO8sEeSjd_SbcemYiA" type="4001" source="_9Um8gO8rEeSjd_SbcemYiA" target="_-vtBgO8rEeSjd_SbcemYiA">
+      <children xmi:type="notation:DecorationNode" xmi:id="_LkfioO8sEeSjd_SbcemYiA" type="6001">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_LkgJsO8sEeSjd_SbcemYiA" y="-20"/>
+      </children>
+      <children xmi:type="notation:DecorationNode" xmi:id="_LkgJse8sEeSjd_SbcemYiA" type="6002">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_LkgJsu8sEeSjd_SbcemYiA" y="20"/>
+      </children>
+      <children xmi:type="notation:DecorationNode" xmi:id="_LkgJs-8sEeSjd_SbcemYiA" type="6003">
+        <styles xmi:type="notation:StringListValueStyle" xmi:id="_bOTwIO8sEeSjd_SbcemYiA" name="maskLabel">
+          <stringListValue>derived</stringListValue>
+        </styles>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_LkgJtO8sEeSjd_SbcemYiA" y="-20"/>
+      </children>
+      <children xmi:type="notation:DecorationNode" xmi:id="_LkgJte8sEeSjd_SbcemYiA" type="6005">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_LkgwwO8sEeSjd_SbcemYiA" y="20"/>
+      </children>
+      <children xmi:type="notation:DecorationNode" xmi:id="_Lkgwwe8sEeSjd_SbcemYiA" type="6033">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_Lkgwwu8sEeSjd_SbcemYiA" y="20"/>
+      </children>
+      <children xmi:type="notation:DecorationNode" xmi:id="_Lkgww-8sEeSjd_SbcemYiA" type="6034">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_LkgwxO8sEeSjd_SbcemYiA" y="-20"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_Lke7ke8sEeSjd_SbcemYiA"/>
+      <element xmi:type="uml:Association" href="airlines.uml#_Lkb4QO8sEeSjd_SbcemYiA"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_Lke7ku8sEeSjd_SbcemYiA" points="[0, 0, 0, -220]$[0, 220, 0, 0]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_QztZge8sEeSjd_SbcemYiA" id="(0.49700598802395207,1.0)"/>
+      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_QzuAkO8sEeSjd_SbcemYiA" id="(0.4954954954954955,0.0)"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_9w9PYO8tEeSjd_SbcemYiA" type="4001" source="_9Um8gO8rEeSjd_SbcemYiA" target="_Fbp8IO8sEeSjd_SbcemYiA">
+      <children xmi:type="notation:DecorationNode" xmi:id="_9xCH4O8tEeSjd_SbcemYiA" type="6001">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_9xCH4e8tEeSjd_SbcemYiA" y="-20"/>
+      </children>
+      <children xmi:type="notation:DecorationNode" xmi:id="_9xCu8O8tEeSjd_SbcemYiA" type="6002">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_9xCu8e8tEeSjd_SbcemYiA" y="20"/>
+      </children>
+      <children xmi:type="notation:DecorationNode" xmi:id="_9xDWAO8tEeSjd_SbcemYiA" type="6003">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_9xDWAe8tEeSjd_SbcemYiA" y="-20"/>
+      </children>
+      <children xmi:type="notation:DecorationNode" xmi:id="_9xD9EO8tEeSjd_SbcemYiA" type="6005">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_9xD9Ee8tEeSjd_SbcemYiA" y="20"/>
+      </children>
+      <children xmi:type="notation:DecorationNode" xmi:id="_9xD9Eu8tEeSjd_SbcemYiA" type="6033">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_9xD9E-8tEeSjd_SbcemYiA" y="20"/>
+      </children>
+      <children xmi:type="notation:DecorationNode" xmi:id="_9xD9FO8tEeSjd_SbcemYiA" type="6034">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_9xD9Fe8tEeSjd_SbcemYiA" y="-20"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_9w9PYe8tEeSjd_SbcemYiA"/>
+      <element xmi:type="uml:Association" href="airlines.uml#_9w1TkO8tEeSjd_SbcemYiA"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_9w9PYu8tEeSjd_SbcemYiA" points="[0, 0, 136, -60]$[-137, 30, -1, -30]$[-136, 60, 0, 0]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_9xbwgO8tEeSjd_SbcemYiA" id="(0.24550898203592814,1.0)"/>
+      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_9xcXkO8tEeSjd_SbcemYiA" id="(0.5,0.0)"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_B8VDoO8uEeSjd_SbcemYiA" type="4001" source="_9Um8gO8rEeSjd_SbcemYiA" target="_GX5h8O8sEeSjd_SbcemYiA">
+      <children xmi:type="notation:DecorationNode" xmi:id="_B8W40O8uEeSjd_SbcemYiA" type="6001">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_B8Xf4O8uEeSjd_SbcemYiA" y="-20"/>
+      </children>
+      <children xmi:type="notation:DecorationNode" xmi:id="_B8Xf4e8uEeSjd_SbcemYiA" type="6002">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_B8Xf4u8uEeSjd_SbcemYiA" y="20"/>
+      </children>
+      <children xmi:type="notation:DecorationNode" xmi:id="_B8YG8O8uEeSjd_SbcemYiA" type="6003">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_B8YG8e8uEeSjd_SbcemYiA" y="-20"/>
+      </children>
+      <children xmi:type="notation:DecorationNode" xmi:id="_B8YG8u8uEeSjd_SbcemYiA" type="6005">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_B8YG8-8uEeSjd_SbcemYiA" y="20"/>
+      </children>
+      <children xmi:type="notation:DecorationNode" xmi:id="_B8YuAO8uEeSjd_SbcemYiA" type="6033">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_B8YuAe8uEeSjd_SbcemYiA" y="20"/>
+      </children>
+      <children xmi:type="notation:DecorationNode" xmi:id="_B8YuAu8uEeSjd_SbcemYiA" type="6034">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_B8YuA-8uEeSjd_SbcemYiA" y="-20"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_B8VDoe8uEeSjd_SbcemYiA"/>
+      <element xmi:type="uml:Association" href="airlines.uml#_B8O9AO8uEeSjd_SbcemYiA"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_B8VDou8uEeSjd_SbcemYiA" points="[0, 0, -138, -60]$[138, 30, 0, -30]$[138, 60, 0, 0]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_3LTUkO8uEeSjd_SbcemYiA" id="(0.7485029940119761,1.0)"/>
+      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_3LT7oO8uEeSjd_SbcemYiA" id="(0.49,0.0)"/>
+    </edges>
+  </notation:Diagram>
+  <css:ModelStyleSheets xmi:id="_TPDakO8sEeSjd_SbcemYiA"/>
+</xmi:XMI>
