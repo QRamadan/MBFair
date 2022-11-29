@@ -10,8 +10,9 @@ In this file, we present the artifact used in our paper. The submission includes
 
 - Profile: [The UMLfair Profile](https://github.com/confFair/project/blob/master/profile.zip)
 - Source code of our MBFair tool
-- Artifacts: [The delivery system case study](https://github.com/QRamadan/MBFair/raw/windows/DeliveryManagementSystem.zip)
-- Artifacts: [The loan management system case study](https://github.com/QRamadan/MBFair/raw/windows/LoanManagementSystem.zip)
+- Artifacts: [The delivery system case study](https://github.com/QRamadan/MBFair/tree/linux/artifacts/delivery_system)
+- Artifacts: [The loan management system case study](https://github.com/QRamadan/MBFair/tree/linux/artifacts/loand_management)
+- Artifacts: [Bank management system](https://github.com/QRamadan/MBFair/tree/linux/artifacts/bank_management)
 
 The artifacts of each case study contains:
 - A (.uml) file: the UML model of the system annotated with the UMLfair profile.
