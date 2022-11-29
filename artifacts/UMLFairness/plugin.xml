@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated UMLfair -->
+      <package
+            uri="http://koblenz.de/umlfair/2020/1.0"
+            class="UMLFairness.UMLFairnessPackage"
+            genModel="UMLfair.genmodel"/>
+   </extension>
+
+</plugin>

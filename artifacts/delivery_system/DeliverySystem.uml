@@ -1,0 +1,459 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:UMLFairness="http://koblenz.de/umlfair/2020/1.0" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http://koblenz.de/umlfair/2020/1.0 ../UMLFairness/model.profile.uml#_34Z2UL1SEemhV-rmp0ri8g">
+  <uml:Model xmi:id="__MIOQJbUEemWSbyqc1bPkA" name="amazon">
+    <packagedElement xmi:type="uml:Class" xmi:id="_K8hTIJbVEemWSbyqc1bPkA" name="CustomerProfile" classifierBehavior="_av42gJbbEemWSbyqc1bPkA">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_XBoDwJbVEemWSbyqc1bPkA" name="primeCustomer" isStatic="true" type="__6n2gJbVEemWSbyqc1bPkA"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_MVVDsJbWEemWSbyqc1bPkA" name="billingAddress" isStatic="true" type="_GhUdsJbWEemWSbyqc1bPkA"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_fbDXYJbWEemWSbyqc1bPkA" name="totalPriceOfItems" isStatic="true" type="_GhUdsJbWEemWSbyqc1bPkA"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_fAshMJbXEemWSbyqc1bPkA" name="freeDelivery" isStatic="true" type="__6n2gJbVEemWSbyqc1bPkA"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_MdxjIJbYEemWSbyqc1bPkA" name="cust" type="_M1bVgJbVEemWSbyqc1bPkA" association="_MdsDkJbYEemWSbyqc1bPkA"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_xhNuoPwQEeqKdo14JvXa6A" name="age" isStatic="true" type="_GhUdsJbWEemWSbyqc1bPkA"/>
+      <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_av42gJbbEemWSbyqc1bPkA" name="CustomerProfileStateMachine">
+        <region xmi:type="uml:Region" xmi:id="_cNAUwJbbEemWSbyqc1bPkA" name="Region1">
+          <transition xmi:type="uml:Transition" xmi:id="_m6OscJbbEemWSbyqc1bPkA" source="_goPJ8JbbEemWSbyqc1bPkA" target="_hipjwJbbEemWSbyqc1bPkA"/>
+          <transition xmi:type="uml:Transition" xmi:id="_aOqjUJbcEemWSbyqc1bPkA" source="_hipjwJbbEemWSbyqc1bPkA" target="_stOl0JbbEemWSbyqc1bPkA">
+            <effect xmi:type="uml:OpaqueBehavior" xmi:id="_5oR0sOxfEeqS2fX8IJc7JA" name="freeDelivery=false">
+              <language>JAVA</language>
+              <body>freeDelivery=false</body>
+            </effect>
+            <trigger xmi:type="uml:Trigger" xmi:id="_Sdl24JbgEemWSbyqc1bPkA" name="pay()" event="_R-F3cJbgEemWSbyqc1bPkA"/>
+          </transition>
+          <transition xmi:type="uml:Transition" xmi:id="_YGG-kJbgEemWSbyqc1bPkA" source="_stOl0JbbEemWSbyqc1bPkA" target="_hipjwJbbEemWSbyqc1bPkA">
+            <effect xmi:type="uml:OpaqueBehavior" xmi:id="_gcFyEJbgEemWSbyqc1bPkA" name="cust.transactionCompleted">
+              <language>JAVA</language>
+              <body>cust.transactionCompleted</body>
+            </effect>
+          </transition>
+          <transition xmi:type="uml:Transition" xmi:id="_jVircJbgEemWSbyqc1bPkA" source="_hipjwJbbEemWSbyqc1bPkA" target="_h5_6gJbgEemWSbyqc1bPkA">
+            <trigger xmi:type="uml:Trigger" xmi:id="_qJ4GAJbgEemWSbyqc1bPkA" name="done" event="_ppeusJbgEemWSbyqc1bPkA"/>
+          </transition>
+          <subvertex xmi:type="uml:Pseudostate" xmi:id="_goPJ8JbbEemWSbyqc1bPkA" name="Initial1"/>
+          <subvertex xmi:type="uml:State" xmi:id="_hipjwJbbEemWSbyqc1bPkA" name="WaitForRequest"/>
+          <subvertex xmi:type="uml:State" xmi:id="_stOl0JbbEemWSbyqc1bPkA" name="PaymentStateMachine">
+            <region xmi:type="uml:Region" xmi:id="_vrGsMJbbEemWSbyqc1bPkA" name="Region1">
+              <transition xmi:type="uml:Transition" xmi:id="_GcCGUJbcEemWSbyqc1bPkA" source="_vrMy0JbbEemWSbyqc1bPkA" target="_zOPbwJbbEemWSbyqc1bPkA"/>
+              <transition xmi:type="uml:Transition" xmi:id="_uv8PAJbcEemWSbyqc1bPkA" guard="_gB4psJbdEemWSbyqc1bPkA" source="_zOPbwJbbEemWSbyqc1bPkA" target="_dJWy0JbcEemWSbyqc1bPkA">
+                <ownedRule xmi:type="uml:Constraint" xmi:id="_gB4psJbdEemWSbyqc1bPkA" name="primeCustomer==true &amp;&amp; totalPriceOfItems >=35 &amp;&amp; billingAddress>=56072">
+                  <specification xmi:type="uml:OpaqueExpression" xmi:id="_gB4psZbdEemWSbyqc1bPkA" name="primeCustomer==true &amp;&amp; totalPriceOfItems >=35 &amp;&amp; billingAddress>=56072">
+                    <language>JAVA</language>
+                    <body>primeCustomer==true &amp;&amp; totalPriceOfItems >=35 &amp;&amp; billingAddress>=56072</body>
+                  </specification>
+                </ownedRule>
+                <effect xmi:type="uml:OpaqueBehavior" xmi:id="_0lwWYJbdEemWSbyqc1bPkA" name="freeDelivery=true; ">
+                  <language>JAVA</language>
+                  <body>freeDelivery=true;&#xD;
+</body>
+                </effect>
+              </transition>
+              <transition xmi:type="uml:Transition" xmi:id="_W2tBoJbfEemWSbyqc1bPkA" guard="_b8hE4JbfEemWSbyqc1bPkA" source="_zOPbwJbbEemWSbyqc1bPkA" target="_I9nK4JbfEemWSbyqc1bPkA">
+                <ownedRule xmi:type="uml:Constraint" xmi:id="_b8hE4JbfEemWSbyqc1bPkA" name="else">
+                  <specification xmi:type="uml:OpaqueExpression" xmi:id="_b8hE4ZbfEemWSbyqc1bPkA" name="else">
+                    <language>JAVA</language>
+                    <body>else</body>
+                  </specification>
+                </ownedRule>
+                <effect xmi:type="uml:OpaqueBehavior" xmi:id="_mxfqYJbfEemWSbyqc1bPkA" name="freeDelivery=false; totalPriceOfItems=+5;">
+                  <language>JAVA</language>
+                  <body>freeDelivery=false;&#xD;
+totalPriceOfItems=+5;</body>
+                </effect>
+              </transition>
+              <transition xmi:type="uml:Transition" xmi:id="_pSC7kJbfEemWSbyqc1bPkA" source="_dJWy0JbcEemWSbyqc1bPkA" target="_2gdvkJbdEemWSbyqc1bPkA"/>
+              <transition xmi:type="uml:Transition" xmi:id="_qAnRwJbfEemWSbyqc1bPkA" source="_I9nK4JbfEemWSbyqc1bPkA" target="_2gdvkJbdEemWSbyqc1bPkA"/>
+              <subvertex xmi:type="uml:Pseudostate" xmi:id="_vrMy0JbbEemWSbyqc1bPkA" name="Initial1"/>
+              <subvertex xmi:type="uml:State" xmi:id="_zOPbwJbbEemWSbyqc1bPkA" name="addingDeliveryCost"/>
+              <subvertex xmi:type="uml:State" xmi:id="_dJWy0JbcEemWSbyqc1bPkA" name="PaidWithoutDeliveryCost"/>
+              <subvertex xmi:type="uml:FinalState" xmi:id="_2gdvkJbdEemWSbyqc1bPkA" name="FinalState1"/>
+              <subvertex xmi:type="uml:State" xmi:id="_I9nK4JbfEemWSbyqc1bPkA" name="PaidWithDeliveryCost"/>
+            </region>
+          </subvertex>
+          <subvertex xmi:type="uml:FinalState" xmi:id="_h5_6gJbgEemWSbyqc1bPkA" name="FinalState1"/>
+        </region>
+      </ownedBehavior>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_siG3wJbXEemWSbyqc1bPkA" name="pay"/>
+      <ownedReception xmi:type="uml:Reception" xmi:id="__3fYEJbXEemWSbyqc1bPkA" name="done" signal="_5P5jkJbYEemWSbyqc1bPkA"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_M1bVgJbVEemWSbyqc1bPkA" name="Customer" classifierBehavior="_RoSqwJbZEemWSbyqc1bPkA">
+      <generalization xmi:type="uml:Generalization" xmi:id="_462YsOw4EeqS2fX8IJc7JA" general="_GSI_YOw4EeqS2fX8IJc7JA"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_UVWY0JbXEemWSbyqc1bPkA" name="proceedToPayment" isStatic="true" type="__6n2gJbVEemWSbyqc1bPkA"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_MdyKMJbYEemWSbyqc1bPkA" name="custProf" type="_K8hTIJbVEemWSbyqc1bPkA" association="_MdsDkJbYEemWSbyqc1bPkA"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_80zFwOw4EeqS2fX8IJc7JA" name="customerID" isStatic="true" type="_GhUdsJbWEemWSbyqc1bPkA"/>
+      <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_RoSqwJbZEemWSbyqc1bPkA" name="CustomerStateMachine">
+        <region xmi:type="uml:Region" xmi:id="_UDwnoJbZEemWSbyqc1bPkA" name="Region1">
+          <transition xmi:type="uml:Transition" xmi:id="_y_QPcJbZEemWSbyqc1bPkA" source="_kTdwcJbZEemWSbyqc1bPkA" target="_uRKIoJbZEemWSbyqc1bPkA"/>
+          <transition xmi:type="uml:Transition" xmi:id="_0NyfIJbZEemWSbyqc1bPkA" source="_jGHzkJbZEemWSbyqc1bPkA" target="_kTdwcJbZEemWSbyqc1bPkA"/>
+          <transition xmi:type="uml:Transition" xmi:id="_AmLYIJbaEemWSbyqc1bPkA" guard="_caS_UJbaEemWSbyqc1bPkA" source="_uRKIoJbZEemWSbyqc1bPkA" target="_9l3BwJbZEemWSbyqc1bPkA">
+            <ownedRule xmi:type="uml:Constraint" xmi:id="_caS_UJbaEemWSbyqc1bPkA" name="else">
+              <specification xmi:type="uml:OpaqueExpression" xmi:id="_caS_UZbaEemWSbyqc1bPkA" name="else">
+                <language>JAVA</language>
+                <body>else</body>
+              </specification>
+            </ownedRule>
+            <effect xmi:type="uml:OpaqueBehavior" xmi:id="_VI9qQJbbEemWSbyqc1bPkA" name="custProf.done">
+              <language>JAVA</language>
+              <body>custProf.done</body>
+            </effect>
+          </transition>
+          <transition xmi:type="uml:Transition" xmi:id="_GXB8cJbaEemWSbyqc1bPkA" source="_5mkhsJbZEemWSbyqc1bPkA" target="_9l3BwJbZEemWSbyqc1bPkA">
+            <effect xmi:type="uml:OpaqueBehavior" xmi:id="_QG9I8JbbEemWSbyqc1bPkA" name="custProf.done">
+              <language>JAVA</language>
+              <body>custProf.done</body>
+            </effect>
+            <trigger xmi:type="uml:Trigger" xmi:id="_JOdAEJbbEemWSbyqc1bPkA" name="transactionCompleted" event="_IwZyIJbbEemWSbyqc1bPkA"/>
+          </transition>
+          <transition xmi:type="uml:Transition" xmi:id="_IUcrYJbaEemWSbyqc1bPkA" guard="_XMk9QJbaEemWSbyqc1bPkA" source="_uRKIoJbZEemWSbyqc1bPkA" target="_5mkhsJbZEemWSbyqc1bPkA">
+            <ownedRule xmi:type="uml:Constraint" xmi:id="_XMk9QJbaEemWSbyqc1bPkA" name="proceedToPayment==true">
+              <specification xmi:type="uml:OpaqueExpression" xmi:id="_XMk9QZbaEemWSbyqc1bPkA" name="proceedToPayment==true">
+                <language>JAVA</language>
+                <body>proceedToPayment==true</body>
+              </specification>
+            </ownedRule>
+            <effect xmi:type="uml:OpaqueBehavior" xmi:id="_yXyxYJbaEemWSbyqc1bPkA" name="custProf.pay()">
+              <language>JAVA</language>
+              <body>custProf.pay()</body>
+            </effect>
+          </transition>
+          <subvertex xmi:type="uml:Pseudostate" xmi:id="_jGHzkJbZEemWSbyqc1bPkA" name="Initial1"/>
+          <subvertex xmi:type="uml:State" xmi:id="_kTdwcJbZEemWSbyqc1bPkA" name="ChoiceEntry"/>
+          <subvertex xmi:type="uml:Pseudostate" xmi:id="_uRKIoJbZEemWSbyqc1bPkA" name="proceedToPayment?" kind="choice"/>
+          <subvertex xmi:type="uml:State" xmi:id="_5mkhsJbZEemWSbyqc1bPkA" name="PaymentRequestSent"/>
+          <subvertex xmi:type="uml:FinalState" xmi:id="_9l3BwJbZEemWSbyqc1bPkA" name="FinalState1"/>
+        </region>
+      </ownedBehavior>
+      <ownedReception xmi:type="uml:Reception" xmi:id="_3VkaUJbXEemWSbyqc1bPkA" name="transactionCompleted" signal="_-Q6mYJbYEemWSbyqc1bPkA"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_rt0mAJbVEemWSbyqc1bPkA" name="signals">
+      <packagedElement xmi:type="uml:Signal" xmi:id="_5P5jkJbYEemWSbyqc1bPkA" name="done"/>
+      <packagedElement xmi:type="uml:Signal" xmi:id="_-Q6mYJbYEemWSbyqc1bPkA" name="transactionCompleted"/>
+      <packagedElement xmi:type="uml:Signal" xmi:id="_8pAtgOwtEeqS2fX8IJc7JA" name="loginDenied"/>
+      <packagedElement xmi:type="uml:Signal" xmi:id="_AfWF4OwuEeqS2fX8IJc7JA" name="loggedSuccessfully"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_vNubYJbVEemWSbyqc1bPkA" name="events">
+      <packagedElement xmi:type="uml:SignalEvent" xmi:id="_IwZyIJbbEemWSbyqc1bPkA" name="transactionCompleted" signal="_-Q6mYJbYEemWSbyqc1bPkA"/>
+      <packagedElement xmi:type="uml:CallEvent" xmi:id="_R-F3cJbgEemWSbyqc1bPkA" name="pay()" operation="_siG3wJbXEemWSbyqc1bPkA"/>
+      <packagedElement xmi:type="uml:SignalEvent" xmi:id="_ppeusJbgEemWSbyqc1bPkA" name="done" signal="_5P5jkJbYEemWSbyqc1bPkA"/>
+      <packagedElement xmi:type="uml:SignalEvent" xmi:id="_kNEAYOxLEeqS2fX8IJc7JA" name="loggedSuccessfully" signal="_AfWF4OwuEeqS2fX8IJc7JA"/>
+      <packagedElement xmi:type="uml:SignalEvent" xmi:id="_qH_twOxLEeqS2fX8IJc7JA" name="loginDenied" signal="_8pAtgOwtEeqS2fX8IJc7JA"/>
+      <packagedElement xmi:type="uml:CallEvent" xmi:id="_CaXL0OxUEeqS2fX8IJc7JA" name="login()" operation="_hmpSYOw4EeqS2fX8IJc7JA"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_xu2UUJbVEemWSbyqc1bPkA" name="dataTypes">
+      <packagedElement xmi:type="uml:DataType" xmi:id="__6n2gJbVEemWSbyqc1bPkA" name="boolean"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_GhUdsJbWEemWSbyqc1bPkA" name="int"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_MdsDkJbYEemWSbyqc1bPkA" memberEnd="_MdxjIJbYEemWSbyqc1bPkA _MdyKMJbYEemWSbyqc1bPkA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_MdvG4JbYEemWSbyqc1bPkA" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Mdvt8JbYEemWSbyqc1bPkA" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_j3FE8OwtEeqS2fX8IJc7JA" name="WebUser" isAbstract="true" classifierBehavior="_zWhIQOxKEeqS2fX8IJc7JA">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_o2UmIOwtEeqS2fX8IJc7JA" name="performLoginAction" isStatic="true" type="__6n2gJbVEemWSbyqc1bPkA"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_qcmAYOwtEeqS2fX8IJc7JA" name="asCustomer" isStatic="true" type="__6n2gJbVEemWSbyqc1bPkA"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_Bwgx0Ow5EeqS2fX8IJc7JA" name="role" type="_GSI_YOw4EeqS2fX8IJc7JA" association="_BwdHcOw5EeqS2fX8IJc7JA">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_FFhl0Ow5EeqS2fX8IJc7JA"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_FFkpIOw5EeqS2fX8IJc7JA" value="*"/>
+      </ownedAttribute>
+      <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_zWhIQOxKEeqS2fX8IJc7JA" name="UserActions">
+        <region xmi:type="uml:Region" xmi:id="_1I6S8OxKEeqS2fX8IJc7JA" name="Region1">
+          <transition xmi:type="uml:Transition" xmi:id="_CxnkUOxLEeqS2fX8IJc7JA" guard="_OvIfMOxLEeqS2fX8IJc7JA" source="_54yicOxKEeqS2fX8IJc7JA" target="_6TEqsOxKEeqS2fX8IJc7JA">
+            <ownedRule xmi:type="uml:Constraint" xmi:id="_OvIfMOxLEeqS2fX8IJc7JA" name="performLoginAction==true">
+              <specification xmi:type="uml:OpaqueExpression" xmi:id="_OvIfMexLEeqS2fX8IJc7JA" name="performLoginAction==true">
+                <language>JAVA</language>
+                <body>performLoginAction==true</body>
+              </specification>
+            </ownedRule>
+            <effect xmi:type="uml:OpaqueBehavior" xmi:id="_X0HGsOxLEeqS2fX8IJc7JA" name="role.login()">
+              <language>JAVA</language>
+              <body>role.login()</body>
+            </effect>
+          </transition>
+          <transition xmi:type="uml:Transition" xmi:id="_DeaY4OxLEeqS2fX8IJc7JA" source="_6TEqsOxKEeqS2fX8IJc7JA" target="_8wxcMOxKEeqS2fX8IJc7JA">
+            <trigger xmi:type="uml:Trigger" xmi:id="_lnvOoOxLEeqS2fX8IJc7JA" name="loggedSuccessfully" event="_kNEAYOxLEeqS2fX8IJc7JA"/>
+          </transition>
+          <transition xmi:type="uml:Transition" xmi:id="_D_UtkOxLEeqS2fX8IJc7JA" source="_6TEqsOxKEeqS2fX8IJc7JA" target="_-0NTkOxKEeqS2fX8IJc7JA">
+            <trigger xmi:type="uml:Trigger" xmi:id="_qrKFMOxLEeqS2fX8IJc7JA" name="loginDenied" event="_qH_twOxLEeqS2fX8IJc7JA"/>
+          </transition>
+          <transition xmi:type="uml:Transition" xmi:id="_EdaXwOxLEeqS2fX8IJc7JA" source="_8wxcMOxKEeqS2fX8IJc7JA" target="_BmkGcOxLEeqS2fX8IJc7JA"/>
+          <transition xmi:type="uml:Transition" xmi:id="_FAOJ4OxLEeqS2fX8IJc7JA" source="_-0NTkOxKEeqS2fX8IJc7JA" target="_BmkGcOxLEeqS2fX8IJc7JA"/>
+          <subvertex xmi:type="uml:Pseudostate" xmi:id="_54yicOxKEeqS2fX8IJc7JA" name="Initial1"/>
+          <subvertex xmi:type="uml:State" xmi:id="_6TEqsOxKEeqS2fX8IJc7JA" name="AuthorizationQuerySent"/>
+          <subvertex xmi:type="uml:State" xmi:id="_8wxcMOxKEeqS2fX8IJc7JA" name="LoggedSuccessfully"/>
+          <subvertex xmi:type="uml:State" xmi:id="_-0NTkOxKEeqS2fX8IJc7JA" name="LoginDenied"/>
+          <subvertex xmi:type="uml:FinalState" xmi:id="_BmkGcOxLEeqS2fX8IJc7JA" name="FinalState1"/>
+        </region>
+      </ownedBehavior>
+      <ownedReception xmi:type="uml:Reception" xmi:id="_t6iG4OwtEeqS2fX8IJc7JA" name="loggedSuccessfully" signal="_AfWF4OwuEeqS2fX8IJc7JA"/>
+      <ownedReception xmi:type="uml:Reception" xmi:id="_wr1J0OwtEeqS2fX8IJc7JA" name="loginDenied" signal="_8pAtgOwtEeqS2fX8IJc7JA"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_GSI_YOw4EeqS2fX8IJc7JA" name="Role" classifierBehavior="_39mWMOxMEeqS2fX8IJc7JA">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_OHWBEOw4EeqS2fX8IJc7JA" name="userID" isStatic="true" type="_GhUdsJbWEemWSbyqc1bPkA"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_QqpEQOw4EeqS2fX8IJc7JA" name="password" isStatic="true" type="_GhUdsJbWEemWSbyqc1bPkA"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_SM8kgOw4EeqS2fX8IJc7JA" name="validEntry" isStatic="true" type="__6n2gJbVEemWSbyqc1bPkA"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_U8fT8Ow4EeqS2fX8IJc7JA" name="tries" isStatic="true" type="_GhUdsJbWEemWSbyqc1bPkA"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_V3dHYOw4EeqS2fX8IJc7JA" name="roleID" isStatic="true" type="_GhUdsJbWEemWSbyqc1bPkA"/>
+      <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_39mWMOxMEeqS2fX8IJc7JA" name="LoginStateMachine">
+        <region xmi:type="uml:Region" xmi:id="_6xqZQOxMEeqS2fX8IJc7JA" name="Region1">
+          <transition xmi:type="uml:Transition" xmi:id="_XX5Z4OxNEeqS2fX8IJc7JA" source="_AVKeEOxNEeqS2fX8IJc7JA" target="_A3dS0OxNEeqS2fX8IJc7JA"/>
+          <transition xmi:type="uml:Transition" xmi:id="_X6fwoOxNEeqS2fX8IJc7JA" source="_A3dS0OxNEeqS2fX8IJc7JA" target="_GNIXAOxNEeqS2fX8IJc7JA">
+            <effect xmi:type="uml:OpaqueBehavior" xmi:id="_HclIgOxUEeqS2fX8IJc7JA" name="tries=0">
+              <language>JAVA</language>
+              <body>tries=0</body>
+            </effect>
+            <trigger xmi:type="uml:Trigger" xmi:id="_C0IWsOxUEeqS2fX8IJc7JA" name="login()" event="_CaXL0OxUEeqS2fX8IJc7JA"/>
+          </transition>
+          <transition xmi:type="uml:Transition" xmi:id="_YdGHYOxNEeqS2fX8IJc7JA" source="_GNIXAOxNEeqS2fX8IJc7JA" target="_JjM68OxNEeqS2fX8IJc7JA">
+            <effect xmi:type="uml:OpaqueBehavior" xmi:id="_yIAXoOxTEeqS2fX8IJc7JA" name="tries=tries+1">
+              <language>JAVA</language>
+              <body>tries=tries+1</body>
+            </effect>
+          </transition>
+          <transition xmi:type="uml:Transition" xmi:id="_ZFsYcOxNEeqS2fX8IJc7JA" guard="_sRjwYOxNEeqS2fX8IJc7JA" source="_JjM68OxNEeqS2fX8IJc7JA" target="_J-z44OxNEeqS2fX8IJc7JA">
+            <ownedRule xmi:type="uml:Constraint" xmi:id="_sRjwYOxNEeqS2fX8IJc7JA" name="validEntry==false &amp;&amp; tries>2">
+              <specification xmi:type="uml:OpaqueExpression" xmi:id="_sRjwYexNEeqS2fX8IJc7JA" name="validEntry==false &amp;&amp; tries>2">
+                <language>JAVA</language>
+                <body>validEntry==false &amp;&amp; tries>2</body>
+              </specification>
+            </ownedRule>
+            <effect xmi:type="uml:OpaqueBehavior" xmi:id="_apuvUOxTEeqS2fX8IJc7JA" name="webuser.loginDenied">
+              <language>JAVA</language>
+              <body>webuser.loginDenied</body>
+            </effect>
+          </transition>
+          <transition xmi:type="uml:Transition" xmi:id="_ZiYUcOxNEeqS2fX8IJc7JA" guard="_l5HY4OxTEeqS2fX8IJc7JA" source="_JjM68OxNEeqS2fX8IJc7JA" target="_LLvmEOxNEeqS2fX8IJc7JA">
+            <ownedRule xmi:type="uml:Constraint" xmi:id="_l5HY4OxTEeqS2fX8IJc7JA" name="validEntry==true &amp;&amp; tries&lt;3">
+              <specification xmi:type="uml:OpaqueExpression" xmi:id="_l5HY4exTEeqS2fX8IJc7JA" name="validEntry==true &amp;&amp; tries&lt;3">
+                <language>JAVA</language>
+                <body>validEntry==true &amp;&amp; tries&lt;3</body>
+              </specification>
+            </ownedRule>
+            <effect xmi:type="uml:OpaqueBehavior" xmi:id="_e0OZ0OxTEeqS2fX8IJc7JA" name="webuser.loggedSuccessfully">
+              <language>JAVA</language>
+              <body>webuser.loggedSuccessfully</body>
+            </effect>
+          </transition>
+          <transition xmi:type="uml:Transition" xmi:id="_a2oKkOxNEeqS2fX8IJc7JA" source="_LLvmEOxNEeqS2fX8IJc7JA" target="_SMkkgOxNEeqS2fX8IJc7JA"/>
+          <transition xmi:type="uml:Transition" xmi:id="_ztw0gOxTEeqS2fX8IJc7JA" guard="_5ly-4OxTEeqS2fX8IJc7JA" source="_JjM68OxNEeqS2fX8IJc7JA" target="_GNIXAOxNEeqS2fX8IJc7JA">
+            <ownedRule xmi:type="uml:Constraint" xmi:id="_5ly-4OxTEeqS2fX8IJc7JA" name="else">
+              <specification xmi:type="uml:OpaqueExpression" xmi:id="_5ly-4exTEeqS2fX8IJc7JA" name="else">
+                <language>JAVA</language>
+                <body>else</body>
+              </specification>
+            </ownedRule>
+          </transition>
+          <transition xmi:type="uml:Transition" xmi:id="_NoKhAOxUEeqS2fX8IJc7JA" guard="_VOh1cOxUEeqS2fX8IJc7JA" source="_SMkkgOxNEeqS2fX8IJc7JA" target="_TmwDgOxNEeqS2fX8IJc7JA">
+            <ownedRule xmi:type="uml:Constraint" xmi:id="_VOh1cOxUEeqS2fX8IJc7JA" name="webuser.asCustomer==true">
+              <specification xmi:type="uml:OpaqueExpression" xmi:id="_VOh1cexUEeqS2fX8IJc7JA" name="webuser.asCustomer==true">
+                <language>JAVA</language>
+                <body>webuser.asCustomer==true</body>
+              </specification>
+            </ownedRule>
+          </transition>
+          <transition xmi:type="uml:Transition" xmi:id="_ZMXkAOxUEeqS2fX8IJc7JA" guard="_c3mfoOxUEeqS2fX8IJc7JA" source="_SMkkgOxNEeqS2fX8IJc7JA" target="_WwCrgOxUEeqS2fX8IJc7JA">
+            <ownedRule xmi:type="uml:Constraint" xmi:id="_c3mfoOxUEeqS2fX8IJc7JA" name="else">
+              <specification xmi:type="uml:OpaqueExpression" xmi:id="_c3mfoexUEeqS2fX8IJc7JA" name="else">
+                <language>JAVA</language>
+                <body>else</body>
+              </specification>
+            </ownedRule>
+          </transition>
+          <transition xmi:type="uml:Transition" xmi:id="_d_f70OxUEeqS2fX8IJc7JA" source="_J-z44OxNEeqS2fX8IJc7JA" target="_Jzn4YOxUEeqS2fX8IJc7JA"/>
+          <transition xmi:type="uml:Transition" xmi:id="_gqXmoOxUEeqS2fX8IJc7JA" source="_TmwDgOxNEeqS2fX8IJc7JA" target="_Jzn4YOxUEeqS2fX8IJc7JA"/>
+          <transition xmi:type="uml:Transition" xmi:id="_hzSWgOxUEeqS2fX8IJc7JA" source="_WwCrgOxUEeqS2fX8IJc7JA" target="_Jzn4YOxUEeqS2fX8IJc7JA"/>
+          <subvertex xmi:type="uml:Pseudostate" xmi:id="_AVKeEOxNEeqS2fX8IJc7JA" name="Initial1"/>
+          <subvertex xmi:type="uml:State" xmi:id="_A3dS0OxNEeqS2fX8IJc7JA" name="Idle"/>
+          <subvertex xmi:type="uml:State" xmi:id="_GNIXAOxNEeqS2fX8IJc7JA" name="Logging"/>
+          <subvertex xmi:type="uml:Pseudostate" xmi:id="_JjM68OxNEeqS2fX8IJc7JA" name="Choice1" kind="choice"/>
+          <subvertex xmi:type="uml:State" xmi:id="_J-z44OxNEeqS2fX8IJc7JA" name="LoginDenied"/>
+          <subvertex xmi:type="uml:State" xmi:id="_LLvmEOxNEeqS2fX8IJc7JA" name="LoggedSuccessfully"/>
+          <subvertex xmi:type="uml:Pseudostate" xmi:id="_SMkkgOxNEeqS2fX8IJc7JA" name="Choice2" kind="choice"/>
+          <subvertex xmi:type="uml:State" xmi:id="_TmwDgOxNEeqS2fX8IJc7JA" name="LoggedAsCustomer"/>
+          <subvertex xmi:type="uml:FinalState" xmi:id="_Jzn4YOxUEeqS2fX8IJc7JA" name="FinalState1"/>
+          <subvertex xmi:type="uml:State" xmi:id="_WwCrgOxUEeqS2fX8IJc7JA" name="LoggedAsEmployee"/>
+        </region>
+      </ownedBehavior>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_hmpSYOw4EeqS2fX8IJc7JA" name="login"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_BwdHcOw5EeqS2fX8IJc7JA" memberEnd="_Bwgx0Ow5EeqS2fX8IJc7JA _Bwgx0ew5EeqS2fX8IJc7JA" navigableOwnedEnd="_Bwgx0ew5EeqS2fX8IJc7JA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_BweVkOw5EeqS2fX8IJc7JA" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_BweVkew5EeqS2fX8IJc7JA" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_Bwgx0ew5EeqS2fX8IJc7JA" name="webuser" type="_j3FE8OwtEeqS2fX8IJc7JA" association="_BwdHcOw5EeqS2fX8IJc7JA">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ElASsOw5EeqS2fX8IJc7JA" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ElHAYOw5EeqS2fX8IJc7JA" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_JlAYIOxVEeqS2fX8IJc7JA" name="Order" classifierBehavior="_Y-MIoOxVEeqS2fX8IJc7JA">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_pndnAOxgEeqS2fX8IJc7JA" name="orderId" isStatic="true" type="_GhUdsJbWEemWSbyqc1bPkA"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_vsqqsOxgEeqS2fX8IJc7JA" name="total" isStatic="true" type="_GhUdsJbWEemWSbyqc1bPkA"/>
+      <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_Y-MIoOxVEeqS2fX8IJc7JA" name="StateMachine1">
+        <region xmi:type="uml:Region" xmi:id="_aeYJAOxVEeqS2fX8IJc7JA" name="Region1">
+          <transition xmi:type="uml:Transition" xmi:id="_mb-jcOxVEeqS2fX8IJc7JA" source="_cEwQ8OxVEeqS2fX8IJc7JA" target="_dB7D0OxVEeqS2fX8IJc7JA"/>
+          <transition xmi:type="uml:Transition" xmi:id="_nAYRAOxVEeqS2fX8IJc7JA" source="_dB7D0OxVEeqS2fX8IJc7JA" target="_jGlU8OxVEeqS2fX8IJc7JA"/>
+          <transition xmi:type="uml:Transition" xmi:id="_nfsqQOxVEeqS2fX8IJc7JA" source="_jGlU8OxVEeqS2fX8IJc7JA" target="_e0TncOxVEeqS2fX8IJc7JA"/>
+          <transition xmi:type="uml:Transition" xmi:id="_oD0D8OxVEeqS2fX8IJc7JA" source="_e0TncOxVEeqS2fX8IJc7JA" target="_cin4sOxVEeqS2fX8IJc7JA"/>
+          <subvertex xmi:type="uml:Pseudostate" xmi:id="_cEwQ8OxVEeqS2fX8IJc7JA" name="Initial1"/>
+          <subvertex xmi:type="uml:FinalState" xmi:id="_cin4sOxVEeqS2fX8IJc7JA" name="FinalState1"/>
+          <subvertex xmi:type="uml:State" xmi:id="_dB7D0OxVEeqS2fX8IJc7JA" name="OrderCreated"/>
+          <subvertex xmi:type="uml:State" xmi:id="_e0TncOxVEeqS2fX8IJc7JA" name="OrderDelivered"/>
+          <subvertex xmi:type="uml:State" xmi:id="_jGlU8OxVEeqS2fX8IJc7JA" name="OrderShipped"/>
+        </region>
+      </ownedBehavior>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_RFMzIOxVEeqS2fX8IJc7JA" memberEnd="_RFMzI-xVEeqS2fX8IJc7JA _RFMzJOxVEeqS2fX8IJc7JA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_RFMzIexVEeqS2fX8IJc7JA" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_RFMzIuxVEeqS2fX8IJc7JA" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_RFMzJOxVEeqS2fX8IJc7JA" name="customerprofile" type="_K8hTIJbVEemWSbyqc1bPkA" association="_RFMzIOxVEeqS2fX8IJc7JA">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_sWZ2UOxcEeqS2fX8IJc7JA" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_sWkOYOxcEeqS2fX8IJc7JA" value="1"/>
+      </ownedEnd>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_RFMzI-xVEeqS2fX8IJc7JA" name="order" type="_JlAYIOxVEeqS2fX8IJc7JA" association="_RFMzIOxVEeqS2fX8IJc7JA">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_tVyPsOxcEeqS2fX8IJc7JA"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_tV8nwOxcEeqS2fX8IJc7JA" value="*"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_M4_0QOxcEeqS2fX8IJc7JA" name="Payment" classifierBehavior="_ixbDoOxdEeqS2fX8IJc7JA">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_2UFDkOxgEeqS2fX8IJc7JA" name="paymentID" isStatic="true" type="_GhUdsJbWEemWSbyqc1bPkA"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_4811kOxgEeqS2fX8IJc7JA" name="paid" isStatic="true" type="__6n2gJbVEemWSbyqc1bPkA"/>
+      <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_ixbDoOxdEeqS2fX8IJc7JA" name="PaymentStateMachine">
+        <region xmi:type="uml:Region" xmi:id="_kM7_YOxdEeqS2fX8IJc7JA" name="Region1">
+          <transition xmi:type="uml:Transition" xmi:id="_tvG5MOxdEeqS2fX8IJc7JA" source="_k5TWIOxdEeqS2fX8IJc7JA" target="_lt_icOxdEeqS2fX8IJc7JA"/>
+          <transition xmi:type="uml:Transition" xmi:id="_uQ5-sOxdEeqS2fX8IJc7JA" source="_lt_icOxdEeqS2fX8IJc7JA" target="_pYSp8OxdEeqS2fX8IJc7JA"/>
+          <transition xmi:type="uml:Transition" xmi:id="_u8nOIOxdEeqS2fX8IJc7JA" source="_pYSp8OxdEeqS2fX8IJc7JA" target="_lOEsQOxdEeqS2fX8IJc7JA"/>
+          <subvertex xmi:type="uml:Pseudostate" xmi:id="_k5TWIOxdEeqS2fX8IJc7JA" name="Initial1"/>
+          <subvertex xmi:type="uml:FinalState" xmi:id="_lOEsQOxdEeqS2fX8IJc7JA" name="FinalState1"/>
+          <subvertex xmi:type="uml:State" xmi:id="_lt_icOxdEeqS2fX8IJc7JA" name="PaymentMethodSelected"/>
+          <subvertex xmi:type="uml:State" xmi:id="_pYSp8OxdEeqS2fX8IJc7JA" name="PaymentDetailsInserted"/>
+        </region>
+      </ownedBehavior>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_PFzDAOxcEeqS2fX8IJc7JA" name="ShoppingCart" classifierBehavior="_4sBSsOxdEeqS2fX8IJc7JA">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_c6xR8OxgEeqS2fX8IJc7JA" name="hasItems" isStatic="true" type="__6n2gJbVEemWSbyqc1bPkA"/>
+      <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_4sBSsOxdEeqS2fX8IJc7JA" name="ShoppingCartStateMachine">
+        <region xmi:type="uml:Region" xmi:id="_6ZTT4OxdEeqS2fX8IJc7JA" name="Region1">
+          <transition xmi:type="uml:Transition" xmi:id="_I4COUOxeEeqS2fX8IJc7JA" source="_8_tVcOxdEeqS2fX8IJc7JA" target="_9v2Y8OxdEeqS2fX8IJc7JA"/>
+          <transition xmi:type="uml:Transition" xmi:id="_JhUb4OxeEeqS2fX8IJc7JA" source="_9v2Y8OxdEeqS2fX8IJc7JA" target="_AAmTkOxeEeqS2fX8IJc7JA"/>
+          <transition xmi:type="uml:Transition" xmi:id="_KJ--YOxeEeqS2fX8IJc7JA" source="_AAmTkOxeEeqS2fX8IJc7JA" target="_DZ5xsOxeEeqS2fX8IJc7JA"/>
+          <transition xmi:type="uml:Transition" xmi:id="_Kz9IcOxeEeqS2fX8IJc7JA" source="_DZ5xsOxeEeqS2fX8IJc7JA" target="_9U9MsOxdEeqS2fX8IJc7JA"/>
+          <subvertex xmi:type="uml:Pseudostate" xmi:id="_8_tVcOxdEeqS2fX8IJc7JA" name="Initial1"/>
+          <subvertex xmi:type="uml:FinalState" xmi:id="_9U9MsOxdEeqS2fX8IJc7JA" name="FinalState1"/>
+          <subvertex xmi:type="uml:State" xmi:id="_9v2Y8OxdEeqS2fX8IJc7JA" name="Empty"/>
+          <subvertex xmi:type="uml:State" xmi:id="_AAmTkOxeEeqS2fX8IJc7JA" name="ItemsAdded"/>
+          <subvertex xmi:type="uml:State" xmi:id="_DZ5xsOxeEeqS2fX8IJc7JA" name="ProcceedToPayment"/>
+        </region>
+      </ownedBehavior>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_RTEL0OxcEeqS2fX8IJc7JA" name="LineItem" classifierBehavior="_Pc_JEOxeEeqS2fX8IJc7JA">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_htG_kOxgEeqS2fX8IJc7JA" name="quantity" isStatic="true" type="_GhUdsJbWEemWSbyqc1bPkA"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_kM-7UOxgEeqS2fX8IJc7JA" name="price" isStatic="true" type="_GhUdsJbWEemWSbyqc1bPkA"/>
+      <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_Pc_JEOxeEeqS2fX8IJc7JA" name="ItemLineStateMachine">
+        <region xmi:type="uml:Region" xmi:id="_RzRD8OxeEeqS2fX8IJc7JA" name="Region1">
+          <transition xmi:type="uml:Transition" xmi:id="_duQPQOxeEeqS2fX8IJc7JA" source="_S_JoQOxeEeqS2fX8IJc7JA" target="_UNlxUOxeEeqS2fX8IJc7JA"/>
+          <transition xmi:type="uml:Transition" xmi:id="_eLiBIOxeEeqS2fX8IJc7JA" source="_UNlxUOxeEeqS2fX8IJc7JA" target="_aN7jIOxeEeqS2fX8IJc7JA"/>
+          <transition xmi:type="uml:Transition" xmi:id="_epUwYOxeEeqS2fX8IJc7JA" source="_aN7jIOxeEeqS2fX8IJc7JA" target="_TUfmIOxeEeqS2fX8IJc7JA"/>
+          <subvertex xmi:type="uml:Pseudostate" xmi:id="_S_JoQOxeEeqS2fX8IJc7JA" name="Initial1"/>
+          <subvertex xmi:type="uml:FinalState" xmi:id="_TUfmIOxeEeqS2fX8IJc7JA" name="FinalState1"/>
+          <subvertex xmi:type="uml:State" xmi:id="_UNlxUOxeEeqS2fX8IJc7JA" name="ItemSelected"/>
+          <subvertex xmi:type="uml:State" xmi:id="_aN7jIOxeEeqS2fX8IJc7JA" name="ItemAddedToShoppingCart"/>
+        </region>
+      </ownedBehavior>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_UBb2kOxcEeqS2fX8IJc7JA" name="Product" classifierBehavior="_jSNnEOxeEeqS2fX8IJc7JA">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_BfHYoOxhEeqS2fX8IJc7JA" name="productID" isStatic="true" type="_GhUdsJbWEemWSbyqc1bPkA"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_DmmCgOxhEeqS2fX8IJc7JA" name="supplierID" isStatic="true" type="_GhUdsJbWEemWSbyqc1bPkA"/>
+      <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_jSNnEOxeEeqS2fX8IJc7JA" name="ProductStateMachine">
+        <region xmi:type="uml:Region" xmi:id="_k28JMOxeEeqS2fX8IJc7JA" name="Region1">
+          <transition xmi:type="uml:Transition" xmi:id="_tf14sOxeEeqS2fX8IJc7JA" source="_msofgOxeEeqS2fX8IJc7JA" target="_niABQOxeEeqS2fX8IJc7JA"/>
+          <transition xmi:type="uml:Transition" xmi:id="_uHGF8OxeEeqS2fX8IJc7JA" source="_niABQOxeEeqS2fX8IJc7JA" target="_r9pGIOxeEeqS2fX8IJc7JA"/>
+          <transition xmi:type="uml:Transition" xmi:id="_ursAwOxeEeqS2fX8IJc7JA" source="_r9pGIOxeEeqS2fX8IJc7JA" target="_nBqUUOxeEeqS2fX8IJc7JA"/>
+          <subvertex xmi:type="uml:Pseudostate" xmi:id="_msofgOxeEeqS2fX8IJc7JA" name="Initial1"/>
+          <subvertex xmi:type="uml:FinalState" xmi:id="_nBqUUOxeEeqS2fX8IJc7JA" name="FinalState1"/>
+          <subvertex xmi:type="uml:State" xmi:id="_niABQOxeEeqS2fX8IJc7JA" name="Supplied"/>
+          <subvertex xmi:type="uml:State" xmi:id="_r9pGIOxeEeqS2fX8IJc7JA" name="Stored"/>
+        </region>
+      </ownedBehavior>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_ZJPd4OxcEeqS2fX8IJc7JA" memberEnd="_ZJPd4-xcEeqS2fX8IJc7JA _ZJQsAOxcEeqS2fX8IJc7JA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_ZJPd4excEeqS2fX8IJc7JA" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_ZJPd4uxcEeqS2fX8IJc7JA" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_ZJQsAOxcEeqS2fX8IJc7JA" name="order" type="_JlAYIOxVEeqS2fX8IJc7JA" association="_ZJPd4OxcEeqS2fX8IJc7JA">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_wggfQOxcEeqS2fX8IJc7JA" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_wgiUcOxcEeqS2fX8IJc7JA" value="*"/>
+      </ownedEnd>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_ZJPd4-xcEeqS2fX8IJc7JA" name="payment" type="_M4_0QOxcEeqS2fX8IJc7JA" association="_ZJPd4OxcEeqS2fX8IJc7JA"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_fHT-0OxcEeqS2fX8IJc7JA" memberEnd="_fHUl4excEeqS2fX8IJc7JA _fHUl4uxcEeqS2fX8IJc7JA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_fHT-0excEeqS2fX8IJc7JA" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_fHUl4OxcEeqS2fX8IJc7JA" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_fHUl4uxcEeqS2fX8IJc7JA" name="payment" type="_M4_0QOxcEeqS2fX8IJc7JA" association="_fHT-0OxcEeqS2fX8IJc7JA">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_oJTjwOxcEeqS2fX8IJc7JA"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_oJVY8OxcEeqS2fX8IJc7JA" value="*"/>
+      </ownedEnd>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_fHUl4excEeqS2fX8IJc7JA" name="customerprofile" type="_K8hTIJbVEemWSbyqc1bPkA" association="_fHT-0OxcEeqS2fX8IJc7JA">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_kRDf0OxcEeqS2fX8IJc7JA" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_kRFVAOxcEeqS2fX8IJc7JA" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_z-lIoOxcEeqS2fX8IJc7JA" memberEnd="_z-lIo-xcEeqS2fX8IJc7JA _z-mWwOxcEeqS2fX8IJc7JA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_z-lIoexcEeqS2fX8IJc7JA" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_z-lIouxcEeqS2fX8IJc7JA" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_z-mWwOxcEeqS2fX8IJc7JA" name="order" type="_JlAYIOxVEeqS2fX8IJc7JA" association="_z-lIoOxcEeqS2fX8IJc7JA"/>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_z-lIo-xcEeqS2fX8IJc7JA" name="lineitem" type="_RTEL0OxcEeqS2fX8IJc7JA" association="_z-lIoOxcEeqS2fX8IJc7JA">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_2ONB4OxcEeqS2fX8IJc7JA" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_2OQsQOxcEeqS2fX8IJc7JA" value="*"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_6mQAMOxcEeqS2fX8IJc7JA" memberEnd="_6mQnQOxcEeqS2fX8IJc7JA _6mQnQexcEeqS2fX8IJc7JA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_6mQAMexcEeqS2fX8IJc7JA" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_6mQAMuxcEeqS2fX8IJc7JA" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_6mQnQexcEeqS2fX8IJc7JA" name="lineitem" type="_RTEL0OxcEeqS2fX8IJc7JA" association="_6mQAMOxcEeqS2fX8IJc7JA">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_8KfaIOxcEeqS2fX8IJc7JA" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_8KjEgOxcEeqS2fX8IJc7JA" value="*"/>
+      </ownedEnd>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_6mQnQOxcEeqS2fX8IJc7JA" name="shoppingcart" type="_PFzDAOxcEeqS2fX8IJc7JA" association="_6mQAMOxcEeqS2fX8IJc7JA"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_-hHTQOxcEeqS2fX8IJc7JA" memberEnd="_-hHTQ-xcEeqS2fX8IJc7JA _-hH6UOxcEeqS2fX8IJc7JA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_-hHTQexcEeqS2fX8IJc7JA" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_-hHTQuxcEeqS2fX8IJc7JA" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_-hH6UOxcEeqS2fX8IJc7JA" name="shoppingcart" type="_PFzDAOxcEeqS2fX8IJc7JA" association="_-hHTQOxcEeqS2fX8IJc7JA">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ANYAwOxdEeqS2fX8IJc7JA"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ANadAOxdEeqS2fX8IJc7JA" value="1"/>
+      </ownedEnd>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_-hHTQ-xcEeqS2fX8IJc7JA" name="webuser" type="_j3FE8OwtEeqS2fX8IJc7JA" association="_-hHTQOxcEeqS2fX8IJc7JA"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_KfaRQOxdEeqS2fX8IJc7JA" memberEnd="_Kfa4UOxdEeqS2fX8IJc7JA _Kfa4UexdEeqS2fX8IJc7JA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_KfaRQexdEeqS2fX8IJc7JA" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_KfaRQuxdEeqS2fX8IJc7JA" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_Kfa4UexdEeqS2fX8IJc7JA" name="customerprofile" type="_K8hTIJbVEemWSbyqc1bPkA" association="_KfaRQOxdEeqS2fX8IJc7JA"/>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_Kfa4UOxdEeqS2fX8IJc7JA" name="shoppingcart" type="_PFzDAOxcEeqS2fX8IJc7JA" association="_KfaRQOxdEeqS2fX8IJc7JA"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_PjsDcOxdEeqS2fX8IJc7JA" memberEnd="_PjsqguxdEeqS2fX8IJc7JA _Pjsqg-xdEeqS2fX8IJc7JA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_PjsqgOxdEeqS2fX8IJc7JA" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_PjsqgexdEeqS2fX8IJc7JA" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_Pjsqg-xdEeqS2fX8IJc7JA" name="lineitem" type="_RTEL0OxcEeqS2fX8IJc7JA" association="_PjsDcOxdEeqS2fX8IJc7JA">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ReHIwOxdEeqS2fX8IJc7JA"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ReMBQOxdEeqS2fX8IJc7JA" value="*"/>
+      </ownedEnd>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_PjsqguxdEeqS2fX8IJc7JA" name="product" type="_UBb2kOxcEeqS2fX8IJc7JA" association="_PjsDcOxdEeqS2fX8IJc7JA"/>
+    </packagedElement>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_5bJGAL6zEem1IKh7ty8TwA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_5bMwYL6zEem1IKh7ty8TwA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="../UMLFairness/model.profile.uml#_34Z2UL1SEemhV-rmp0ri8g"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="../UMLFairness/model.profile.uml#_iG61EGzDEemlJ-dlSmJotw"/>
+    </profileApplication>
+  </uml:Model>
+  <UMLFairness:critical xmi:id="__H0U8L6zEem1IKh7ty8TwA" base_StructuredClassifier="_K8hTIJbVEemWSbyqc1bPkA">
+    <protectedData>(ethnicity,age)</protectedData>
+  </UMLFairness:critical>
+  <UMLFairness:indvidualFairness xmi:id="_WK_8sL60Eem1IKh7ty8TwA" base_BehavioredClassifier="_av42gJbbEemWSbyqc1bPkA" threshold="0.6" metric="(conditionalEntropy)">
+    <explanatoryData>((primeCustomer, (freeDelivery))</explanatoryData>
+    <sensitiveDecisions>(freeDelivery)</sensitiveDecisions>
+  </UMLFairness:indvidualFairness>
+</xmi:XMI>

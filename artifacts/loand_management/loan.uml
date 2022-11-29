@@ -1,0 +1,451 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:UMLFairness="http://koblenz.de/umlfair/2020/1.0" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http://koblenz.de/umlfair/2020/1.0 ../UMLFairness/model.profile.uml#_34Z2UL1SEemhV-rmp0ri8g">
+  <uml:Model xmi:id="_2TSJIKaJEempydsPnNa-2w" name="loanSystem">
+    <packageImport xmi:type="uml:PackageImport" xmi:id="_2VOC0KaJEempydsPnNa-2w">
+      <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+    </packageImport>
+    <packagedElement xmi:type="uml:Class" xmi:id="_9p8NoKaJEempydsPnNa-2w" name="LoanRequest" classifierBehavior="_wncVwKaLEempydsPnNa-2w">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_54rtEKaKEempydsPnNa-2w" name="loanRequestStatus" isStatic="true" type="_L5IawKaLEempydsPnNa-2w" isDerived="true">
+        <defaultValue xmi:type="uml:LiteralBoolean" xmi:id="_k-V7UFo1Ee2PSqoo-D43hA" name="false"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_XWkHYKaLEempydsPnNa-2w" name="loanproposal" type="_ABPcMKaKEempydsPnNa-2w" association="_XWeAwKaLEempydsPnNa-2w"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_LN2P0KaQEempydsPnNa-2w" name="saving" isStatic="true" type="_Rhms4KaQEempydsPnNa-2w"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_MXfYcKaQEempydsPnNa-2w" name="creditHistoryStatus" isStatic="true" type="_L5IawKaLEempydsPnNa-2w"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_STTj4O3oEeqbWtpzmNfWmg" name="hasProperity" isStatic="true" type="_L5IawKaLEempydsPnNa-2w"/>
+      <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_wncVwKaLEempydsPnNa-2w" name="LoanRequestBehavior">
+        <region xmi:type="uml:Region" xmi:id="_y2K3IKaLEempydsPnNa-2w" name="Region1">
+          <transition xmi:type="uml:Transition" xmi:id="_eCceoKaNEempydsPnNa-2w" source="_FtnBwKaNEempydsPnNa-2w" target="_GY4BwKaMEempydsPnNa-2w"/>
+          <transition xmi:type="uml:Transition" xmi:id="_g3q_UKaNEempydsPnNa-2w" guard="_Gdp3QKaQEempydsPnNa-2w" source="_GY4BwKaMEempydsPnNa-2w" target="_70WdoKaMEempydsPnNa-2w">
+            <ownedRule xmi:type="uml:Constraint" xmi:id="_Gdp3QKaQEempydsPnNa-2w" name="saving>=1000 &amp;&amp; creditHistoryStatus==true">
+              <specification xmi:type="uml:OpaqueExpression" xmi:id="_Gdp3QaaQEempydsPnNa-2w" name="saving>=1000 &amp;&amp; creditHistoryStatus==true">
+                <language>JAVA</language>
+                <body>saving>=1000 &amp;&amp; creditHistoryStatus==true</body>
+              </specification>
+            </ownedRule>
+            <effect xmi:type="uml:OpaqueBehavior" xmi:id="_llvLEKe4Eemta_tRQfvjTg" name="loanRequestStatus=true">
+              <language>JAVA</language>
+              <body>loanRequestStatus=true&#xD;
+</body>
+            </effect>
+          </transition>
+          <transition xmi:type="uml:Transition" xmi:id="_wv9GoKaNEempydsPnNa-2w" guard="_iHzqIKaQEempydsPnNa-2w" source="_GY4BwKaMEempydsPnNa-2w" target="_q0xhoKaNEempydsPnNa-2w">
+            <ownedRule xmi:type="uml:Constraint" xmi:id="_iHzqIKaQEempydsPnNa-2w" name="else">
+              <specification xmi:type="uml:OpaqueExpression" xmi:id="_iHzqIaaQEempydsPnNa-2w" name="else">
+                <language>JAVA</language>
+                <body>else</body>
+              </specification>
+            </ownedRule>
+            <effect xmi:type="uml:OpaqueBehavior" xmi:id="_zjopUKe4Eemta_tRQfvjTg" name="loanRequestStatus=false">
+              <language>JAVA</language>
+              <body>loanRequestStatus=false</body>
+            </effect>
+          </transition>
+          <transition xmi:type="uml:Transition" xmi:id="_BUNmsKbcEem-U6zCymrlWA" source="_70WdoKaMEempydsPnNa-2w" target="_-VTiAKaNEempydsPnNa-2w">
+            <effect xmi:type="uml:OpaqueBehavior" xmi:id="_OjLiYKbcEem-U6zCymrlWA" name="loanproposal.verifyProposal()">
+              <language>JAVA</language>
+              <body>loanproposal.verifyProposal()</body>
+            </effect>
+          </transition>
+          <transition xmi:type="uml:Transition" xmi:id="_CS-VAKbcEem-U6zCymrlWA" source="_q0xhoKaNEempydsPnNa-2w" target="_-VTiAKaNEempydsPnNa-2w">
+            <effect xmi:type="uml:OpaqueBehavior" xmi:id="_FUYRsFo6Ee2PSqoo-D43hA" name="loanproposal.verifyProposal()">
+              <language>JAVA</language>
+              <body>loanproposal.verifyProposal()</body>
+            </effect>
+          </transition>
+          <subvertex xmi:type="uml:State" xmi:id="_GY4BwKaMEempydsPnNa-2w" name="proposalSubmitted"/>
+          <subvertex xmi:type="uml:State" xmi:id="_70WdoKaMEempydsPnNa-2w" name="proposalAccepted"/>
+          <subvertex xmi:type="uml:Pseudostate" xmi:id="_FtnBwKaNEempydsPnNa-2w" name="Initial1"/>
+          <subvertex xmi:type="uml:State" xmi:id="_q0xhoKaNEempydsPnNa-2w" name="proposalRejected"/>
+          <subvertex xmi:type="uml:FinalState" xmi:id="_-VTiAKaNEempydsPnNa-2w" name="FinalState1"/>
+        </region>
+      </ownedBehavior>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_ABPcMKaKEempydsPnNa-2w" name="LoanProposal" classifierBehavior="_2Jj-EKbZEem-U6zCymrlWA">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_XWkHYaaLEempydsPnNa-2w" name="loanrequest" type="_9p8NoKaJEempydsPnNa-2w" association="_XWeAwKaLEempydsPnNa-2w"/>
+      <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_2Jj-EKbZEem-U6zCymrlWA" name="LoanPropsalBehavior">
+        <region xmi:type="uml:Region" xmi:id="_45g9MKbZEem-U6zCymrlWA" name="Region1">
+          <transition xmi:type="uml:Transition" xmi:id="_RDIBgKbaEem-U6zCymrlWA" source="_8wf10KbZEem-U6zCymrlWA" target="_9wkywKbZEem-U6zCymrlWA"/>
+          <transition xmi:type="uml:Transition" xmi:id="_S5wL8KbaEem-U6zCymrlWA" guard="_-7T-MFo2Ee2PSqoo-D43hA" source="_9wkywKbZEem-U6zCymrlWA" target="_CDojYKbaEem-U6zCymrlWA">
+            <ownedRule xmi:type="uml:Constraint" xmi:id="_-7T-MFo2Ee2PSqoo-D43hA" name="loanrequest.loanRequestStatus==true">
+              <specification xmi:type="uml:OpaqueExpression" xmi:id="_-7T-MVo2Ee2PSqoo-D43hA" name="loanrequest.loanRequestStatus==true">
+                <language>JAVA</language>
+                <body>loanrequest.loanRequestStatus==true</body>
+              </specification>
+            </ownedRule>
+            <effect xmi:type="uml:OpaqueBehavior" xmi:id="_idZ_sKbdEem-U6zCymrlWA" name="riskAnalysis()">
+              <language>JAVA</language>
+              <body>riskAnalysis()</body>
+            </effect>
+            <trigger xmi:type="uml:Trigger" xmi:id="_lap8gFo4Ee2PSqoo-D43hA" name="verifyProposal()" event="_lC48wFo4Ee2PSqoo-D43hA"/>
+          </transition>
+          <transition xmi:type="uml:Transition" xmi:id="_UcrXQKbaEem-U6zCymrlWA" source="_CDojYKbaEem-U6zCymrlWA" target="_IFVAEKbaEem-U6zCymrlWA"/>
+          <transition xmi:type="uml:Transition" xmi:id="_Wrle0KbaEem-U6zCymrlWA" source="_IFVAEKbaEem-U6zCymrlWA" target="_O3EZoKbaEem-U6zCymrlWA"/>
+          <transition xmi:type="uml:Transition" xmi:id="_TaR0MKbcEem-U6zCymrlWA" guard="_LOuQkFo3Ee2PSqoo-D43hA" source="_9wkywKbZEem-U6zCymrlWA" target="_O3EZoKbaEem-U6zCymrlWA">
+            <ownedRule xmi:type="uml:Constraint" xmi:id="_LOuQkFo3Ee2PSqoo-D43hA" name="loanrequest.loanRequestStatus==false">
+              <specification xmi:type="uml:OpaqueExpression" xmi:id="_LOuQkVo3Ee2PSqoo-D43hA" name="loanrequest.loanRequestStatus==false">
+                <language>JAVA</language>
+                <body>loanrequest.loanRequestStatus==false</body>
+              </specification>
+            </ownedRule>
+            <trigger xmi:type="uml:Trigger" xmi:id="_um97EFo4Ee2PSqoo-D43hA" name="verifyProposal()" event="_uF-t4Fo4Ee2PSqoo-D43hA"/>
+          </transition>
+          <subvertex xmi:type="uml:Pseudostate" xmi:id="_8wf10KbZEem-U6zCymrlWA" name="Initial1"/>
+          <subvertex xmi:type="uml:State" xmi:id="_9wkywKbZEem-U6zCymrlWA" name="Idle"/>
+          <subvertex xmi:type="uml:State" xmi:id="_CDojYKbaEem-U6zCymrlWA" name="ProposalCreated"/>
+          <subvertex xmi:type="uml:State" xmi:id="_IFVAEKbaEem-U6zCymrlWA" name="ProposalVerified"/>
+          <subvertex xmi:type="uml:FinalState" xmi:id="_O3EZoKbaEem-U6zCymrlWA" name="FinalState1"/>
+        </region>
+      </ownedBehavior>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_ir988KbZEem-U6zCymrlWA" name="riskAnalysis"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_cY6YkKbbEem-U6zCymrlWA" name="verifyProposal"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_NpyIUFo4Ee2PSqoo-D43hA" name="verifyProposal"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_DgTuoKaLEempydsPnNa-2w" name="dataTyoe">
+      <packagedElement xmi:type="uml:DataType" xmi:id="_L5IawKaLEempydsPnNa-2w" name="boolean"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_Rhms4KaQEempydsPnNa-2w" name="int"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_XWeAwKaLEempydsPnNa-2w" memberEnd="_XWkHYKaLEempydsPnNa-2w _XWkHYaaLEempydsPnNa-2w">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_XWhrIKaLEempydsPnNa-2w" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_XWiSMKaLEempydsPnNa-2w" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_G50EoKbZEem-U6zCymrlWA" name="signals">
+      <packagedElement xmi:type="uml:Signal" xmi:id="_mRXg4KbaEem-U6zCymrlWA" name="loanRequestVerified"/>
+      <packagedElement xmi:type="uml:Signal" xmi:id="_pq26UKbcEem-U6zCymrlWA" name="loanRequestVerified"/>
+      <packagedElement xmi:type="uml:Signal" xmi:id="_IhNcwOztEeqnXP_wewKfYA" name="loggedSuccessfully"/>
+      <packagedElement xmi:type="uml:Signal" xmi:id="_Ow__0OztEeqnXP_wewKfYA" name="loginDenied"/>
+      <packagedElement xmi:type="uml:Signal" xmi:id="_QwBNQO0ZEeqnXP_wewKfYA" name="loggedAsCustomer"/>
+      <packagedElement xmi:type="uml:Signal" xmi:id="_TkI6sO0ZEeqnXP_wewKfYA" name="loggedAsManager"/>
+      <packagedElement xmi:type="uml:Signal" xmi:id="_1ZTQgO3YEeqbWtpzmNfWmg" name="done"/>
+      <packagedElement xmi:type="uml:Signal" xmi:id="_c22QkO3nEeqbWtpzmNfWmg" name="custDone"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_KnhsgKbZEem-U6zCymrlWA" name="events">
+      <packagedElement xmi:type="uml:SignalEvent" xmi:id="_84HrUKbaEem-U6zCymrlWA" name="loanRequestVerified" signal="_mRXg4KbaEem-U6zCymrlWA"/>
+      <packagedElement xmi:type="uml:SignalEvent" xmi:id="_w3rGUKbcEem-U6zCymrlWA" name="loanRequestVerified" signal="_pq26UKbcEem-U6zCymrlWA"/>
+      <packagedElement xmi:type="uml:CallEvent" xmi:id="_9f43EKe4Eemta_tRQfvjTg" name="verifyProposal()" operation="_cY6YkKbbEem-U6zCymrlWA"/>
+      <packagedElement xmi:type="uml:SignalEvent" xmi:id="_nEdtcO0eEeqnXP_wewKfYA" name="loggedSuccessfully" signal="_IhNcwOztEeqnXP_wewKfYA"/>
+      <packagedElement xmi:type="uml:SignalEvent" xmi:id="_stUzYO0eEeqnXP_wewKfYA" name="loginDenied" signal="_Ow__0OztEeqnXP_wewKfYA"/>
+      <packagedElement xmi:type="uml:CallEvent" xmi:id="_8ZAm4O3TEeqbWtpzmNfWmg" name="login()" operation="_pnfhIOztEeqnXP_wewKfYA"/>
+      <packagedElement xmi:type="uml:SignalEvent" xmi:id="_jnJdgO3YEeqbWtpzmNfWmg" name="loggedAsManager" signal="_TkI6sO0ZEeqnXP_wewKfYA"/>
+      <packagedElement xmi:type="uml:SignalEvent" xmi:id="_8sFhoO3YEeqbWtpzmNfWmg" name="done" signal="_1ZTQgO3YEeqbWtpzmNfWmg"/>
+      <packagedElement xmi:type="uml:SignalEvent" xmi:id="_UYzGMO3nEeqbWtpzmNfWmg" name="loggedAsCustomer" signal="_QwBNQO0ZEeqnXP_wewKfYA"/>
+      <packagedElement xmi:type="uml:SignalEvent" xmi:id="_wiy2wO3nEeqbWtpzmNfWmg" name="custDone" signal="_c22QkO3nEeqbWtpzmNfWmg"/>
+      <packagedElement xmi:type="uml:CallEvent" xmi:id="_lC48wFo4Ee2PSqoo-D43hA" name="verifyProposal()" operation="_NpyIUFo4Ee2PSqoo-D43hA"/>
+      <packagedElement xmi:type="uml:CallEvent" xmi:id="_uF-t4Fo4Ee2PSqoo-D43hA" name="verifyProposal()" operation="_NpyIUFo4Ee2PSqoo-D43hA"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_VibFwOzsEeqnXP_wewKfYA" name="User" isAbstract="true" classifierBehavior="_bEniMO0cEeqnXP_wewKfYA">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_wVzosOzsEeqnXP_wewKfYA" name="performLoginAction" isStatic="true" type="_L5IawKaLEempydsPnNa-2w"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_0WhsIOzsEeqnXP_wewKfYA" name="asManager" isStatic="true" type="_L5IawKaLEempydsPnNa-2w"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_2iwTIOzsEeqnXP_wewKfYA" name="asCustomer" isStatic="true" type="_L5IawKaLEempydsPnNa-2w"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_4dwnQOzsEeqnXP_wewKfYA" name="asClerk" isStatic="true" type="_L5IawKaLEempydsPnNa-2w"/>
+      <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_bEniMO0cEeqnXP_wewKfYA" name="UserActions">
+        <region xmi:type="uml:Region" xmi:id="_dSDqIO0cEeqnXP_wewKfYA" name="Region1">
+          <transition xmi:type="uml:Transition" xmi:id="_x79tYO0cEeqnXP_wewKfYA" guard="_sfhxoFoxEe2PSqoo-D43hA" source="_fclA8O0cEeqnXP_wewKfYA" target="_ijuYEO0cEeqnXP_wewKfYA">
+            <ownedRule xmi:type="uml:Constraint" xmi:id="_X4Pa4O0eEeqnXP_wewKfYA" name="performLoginAction==true">
+              <specification xmi:type="uml:OpaqueExpression" xmi:id="_X4Pa4e0eEeqnXP_wewKfYA" name="performLoginAction==true">
+                <language>JAVA</language>
+                <body>performLoginAction==true</body>
+              </specification>
+            </ownedRule>
+            <ownedRule xmi:type="uml:Constraint" xmi:id="_sfhxoFoxEe2PSqoo-D43hA" name="performLoginAction==true">
+              <specification xmi:type="uml:OpaqueExpression" xmi:id="_sfhxoVoxEe2PSqoo-D43hA" name="performLoginAction==true">
+                <language>JAVA</language>
+                <body>performLoginAction==true</body>
+              </specification>
+            </ownedRule>
+            <effect xmi:type="uml:OpaqueBehavior" xmi:id="_yVCMcFoxEe2PSqoo-D43hA" name="role.login()">
+              <language>JAVA</language>
+              <body>role.login()</body>
+            </effect>
+          </transition>
+          <transition xmi:type="uml:Transition" xmi:id="_zYD38O0cEeqnXP_wewKfYA" source="_ijuYEO0cEeqnXP_wewKfYA" target="_hNlEgO0cEeqnXP_wewKfYA">
+            <ownedRule xmi:type="uml:Constraint" xmi:id="_UCMWYO0eEeqnXP_wewKfYA" name="performLoginAction==true">
+              <specification xmi:type="uml:OpaqueExpression" xmi:id="_UCMWYe0eEeqnXP_wewKfYA" name="performLoginAction==true">
+                <language>JAVA</language>
+                <body>performLoginAction==true</body>
+              </specification>
+            </ownedRule>
+          </transition>
+          <transition xmi:type="uml:Transition" xmi:id="_z5VZAO0cEeqnXP_wewKfYA" source="_ijuYEO0cEeqnXP_wewKfYA" target="_iFBp4O0cEeqnXP_wewKfYA"/>
+          <transition xmi:type="uml:Transition" xmi:id="_0jLAMO0cEeqnXP_wewKfYA" source="_iFBp4O0cEeqnXP_wewKfYA" target="_f1oaIO0cEeqnXP_wewKfYA"/>
+          <transition xmi:type="uml:Transition" xmi:id="_1EvcMO0cEeqnXP_wewKfYA" source="_hNlEgO0cEeqnXP_wewKfYA" target="_f1oaIO0cEeqnXP_wewKfYA"/>
+          <subvertex xmi:type="uml:Pseudostate" xmi:id="_fclA8O0cEeqnXP_wewKfYA" name="Initial1"/>
+          <subvertex xmi:type="uml:FinalState" xmi:id="_f1oaIO0cEeqnXP_wewKfYA" name="FinalState1"/>
+          <subvertex xmi:type="uml:State" xmi:id="_hNlEgO0cEeqnXP_wewKfYA" name="LoggedSuccessfully"/>
+          <subvertex xmi:type="uml:State" xmi:id="_iFBp4O0cEeqnXP_wewKfYA" name="LoginDenied"/>
+          <subvertex xmi:type="uml:State" xmi:id="_ijuYEO0cEeqnXP_wewKfYA" name="VerificationQuerySent"/>
+        </region>
+      </ownedBehavior>
+      <ownedReception xmi:type="uml:Reception" xmi:id="_Dt6F0OztEeqnXP_wewKfYA" name="loggedSuccessfully" signal="_IhNcwOztEeqnXP_wewKfYA"/>
+      <ownedReception xmi:type="uml:Reception" xmi:id="_KPAbUOztEeqnXP_wewKfYA" name="loginDenied" signal="_Ow__0OztEeqnXP_wewKfYA"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_XnD3AOzsEeqnXP_wewKfYA" name="Role" isAbstract="true" classifierBehavior="_PWxeMO0gEeqnXP_wewKfYA">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_R1wKQOztEeqnXP_wewKfYA" name="userID" isStatic="true" type="_Rhms4KaQEempydsPnNa-2w"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_VKWHgOztEeqnXP_wewKfYA" name="password" isStatic="true" type="_Rhms4KaQEempydsPnNa-2w"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_WxmZMOztEeqnXP_wewKfYA" name="validEntry" isStatic="true" type="_L5IawKaLEempydsPnNa-2w"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_ZGJOsOztEeqnXP_wewKfYA" name="roleID" isStatic="true" type="_L5IawKaLEempydsPnNa-2w"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_llQ90O0ZEeqnXP_wewKfYA" name="user" type="_VibFwOzsEeqnXP_wewKfYA" association="_llIa8O0ZEeqnXP_wewKfYA">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_wmTpYO0ZEeqnXP_wewKfYA"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_wmcMQO0ZEeqnXP_wewKfYA" value="*"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_CxMmEu3WEeqbWtpzmNfWmg" name="customer" type="_aMAgAOzsEeqnXP_wewKfYA" association="_CxL_AO3WEeqbWtpzmNfWmg">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Mgof0O3WEeqbWtpzmNfWmg" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_MgrjIO3WEeqbWtpzmNfWmg" value="*"/>
+      </ownedAttribute>
+      <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_PWxeMO0gEeqnXP_wewKfYA" name="LoginStateMachine">
+        <region xmi:type="uml:Region" xmi:id="_PzYhsO0gEeqnXP_wewKfYA" name="Region1">
+          <transition xmi:type="uml:Transition" xmi:id="_omAL4O3SEeqbWtpzmNfWmg" source="_VP5NsO0gEeqnXP_wewKfYA" target="_Vr3_EO0gEeqnXP_wewKfYA"/>
+          <transition xmi:type="uml:Transition" xmi:id="_p4K-YO3SEeqbWtpzmNfWmg" source="_Vr3_EO0gEeqnXP_wewKfYA" target="_Zus7UO0gEeqnXP_wewKfYA"/>
+          <transition xmi:type="uml:Transition" xmi:id="_qooyAO3SEeqbWtpzmNfWmg" guard="_eGYFUFoyEe2PSqoo-D43hA" source="_DIR7QO3UEeqbWtpzmNfWmg" target="_bBW2AO0gEeqnXP_wewKfYA">
+            <ownedRule xmi:type="uml:Constraint" xmi:id="_fGFC4O3UEeqbWtpzmNfWmg" name="validEntry==false &amp;&amp; tries>2">
+              <specification xmi:type="uml:OpaqueExpression" xmi:id="_fGFC4e3UEeqbWtpzmNfWmg" name="validEntry==false &amp;&amp; tries>2">
+                <language>JAVA</language>
+                <body>validEntry==false &amp;&amp; tries>2</body>
+              </specification>
+            </ownedRule>
+            <ownedRule xmi:type="uml:Constraint" xmi:id="_eGYFUFoyEe2PSqoo-D43hA" name="validEntry==false">
+              <specification xmi:type="uml:OpaqueExpression" xmi:id="_eGYFUVoyEe2PSqoo-D43hA" name="validEntry==false">
+                <language>JAVA</language>
+                <body>validEntry==false</body>
+              </specification>
+            </ownedRule>
+          </transition>
+          <transition xmi:type="uml:Transition" xmi:id="_rWHjEO3SEeqbWtpzmNfWmg" guard="_lFzVkFoyEe2PSqoo-D43hA" source="_DIR7QO3UEeqbWtpzmNfWmg" target="_cWL68O0gEeqnXP_wewKfYA">
+            <ownedRule xmi:type="uml:Constraint" xmi:id="_DGsKYO3VEeqbWtpzmNfWmg" name="validEntry==true &amp;&amp; tries&lt;3">
+              <specification xmi:type="uml:OpaqueExpression" xmi:id="_DGsKYe3VEeqbWtpzmNfWmg" name="validEntry==true &amp;&amp; tries&lt;3">
+                <language>JAVA</language>
+                <body>validEntry==true &amp;&amp; tries&lt;3</body>
+              </specification>
+            </ownedRule>
+            <ownedRule xmi:type="uml:Constraint" xmi:id="_lFzVkFoyEe2PSqoo-D43hA" name="validEntry==true">
+              <specification xmi:type="uml:OpaqueExpression" xmi:id="_lFzVkVoyEe2PSqoo-D43hA" name="validEntry==true">
+                <language>JAVA</language>
+                <body>validEntry==true</body>
+              </specification>
+            </ownedRule>
+          </transition>
+          <transition xmi:type="uml:Transition" xmi:id="_sDMEcO3SEeqbWtpzmNfWmg" source="_bBW2AO0gEeqnXP_wewKfYA" target="_mHrqMO0gEeqnXP_wewKfYA"/>
+          <transition xmi:type="uml:Transition" xmi:id="_sutGoO3SEeqbWtpzmNfWmg" guard="_t15SMFoyEe2PSqoo-D43hA" source="_2RVTcO3SEeqbWtpzmNfWmg" target="_fPYVoO0gEeqnXP_wewKfYA">
+            <ownedRule xmi:type="uml:Constraint" xmi:id="_Y8mGsO3VEeqbWtpzmNfWmg" name="user.asCustomer==true">
+              <specification xmi:type="uml:OpaqueExpression" xmi:id="_Y8mGse3VEeqbWtpzmNfWmg" name="user.asCustomer==true">
+                <language>JAVA</language>
+                <body>user.asCustomer==true</body>
+              </specification>
+            </ownedRule>
+            <ownedRule xmi:type="uml:Constraint" xmi:id="_t15SMFoyEe2PSqoo-D43hA" name="user.asCustomer==true">
+              <specification xmi:type="uml:OpaqueExpression" xmi:id="_t15SMVoyEe2PSqoo-D43hA" name="user.asCustomer==true">
+                <language>JAVA</language>
+                <body>user.asCustomer==true</body>
+              </specification>
+            </ownedRule>
+          </transition>
+          <transition xmi:type="uml:Transition" xmi:id="_tc_wAO3SEeqbWtpzmNfWmg" guard="_zXoccFoyEe2PSqoo-D43hA" source="_2RVTcO3SEeqbWtpzmNfWmg" target="_g3e74O0gEeqnXP_wewKfYA">
+            <ownedRule xmi:type="uml:Constraint" xmi:id="_d2-WAO3VEeqbWtpzmNfWmg" name="user.asManager==true">
+              <specification xmi:type="uml:OpaqueExpression" xmi:id="_d2-WAe3VEeqbWtpzmNfWmg" name="user.asManager==true">
+                <language>JAVA</language>
+                <body>user.asManager==true</body>
+              </specification>
+            </ownedRule>
+            <ownedRule xmi:type="uml:Constraint" xmi:id="_zXoccFoyEe2PSqoo-D43hA" name="user.asManager==true">
+              <specification xmi:type="uml:OpaqueExpression" xmi:id="_zXoccVoyEe2PSqoo-D43hA" name="user.asManager==true">
+                <language>JAVA</language>
+                <body>user.asManager==true</body>
+              </specification>
+            </ownedRule>
+          </transition>
+          <transition xmi:type="uml:Transition" xmi:id="_0nNT8O3SEeqbWtpzmNfWmg" source="_fPYVoO0gEeqnXP_wewKfYA" target="_mHrqMO0gEeqnXP_wewKfYA"/>
+          <transition xmi:type="uml:Transition" xmi:id="_1U3EIO3SEeqbWtpzmNfWmg" source="_g3e74O0gEeqnXP_wewKfYA" target="_mHrqMO0gEeqnXP_wewKfYA"/>
+          <transition xmi:type="uml:Transition" xmi:id="_GHeQQO3UEeqbWtpzmNfWmg" source="_Zus7UO0gEeqnXP_wewKfYA" target="_DIR7QO3UEeqbWtpzmNfWmg"/>
+          <transition xmi:type="uml:Transition" xmi:id="_Ld14AO3UEeqbWtpzmNfWmg" guard="_7G2x8FoyEe2PSqoo-D43hA" source="_DIR7QO3UEeqbWtpzmNfWmg" target="_Zus7UO0gEeqnXP_wewKfYA">
+            <ownedRule xmi:type="uml:Constraint" xmi:id="_XlY4oO3UEeqbWtpzmNfWmg" name="else">
+              <specification xmi:type="uml:OpaqueExpression" xmi:id="_XlY4oe3UEeqbWtpzmNfWmg" name="else">
+                <language>JAVA</language>
+                <body>else</body>
+              </specification>
+            </ownedRule>
+            <ownedRule xmi:type="uml:Constraint" xmi:id="_7G2x8FoyEe2PSqoo-D43hA" name="else">
+              <specification xmi:type="uml:OpaqueExpression" xmi:id="_7G2x8VoyEe2PSqoo-D43hA" name="else">
+                <language>JAVA</language>
+                <body>else</body>
+              </specification>
+            </ownedRule>
+          </transition>
+          <transition xmi:type="uml:Transition" xmi:id="_OjGjUO3VEeqbWtpzmNfWmg" source="_cWL68O0gEeqnXP_wewKfYA" target="_2RVTcO3SEeqbWtpzmNfWmg"/>
+          <subvertex xmi:type="uml:Pseudostate" xmi:id="_VP5NsO0gEeqnXP_wewKfYA" name="Initial1"/>
+          <subvertex xmi:type="uml:State" xmi:id="_Vr3_EO0gEeqnXP_wewKfYA" name="Idle"/>
+          <subvertex xmi:type="uml:State" xmi:id="_Zus7UO0gEeqnXP_wewKfYA" name="Logging"/>
+          <subvertex xmi:type="uml:State" xmi:id="_bBW2AO0gEeqnXP_wewKfYA" name="LoginDenied"/>
+          <subvertex xmi:type="uml:State" xmi:id="_cWL68O0gEeqnXP_wewKfYA" name="LoggedSuccessfully"/>
+          <subvertex xmi:type="uml:State" xmi:id="_fPYVoO0gEeqnXP_wewKfYA" name="LoggedAsCustomer"/>
+          <subvertex xmi:type="uml:State" xmi:id="_g3e74O0gEeqnXP_wewKfYA" name="LoggedAsManager"/>
+          <subvertex xmi:type="uml:FinalState" xmi:id="_mHrqMO0gEeqnXP_wewKfYA" name="FinalState1"/>
+          <subvertex xmi:type="uml:Pseudostate" xmi:id="_2RVTcO3SEeqbWtpzmNfWmg" name="Choice1" kind="choice"/>
+          <subvertex xmi:type="uml:Pseudostate" xmi:id="_DIR7QO3UEeqbWtpzmNfWmg" name="Choice2" kind="choice"/>
+        </region>
+      </ownedBehavior>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_pnfhIOztEeqnXP_wewKfYA" name="login"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_aMAgAOzsEeqnXP_wewKfYA" name="Customer" classifierBehavior="_WqsFwO3mEeqbWtpzmNfWmg">
+      <generalization xmi:type="uml:Generalization" xmi:id="_2-3AcO3VEeqbWtpzmNfWmg" general="_XnD3AOzsEeqnXP_wewKfYA"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_RgPlwO0YEeqnXP_wewKfYA" name="customerID" isStatic="true" type="_Rhms4KaQEempydsPnNa-2w"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_Tkc5MO0YEeqnXP_wewKfYA" name="mobileNumber" isStatic="true" type="_Rhms4KaQEempydsPnNa-2w"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_VnBN4O0YEeqnXP_wewKfYA" name="birthDate" isStatic="true" type="_Rhms4KaQEempydsPnNa-2w"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_ea6scO0YEeqnXP_wewKfYA" name="applyForLoan" isStatic="true" type="_L5IawKaLEempydsPnNa-2w"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_iVlyQO0YEeqnXP_wewKfYA" name="loggedOut" isStatic="true" type="_L5IawKaLEempydsPnNa-2w"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_8pkucPylEeqDu8gnqIS6Fg" name="gender" isStatic="true" type="_L5IawKaLEempydsPnNa-2w"/>
+      <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_WqsFwO3mEeqbWtpzmNfWmg" name="CustomerActions">
+        <region xmi:type="uml:Region" xmi:id="_YJ_VUO3mEeqbWtpzmNfWmg" name="Region1">
+          <transition xmi:type="uml:Transition" xmi:id="_uDxsEO3mEeqbWtpzmNfWmg" source="_eAxigO3mEeqbWtpzmNfWmg" target="_bVxU0O3mEeqbWtpzmNfWmg"/>
+          <transition xmi:type="uml:Transition" xmi:id="_wLQ9AO3mEeqbWtpzmNfWmg" source="_bVxU0O3mEeqbWtpzmNfWmg" target="_iXUsAO3mEeqbWtpzmNfWmg"/>
+          <transition xmi:type="uml:Transition" xmi:id="_wxz_oO3mEeqbWtpzmNfWmg" guard="_HrrTUO3nEeqbWtpzmNfWmg" source="_iXUsAO3mEeqbWtpzmNfWmg" target="__L16YEoYEe2jdb47ye30OQ">
+            <ownedRule xmi:type="uml:Constraint" xmi:id="_HrrTUO3nEeqbWtpzmNfWmg" name="applyForLoan==false">
+              <specification xmi:type="uml:OpaqueExpression" xmi:id="_HrrTUe3nEeqbWtpzmNfWmg" name="applyForLoan==false">
+                <language>JAVA</language>
+                <body>applyForLoan==false</body>
+              </specification>
+            </ownedRule>
+          </transition>
+          <transition xmi:type="uml:Transition" xmi:id="_yStxsO3mEeqbWtpzmNfWmg" guard="_DOCqYO3nEeqbWtpzmNfWmg" source="_iXUsAO3mEeqbWtpzmNfWmg" target="_bokVAO3mEeqbWtpzmNfWmg">
+            <ownedRule xmi:type="uml:Constraint" xmi:id="_DOCqYO3nEeqbWtpzmNfWmg" name="applyForLoan==true">
+              <specification xmi:type="uml:OpaqueExpression" xmi:id="_DOCqYe3nEeqbWtpzmNfWmg" name="applyForLoan==true">
+                <language>JAVA</language>
+                <body>applyForLoan==true</body>
+              </specification>
+            </ownedRule>
+          </transition>
+          <transition xmi:type="uml:Transition" xmi:id="_yyYwQO3mEeqbWtpzmNfWmg" source="_bokVAO3mEeqbWtpzmNfWmg" target="_b9NvUO3mEeqbWtpzmNfWmg"/>
+          <transition xmi:type="uml:Transition" xmi:id="_zlGmoO3mEeqbWtpzmNfWmg" source="_b9NvUO3mEeqbWtpzmNfWmg" target="__L16YEoYEe2jdb47ye30OQ"/>
+          <subvertex xmi:type="uml:State" xmi:id="_bVxU0O3mEeqbWtpzmNfWmg" name="Logged"/>
+          <subvertex xmi:type="uml:State" xmi:id="_bokVAO3mEeqbWtpzmNfWmg" name="ApplyingForLoan"/>
+          <subvertex xmi:type="uml:State" xmi:id="_b9NvUO3mEeqbWtpzmNfWmg" name="AppliedForLoan"/>
+          <subvertex xmi:type="uml:Pseudostate" xmi:id="_eAxigO3mEeqbWtpzmNfWmg" name="Initial1"/>
+          <subvertex xmi:type="uml:Pseudostate" xmi:id="_iXUsAO3mEeqbWtpzmNfWmg" name="Choice1" kind="choice"/>
+          <subvertex xmi:type="uml:FinalState" xmi:id="__L16YEoYEe2jdb47ye30OQ" name="FinalState1"/>
+        </region>
+      </ownedBehavior>
+      <ownedReception xmi:type="uml:Reception" xmi:id="_JPbwsO0ZEeqnXP_wewKfYA" name="loggedAsCustomer" signal="_QwBNQO0ZEeqnXP_wewKfYA"/>
+      <ownedReception xmi:type="uml:Reception" xmi:id="_XvFFgO3nEeqbWtpzmNfWmg" name="custDone" signal="_c22QkO3nEeqbWtpzmNfWmg"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_cATIIOzsEeqnXP_wewKfYA" name="Manager" classifierBehavior="_PkqcEO3XEeqbWtpzmNfWmg">
+      <generalization xmi:type="uml:Generalization" xmi:id="_399tAO3VEeqbWtpzmNfWmg" general="_XnD3AOzsEeqnXP_wewKfYA"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_24mjUO0YEeqnXP_wewKfYA" name="managerID" isStatic="true" type="_Rhms4KaQEempydsPnNa-2w"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_4pJ68O0YEeqnXP_wewKfYA" name="mobileNumber" isStatic="true" type="_Rhms4KaQEempydsPnNa-2w"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_6QWiQO0YEeqnXP_wewKfYA" name="age" isStatic="true" type="_Rhms4KaQEempydsPnNa-2w"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_8XjfUO0YEeqnXP_wewKfYA" name="manageLoansProposals" isStatic="true" type="_L5IawKaLEempydsPnNa-2w"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_CXyjcO0ZEeqnXP_wewKfYA" name="loggedOut" isStatic="true" type="_L5IawKaLEempydsPnNa-2w"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_EM_Oou3WEeqbWtpzmNfWmg" name="role" type="_XnD3AOzsEeqnXP_wewKfYA" association="_EM-nkO3WEeqbWtpzmNfWmg">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_J7ebcO3WEeqbWtpzmNfWmg" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_J7g3sO3WEeqbWtpzmNfWmg" value="*"/>
+      </ownedAttribute>
+      <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_PkqcEO3XEeqbWtpzmNfWmg" name="ManagerActions">
+        <region xmi:type="uml:Region" xmi:id="_R1sqkO3XEeqbWtpzmNfWmg" name="Region1">
+          <transition xmi:type="uml:Transition" xmi:id="_hUJ8oO3XEeqbWtpzmNfWmg" source="_V_NdoO3XEeqbWtpzmNfWmg" target="_W2PzUO3XEeqbWtpzmNfWmg"/>
+          <transition xmi:type="uml:Transition" xmi:id="_irdt0O3XEeqbWtpzmNfWmg" source="_W2PzUO3XEeqbWtpzmNfWmg" target="_YJY2MO3XEeqbWtpzmNfWmg"/>
+          <transition xmi:type="uml:Transition" xmi:id="_jNrqEO3XEeqbWtpzmNfWmg" source="_YJY2MO3XEeqbWtpzmNfWmg" target="_aQuWIO3XEeqbWtpzmNfWmg"/>
+          <transition xmi:type="uml:Transition" xmi:id="_kAlGoO3XEeqbWtpzmNfWmg" source="_aQuWIO3XEeqbWtpzmNfWmg" target="_eHFjsO3XEeqbWtpzmNfWmg">
+            <ownedRule xmi:type="uml:Constraint" xmi:id="_RBfJ8O3YEeqbWtpzmNfWmg" name="manageLoansProposals==true">
+              <specification xmi:type="uml:OpaqueExpression" xmi:id="_RBfJ8e3YEeqbWtpzmNfWmg" name="manageLoansProposals==true">
+                <language>JAVA</language>
+                <body>manageLoansProposals==true</body>
+              </specification>
+            </ownedRule>
+          </transition>
+          <transition xmi:type="uml:Transition" xmi:id="_khv6AO3XEeqbWtpzmNfWmg" guard="_sgw_AO3XEeqbWtpzmNfWmg" source="_aQuWIO3XEeqbWtpzmNfWmg" target="_YJY2MO3XEeqbWtpzmNfWmg">
+            <ownedRule xmi:type="uml:Constraint" xmi:id="_sgw_AO3XEeqbWtpzmNfWmg" name="else">
+              <specification xmi:type="uml:OpaqueExpression" xmi:id="_sgw_Ae3XEeqbWtpzmNfWmg" name="else">
+                <language>JAVA</language>
+                <body>else</body>
+              </specification>
+            </ownedRule>
+          </transition>
+          <transition xmi:type="uml:Transition" xmi:id="_8kL_UO3XEeqbWtpzmNfWmg" source="_aQuWIO3XEeqbWtpzmNfWmg" target="_W2PzUO3XEeqbWtpzmNfWmg">
+            <ownedRule xmi:type="uml:Constraint" xmi:id="_ITYxYO3YEeqbWtpzmNfWmg" name="loggedOut==true">
+              <specification xmi:type="uml:OpaqueExpression" xmi:id="_ITYxYe3YEeqbWtpzmNfWmg" name="loggedOut==true">
+                <language>JAVA</language>
+                <body>loggedOut==true</body>
+              </specification>
+            </ownedRule>
+          </transition>
+          <transition xmi:type="uml:Transition" xmi:id="_qaNFsO3YEeqbWtpzmNfWmg" source="_W2PzUO3XEeqbWtpzmNfWmg" target="_prp9oO3YEeqbWtpzmNfWmg">
+            <trigger xmi:type="uml:Trigger" xmi:id="_845OkO3YEeqbWtpzmNfWmg" event="_8sFhoO3YEeqbWtpzmNfWmg"/>
+          </transition>
+          <transition xmi:type="uml:Transition" xmi:id="_ML43gO3ZEeqbWtpzmNfWmg" source="_eHFjsO3XEeqbWtpzmNfWmg" target="_EBdzwO3ZEeqbWtpzmNfWmg"/>
+          <transition xmi:type="uml:Transition" xmi:id="_QgrtgO3ZEeqbWtpzmNfWmg" source="_EBdzwO3ZEeqbWtpzmNfWmg" target="_OFh5sO3ZEeqbWtpzmNfWmg"/>
+          <transition xmi:type="uml:Transition" xmi:id="_ShxbgO3ZEeqbWtpzmNfWmg" source="_OFh5sO3ZEeqbWtpzmNfWmg" target="_YJY2MO3XEeqbWtpzmNfWmg"/>
+          <subvertex xmi:type="uml:Pseudostate" xmi:id="_V_NdoO3XEeqbWtpzmNfWmg" name="Initial1"/>
+          <subvertex xmi:type="uml:State" xmi:id="_W2PzUO3XEeqbWtpzmNfWmg" name="LoggedOut"/>
+          <subvertex xmi:type="uml:State" xmi:id="_YJY2MO3XEeqbWtpzmNfWmg" name="Logged"/>
+          <subvertex xmi:type="uml:Pseudostate" xmi:id="_aQuWIO3XEeqbWtpzmNfWmg" name="Choice1" kind="choice"/>
+          <subvertex xmi:type="uml:State" xmi:id="_eHFjsO3XEeqbWtpzmNfWmg" name="ManagingLoans"/>
+          <subvertex xmi:type="uml:FinalState" xmi:id="_prp9oO3YEeqbWtpzmNfWmg" name="FinalState1"/>
+          <subvertex xmi:type="uml:State" xmi:id="_EBdzwO3ZEeqbWtpzmNfWmg" name="LoansManaged"/>
+          <subvertex xmi:type="uml:State" xmi:id="_OFh5sO3ZEeqbWtpzmNfWmg" name="ActionDone"/>
+        </region>
+      </ownedBehavior>
+      <ownedReception xmi:type="uml:Reception" xmi:id="_LgGLwO0ZEeqnXP_wewKfYA" name="loggedAsManager" signal="_TkI6sO0ZEeqnXP_wewKfYA"/>
+      <ownedReception xmi:type="uml:Reception" xmi:id="_wHTLYO3YEeqbWtpzmNfWmg" name="done" signal="_1ZTQgO3YEeqbWtpzmNfWmg"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_llIa8O0ZEeqnXP_wewKfYA" memberEnd="_llQ90O0ZEeqnXP_wewKfYA _llQ90e0ZEeqnXP_wewKfYA" navigableOwnedEnd="_llQ90e0ZEeqnXP_wewKfYA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_llPvsO0ZEeqnXP_wewKfYA" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_llPvse0ZEeqnXP_wewKfYA" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_llQ90e0ZEeqnXP_wewKfYA" name="role" type="_XnD3AOzsEeqnXP_wewKfYA" association="_llIa8O0ZEeqnXP_wewKfYA">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_tQdH4O0ZEeqnXP_wewKfYA"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_tQm44O0ZEeqnXP_wewKfYA" value="*"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_CxL_AO3WEeqbWtpzmNfWmg" memberEnd="_CxMmEu3WEeqbWtpzmNfWmg _CxMmE-3WEeqbWtpzmNfWmg" navigableOwnedEnd="_CxMmE-3WEeqbWtpzmNfWmg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_CxMmEO3WEeqbWtpzmNfWmg" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_CxMmEe3WEeqbWtpzmNfWmg" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_CxMmE-3WEeqbWtpzmNfWmg" name="role" type="_XnD3AOzsEeqnXP_wewKfYA" association="_CxL_AO3WEeqbWtpzmNfWmg">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Nk1HwO3WEeqbWtpzmNfWmg" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Nk4LEO3WEeqbWtpzmNfWmg" value="*"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_EM-nkO3WEeqbWtpzmNfWmg" memberEnd="_EM_Oou3WEeqbWtpzmNfWmg _EM_Oo-3WEeqbWtpzmNfWmg" navigableOwnedEnd="_EM_Oo-3WEeqbWtpzmNfWmg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_EM_OoO3WEeqbWtpzmNfWmg" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_EM_Ooe3WEeqbWtpzmNfWmg" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_EM_Oo-3WEeqbWtpzmNfWmg" name="manager" type="_cATIIOzsEeqnXP_wewKfYA" association="_EM-nkO3WEeqbWtpzmNfWmg">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_K9US8O3WEeqbWtpzmNfWmg" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_K9WIIO3WEeqbWtpzmNfWmg" value="*"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_zU4j4O3nEeqbWtpzmNfWmg" memberEnd="_zU5K8O3nEeqbWtpzmNfWmg _zU6ZEO3nEeqbWtpzmNfWmg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_zU4j4e3nEeqbWtpzmNfWmg" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_zU4j4u3nEeqbWtpzmNfWmg" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_zU6ZEO3nEeqbWtpzmNfWmg" name="customer" type="_aMAgAOzsEeqnXP_wewKfYA" association="_zU4j4O3nEeqbWtpzmNfWmg"/>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_zU5K8O3nEeqbWtpzmNfWmg" name="loanrequest" type="_9p8NoKaJEempydsPnNa-2w" association="_zU4j4O3nEeqbWtpzmNfWmg">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_3PA3IO3nEeqbWtpzmNfWmg"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_3PEhgO3nEeqbWtpzmNfWmg" value="*"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_5QEv8O3nEeqbWtpzmNfWmg" memberEnd="_5QFXAu3nEeqbWtpzmNfWmg _5QFXA-3nEeqbWtpzmNfWmg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_5QFXAO3nEeqbWtpzmNfWmg" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_5QFXAe3nEeqbWtpzmNfWmg" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_5QFXA-3nEeqbWtpzmNfWmg" name="manager" type="_cATIIOzsEeqnXP_wewKfYA" association="_5QEv8O3nEeqbWtpzmNfWmg">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_6f71UO3nEeqbWtpzmNfWmg" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_6f_fsO3nEeqbWtpzmNfWmg" value="*"/>
+      </ownedEnd>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_5QFXAu3nEeqbWtpzmNfWmg" name="loanproposal" type="_ABPcMKaKEempydsPnNa-2w" association="_5QEv8O3nEeqbWtpzmNfWmg">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_7F-hoO3nEeqbWtpzmNfWmg" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_7GBk8O3nEeqbWtpzmNfWmg" value="*"/>
+      </ownedEnd>
+    </packagedElement>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_vHlnAL69Eem1IKh7ty8TwA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_vHm1IL69Eem1IKh7ty8TwA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="../UMLFairness/model.profile.uml#_34Z2UL1SEemhV-rmp0ri8g"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="../UMLFairness/model.profile.uml#_iG61EGzDEemlJ-dlSmJotw"/>
+    </profileApplication>
+  </uml:Model>
+  <UMLFairness:critical xmi:id="_yBl6AL69Eem1IKh7ty8TwA" base_StructuredClassifier="_9p8NoKaJEempydsPnNa-2w">
+    <protectedData>(gender, age, citizenship)</protectedData>
+  </UMLFairness:critical>
+  <UMLFairness:indvidualFairness xmi:id="_Au5NMISFEeqP5_n3XyOQcQ" base_BehavioredClassifier="_wncVwKaLEempydsPnNa-2w" threshold="0.6" metric="">
+    <sensitiveDecisions>(loanRequestStatus)</sensitiveDecisions>
+  </UMLFairness:indvidualFairness>
+</xmi:XMI>

@@ -1,0 +1,436 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Profile xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_iG61EGzDEemlJ-dlSmJotw" name="UMLFairness" URI="http://koblenz.de/umlfair/2020/1.0" metaclassReference="_MsST8GzNEemlJ-dlSmJotw _EL6gIHDEEemNjf67lB1xBw">
+  <eAnnotations xmi:id="_dsPVUGzKEemlJ-dlSmJotw" source="http://www.eclipse.org/uml2/2.0.0/UML">
+    <contents xmi:type="ecore:EPackage" xmi:id="_34Z2UL1SEemhV-rmp0ri8g" name="UMLFairness" nsURI="http://koblenz.de/umlfair/2020/1.0" nsPrefix="UMLFairness">
+      <eAnnotations xmi:id="_34eu0L1SEemhV-rmp0ri8g" source="PapyrusVersion">
+        <details xmi:id="_34eu0b1SEemhV-rmp0ri8g" key="Version" value="0.0.11"/>
+        <details xmi:id="_34eu0r1SEemhV-rmp0ri8g" key="Comment" value=""/>
+        <details xmi:id="_34eu071SEemhV-rmp0ri8g" key="Copyright" value=""/>
+        <details xmi:id="_34eu1L1SEemhV-rmp0ri8g" key="Date" value="2019-08-13"/>
+        <details xmi:id="_34eu1b1SEemhV-rmp0ri8g" key="Author" value="Qusai"/>
+      </eAnnotations>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_34adYL1SEemhV-rmp0ri8g" name="indvidualFairness">
+        <eAnnotations xmi:id="_34adYb1SEemhV-rmp0ri8g" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_Il-U8GzEEemlJ-dlSmJotw">
+          <details xmi:id="_34adYr1SEemhV-rmp0ri8g" key="originalName" value="indvidual-Fairness"/>
+        </eAnnotations>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_34adY71SEemhV-rmp0ri8g" name="base_BehavioredClassifier" ordered="false" lowerBound="1">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//BehavioredClassifier"/>
+        </eStructuralFeatures>
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_34adZb1SEemhV-rmp0ri8g" name="explanatoryData" ordered="false" upperBound="-1">
+          <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        </eStructuralFeatures>
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_34adZ71SEemhV-rmp0ri8g" name="sensitiveDecisions" ordered="false" upperBound="-1">
+          <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        </eStructuralFeatures>
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_34adab1SEemhV-rmp0ri8g" name="threshold" ordered="false" lowerBound="1">
+          <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+        </eStructuralFeatures>
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_34ada71SEemhV-rmp0ri8g" name="metric" ordered="false" lowerBound="1">
+          <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_34adbb1SEemhV-rmp0ri8g" name="critical">
+        <eAnnotations xmi:id="_34adbr1SEemhV-rmp0ri8g" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_d-zTsGzEEemlJ-dlSmJotw"/>
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_34adb71SEemhV-rmp0ri8g" name="protectedData" ordered="false" upperBound="-1">
+          <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        </eStructuralFeatures>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_34adcb1SEemhV-rmp0ri8g" name="base_StructuredClassifier" ordered="false" lowerBound="1">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//StructuredClassifier"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+    </contents>
+    <contents xmi:type="ecore:EPackage" xmi:id="_BaBGQHLzEemwXuowKhLqQw" name="UMLFairness" nsURI="http://koblenz.de/umlfair/2020/1.0" nsPrefix="UMLFairness">
+      <eAnnotations xmi:id="_BaBtUXLzEemwXuowKhLqQw" source="PapyrusVersion">
+        <details xmi:id="_BaBtUnLzEemwXuowKhLqQw" key="Version" value="0.0.10"/>
+        <details xmi:id="_BaBtU3LzEemwXuowKhLqQw" key="Comment" value=""/>
+        <details xmi:id="_BaBtVHLzEemwXuowKhLqQw" key="Copyright" value=""/>
+        <details xmi:id="_BaBtVXLzEemwXuowKhLqQw" key="Date" value="2019-05-10"/>
+        <details xmi:id="_BaBtVnLzEemwXuowKhLqQw" key="Author" value="Qusai"/>
+      </eAnnotations>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_BaBGQXLzEemwXuowKhLqQw" name="indvidualFairness">
+        <eAnnotations xmi:id="_BaBGQnLzEemwXuowKhLqQw" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_Il-U8GzEEemlJ-dlSmJotw">
+          <details xmi:id="_BaBGQ3LzEemwXuowKhLqQw" key="originalName" value="indvidual-Fairness"/>
+        </eAnnotations>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_BaBGRHLzEemwXuowKhLqQw" name="base_BehavioredClassifier" ordered="false" lowerBound="1">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//BehavioredClassifier"/>
+        </eStructuralFeatures>
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_BaBGRnLzEemwXuowKhLqQw" name="explanatory" ordered="false" upperBound="-1">
+          <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        </eStructuralFeatures>
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_BaBGSHLzEemwXuowKhLqQw" name="sink" ordered="false" upperBound="-1">
+          <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        </eStructuralFeatures>
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_BaBGSnLzEemwXuowKhLqQw" name="threshold" ordered="false" lowerBound="1">
+          <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_BaBGTHLzEemwXuowKhLqQw" name="critical">
+        <eAnnotations xmi:id="_BaBGTXLzEemwXuowKhLqQw" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_d-zTsGzEEemlJ-dlSmJotw"/>
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_BaBGTnLzEemwXuowKhLqQw" name="protected" ordered="false" upperBound="-1">
+          <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        </eStructuralFeatures>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_BaBGUHLzEemwXuowKhLqQw" name="base_StructuredClassifier" ordered="false" lowerBound="1">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//StructuredClassifier"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+    </contents>
+    <contents xmi:type="ecore:EPackage" xmi:id="_bVm7AHLyEemwXuowKhLqQw" name="UMLFairness" nsURI="http://koblenz.de/umlfair/2020/1.0" nsPrefix="UMLFairness">
+      <eAnnotations xmi:id="_bVniEnLyEemwXuowKhLqQw" source="PapyrusVersion">
+        <details xmi:id="_bVniE3LyEemwXuowKhLqQw" key="Version" value="0.0.9"/>
+        <details xmi:id="_bVniFHLyEemwXuowKhLqQw" key="Comment" value=""/>
+        <details xmi:id="_bVniFXLyEemwXuowKhLqQw" key="Copyright" value=""/>
+        <details xmi:id="_bVniFnLyEemwXuowKhLqQw" key="Date" value="2019-05-10"/>
+        <details xmi:id="_bVniF3LyEemwXuowKhLqQw" key="Author" value="Qusai"/>
+      </eAnnotations>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_bVm7AXLyEemwXuowKhLqQw" name="indvidualfairness">
+        <eAnnotations xmi:id="_bVm7AnLyEemwXuowKhLqQw" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_Il-U8GzEEemlJ-dlSmJotw">
+          <details xmi:id="_bVm7A3LyEemwXuowKhLqQw" key="originalName" value="indvidual-fairness"/>
+        </eAnnotations>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_bVm7BHLyEemwXuowKhLqQw" name="base_BehavioredClassifier" ordered="false" lowerBound="1">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//BehavioredClassifier"/>
+        </eStructuralFeatures>
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_bVm7BnLyEemwXuowKhLqQw" name="explanatory" ordered="false" upperBound="-1">
+          <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        </eStructuralFeatures>
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_bVm7CHLyEemwXuowKhLqQw" name="sink" ordered="false" upperBound="-1">
+          <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        </eStructuralFeatures>
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_bVm7CnLyEemwXuowKhLqQw" name="threshold" ordered="false" lowerBound="1">
+          <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_bVm7DHLyEemwXuowKhLqQw" name="critical">
+        <eAnnotations xmi:id="_bVm7DXLyEemwXuowKhLqQw" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_d-zTsGzEEemlJ-dlSmJotw"/>
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_bVm7DnLyEemwXuowKhLqQw" name="protected" ordered="false" upperBound="-1">
+          <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        </eStructuralFeatures>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_bVm7EHLyEemwXuowKhLqQw" name="base_StructuredClassifier" ordered="false" lowerBound="1">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//StructuredClassifier"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+    </contents>
+    <contents xmi:type="ecore:EPackage" xmi:id="_8LhdkHLxEemwXuowKhLqQw" name="UMLFairness" nsURI="http://koblenz.de/umlfair/2020/1.0" nsPrefix="UMLFairness">
+      <eAnnotations xmi:id="_8LirsXLxEemwXuowKhLqQw" source="PapyrusVersion">
+        <details xmi:id="_8LirsnLxEemwXuowKhLqQw" key="Version" value="0.0.8"/>
+        <details xmi:id="_8Lirs3LxEemwXuowKhLqQw" key="Comment" value=""/>
+        <details xmi:id="_8LirtHLxEemwXuowKhLqQw" key="Copyright" value=""/>
+        <details xmi:id="_8LirtXLxEemwXuowKhLqQw" key="Date" value="2019-05-10"/>
+        <details xmi:id="_8LirtnLxEemwXuowKhLqQw" key="Author" value="Qusai"/>
+      </eAnnotations>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_8LhdkXLxEemwXuowKhLqQw" name="indvidualfairness">
+        <eAnnotations xmi:id="_8LhdknLxEemwXuowKhLqQw" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_Il-U8GzEEemlJ-dlSmJotw">
+          <details xmi:id="_8Lhdk3LxEemwXuowKhLqQw" key="originalName" value="indvidual-fairness"/>
+        </eAnnotations>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_8LhdlHLxEemwXuowKhLqQw" name="base_BehavioredClassifier" ordered="false" lowerBound="1">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//BehavioredClassifier"/>
+        </eStructuralFeatures>
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_8LhdlnLxEemwXuowKhLqQw" name="explanatory" ordered="false" upperBound="-1">
+          <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        </eStructuralFeatures>
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_8LhdmHLxEemwXuowKhLqQw" name="sink" ordered="false" upperBound="-1">
+          <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        </eStructuralFeatures>
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_8LhdmnLxEemwXuowKhLqQw" name="threshold" ordered="false" lowerBound="1">
+          <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_8LhdnHLxEemwXuowKhLqQw" name="critical">
+        <eAnnotations xmi:id="_8LhdnXLxEemwXuowKhLqQw" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_d-zTsGzEEemlJ-dlSmJotw"/>
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_8LhdnnLxEemwXuowKhLqQw" name="protected" ordered="false" upperBound="-1">
+          <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        </eStructuralFeatures>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_8LhdoHLxEemwXuowKhLqQw" name="base_StructuredClassifier" ordered="false" lowerBound="1">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//StructuredClassifier"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+    </contents>
+    <contents xmi:type="ecore:EPackage" xmi:id="_mehOIHK7EemwXuowKhLqQw" name="UMLFairness" nsURI="http://koblenz.de/umlfair/2020/1.0" nsPrefix="UMLFairness">
+      <eAnnotations xmi:id="_memtsHK7EemwXuowKhLqQw" source="PapyrusVersion">
+        <details xmi:id="_memtsXK7EemwXuowKhLqQw" key="Version" value="0.0.7"/>
+        <details xmi:id="_memtsnK7EemwXuowKhLqQw" key="Comment" value=""/>
+        <details xmi:id="_memts3K7EemwXuowKhLqQw" key="Copyright" value=""/>
+        <details xmi:id="_memttHK7EemwXuowKhLqQw" key="Date" value="2019-05-10"/>
+        <details xmi:id="_memttXK7EemwXuowKhLqQw" key="Author" value="Qusai"/>
+      </eAnnotations>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_mehOIXK7EemwXuowKhLqQw" name="indvidualfairness">
+        <eAnnotations xmi:id="_mehOInK7EemwXuowKhLqQw" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_Il-U8GzEEemlJ-dlSmJotw">
+          <details xmi:id="_mehOI3K7EemwXuowKhLqQw" key="originalName" value="indvidual-fairness"/>
+        </eAnnotations>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_mehOJHK7EemwXuowKhLqQw" name="base_BehavioredClassifier" ordered="false" lowerBound="1">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//BehavioredClassifier"/>
+        </eStructuralFeatures>
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_mehOJnK7EemwXuowKhLqQw" name="explanatory" ordered="false" upperBound="-1">
+          <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        </eStructuralFeatures>
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_mehOKHK7EemwXuowKhLqQw" name="sink" ordered="false" upperBound="-1">
+          <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        </eStructuralFeatures>
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_mehOKnK7EemwXuowKhLqQw" name="threshold" ordered="false" lowerBound="1">
+          <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_mehOLHK7EemwXuowKhLqQw" name="critical">
+        <eAnnotations xmi:id="_mehOLXK7EemwXuowKhLqQw" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_d-zTsGzEEemlJ-dlSmJotw"/>
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_mehOLnK7EemwXuowKhLqQw" name="protected" ordered="false" upperBound="-1">
+          <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        </eStructuralFeatures>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_mehOMHK7EemwXuowKhLqQw" name="base_StructuredClassifier" ordered="false" lowerBound="1">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//StructuredClassifier"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+    </contents>
+    <contents xmi:type="ecore:EPackage" xmi:id="_S-k4oHDDEemNjf67lB1xBw" name="UMLFairness" nsURI="http://koblenz.de/umlfair/2020/1.0" nsPrefix="UMLFairness">
+      <eAnnotations xmi:id="_S-q_QXDDEemNjf67lB1xBw" source="PapyrusVersion">
+        <details xmi:id="_S-rmUHDDEemNjf67lB1xBw" key="Version" value="0.0.6"/>
+        <details xmi:id="_S-rmUXDDEemNjf67lB1xBw" key="Comment" value=""/>
+        <details xmi:id="_S-rmUnDDEemNjf67lB1xBw" key="Copyright" value=""/>
+        <details xmi:id="_S-rmU3DDEemNjf67lB1xBw" key="Date" value="2019-05-07"/>
+        <details xmi:id="_S-rmVHDDEemNjf67lB1xBw" key="Author" value="Qusai"/>
+      </eAnnotations>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_S-k4oXDDEemNjf67lB1xBw" name="fairness">
+        <eAnnotations xmi:id="_S-k4onDDEemNjf67lB1xBw" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_Il-U8GzEEemlJ-dlSmJotw"/>
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_S-k4o3DDEemNjf67lB1xBw" name="level" ordered="false" lowerBound="1" eType="_S-k4rXDDEemNjf67lB1xBw"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_S-k4pXDDEemNjf67lB1xBw" name="base_BehavioredClassifier" ordered="false" lowerBound="1">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//BehavioredClassifier"/>
+        </eStructuralFeatures>
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_S-k4p3DDEemNjf67lB1xBw" name="explanatory" ordered="false" lowerBound="1" upperBound="-1">
+          <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        </eStructuralFeatures>
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_S-k4qXDDEemNjf67lB1xBw" name="sink" ordered="false" lowerBound="1" upperBound="-1">
+          <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        </eStructuralFeatures>
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_S-k4q3DDEemNjf67lB1xBw" name="threshold" ordered="false" lowerBound="1">
+          <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EEnum" xmi:id="_S-k4rXDDEemNjf67lB1xBw" name="FairnessLevel">
+        <eAnnotations xmi:id="_S-k4rnDDEemNjf67lB1xBw" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
+        <eLiterals xmi:id="_S-k4r3DDEemNjf67lB1xBw" name="IndividualFairness" value="1"/>
+        <eLiterals xmi:id="_S-k4sHDDEemNjf67lB1xBw" name="GroupFairness" value="2"/>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_S-k4sXDDEemNjf67lB1xBw" name="critical">
+        <eAnnotations xmi:id="_S-k4snDDEemNjf67lB1xBw" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_d-zTsGzEEemlJ-dlSmJotw"/>
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_S-k4s3DDEemNjf67lB1xBw" name="protected" ordered="false" lowerBound="1" upperBound="-1">
+          <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        </eStructuralFeatures>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_S-k4tXDDEemNjf67lB1xBw" name="base_Class" ordered="false" lowerBound="1">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+    </contents>
+    <contents xmi:type="ecore:EPackage" xmi:id="_rzA-kGzREemKyMaTIZOcnA" name="UMLFairness" nsURI="http://koblenz.de/umlfair/2020/1.0" nsPrefix="UMLFairness">
+      <eAnnotations xmi:id="_rzCMsWzREemKyMaTIZOcnA" source="PapyrusVersion">
+        <details xmi:id="_rzCMsmzREemKyMaTIZOcnA" key="Version" value="0.0.5"/>
+        <details xmi:id="_rzCMs2zREemKyMaTIZOcnA" key="Comment" value=""/>
+        <details xmi:id="_rzCMtGzREemKyMaTIZOcnA" key="Copyright" value=""/>
+        <details xmi:id="_rzCMtWzREemKyMaTIZOcnA" key="Date" value="2019-05-02"/>
+        <details xmi:id="_rzCMtmzREemKyMaTIZOcnA" key="Author" value="Qusai"/>
+      </eAnnotations>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_rzA-kWzREemKyMaTIZOcnA" name="fairness">
+        <eAnnotations xmi:id="_rzA-kmzREemKyMaTIZOcnA" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_Il-U8GzEEemlJ-dlSmJotw"/>
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_rzA-k2zREemKyMaTIZOcnA" name="level" ordered="false" lowerBound="1" eType="_rzA-m2zREemKyMaTIZOcnA"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_rzA-lWzREemKyMaTIZOcnA" name="base_BehavioredClassifier" ordered="false" lowerBound="1">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//BehavioredClassifier"/>
+        </eStructuralFeatures>
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_rzA-l2zREemKyMaTIZOcnA" name="explanatory" ordered="false" lowerBound="1" upperBound="-1">
+          <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        </eStructuralFeatures>
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_rzA-mWzREemKyMaTIZOcnA" name="sink" ordered="false" lowerBound="1" upperBound="-1">
+          <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EEnum" xmi:id="_rzA-m2zREemKyMaTIZOcnA" name="FairnessLevel">
+        <eAnnotations xmi:id="_rzA-nGzREemKyMaTIZOcnA" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
+        <eLiterals xmi:id="_rzA-nWzREemKyMaTIZOcnA" name="IndividualFairness" value="1"/>
+        <eLiterals xmi:id="_rzA-nmzREemKyMaTIZOcnA" name="GroupFairness" value="2"/>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_rzA-n2zREemKyMaTIZOcnA" name="critical">
+        <eAnnotations xmi:id="_rzA-oGzREemKyMaTIZOcnA" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_d-zTsGzEEemlJ-dlSmJotw"/>
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_rzA-oWzREemKyMaTIZOcnA" name="protected" ordered="false" lowerBound="1" upperBound="-1">
+          <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        </eStructuralFeatures>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_rzA-o2zREemKyMaTIZOcnA" name="base_Class" ordered="false" lowerBound="1">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+    </contents>
+    <contents xmi:type="ecore:EPackage" xmi:id="_gwvj8WzREemKyMaTIZOcnA" name="UMLFairness" nsURI="http://koblenz.de/umlfair/2020/1.0" nsPrefix="UMLFairness">
+      <eAnnotations xmi:id="_gwwyEGzREemKyMaTIZOcnA" source="PapyrusVersion">
+        <details xmi:id="_gwwyEWzREemKyMaTIZOcnA" key="Version" value="0.0.4"/>
+        <details xmi:id="_gwwyEmzREemKyMaTIZOcnA" key="Comment" value=""/>
+        <details xmi:id="_gwwyE2zREemKyMaTIZOcnA" key="Copyright" value=""/>
+        <details xmi:id="_gwwyFGzREemKyMaTIZOcnA" key="Date" value="2019-05-02"/>
+        <details xmi:id="_gwwyFWzREemKyMaTIZOcnA" key="Author" value="Qusai"/>
+      </eAnnotations>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_gwvj8mzREemKyMaTIZOcnA" name="fairness">
+        <eAnnotations xmi:id="_gwvj82zREemKyMaTIZOcnA" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_Il-U8GzEEemlJ-dlSmJotw"/>
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_gwvj9GzREemKyMaTIZOcnA" name="level" ordered="false" lowerBound="1" eType="_gwvj_GzREemKyMaTIZOcnA"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_gwvj9mzREemKyMaTIZOcnA" name="base_BehavioredClassifier" ordered="false" lowerBound="1">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//BehavioredClassifier"/>
+        </eStructuralFeatures>
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_gwvj-GzREemKyMaTIZOcnA" name="explanatory" ordered="false" lowerBound="1" upperBound="-1">
+          <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        </eStructuralFeatures>
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_gwvj-mzREemKyMaTIZOcnA" name="sink" ordered="false" lowerBound="1" upperBound="-1">
+          <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EEnum" xmi:id="_gwvj_GzREemKyMaTIZOcnA" name="FairnessLevel">
+        <eAnnotations xmi:id="_gwvj_WzREemKyMaTIZOcnA" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
+        <eLiterals xmi:id="_gwvj_mzREemKyMaTIZOcnA" name="IndividualFairness" value="1"/>
+        <eLiterals xmi:id="_gwvj_2zREemKyMaTIZOcnA" name="GroupFairness" value="2"/>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_gwvkAGzREemKyMaTIZOcnA" name="critical">
+        <eAnnotations xmi:id="_gwvkAWzREemKyMaTIZOcnA" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_d-zTsGzEEemlJ-dlSmJotw"/>
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_gwvkAmzREemKyMaTIZOcnA" name="protected" ordered="false" lowerBound="1" upperBound="-1">
+          <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        </eStructuralFeatures>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_gwvkBGzREemKyMaTIZOcnA" name="base_Class" ordered="false" lowerBound="1">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+    </contents>
+    <contents xmi:type="ecore:EPackage" xmi:id="_eLG-cGzREemKyMaTIZOcnA" name="UMLFairness" nsURI="http://koblenz.de/umlfair/2020/1.0" nsPrefix="UMLFairness">
+      <eAnnotations xmi:id="_eLKBwWzREemKyMaTIZOcnA" source="PapyrusVersion">
+        <details xmi:id="_eLKBwmzREemKyMaTIZOcnA" key="Version" value="0.0.3"/>
+        <details xmi:id="_eLKBw2zREemKyMaTIZOcnA" key="Comment" value=""/>
+        <details xmi:id="_eLKBxGzREemKyMaTIZOcnA" key="Copyright" value=""/>
+        <details xmi:id="_eLKBxWzREemKyMaTIZOcnA" key="Date" value="2019-05-02"/>
+        <details xmi:id="_eLKBxmzREemKyMaTIZOcnA" key="Author" value="Qusai"/>
+      </eAnnotations>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_eLG-cWzREemKyMaTIZOcnA" name="fairness">
+        <eAnnotations xmi:id="_eLG-cmzREemKyMaTIZOcnA" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_Il-U8GzEEemlJ-dlSmJotw"/>
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_eLG-c2zREemKyMaTIZOcnA" name="level" ordered="false" lowerBound="1" eType="_eLG-e2zREemKyMaTIZOcnA"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_eLG-dWzREemKyMaTIZOcnA" name="base_BehavioredClassifier" ordered="false" lowerBound="1">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//BehavioredClassifier"/>
+        </eStructuralFeatures>
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_eLG-d2zREemKyMaTIZOcnA" name="explanatory" ordered="false" lowerBound="1" upperBound="-1">
+          <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        </eStructuralFeatures>
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_eLG-eWzREemKyMaTIZOcnA" name="sink" ordered="false" lowerBound="1" upperBound="-1">
+          <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EEnum" xmi:id="_eLG-e2zREemKyMaTIZOcnA" name="FairnessLevel">
+        <eAnnotations xmi:id="_eLG-fGzREemKyMaTIZOcnA" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
+        <eLiterals xmi:id="_eLG-fWzREemKyMaTIZOcnA" name="IndividualFairness" value="1"/>
+        <eLiterals xmi:id="_eLG-fmzREemKyMaTIZOcnA" name="GroupFairness" value="2"/>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_eLG-f2zREemKyMaTIZOcnA" name="critical">
+        <eAnnotations xmi:id="_eLG-gGzREemKyMaTIZOcnA" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_d-zTsGzEEemlJ-dlSmJotw"/>
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_eLG-gWzREemKyMaTIZOcnA" name="protected" ordered="false" lowerBound="1" upperBound="-1">
+          <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        </eStructuralFeatures>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_eLG-g2zREemKyMaTIZOcnA" name="base_Class" ordered="false" lowerBound="1">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+    </contents>
+    <contents xmi:type="ecore:EPackage" xmi:id="_UpYGUGzNEemlJ-dlSmJotw" name="UMLFairness" nsURI="http://koblenz.de/umlfair/2020/1.0" nsPrefix="UMLFairness">
+      <eAnnotations xmi:id="_UpYtYWzNEemlJ-dlSmJotw" source="PapyrusVersion">
+        <details xmi:id="_UpYtYmzNEemlJ-dlSmJotw" key="Version" value="0.0.2"/>
+        <details xmi:id="_UpYtY2zNEemlJ-dlSmJotw" key="Comment" value=""/>
+        <details xmi:id="_UpYtZGzNEemlJ-dlSmJotw" key="Copyright" value=""/>
+        <details xmi:id="_UpYtZWzNEemlJ-dlSmJotw" key="Date" value="2019-05-02"/>
+        <details xmi:id="_UpYtZmzNEemlJ-dlSmJotw" key="Author" value="Qusai"/>
+      </eAnnotations>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_UpYGUWzNEemlJ-dlSmJotw" name="fairness">
+        <eAnnotations xmi:id="_UpYGUmzNEemlJ-dlSmJotw" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_Il-U8GzEEemlJ-dlSmJotw"/>
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_UpYGU2zNEemlJ-dlSmJotw" name="level" ordered="false" lowerBound="1" eType="_UpYGV2zNEemlJ-dlSmJotw"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_UpYGVWzNEemlJ-dlSmJotw" name="base_BehavioredClassifier" ordered="false" lowerBound="1">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//BehavioredClassifier"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EEnum" xmi:id="_UpYGV2zNEemlJ-dlSmJotw" name="FairnessLevel">
+        <eAnnotations xmi:id="_UpYGWGzNEemlJ-dlSmJotw" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
+        <eLiterals xmi:id="_UpYGWWzNEemlJ-dlSmJotw" name="IndividualFairness" value="1"/>
+        <eLiterals xmi:id="_UpYGWmzNEemlJ-dlSmJotw" name="GroupFairness" value="2"/>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_UpYGW2zNEemlJ-dlSmJotw" name="critical">
+        <eAnnotations xmi:id="_UpYGXGzNEemlJ-dlSmJotw" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_d-zTsGzEEemlJ-dlSmJotw"/>
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_UpYGXWzNEemlJ-dlSmJotw" name="protected" ordered="false" upperBound="-1">
+          <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        </eStructuralFeatures>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_UpYGX2zNEemlJ-dlSmJotw" name="base_Class" ordered="false" lowerBound="1">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+    </contents>
+    <contents xmi:type="ecore:EPackage" xmi:id="_dsPVUWzKEemlJ-dlSmJotw" name="UMLFairness" nsURI="http://koblenz.de/umlfair/2020/1.0" nsPrefix="UMLFairness">
+      <eAnnotations xmi:id="_dsRKgWzKEemlJ-dlSmJotw" source="PapyrusVersion">
+        <details xmi:id="_dsRKgmzKEemlJ-dlSmJotw" key="Version" value="0.0.1"/>
+        <details xmi:id="_dsRKg2zKEemlJ-dlSmJotw" key="Comment" value=""/>
+        <details xmi:id="_dsRKhGzKEemlJ-dlSmJotw" key="Copyright" value=""/>
+        <details xmi:id="_dsRKhWzKEemlJ-dlSmJotw" key="Date" value="2019-05-02"/>
+        <details xmi:id="_dsRKhmzKEemlJ-dlSmJotw" key="Author" value=""/>
+      </eAnnotations>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_dsPVUmzKEemlJ-dlSmJotw" name="fairness">
+        <eAnnotations xmi:id="_dsPVU2zKEemlJ-dlSmJotw" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_Il-U8GzEEemlJ-dlSmJotw"/>
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_dsPVVGzKEemlJ-dlSmJotw" name="level" ordered="false" lowerBound="1" eType="_dsPVVmzKEemlJ-dlSmJotw"/>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EEnum" xmi:id="_dsPVVmzKEemlJ-dlSmJotw" name="FairnessLevel">
+        <eAnnotations xmi:id="_dsPVV2zKEemlJ-dlSmJotw" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
+        <eLiterals xmi:id="_dsPVWGzKEemlJ-dlSmJotw" name="IndividualFairness" value="1"/>
+        <eLiterals xmi:id="_dsPVWWzKEemlJ-dlSmJotw" name="GroupFairness" value="2"/>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_dsPVWmzKEemlJ-dlSmJotw" name="critical">
+        <eAnnotations xmi:id="_dsPVW2zKEemlJ-dlSmJotw" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_d-zTsGzEEemlJ-dlSmJotw"/>
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_dsPVXGzKEemlJ-dlSmJotw" name="protected" ordered="false" upperBound="-1">
+          <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        </eStructuralFeatures>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_dsPVXmzKEemlJ-dlSmJotw" name="base_Class" ordered="false" lowerBound="1">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+    </contents>
+  </eAnnotations>
+  <elementImport xmi:id="_MsST8GzNEemlJ-dlSmJotw" alias="BehavioredClassifier">
+    <importedElement xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#BehavioredClassifier"/>
+  </elementImport>
+  <elementImport xmi:id="_EL6gIHDEEemNjf67lB1xBw" alias="StructuredClassifier">
+    <importedElement xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#StructuredClassifier"/>
+  </elementImport>
+  <packagedElement xmi:type="uml:Stereotype" xmi:id="_Il-U8GzEEemlJ-dlSmJotw" name="indvidual-Fairness">
+    <ownedAttribute xmi:id="_RuTcUWzNEemlJ-dlSmJotw" name="base_BehavioredClassifier" association="_RuS1QGzNEemlJ-dlSmJotw">
+      <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#BehavioredClassifier"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_F-3c4GzREemKyMaTIZOcnA" name="explanatoryData">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_OdX6QGzREemKyMaTIZOcnA"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Odi5YGzREemKyMaTIZOcnA" value="*"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_U5Q_oGzREemKyMaTIZOcnA" name="sensitiveDecisions">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_alKLcGzREemKyMaTIZOcnA"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_alT8cGzREemKyMaTIZOcnA" value="*"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_K3jHIHDDEemNjf67lB1xBw" name="threshold">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDouble"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_qVJFoL1SEemhV-rmp0ri8g" name="metric">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+    </ownedAttribute>
+    <icon xmi:id="_2X__wHLxEemwXuowKhLqQw" content="-119%80%78%71%13%10%26%10%0%0%0%13%73%72%68%82%0%0%0%32%0%0%0%32%8%6%0%0%0%115%122%122%-12%0%0%5%116%73%68%65%84%88%71%-99%-105%119%76%-108%119%24%-57%63%-17%1%65%8%-89%34%67%14%61%-11%80%43%-95%106%28%96%-30%4%-108%63%76%-36%88%99%-115%113%68%-101%52%-114%-76%-38%-44%-44%-88%-119%86%91%87%-76%-119%49%21%90%71%-94%-87%70%91%103%-12%15%19%5%28%113%85%-94%-79%34%-114%88%112%20%78%-112%-31%98%-55%-63%-81%121%120%61%-114%-105%59%-114%87%-97%-124%-28%-8%-3%-98%-15%-3%61%-5%-43%-8%68%106%104%80%-54%-27%2%-91%32%48%80%-2%52%-19%83%84%-103%22%-86%-85%83%-86%-86%-22%14%-102%-10%7%22%75%54%22%75%62%65%65%-75%-120%89%1%-30%114%57%80%106%56%74%-91%19%24%56%29%-85%-43%28%-96%118%1%84%87%43%85%93%-67%-115%-112%-112%21%-124%-122%-102%123%99%67%3%-68%126%61%29%-117%101%63%-31%-31%97%126%109%-8%-67%44%45%-51%81%86%107%42%29%58%-104%51%-20%-117%-85%-84%108%41%97%97%59%9%9%-15%-19%17%-97%0%-34%-65%87%-86%-78%-14%43%-94%-93%-9%-6%-75%-4%-8%49%-36%-67%11%-45%-90%-7%7%-8%-18%-99%21%-105%-21%13%-31%-31%-34%32%-68%0%-44%-42%74%-84%71%-46%-91%-53%85%-65%90%51%51%97%-47%34%15%-117%36%-93%63%-86%-85%-125%-86%-86%-73%68%68%88%13%54%13%-1%72%102%-105%-105%79%38%42%-22%116%-101%-70%78%-100%-128%67%-121%-32%-24%81%35%-117%-51%6%-13%-26%-63%-46%-91%-48%-83%-101%111%-15%-6%122%-88%-82%86%116%-18%-20%-15%-124%1%64%113%-15%111%-54%102%-5%-102%-67%123%97%-5%118%-56%-53%3%-117%69%87%-74%106%21%108%-38%100%46%23%-20%118%56%118%12%-110%-110%116%-2%-35%-69%97%-53%22%120%-12%72%-68%16%71%112%-16%-65%4%7%-21%32%-102%1%-108%-107%-71%84%120%120%96%-109%-63%-24%104%120%-7%82%23%-34%-73%15%22%44%48%26%94%-66%28%-82%94%-123%27%55%60%-25%91%-73%-62%-15%-29%112%-3%-70%-25%108%-46%36%-24%-46%5%-10%-17%-41%-49%78%-97%-122%-119%19%-63%-23%-4%-107%-40%-40%37%70%0%37%37%83%85%116%-12%-55%38%70%113%85%68%4%-68%125%107%52%44%-81%74%79%-9%-100%-55%111%-15%-46%-122%13%48%115%-90%126%46%-71%48%103%14%28%60%104%-108%93%-77%70%-25%19%122%-1%30%106%106%-12%80%52%-95%40%45%117%-87%-88%-88%64%47%-1%-50%-102%5%-121%15%-61%-62%-123%-80%103%-113%57%-9%-69%-71%-100%78%-24%-41%79%127%68%110%46%12%29%106%-108%127%-15%-30%23%108%-74%-17%116%0%78%-25%-49%42%38%102%-75%-105%5%113%-39%-28%-55%112%-31%2%36%39%127%28%0%-31%-114%-113%-121%-121%15%117%-81%-76%-90%-54%74%27%86%107%49%-102%100%126%69%-59%-25%68%70%-26%123%49%37%38%-62%-83%91%-112%-102%10%89%89%31%7%64%-38%115%80%-112%46%35%-7%50%124%-72%-73%124%105%105%61%90%69%-123%82%97%97%90%51%115%75%54%-15%79%65%1%-60%-59%-7%126%-123%63%72%-110%-108%71%-114%64%74%10%20%22%-22%9%-38%-102%74%74%-50%-94%57%-99%111%85%76%-116%-43%-21%82%106%125%-18%92%125%-48%8%-112%51%103%96%-62%4%-13%94%-112%74%-110%-78%-107%-48%-11%-19%-21%-5%1%37%37%-37%-48%-118%-117%31%40%-101%45%-34%75%-13%-112%33%48%126%60%108%-36%8%75%-106%-64%-3%-5%-112%-99%109%30%-128%-128%118%-57%94%126%-33%-71%3%3%7%-74%78%-60%-17%-47%-118%-118%-2%81%-79%-79%-83%110%-92%65%104%80%86%-90%-105%-93%-72%-16%99%-62%-80%107%23%-84%93%-21%-23%37%83%-90%64%-89%78%112%-32%-128%17%-128%-45%-7%13%-38%-13%-25%-123%-86%123%119%-121%-31%-26%-44%41%-104%58%-43%-24%54%1%100%-74%26%28%14%88%-68%24%86%-84%-48%-43%94%-66%12%99%-58%120%-121%-95%-88%104%21%-38%-77%103%-115%-54%110%-1%-48%111%63%-64%24%61%26%36%4%59%118%120%112%-51%-97%15%-27%-27%122%55%107%-113%4%-84%52%27%119%21%8%-65%-100%-55%-12%-20%-35%-37%35%-3%-4%-7%-17%104%-107%-107%74%89%44%-95%116%-20%88%-45%124%35%-52%-49%-98%-127%-12%116%55%73%-57%27%48%-96%-3%106%-112%-74%43%83%-78%-70%-38%8%51%45%77%79%-58%-116%12%-49%-7%-109%39%-73%-12%89%80%80%48%94%57%28%103%-101%110%114%114%96%-20%88%-33%-122%4%-104%-12%-123%-63%-125%-37%-10%-127%-128%-100%61%27%86%-82%52%-14%92%-68%-88%-105%-92%59%49%-91%-70%74%74%-108%14%-32%-34%-67%-109%42%33%97%106%-109%-14%101%-53%-64%106%-123%-51%-101%-31%-51%27%-113%18%73%34%-87%6%89%-53%-92%-68%6%13%50%26%-88%-88%-48%-109%85%-102%-105%-124%73%-54%80%102%-118%-37%-3%34%-33%-65%63%72%126%13%27%38%33%74%-59%110%-49%-42%1%56%-99%74%69%69%5%17%24%-24%106%47%-68%-51%-9%-83%-37%-21%-6%-11%122%-26%-101%33%73%-16%-99%59%47%98%-73%39%123%22%-125%-62%-62%29%42%51%-13%-37%-90%-71%-35%30%-119%-95%117%-21%-68%-71%-52%-19%-63%-30%-15%120%28%-114%-5%-124%-122%126%-104%-122%-94%-22%-59%11%-91%-70%118%-19%70%70%70%113%83%9%-75%69%50%21%101%58%-74%69%-93%70%-63%-107%43%-66%111%123%-11%18%-29%-16%-12%-23%93%18%18%6%24%-9%1%17%-71%121%-13%-111%74%76%-4%-84%73%-6%-36%57%-72%116%9%94%-67%-46%-105%10%105%-87%-110%-100%102%-88%-90%70%-33%7%-14%-13%65%86%116%41%-67%25%51%64%-42%-74%-36%-36%-75%36%37%-3%-40%-68%8%121%45%-91%57%57%-57%85%74%74%-117%-83%-61%-116%69%-109%60%-73%111%-89%19%23%119%-84%-19%-99%-48%-83%-25%-4%-7%-61%106%-36%-72%47%77%-86%53%-57%-106%-101%-5%5%118%-5%95%-60%-60%24%51%-91%-51%15%-109%-20%-20%-21%-86%127%-1%52%-94%-94%-34%-103%-77%-32%-121%43%43%-21%39%-122%14%93%109%-18%-69%-96%-91%-98%-4%-4%90%85%86%-74%-116%17%35%50%9%8%-8%120%28%121%121%-119%84%84%-20%35%57%121%96%-101%15%109%-9%-37%80%-52%94%-69%86%-84%-22%-21%-73%-47%-93%-57%-97%-12%-20%-7%-97%95%36%-81%95%-121%-16%-32%65%26%85%85%63%48%100%-56%72%-97%-81%110%-87%-64%20%0%-73%-128%-108%106%97%97%17%-16%55%22%-53%67%44%-106%114%52%-83%-111%-58%-58%48%26%27%29%52%52%12%35%50%-78%23%125%-6%-124%18%16%96%-82%43%-4%15%-19%-17%-6%53%-23%76%-81%74%0%0%0%0%73%69%78%68%-82%66%96%-126%" format="PNG" location="C:/Users/qramadan/workspace/UMLFairness/lawfulfairness.png">
+      <eAnnotations xmi:id="_2X__wXLxEemwXuowKhLqQw" source="image_papyrus">
+        <details xmi:id="_2X__wnLxEemwXuowKhLqQw" key="image_name_key" value="fairness"/>
+        <details xmi:id="_2X__w3LxEemwXuowKhLqQw" key="image_kind_key" value="icon"/>
+      </eAnnotations>
+    </icon>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Stereotype" xmi:id="_d-zTsGzEEemlJ-dlSmJotw" name="critical">
+    <ownedAttribute xmi:id="_hNoAIGzEEemlJ-dlSmJotw" name="protectedData">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_2CxDAGzEEemlJ-dlSmJotw"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_2C6M8GzEEemlJ-dlSmJotw" value="*"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_Xq5BwHK7EemwXuowKhLqQw" name="base_StructuredClassifier" association="_Xqwe4HK7EemwXuowKhLqQw">
+      <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#StructuredClassifier"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Extension" xmi:id="_RuS1QGzNEemlJ-dlSmJotw" name="E_indvidual-Fairness_BehavioredClassifier1" memberEnd="_RuTcUGzNEemlJ-dlSmJotw _RuTcUWzNEemlJ-dlSmJotw">
+    <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_RuTcUGzNEemlJ-dlSmJotw" name="extension_indvidual-Fairness" type="_Il-U8GzEEemlJ-dlSmJotw" aggregation="composite" association="_RuS1QGzNEemlJ-dlSmJotw"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Extension" xmi:id="_Xqwe4HK7EemwXuowKhLqQw" name="E_critical_StructuredClassifier1" memberEnd="_Xq4asHK7EemwXuowKhLqQw _Xq5BwHK7EemwXuowKhLqQw">
+    <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_Xq4asHK7EemwXuowKhLqQw" name="extension_critical" type="_d-zTsGzEEemlJ-dlSmJotw" aggregation="composite" association="_Xqwe4HK7EemwXuowKhLqQw"/>
+  </packagedElement>
+</uml:Profile>

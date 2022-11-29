@@ -1,0 +1,509 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:UMLFairness="http://koblenz.de/umlfair/2020/1.0" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http://koblenz.de/umlfair/2020/1.0 ../UMLFairness/model.profile.uml#_34Z2UL1SEemhV-rmp0ri8g">
+  <uml:Model xmi:id="_8cuG4B4UEe2CkuHVUIYgKA" name="managingLoans">
+    <packageImport xmi:type="uml:PackageImport" xmi:id="_8i9RwB4UEe2CkuHVUIYgKA">
+      <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+    </packageImport>
+    <packagedElement xmi:type="uml:Class" xmi:id="__NqkgB4UEe2CkuHVUIYgKA" name="CustomerProfile" classifierBehavior="_yLfaoB-0Ee2WWcUYuPhKoA">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_L7StsB4VEe2CkuHVUIYgKA" name="healthy" isStatic="true" type="_qHf-4B4bEe2CkuHVUIYgKA"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_4Ttl8B4bEe2CkuHVUIYgKA" name="income" isStatic="true" type="_upUkQB4bEe2CkuHVUIYgKA"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_WWuGkB4cEe2CkuHVUIYgKA" name="hasLifeInsurance" isStatic="true" type="_qHf-4B4bEe2CkuHVUIYgKA" isDerived="true">
+        <defaultValue xmi:type="uml:LiteralBoolean" xmi:id="_YLSWUB4uEe2CkuHVUIYgKA" name="false"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_leGVYB4cEe2CkuHVUIYgKA" name="cust" type="_AwMuQB4VEe2CkuHVUIYgKA" association="_ld-ZkB4cEe2CkuHVUIYgKA"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_NUSXkB4uEe2CkuHVUIYgKA" name="hasCreditCard" isStatic="true" type="_qHf-4B4bEe2CkuHVUIYgKA" isDerived="true">
+        <defaultValue xmi:type="uml:LiteralBoolean" xmi:id="_Zg0l4B4uEe2CkuHVUIYgKA" name="false"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_fAVikB4uEe2CkuHVUIYgKA" name="ownPoints" isStatic="true" type="_upUkQB4bEe2CkuHVUIYgKA" isDerived="true">
+        <defaultValue xmi:type="uml:LiteralInteger" xmi:id="_kvD_8B4uEe2CkuHVUIYgKA" name="0"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_l2wcIB_AEe2WWcUYuPhKoA" name="goodCreditHistory" isStatic="true" type="_qHf-4B4bEe2CkuHVUIYgKA"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_2UrAEB_AEe2WWcUYuPhKoA" name="hasFreeAccount" isStatic="true" type="_qHf-4B4bEe2CkuHVUIYgKA" isDerived="true">
+        <defaultValue xmi:type="uml:LiteralBoolean" xmi:id="_8nrPMB_AEe2WWcUYuPhKoA" name="false"/>
+      </ownedAttribute>
+      <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_yLfaoB-0Ee2WWcUYuPhKoA" name="CustomerProfileStateMachine">
+        <region xmi:type="uml:Region" xmi:id="_z0HlUB-0Ee2WWcUYuPhKoA" name="Region1">
+          <transition xmi:type="uml:Transition" xmi:id="_DrDzYB-2Ee2WWcUYuPhKoA" source="_EI9FwB-1Ee2WWcUYuPhKoA" target="_EfJ_QB-1Ee2WWcUYuPhKoA"/>
+          <transition xmi:type="uml:Transition" xmi:id="_c36dYB-2Ee2WWcUYuPhKoA" source="_EfJ_QB-1Ee2WWcUYuPhKoA" target="_J8DFwB-1Ee2WWcUYuPhKoA">
+            <trigger xmi:type="uml:Trigger" xmi:id="_mRVq4B-2Ee2WWcUYuPhKoA" name="verifyLifeInsApp()" event="_lz-ZcB-2Ee2WWcUYuPhKoA"/>
+          </transition>
+          <transition xmi:type="uml:Transition" xmi:id="_oTkoYB-2Ee2WWcUYuPhKoA" source="_J8DFwB-1Ee2WWcUYuPhKoA" target="_EfJ_QB-1Ee2WWcUYuPhKoA"/>
+          <transition xmi:type="uml:Transition" xmi:id="_qBqscB-3Ee2WWcUYuPhKoA" source="_EfJ_QB-1Ee2WWcUYuPhKoA" target="_1p1e4B-2Ee2WWcUYuPhKoA">
+            <trigger xmi:type="uml:Trigger" xmi:id="_wwYAIB-3Ee2WWcUYuPhKoA" name="verifyCreditCardApp()" event="_wINM4B-3Ee2WWcUYuPhKoA"/>
+          </transition>
+          <transition xmi:type="uml:Transition" xmi:id="_1Mnh8B-3Ee2WWcUYuPhKoA" source="_1p1e4B-2Ee2WWcUYuPhKoA" target="_EfJ_QB-1Ee2WWcUYuPhKoA"/>
+          <transition xmi:type="uml:Transition" xmi:id="_9nn_YB-3Ee2WWcUYuPhKoA" source="_EfJ_QB-1Ee2WWcUYuPhKoA" target="_8ctEYB-3Ee2WWcUYuPhKoA">
+            <trigger xmi:type="uml:Trigger" xmi:id="_pkQQUB-6Ee2WWcUYuPhKoA" name="exit()" event="_pRNYgB-6Ee2WWcUYuPhKoA"/>
+          </transition>
+          <transition xmi:type="uml:Transition" xmi:id="_H0PqwB_AEe2WWcUYuPhKoA" guard="_0kCv8B_AEe2WWcUYuPhKoA" source="_EfJ_QB-1Ee2WWcUYuPhKoA" target="_EfJ_QB-1Ee2WWcUYuPhKoA">
+            <ownedRule xmi:type="uml:Constraint" xmi:id="_0kCv8B_AEe2WWcUYuPhKoA" name="hasFreeAccount==false &amp;&amp; goodCreditHistory==true &amp;&amp; ownPoints>=50">
+              <specification xmi:type="uml:OpaqueExpression" xmi:id="_0kCv8R_AEe2WWcUYuPhKoA" name="hasFreeAccount==false &amp;&amp; goodCreditHistory==true &amp;&amp; ownPoints>=50">
+                <language>JAVA</language>
+                <body>hasFreeAccount==false &amp;&amp; goodCreditHistory==true &amp;&amp; ownPoints>=50</body>
+              </specification>
+            </ownedRule>
+            <effect xmi:type="uml:OpaqueBehavior" xmi:id="_FKdIkB_BEe2WWcUYuPhKoA" name="hasFreeAccount=true">
+              <language>JAVA</language>
+              <body>hasFreeAccount=true</body>
+            </effect>
+          </transition>
+          <subvertex xmi:type="uml:Pseudostate" xmi:id="_EI9FwB-1Ee2WWcUYuPhKoA" name="Initial1"/>
+          <subvertex xmi:type="uml:State" xmi:id="_EfJ_QB-1Ee2WWcUYuPhKoA" name="WaitForRequest"/>
+          <subvertex xmi:type="uml:State" xmi:id="_J8DFwB-1Ee2WWcUYuPhKoA" name="LifeInsurance">
+            <region xmi:type="uml:Region" xmi:id="_M_clUh-1Ee2WWcUYuPhKoA" name="Region1">
+              <transition xmi:type="uml:Transition" xmi:id="_U8VjYB-1Ee2WWcUYuPhKoA" source="_M_hd0B-1Ee2WWcUYuPhKoA" target="_Pc6tUB-1Ee2WWcUYuPhKoA"/>
+              <transition xmi:type="uml:Transition" xmi:id="_fBP94B-1Ee2WWcUYuPhKoA" guard="_kTxAYB-1Ee2WWcUYuPhKoA" source="_Pc6tUB-1Ee2WWcUYuPhKoA" target="_Y6sPUB-1Ee2WWcUYuPhKoA">
+                <ownedRule xmi:type="uml:Constraint" xmi:id="_kTxAYB-1Ee2WWcUYuPhKoA" name="healthy==true">
+                  <specification xmi:type="uml:OpaqueExpression" xmi:id="_kTxncB-1Ee2WWcUYuPhKoA" name="healthy==true">
+                    <language>JAVA</language>
+                    <body>healthy==true</body>
+                  </specification>
+                </ownedRule>
+                <effect xmi:type="uml:OpaqueBehavior" xmi:id="_vnwdIB-1Ee2WWcUYuPhKoA" name="hasLifeInsurance=true">
+                  <language>JAVA</language>
+                  <body>hasLifeInsurance=true</body>
+                </effect>
+              </transition>
+              <transition xmi:type="uml:Transition" xmi:id="_wZwh0B-1Ee2WWcUYuPhKoA" guard="_2Qz0wB-1Ee2WWcUYuPhKoA" source="_Pc6tUB-1Ee2WWcUYuPhKoA" target="_bgU00B-1Ee2WWcUYuPhKoA">
+                <ownedRule xmi:type="uml:Constraint" xmi:id="_2Qz0wB-1Ee2WWcUYuPhKoA" name="healthy==false">
+                  <specification xmi:type="uml:OpaqueExpression" xmi:id="_2Qz0wR-1Ee2WWcUYuPhKoA" name="healthy==false">
+                    <language>JAVA</language>
+                    <body>healthy==false</body>
+                  </specification>
+                </ownedRule>
+                <effect xmi:type="uml:OpaqueBehavior" xmi:id="_69ZfsB-1Ee2WWcUYuPhKoA" name="hasLifeInsurance=false">
+                  <language>JAVA</language>
+                  <body>hasLifeInsurance=false</body>
+                </effect>
+              </transition>
+              <transition xmi:type="uml:Transition" xmi:id="_BwXoUB-2Ee2WWcUYuPhKoA" source="_Y6sPUB-1Ee2WWcUYuPhKoA" target="_Ao97YB-2Ee2WWcUYuPhKoA">
+                <effect xmi:type="uml:OpaqueBehavior" xmi:id="_LJZNMB-2Ee2WWcUYuPhKoA" name="ownPoints=ownPoints+25">
+                  <language>JAVA</language>
+                  <body>ownPoints=ownPoints+25</body>
+                </effect>
+              </transition>
+              <transition xmi:type="uml:Transition" xmi:id="_CrCg0B-2Ee2WWcUYuPhKoA" source="_bgU00B-1Ee2WWcUYuPhKoA" target="_Ao97YB-2Ee2WWcUYuPhKoA">
+                <effect xmi:type="uml:OpaqueBehavior" xmi:id="_XVevkB-2Ee2WWcUYuPhKoA" name="ownPoints=ownPoints">
+                  <language>JAVA</language>
+                  <body>ownPoints=ownPoints</body>
+                </effect>
+              </transition>
+              <subvertex xmi:type="uml:Pseudostate" xmi:id="_M_hd0B-1Ee2WWcUYuPhKoA" name="Initial1"/>
+              <subvertex xmi:type="uml:State" xmi:id="_Pc6tUB-1Ee2WWcUYuPhKoA" name="RecievedLifeInsApp"/>
+              <subvertex xmi:type="uml:State" xmi:id="_Y6sPUB-1Ee2WWcUYuPhKoA" name="AcceptedLifeAPP"/>
+              <subvertex xmi:type="uml:State" xmi:id="_bgU00B-1Ee2WWcUYuPhKoA" name="RejectedLifeApp"/>
+              <subvertex xmi:type="uml:FinalState" xmi:id="_Ao97YB-2Ee2WWcUYuPhKoA" name="FinalState1"/>
+            </region>
+          </subvertex>
+          <subvertex xmi:type="uml:State" xmi:id="_1p1e4B-2Ee2WWcUYuPhKoA" name="CreditCard">
+            <region xmi:type="uml:Region" xmi:id="_9cTVoh-2Ee2WWcUYuPhKoA" name="Region1">
+              <transition xmi:type="uml:Transition" xmi:id="_JeJW4B-3Ee2WWcUYuPhKoA" guard="_PwHrQB-3Ee2WWcUYuPhKoA" source="_-hYuYB-2Ee2WWcUYuPhKoA" target="_BpMz4B-3Ee2WWcUYuPhKoA">
+                <ownedRule xmi:type="uml:Constraint" xmi:id="_PwHrQB-3Ee2WWcUYuPhKoA" name="income>=2500">
+                  <specification xmi:type="uml:OpaqueExpression" xmi:id="_PwHrQR-3Ee2WWcUYuPhKoA" name="income>=2500">
+                    <language>JAVA</language>
+                    <body>income>=2500</body>
+                  </specification>
+                </ownedRule>
+                <effect xmi:type="uml:OpaqueBehavior" xmi:id="_dWmIAB-3Ee2WWcUYuPhKoA" name="hasCreditCard=true">
+                  <language>JAVA</language>
+                  <body>hasCreditCard=true</body>
+                </effect>
+              </transition>
+              <transition xmi:type="uml:Transition" xmi:id="_Q2KtUB-3Ee2WWcUYuPhKoA" guard="_VjxE4B-3Ee2WWcUYuPhKoA" source="_-hYuYB-2Ee2WWcUYuPhKoA" target="_DyNu0B-3Ee2WWcUYuPhKoA">
+                <ownedRule xmi:type="uml:Constraint" xmi:id="_VjxE4B-3Ee2WWcUYuPhKoA" name="income&lt;2500">
+                  <specification xmi:type="uml:OpaqueExpression" xmi:id="_VjxE4R-3Ee2WWcUYuPhKoA" name="income&lt;2500">
+                    <language>JAVA</language>
+                    <body>income&lt;2500</body>
+                  </specification>
+                </ownedRule>
+                <effect xmi:type="uml:OpaqueBehavior" xmi:id="_glwLoB-3Ee2WWcUYuPhKoA" name="hasCreditCard=false">
+                  <language>JAVA</language>
+                  <body>hasCreditCard=false</body>
+                </effect>
+              </transition>
+              <transition xmi:type="uml:Transition" xmi:id="_WXCU4B-3Ee2WWcUYuPhKoA" source="_9cVK0B-2Ee2WWcUYuPhKoA" target="_-hYuYB-2Ee2WWcUYuPhKoA"/>
+              <transition xmi:type="uml:Transition" xmi:id="_XOzqYB-3Ee2WWcUYuPhKoA" source="_BpMz4B-3Ee2WWcUYuPhKoA" target="_G1X90B-3Ee2WWcUYuPhKoA">
+                <effect xmi:type="uml:OpaqueBehavior" xmi:id="_lbqKoB-3Ee2WWcUYuPhKoA" name="ownPoints=ownPoints+25">
+                  <language>JAVA</language>
+                  <body>ownPoints=ownPoints+25</body>
+                </effect>
+              </transition>
+              <transition xmi:type="uml:Transition" xmi:id="_XySK4B-3Ee2WWcUYuPhKoA" source="_DyNu0B-3Ee2WWcUYuPhKoA" target="_G1X90B-3Ee2WWcUYuPhKoA">
+                <effect xmi:type="uml:OpaqueBehavior" xmi:id="_ov5ikB-3Ee2WWcUYuPhKoA" name="ownPoints=ownPoints">
+                  <language>JAVA</language>
+                  <body>ownPoints=ownPoints</body>
+                </effect>
+              </transition>
+              <subvertex xmi:type="uml:Pseudostate" xmi:id="_9cVK0B-2Ee2WWcUYuPhKoA" name="Initial1"/>
+              <subvertex xmi:type="uml:State" xmi:id="_-hYuYB-2Ee2WWcUYuPhKoA" name="RecievedCreditCardApp"/>
+              <subvertex xmi:type="uml:State" xmi:id="_BpMz4B-3Ee2WWcUYuPhKoA" name="AcceptedCreditCardApp"/>
+              <subvertex xmi:type="uml:State" xmi:id="_DyNu0B-3Ee2WWcUYuPhKoA" name="RejectedCreditCardApp"/>
+              <subvertex xmi:type="uml:FinalState" xmi:id="_G1X90B-3Ee2WWcUYuPhKoA" name="FinalState1"/>
+            </region>
+          </subvertex>
+          <subvertex xmi:type="uml:FinalState" xmi:id="_8ctEYB-3Ee2WWcUYuPhKoA" name="FinalState1"/>
+        </region>
+      </ownedBehavior>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_XFqc8B4sEe2CkuHVUIYgKA" name="verifyLifeInsApp"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_wlG2UB4tEe2CkuHVUIYgKA" name="verifyCreditCardApp"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_P7H6AB-6Ee2WWcUYuPhKoA" name="exit"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_UPqpoB_AEe2WWcUYuPhKoA" name="verifyFreeAccount"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_AwMuQB4VEe2CkuHVUIYgKA" name="Customer" classifierBehavior="_upyaAB-qEe2WWcUYuPhKoA">
+      <generalization xmi:type="uml:Generalization" xmi:id="_2Oc0gDQSEe2eCNQ2YVUcrg" general="_IuZwYDQNEe2eCNQ2YVUcrg"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_OK2RUB4cEe2CkuHVUIYgKA" name="applyForLifeInsurance" isStatic="true" type="_qHf-4B4bEe2CkuHVUIYgKA">
+        <defaultValue xmi:type="uml:LiteralBoolean" xmi:id="_citpkB4uEe2CkuHVUIYgKA" name="false"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_leG8cB4cEe2CkuHVUIYgKA" name="custProf" type="__NqkgB4UEe2CkuHVUIYgKA" association="_ld-ZkB4cEe2CkuHVUIYgKA"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_qEjTYB4tEe2CkuHVUIYgKA" name="applyForCreditCard" isStatic="true" type="_qHf-4B4bEe2CkuHVUIYgKA">
+        <defaultValue xmi:type="uml:LiteralBoolean" xmi:id="_d4ZDEB4uEe2CkuHVUIYgKA" name="false"/>
+      </ownedAttribute>
+      <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_upyaAB-qEe2WWcUYuPhKoA" name="CustomerActions">
+        <region xmi:type="uml:Region" xmi:id="_vd6loB-qEe2WWcUYuPhKoA" name="Region1">
+          <transition xmi:type="uml:Transition" xmi:id="_SpepkB-tEe2WWcUYuPhKoA" source="_L64qoB-tEe2WWcUYuPhKoA" target="_IrMbgB-tEe2WWcUYuPhKoA"/>
+          <transition xmi:type="uml:Transition" xmi:id="_TlhbEB-tEe2WWcUYuPhKoA" source="_IrMbgB-tEe2WWcUYuPhKoA" target="_KZvoAB-tEe2WWcUYuPhKoA"/>
+          <transition xmi:type="uml:Transition" xmi:id="_VMSkkB-tEe2WWcUYuPhKoA" guard="_evIMwB-tEe2WWcUYuPhKoA" source="_KZvoAB-tEe2WWcUYuPhKoA" target="_I_IEIB-tEe2WWcUYuPhKoA">
+            <ownedRule xmi:type="uml:Constraint" xmi:id="_evIMwB-tEe2WWcUYuPhKoA" name="applyForLifeInsurance==true">
+              <specification xmi:type="uml:OpaqueExpression" xmi:id="_evIMwR-tEe2WWcUYuPhKoA" name="applyForLifeInsurance==true">
+                <language>JAVA</language>
+                <body>applyForLifeInsurance==true</body>
+              </specification>
+            </ownedRule>
+            <effect xmi:type="uml:OpaqueBehavior" xmi:id="_iSatUB-tEe2WWcUYuPhKoA" name="custProf.verifyLifeInsApp()">
+              <language>JAVA</language>
+              <body>custProf.verifyLifeInsApp()</body>
+            </effect>
+          </transition>
+          <transition xmi:type="uml:Transition" xmi:id="_jyv3oB-tEe2WWcUYuPhKoA" guard="_qEmQMB-tEe2WWcUYuPhKoA" source="_KZvoAB-tEe2WWcUYuPhKoA" target="_LAgtEB-tEe2WWcUYuPhKoA">
+            <ownedRule xmi:type="uml:Constraint" xmi:id="_qEmQMB-tEe2WWcUYuPhKoA" name="applyForLifeInsurance==false">
+              <specification xmi:type="uml:OpaqueExpression" xmi:id="_qEmQMR-tEe2WWcUYuPhKoA" name="applyForLifeInsurance==false">
+                <language>JAVA</language>
+                <body>applyForLifeInsurance==false</body>
+              </specification>
+            </ownedRule>
+          </transition>
+          <transition xmi:type="uml:Transition" xmi:id="_sukjIB-tEe2WWcUYuPhKoA" source="_I_IEIB-tEe2WWcUYuPhKoA" target="_LAgtEB-tEe2WWcUYuPhKoA"/>
+          <transition xmi:type="uml:Transition" xmi:id="_CQgakB-uEe2WWcUYuPhKoA" guard="_FBCBcB-uEe2WWcUYuPhKoA" source="_LAgtEB-tEe2WWcUYuPhKoA" target="_JSkkkB-tEe2WWcUYuPhKoA">
+            <ownedRule xmi:type="uml:Constraint" xmi:id="_FBCBcB-uEe2WWcUYuPhKoA" name="applyForCreditCard==true">
+              <specification xmi:type="uml:OpaqueExpression" xmi:id="_FBCBcR-uEe2WWcUYuPhKoA" name="applyForCreditCard==true">
+                <language>JAVA</language>
+                <body>applyForCreditCard==true</body>
+              </specification>
+            </ownedRule>
+            <effect xmi:type="uml:OpaqueBehavior" xmi:id="_Jg2bsB-uEe2WWcUYuPhKoA" name="custProf.verifyCreditCardApp()">
+              <language>JAVA</language>
+              <body>custProf.verifyCreditCardApp()</body>
+            </effect>
+          </transition>
+          <transition xmi:type="uml:Transition" xmi:id="_LzArkB-uEe2WWcUYuPhKoA" guard="_QQzFgB-uEe2WWcUYuPhKoA" source="_LAgtEB-tEe2WWcUYuPhKoA" target="_LeaxEB-tEe2WWcUYuPhKoA">
+            <ownedRule xmi:type="uml:Constraint" xmi:id="_QQzFgB-uEe2WWcUYuPhKoA" name="applyForCreditCard==false">
+              <specification xmi:type="uml:OpaqueExpression" xmi:id="_QQzFgR-uEe2WWcUYuPhKoA" name="applyForCreditCard==false">
+                <language>JAVA</language>
+                <body>applyForCreditCard==false</body>
+              </specification>
+            </ownedRule>
+            <effect xmi:type="uml:OpaqueBehavior" xmi:id="_MrrNYB-4Ee2WWcUYuPhKoA" name="custProf.exit()">
+              <language>JAVA</language>
+              <body>custProf.exit()</body>
+            </effect>
+          </transition>
+          <transition xmi:type="uml:Transition" xmi:id="_RO2pMB-uEe2WWcUYuPhKoA" source="_JSkkkB-tEe2WWcUYuPhKoA" target="_LeaxEB-tEe2WWcUYuPhKoA">
+            <effect xmi:type="uml:OpaqueBehavior" xmi:id="_Ov3SsB-4Ee2WWcUYuPhKoA" name="custProf.exit()">
+              <language>JAVA</language>
+              <body>custProf.exit()</body>
+            </effect>
+          </transition>
+          <subvertex xmi:type="uml:State" xmi:id="_IrMbgB-tEe2WWcUYuPhKoA" name="ChoiceEntry"/>
+          <subvertex xmi:type="uml:State" xmi:id="_I_IEIB-tEe2WWcUYuPhKoA" name="LifeInsuranceAppSent"/>
+          <subvertex xmi:type="uml:State" xmi:id="_JSkkkB-tEe2WWcUYuPhKoA" name="CreditCardAppSent"/>
+          <subvertex xmi:type="uml:Pseudostate" xmi:id="_KZvoAB-tEe2WWcUYuPhKoA" name="Choice1" kind="choice"/>
+          <subvertex xmi:type="uml:Pseudostate" xmi:id="_LAgtEB-tEe2WWcUYuPhKoA" name="Choice2" kind="choice"/>
+          <subvertex xmi:type="uml:FinalState" xmi:id="_LeaxEB-tEe2WWcUYuPhKoA" name="FinalState1"/>
+          <subvertex xmi:type="uml:Pseudostate" xmi:id="_L64qoB-tEe2WWcUYuPhKoA" name="Initial1"/>
+        </region>
+      </ownedBehavior>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_p-k7IB4VEe2CkuHVUIYgKA" name="dataTypes">
+      <packagedElement xmi:type="uml:DataType" xmi:id="_qHf-4B4bEe2CkuHVUIYgKA" name="boolean"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_upUkQB4bEe2CkuHVUIYgKA" name="int"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_ld-ZkB4cEe2CkuHVUIYgKA" memberEnd="_leGVYB4cEe2CkuHVUIYgKA _leG8cB4cEe2CkuHVUIYgKA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_leFHQB4cEe2CkuHVUIYgKA" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_leFuUB4cEe2CkuHVUIYgKA" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_mS9GgB4sEe2CkuHVUIYgKA" name="signals"/>
+    <packagedElement xmi:type="uml:Package" xmi:id="_6EMIIB-nEe2WWcUYuPhKoA" name="events">
+      <packagedElement xmi:type="uml:CallEvent" xmi:id="_lz-ZcB-2Ee2WWcUYuPhKoA" name="verifyLifeInsApp()" operation="_XFqc8B4sEe2CkuHVUIYgKA"/>
+      <packagedElement xmi:type="uml:CallEvent" xmi:id="_wINM4B-3Ee2WWcUYuPhKoA" name="verifyCreditCardApp()" operation="_wlG2UB4tEe2CkuHVUIYgKA"/>
+      <packagedElement xmi:type="uml:CallEvent" xmi:id="_pRNYgB-6Ee2WWcUYuPhKoA" name="exit()" operation="_P7H6AB-6Ee2WWcUYuPhKoA"/>
+      <packagedElement xmi:type="uml:CallEvent" xmi:id="_TeqsoDQbEe2eCNQ2YVUcrg" name="login()" operation="_nd5ikDQYEe2eCNQ2YVUcrg"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_GgIiADQNEe2eCNQ2YVUcrg" name="Clerk" classifierBehavior="_YiykQDQPEe2eCNQ2YVUcrg">
+      <generalization xmi:type="uml:Generalization" xmi:id="_7AfAIDQSEe2eCNQ2YVUcrg" general="_IuZwYDQNEe2eCNQ2YVUcrg"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_Y1H8UDQNEe2eCNQ2YVUcrg" name="clerkID" isStatic="true" type="_upUkQB4bEe2CkuHVUIYgKA"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_dxehkDQNEe2eCNQ2YVUcrg" name="mobileNum" isStatic="true" type="_upUkQB4bEe2CkuHVUIYgKA"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_gWp0EDQNEe2eCNQ2YVUcrg" name="birthDate" isStatic="true" type="_upUkQB4bEe2CkuHVUIYgKA"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_jfplUDQNEe2eCNQ2YVUcrg" name="editAction" isStatic="true" type="_qHf-4B4bEe2CkuHVUIYgKA"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_kg94YDQNEe2eCNQ2YVUcrg" name="registerCustomer" isStatic="true" type="_qHf-4B4bEe2CkuHVUIYgKA"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_l3VOYDQNEe2eCNQ2YVUcrg" name="addCustomerProfile" isStatic="true" type="_qHf-4B4bEe2CkuHVUIYgKA"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_rYDsADQNEe2eCNQ2YVUcrg" name="loggedOut" isStatic="true" type="_qHf-4B4bEe2CkuHVUIYgKA"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_roabMDQYEe2eCNQ2YVUcrg" name="role" type="_IuZwYDQNEe2eCNQ2YVUcrg" association="_roSfYDQYEe2eCNQ2YVUcrg"/>
+      <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_YiykQDQPEe2eCNQ2YVUcrg" name="CleckActions">
+        <region xmi:type="uml:Region" xmi:id="_bDjQ0DQPEe2eCNQ2YVUcrg" name="Region1">
+          <transition xmi:type="uml:Transition" xmi:id="_dLXccDQQEe2eCNQ2YVUcrg" guard="_LQD4ADQREe2eCNQ2YVUcrg" source="_XnSv4DQQEe2eCNQ2YVUcrg" target="_oDpqEDQPEe2eCNQ2YVUcrg">
+            <ownedRule xmi:type="uml:Constraint" xmi:id="_LQD4ADQREe2eCNQ2YVUcrg" name="editAction==true">
+              <specification xmi:type="uml:OpaqueExpression" xmi:id="_LQD4ATQREe2eCNQ2YVUcrg" name="editAction==true">
+                <language>JAVA</language>
+                <body>editAction==true</body>
+              </specification>
+            </ownedRule>
+          </transition>
+          <transition xmi:type="uml:Transition" xmi:id="_eCXV4DQQEe2eCNQ2YVUcrg" guard="_RLAzgDQREe2eCNQ2YVUcrg" source="_XnSv4DQQEe2eCNQ2YVUcrg" target="_o7vvsDQPEe2eCNQ2YVUcrg">
+            <ownedRule xmi:type="uml:Constraint" xmi:id="_RLAzgDQREe2eCNQ2YVUcrg" name="registerCustomer==true">
+              <specification xmi:type="uml:OpaqueExpression" xmi:id="_RLAzgTQREe2eCNQ2YVUcrg" name="registerCustomer==true">
+                <language>JAVA</language>
+                <body>registerCustomer==true</body>
+              </specification>
+            </ownedRule>
+          </transition>
+          <transition xmi:type="uml:Transition" xmi:id="_eszaADQQEe2eCNQ2YVUcrg" guard="_Wx0rADQREe2eCNQ2YVUcrg" source="_XnSv4DQQEe2eCNQ2YVUcrg" target="_nCqHIDQPEe2eCNQ2YVUcrg">
+            <ownedRule xmi:type="uml:Constraint" xmi:id="_Wx0rADQREe2eCNQ2YVUcrg" name="addCustomerProfile==true">
+              <specification xmi:type="uml:OpaqueExpression" xmi:id="_Wx0rATQREe2eCNQ2YVUcrg" name="addCustomerProfile==true">
+                <language>JAVA</language>
+                <body>addCustomerProfile==true</body>
+              </specification>
+            </ownedRule>
+          </transition>
+          <transition xmi:type="uml:Transition" xmi:id="_fWJ5ADQQEe2eCNQ2YVUcrg" source="_oDpqEDQPEe2eCNQ2YVUcrg" target="_n1nOEDQPEe2eCNQ2YVUcrg"/>
+          <transition xmi:type="uml:Transition" xmi:id="_f6iYcDQQEe2eCNQ2YVUcrg" source="_o7vvsDQPEe2eCNQ2YVUcrg" target="_nmt2cDQPEe2eCNQ2YVUcrg"/>
+          <transition xmi:type="uml:Transition" xmi:id="_gt354DQQEe2eCNQ2YVUcrg" source="_nCqHIDQPEe2eCNQ2YVUcrg" target="_op5KsDQPEe2eCNQ2YVUcrg"/>
+          <transition xmi:type="uml:Transition" xmi:id="_hvSTkDQQEe2eCNQ2YVUcrg" source="_n1nOEDQPEe2eCNQ2YVUcrg" target="_nWIcwDQPEe2eCNQ2YVUcrg"/>
+          <transition xmi:type="uml:Transition" xmi:id="_iSkm0DQQEe2eCNQ2YVUcrg" source="_nmt2cDQPEe2eCNQ2YVUcrg" target="_nWIcwDQPEe2eCNQ2YVUcrg"/>
+          <transition xmi:type="uml:Transition" xmi:id="_i1yBkDQQEe2eCNQ2YVUcrg" source="_op5KsDQPEe2eCNQ2YVUcrg" target="_nWIcwDQPEe2eCNQ2YVUcrg"/>
+          <transition xmi:type="uml:Transition" xmi:id="_k7X1EDQQEe2eCNQ2YVUcrg" source="_nWIcwDQPEe2eCNQ2YVUcrg" target="_oWnpYDQPEe2eCNQ2YVUcrg"/>
+          <transition xmi:type="uml:Transition" xmi:id="_wXViEDQQEe2eCNQ2YVUcrg" source="_oWnpYDQPEe2eCNQ2YVUcrg" target="_XnSv4DQQEe2eCNQ2YVUcrg"/>
+          <transition xmi:type="uml:Transition" xmi:id="_xaoLEDQQEe2eCNQ2YVUcrg" guard="_h3disDQREe2eCNQ2YVUcrg" source="_XnSv4DQQEe2eCNQ2YVUcrg" target="_oWnpYDQPEe2eCNQ2YVUcrg">
+            <ownedRule xmi:type="uml:Constraint" xmi:id="_h3disDQREe2eCNQ2YVUcrg" name="else">
+              <specification xmi:type="uml:OpaqueExpression" xmi:id="_h3disTQREe2eCNQ2YVUcrg" name="else">
+                <language>JAVA</language>
+                <body>else</body>
+              </specification>
+            </ownedRule>
+          </transition>
+          <transition xmi:type="uml:Transition" xmi:id="_2PirkDQQEe2eCNQ2YVUcrg" source="_XnSv4DQQEe2eCNQ2YVUcrg" target="_mofToDQPEe2eCNQ2YVUcrg"/>
+          <transition xmi:type="uml:Transition" xmi:id="_4X3C8DQQEe2eCNQ2YVUcrg" source="_mofToDQPEe2eCNQ2YVUcrg" target="_oWnpYDQPEe2eCNQ2YVUcrg"/>
+          <transition xmi:type="uml:Transition" xmi:id="_6Xq-kDQQEe2eCNQ2YVUcrg" source="_Uq0XsDQQEe2eCNQ2YVUcrg" target="_mofToDQPEe2eCNQ2YVUcrg"/>
+          <transition xmi:type="uml:Transition" xmi:id="_7F6koDQQEe2eCNQ2YVUcrg" source="_mofToDQPEe2eCNQ2YVUcrg" target="_Vi7EYDQQEe2eCNQ2YVUcrg"/>
+          <subvertex xmi:type="uml:State" xmi:id="_mofToDQPEe2eCNQ2YVUcrg" name="LoggedOut"/>
+          <subvertex xmi:type="uml:State" xmi:id="_nCqHIDQPEe2eCNQ2YVUcrg" name="AddingNewCustProfile"/>
+          <subvertex xmi:type="uml:State" xmi:id="_nWIcwDQPEe2eCNQ2YVUcrg" name="ActionDone"/>
+          <subvertex xmi:type="uml:State" xmi:id="_nmt2cDQPEe2eCNQ2YVUcrg" name="CustomerRegistered"/>
+          <subvertex xmi:type="uml:State" xmi:id="_n1nOEDQPEe2eCNQ2YVUcrg" name="ProfileUpdated"/>
+          <subvertex xmi:type="uml:State" xmi:id="_oDpqEDQPEe2eCNQ2YVUcrg" name="UpdatingCustProfile"/>
+          <subvertex xmi:type="uml:State" xmi:id="_oWnpYDQPEe2eCNQ2YVUcrg" name="Logged"/>
+          <subvertex xmi:type="uml:State" xmi:id="_op5KsDQPEe2eCNQ2YVUcrg" name="ProfileAdded"/>
+          <subvertex xmi:type="uml:State" xmi:id="_o7vvsDQPEe2eCNQ2YVUcrg" name="RegisteringNewCustomer"/>
+          <subvertex xmi:type="uml:Pseudostate" xmi:id="_Uq0XsDQQEe2eCNQ2YVUcrg" name="Initial1"/>
+          <subvertex xmi:type="uml:FinalState" xmi:id="_Vi7EYDQQEe2eCNQ2YVUcrg" name="FinalState1"/>
+          <subvertex xmi:type="uml:Pseudostate" xmi:id="_XnSv4DQQEe2eCNQ2YVUcrg" name="Choice1" kind="choice"/>
+        </region>
+      </ownedBehavior>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_IuZwYDQNEe2eCNQ2YVUcrg" name="Role" classifierBehavior="_XxFZgDQaEe2eCNQ2YVUcrg">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_6I_wwDQNEe2eCNQ2YVUcrg" name="userName" isStatic="true" type="_upUkQB4bEe2CkuHVUIYgKA"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_6jab4DQNEe2eCNQ2YVUcrg" name="password" isStatic="true" type="_upUkQB4bEe2CkuHVUIYgKA"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_7DfqIDQNEe2eCNQ2YVUcrg" name="validEntry" isStatic="true" type="_qHf-4B4bEe2CkuHVUIYgKA"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_7fcmUDQNEe2eCNQ2YVUcrg" name="tries" isStatic="true" type="_upUkQB4bEe2CkuHVUIYgKA"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_78zQsDQNEe2eCNQ2YVUcrg" name="roleID" isStatic="true" type="_upUkQB4bEe2CkuHVUIYgKA"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_roZ0IDQYEe2eCNQ2YVUcrg" name="clerk" type="_GgIiADQNEe2eCNQ2YVUcrg" association="_roSfYDQYEe2eCNQ2YVUcrg"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_BGDogDQZEe2eCNQ2YVUcrg" name="user" type="_JfgdMDQNEe2eCNQ2YVUcrg" association="_BF6ekDQZEe2eCNQ2YVUcrg"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_DCijUDQZEe2eCNQ2YVUcrg" name="branchmanager" type="_NUwQcDQNEe2eCNQ2YVUcrg" association="_DChVMDQZEe2eCNQ2YVUcrg"/>
+      <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_XxFZgDQaEe2eCNQ2YVUcrg" name="LoginStateMachine">
+        <region xmi:type="uml:Region" xmi:id="_YA1swDQaEe2eCNQ2YVUcrg" name="Region1">
+          <transition xmi:type="uml:Transition" xmi:id="_0idTIDQaEe2eCNQ2YVUcrg" source="_ywN5cDQaEe2eCNQ2YVUcrg" target="_drvaEDQaEe2eCNQ2YVUcrg"/>
+          <transition xmi:type="uml:Transition" xmi:id="_1e67YDQaEe2eCNQ2YVUcrg" source="_drvaEDQaEe2eCNQ2YVUcrg" target="_eHuygDQaEe2eCNQ2YVUcrg"/>
+          <transition xmi:type="uml:Transition" xmi:id="_4OMlEDQaEe2eCNQ2YVUcrg" guard="_rTFkEDQbEe2eCNQ2YVUcrg" source="_d-4jEDQbEe2eCNQ2YVUcrg" target="_e0ejwDQaEe2eCNQ2YVUcrg">
+            <ownedRule xmi:type="uml:Constraint" xmi:id="_rTFkEDQbEe2eCNQ2YVUcrg" name="validEntry==true">
+              <specification xmi:type="uml:OpaqueExpression" xmi:id="_rTFkETQbEe2eCNQ2YVUcrg" name="validEntry==true">
+                <language>JAVA</language>
+                <body>validEntry==true</body>
+              </specification>
+            </ownedRule>
+          </transition>
+          <transition xmi:type="uml:Transition" xmi:id="_5ws5oDQaEe2eCNQ2YVUcrg" source="_e0ejwDQaEe2eCNQ2YVUcrg" target="_5Ca3UDQaEe2eCNQ2YVUcrg"/>
+          <transition xmi:type="uml:Transition" xmi:id="_6Vm9gDQaEe2eCNQ2YVUcrg" guard="_3KrdIDQbEe2eCNQ2YVUcrg" source="_5Ca3UDQaEe2eCNQ2YVUcrg" target="_gMxMYDQaEe2eCNQ2YVUcrg">
+            <ownedRule xmi:type="uml:Constraint" xmi:id="_3KrdIDQbEe2eCNQ2YVUcrg" name="user.asCustomer==true">
+              <specification xmi:type="uml:OpaqueExpression" xmi:id="_3KrdITQbEe2eCNQ2YVUcrg" name="user.asCustomer==true">
+                <language>JAVA</language>
+                <body>user.asCustomer==true</body>
+              </specification>
+            </ownedRule>
+          </transition>
+          <transition xmi:type="uml:Transition" xmi:id="_7AaOADQaEe2eCNQ2YVUcrg" guard="_-c0OADQbEe2eCNQ2YVUcrg" source="_5Ca3UDQaEe2eCNQ2YVUcrg" target="_fHV1YDQaEe2eCNQ2YVUcrg">
+            <ownedRule xmi:type="uml:Constraint" xmi:id="_-c0OADQbEe2eCNQ2YVUcrg" name="user.asClerk==true">
+              <specification xmi:type="uml:OpaqueExpression" xmi:id="_-c0OATQbEe2eCNQ2YVUcrg" name="user.asClerk==true">
+                <language>JAVA</language>
+                <body>user.asClerk==true</body>
+              </specification>
+            </ownedRule>
+          </transition>
+          <transition xmi:type="uml:Transition" xmi:id="_7lR1oDQaEe2eCNQ2YVUcrg" guard="_FQaBsDQcEe2eCNQ2YVUcrg" source="_5Ca3UDQaEe2eCNQ2YVUcrg" target="_giUloDQaEe2eCNQ2YVUcrg">
+            <ownedRule xmi:type="uml:Constraint" xmi:id="_FQaBsDQcEe2eCNQ2YVUcrg" name="user.asManager==true">
+              <specification xmi:type="uml:OpaqueExpression" xmi:id="_FQaBsTQcEe2eCNQ2YVUcrg" name="user.asManager==true">
+                <language>JAVA</language>
+                <body>user.asManager==true</body>
+              </specification>
+            </ownedRule>
+          </transition>
+          <transition xmi:type="uml:Transition" xmi:id="_8yDx0DQaEe2eCNQ2YVUcrg" guard="_myIhYDQbEe2eCNQ2YVUcrg" source="_d-4jEDQbEe2eCNQ2YVUcrg" target="_ed5PwDQaEe2eCNQ2YVUcrg">
+            <ownedRule xmi:type="uml:Constraint" xmi:id="_myIhYDQbEe2eCNQ2YVUcrg" name="validEntry==false">
+              <specification xmi:type="uml:OpaqueExpression" xmi:id="_myIhYTQbEe2eCNQ2YVUcrg" name="validEntry==false">
+                <language>JAVA</language>
+                <body>validEntry==false</body>
+              </specification>
+            </ownedRule>
+          </transition>
+          <transition xmi:type="uml:Transition" xmi:id="__kYIcDQaEe2eCNQ2YVUcrg" source="_gMxMYDQaEe2eCNQ2YVUcrg" target="_-5KoQDQaEe2eCNQ2YVUcrg"/>
+          <transition xmi:type="uml:Transition" xmi:id="_AKCaQDQbEe2eCNQ2YVUcrg" source="_fHV1YDQaEe2eCNQ2YVUcrg" target="_-5KoQDQaEe2eCNQ2YVUcrg"/>
+          <transition xmi:type="uml:Transition" xmi:id="_AvLHoDQbEe2eCNQ2YVUcrg" source="_giUloDQaEe2eCNQ2YVUcrg" target="_-5KoQDQaEe2eCNQ2YVUcrg"/>
+          <transition xmi:type="uml:Transition" xmi:id="_CON4gDQbEe2eCNQ2YVUcrg" source="_ed5PwDQaEe2eCNQ2YVUcrg" target="_-5KoQDQaEe2eCNQ2YVUcrg"/>
+          <transition xmi:type="uml:Transition" xmi:id="_sK3goDQbEe2eCNQ2YVUcrg" source="_eHuygDQaEe2eCNQ2YVUcrg" target="_d-4jEDQbEe2eCNQ2YVUcrg"/>
+          <transition xmi:type="uml:Transition" xmi:id="_bGvmYDQdEe2eCNQ2YVUcrg" guard="_fq0OgDQdEe2eCNQ2YVUcrg" source="_d-4jEDQbEe2eCNQ2YVUcrg" target="_eHuygDQaEe2eCNQ2YVUcrg">
+            <ownedRule xmi:type="uml:Constraint" xmi:id="_fq0OgDQdEe2eCNQ2YVUcrg" name="else">
+              <specification xmi:type="uml:OpaqueExpression" xmi:id="_fq0OgTQdEe2eCNQ2YVUcrg" name="else">
+                <language>JAVA</language>
+                <body>else</body>
+              </specification>
+            </ownedRule>
+          </transition>
+          <subvertex xmi:type="uml:State" xmi:id="_drvaEDQaEe2eCNQ2YVUcrg" name="Idle"/>
+          <subvertex xmi:type="uml:State" xmi:id="_eHuygDQaEe2eCNQ2YVUcrg" name="Logging"/>
+          <subvertex xmi:type="uml:State" xmi:id="_ed5PwDQaEe2eCNQ2YVUcrg" name="LoginDenied"/>
+          <subvertex xmi:type="uml:State" xmi:id="_e0ejwDQaEe2eCNQ2YVUcrg" name="LoggedSuccessfully"/>
+          <subvertex xmi:type="uml:State" xmi:id="_fHV1YDQaEe2eCNQ2YVUcrg" name="LoggedAsCustomer"/>
+          <subvertex xmi:type="uml:State" xmi:id="_gMxMYDQaEe2eCNQ2YVUcrg" name="LoggedAsClerk"/>
+          <subvertex xmi:type="uml:State" xmi:id="_giUloDQaEe2eCNQ2YVUcrg" name="LoggedAsManager"/>
+          <subvertex xmi:type="uml:Pseudostate" xmi:id="_ywN5cDQaEe2eCNQ2YVUcrg" name="Initial1"/>
+          <subvertex xmi:type="uml:Pseudostate" xmi:id="_5Ca3UDQaEe2eCNQ2YVUcrg" name="Choice1" kind="choice"/>
+          <subvertex xmi:type="uml:FinalState" xmi:id="_-5KoQDQaEe2eCNQ2YVUcrg" name="FinalState1"/>
+          <subvertex xmi:type="uml:Pseudostate" xmi:id="_d-4jEDQbEe2eCNQ2YVUcrg" name="Choice2" kind="choice"/>
+        </region>
+      </ownedBehavior>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_nd5ikDQYEe2eCNQ2YVUcrg" name="login"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_JfgdMDQNEe2eCNQ2YVUcrg" name="User" isAbstract="true" classifierBehavior="_9LQEADQREe2eCNQ2YVUcrg">
+      <generalization xmi:type="uml:Generalization" xmi:id="_73UhgDQSEe2eCNQ2YVUcrg" general="_IuZwYDQNEe2eCNQ2YVUcrg"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_WuLogDQOEe2eCNQ2YVUcrg" name="performLoginAction" isStatic="true" type="_qHf-4B4bEe2CkuHVUIYgKA"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_XRmeoDQOEe2eCNQ2YVUcrg" name="asManager" isStatic="true" type="_qHf-4B4bEe2CkuHVUIYgKA"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_X4-AoDQOEe2eCNQ2YVUcrg" name="asCustomer" isStatic="true" type="_qHf-4B4bEe2CkuHVUIYgKA"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_YUEoQDQOEe2eCNQ2YVUcrg" name="asClerk" isStatic="true" type="_qHf-4B4bEe2CkuHVUIYgKA"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_BF6ekzQZEe2eCNQ2YVUcrg" name="role" type="_IuZwYDQNEe2eCNQ2YVUcrg" association="_BF6ekDQZEe2eCNQ2YVUcrg"/>
+      <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_9LQEADQREe2eCNQ2YVUcrg" name="UserActions">
+        <region xmi:type="uml:Region" xmi:id="_-HJEgDQREe2eCNQ2YVUcrg" name="Region1">
+          <transition xmi:type="uml:Transition" xmi:id="_K924QDQSEe2eCNQ2YVUcrg" guard="_XZi84DQSEe2eCNQ2YVUcrg" source="_B-qIoDQSEe2eCNQ2YVUcrg" target="_AXzfkDQSEe2eCNQ2YVUcrg">
+            <ownedRule xmi:type="uml:Constraint" xmi:id="_XZi84DQSEe2eCNQ2YVUcrg" name="performLoginAction==true">
+              <specification xmi:type="uml:OpaqueExpression" xmi:id="_XZi84TQSEe2eCNQ2YVUcrg" name="performLoginAction==true">
+                <language>JAVA</language>
+                <body>performLoginAction==true</body>
+              </specification>
+            </ownedRule>
+            <effect xmi:type="uml:OpaqueBehavior" xmi:id="_R8O7cDQZEe2eCNQ2YVUcrg" name="role.login()">
+              <language>JAVA</language>
+              <body>role.login()</body>
+            </effect>
+          </transition>
+          <transition xmi:type="uml:Transition" xmi:id="_MPL9QDQSEe2eCNQ2YVUcrg" source="_AXzfkDQSEe2eCNQ2YVUcrg" target="_AxgZADQSEe2eCNQ2YVUcrg"/>
+          <transition xmi:type="uml:Transition" xmi:id="_M99u0DQSEe2eCNQ2YVUcrg" source="_AXzfkDQSEe2eCNQ2YVUcrg" target="_BIcSUDQSEe2eCNQ2YVUcrg"/>
+          <transition xmi:type="uml:Transition" xmi:id="_Niq-YDQSEe2eCNQ2YVUcrg" source="_AxgZADQSEe2eCNQ2YVUcrg" target="_EGBdwDQSEe2eCNQ2YVUcrg"/>
+          <transition xmi:type="uml:Transition" xmi:id="_OWrOMDQSEe2eCNQ2YVUcrg" source="_BIcSUDQSEe2eCNQ2YVUcrg" target="_EGBdwDQSEe2eCNQ2YVUcrg"/>
+          <subvertex xmi:type="uml:State" xmi:id="_AXzfkDQSEe2eCNQ2YVUcrg" name="VerificationQuerySent"/>
+          <subvertex xmi:type="uml:State" xmi:id="_AxgZADQSEe2eCNQ2YVUcrg" name="LoggedSuccessfully"/>
+          <subvertex xmi:type="uml:State" xmi:id="_BIcSUDQSEe2eCNQ2YVUcrg" name="LoginDenied"/>
+          <subvertex xmi:type="uml:Pseudostate" xmi:id="_B-qIoDQSEe2eCNQ2YVUcrg" name="Initial1"/>
+          <subvertex xmi:type="uml:FinalState" xmi:id="_EGBdwDQSEe2eCNQ2YVUcrg" name="FinalState1"/>
+        </region>
+      </ownedBehavior>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_NUwQcDQNEe2eCNQ2YVUcrg" name="BranchManager" classifierBehavior="_x2lJcDQfEe2eCNQ2YVUcrg">
+      <generalization xmi:type="uml:Generalization" xmi:id="_-JrlsDQSEe2eCNQ2YVUcrg" general="_IuZwYDQNEe2eCNQ2YVUcrg"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_mgx-kDQOEe2eCNQ2YVUcrg" name="managerID" isStatic="true" type="_upUkQB4bEe2CkuHVUIYgKA"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_m563UDQOEe2eCNQ2YVUcrg" name="mobileNum" isStatic="true" type="_upUkQB4bEe2CkuHVUIYgKA"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_nTX5IDQOEe2eCNQ2YVUcrg" name="age" isStatic="true" type="_upUkQB4bEe2CkuHVUIYgKA"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_nqexkDQOEe2eCNQ2YVUcrg" name="updatingCustProfile" isStatic="true" type="_qHf-4B4bEe2CkuHVUIYgKA"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_oCdzwDQOEe2eCNQ2YVUcrg" name="updatingClerkProfile" isStatic="true" type="_qHf-4B4bEe2CkuHVUIYgKA"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_obFvIDQOEe2eCNQ2YVUcrg" name="addingNewRole" isStatic="true" type="_qHf-4B4bEe2CkuHVUIYgKA"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_owYpsDQOEe2eCNQ2YVUcrg" name="assigningRole" isStatic="true" type="_qHf-4B4bEe2CkuHVUIYgKA"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_pK9s4DQOEe2eCNQ2YVUcrg" name="loggedOut" isStatic="true" type="_qHf-4B4bEe2CkuHVUIYgKA"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_p3FMADQOEe2eCNQ2YVUcrg" name="managingLoans" isStatic="true" type="_qHf-4B4bEe2CkuHVUIYgKA"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_DCijUTQZEe2eCNQ2YVUcrg" name="role" type="_IuZwYDQNEe2eCNQ2YVUcrg" association="_DChVMDQZEe2eCNQ2YVUcrg"/>
+      <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_x2lJcDQfEe2eCNQ2YVUcrg" name="managerActions">
+        <region xmi:type="uml:Region" xmi:id="_yoPP4DQfEe2eCNQ2YVUcrg" name="Region1">
+          <transition xmi:type="uml:Transition" xmi:id="_ZohNgDQgEe2eCNQ2YVUcrg" source="_7GRMIDQfEe2eCNQ2YVUcrg" target="_-GHocDQfEe2eCNQ2YVUcrg"/>
+          <transition xmi:type="uml:Transition" xmi:id="_aPML8DQgEe2eCNQ2YVUcrg" source="_7GRMIDQfEe2eCNQ2YVUcrg" target="_8cibgDQfEe2eCNQ2YVUcrg"/>
+          <transition xmi:type="uml:Transition" xmi:id="_a525kDQgEe2eCNQ2YVUcrg" source="_7GRMIDQfEe2eCNQ2YVUcrg" target="_86Vx0DQfEe2eCNQ2YVUcrg"/>
+          <transition xmi:type="uml:Transition" xmi:id="_bdz7MDQgEe2eCNQ2YVUcrg" source="_7GRMIDQfEe2eCNQ2YVUcrg" target="_9VrqADQfEe2eCNQ2YVUcrg"/>
+          <transition xmi:type="uml:Transition" xmi:id="_cNfEoDQgEe2eCNQ2YVUcrg" source="_7GRMIDQfEe2eCNQ2YVUcrg" target="_9qVEUDQfEe2eCNQ2YVUcrg"/>
+          <transition xmi:type="uml:Transition" xmi:id="_dLchsDQgEe2eCNQ2YVUcrg" source="_-GHocDQfEe2eCNQ2YVUcrg" target="_-hk1YDQfEe2eCNQ2YVUcrg"/>
+          <transition xmi:type="uml:Transition" xmi:id="_dzJa4DQgEe2eCNQ2YVUcrg" source="_8cibgDQfEe2eCNQ2YVUcrg" target="_-437EDQfEe2eCNQ2YVUcrg"/>
+          <transition xmi:type="uml:Transition" xmi:id="_ejvxYDQgEe2eCNQ2YVUcrg" source="_86Vx0DQfEe2eCNQ2YVUcrg" target="__TpykDQfEe2eCNQ2YVUcrg"/>
+          <transition xmi:type="uml:Transition" xmi:id="_fC2vQDQgEe2eCNQ2YVUcrg" source="_9VrqADQfEe2eCNQ2YVUcrg" target="__qDgYDQfEe2eCNQ2YVUcrg"/>
+          <transition xmi:type="uml:Transition" xmi:id="_fhZscDQgEe2eCNQ2YVUcrg" source="_9qVEUDQfEe2eCNQ2YVUcrg" target="_AC3B8DQgEe2eCNQ2YVUcrg"/>
+          <transition xmi:type="uml:Transition" xmi:id="_gDFdMDQgEe2eCNQ2YVUcrg" source="_-hk1YDQfEe2eCNQ2YVUcrg" target="_YEHbgDQgEe2eCNQ2YVUcrg"/>
+          <transition xmi:type="uml:Transition" xmi:id="_gkxN8DQgEe2eCNQ2YVUcrg" source="_-437EDQfEe2eCNQ2YVUcrg" target="_YEHbgDQgEe2eCNQ2YVUcrg"/>
+          <transition xmi:type="uml:Transition" xmi:id="_hLqO0DQgEe2eCNQ2YVUcrg" source="__TpykDQfEe2eCNQ2YVUcrg" target="_YEHbgDQgEe2eCNQ2YVUcrg"/>
+          <transition xmi:type="uml:Transition" xmi:id="_h1t4cDQgEe2eCNQ2YVUcrg" source="__qDgYDQfEe2eCNQ2YVUcrg" target="_YEHbgDQgEe2eCNQ2YVUcrg"/>
+          <transition xmi:type="uml:Transition" xmi:id="_ibRckDQgEe2eCNQ2YVUcrg" source="_AC3B8DQgEe2eCNQ2YVUcrg" target="_YEHbgDQgEe2eCNQ2YVUcrg"/>
+          <transition xmi:type="uml:Transition" xmi:id="_2ZawkDQhEe2eCNQ2YVUcrg" source="_5cdVsDQfEe2eCNQ2YVUcrg" target="_7GRMIDQfEe2eCNQ2YVUcrg"/>
+          <transition xmi:type="uml:Transition" xmi:id="_3VXbcDQhEe2eCNQ2YVUcrg" source="_5CJ_UDQfEe2eCNQ2YVUcrg" target="_5cdVsDQfEe2eCNQ2YVUcrg"/>
+          <transition xmi:type="uml:Transition" xmi:id="_405UgDQhEe2eCNQ2YVUcrg" source="_7GRMIDQfEe2eCNQ2YVUcrg" target="_5CJ_UDQfEe2eCNQ2YVUcrg"/>
+          <transition xmi:type="uml:Transition" xmi:id="_7VAg0DQhEe2eCNQ2YVUcrg" source="_6MmuUDQhEe2eCNQ2YVUcrg" target="_5CJ_UDQfEe2eCNQ2YVUcrg"/>
+          <transition xmi:type="uml:Transition" xmi:id="_79y_IDQhEe2eCNQ2YVUcrg" source="_5CJ_UDQfEe2eCNQ2YVUcrg" target="_6qe9IDQhEe2eCNQ2YVUcrg"/>
+          <subvertex xmi:type="uml:State" xmi:id="_5CJ_UDQfEe2eCNQ2YVUcrg" name="LoggedOut"/>
+          <subvertex xmi:type="uml:State" xmi:id="_5cdVsDQfEe2eCNQ2YVUcrg" name="Logged"/>
+          <subvertex xmi:type="uml:Pseudostate" xmi:id="_7GRMIDQfEe2eCNQ2YVUcrg" name="Choice1" kind="choice"/>
+          <subvertex xmi:type="uml:State" xmi:id="_8cibgDQfEe2eCNQ2YVUcrg" name="UpdatingClerkProfile"/>
+          <subvertex xmi:type="uml:State" xmi:id="_86Vx0DQfEe2eCNQ2YVUcrg" name="ManagingLoans"/>
+          <subvertex xmi:type="uml:State" xmi:id="_9VrqADQfEe2eCNQ2YVUcrg" name="AddingNewRole"/>
+          <subvertex xmi:type="uml:State" xmi:id="_9qVEUDQfEe2eCNQ2YVUcrg" name="AssigningNewRole"/>
+          <subvertex xmi:type="uml:State" xmi:id="_-GHocDQfEe2eCNQ2YVUcrg" name="UpdatingCustProfile"/>
+          <subvertex xmi:type="uml:State" xmi:id="_-hk1YDQfEe2eCNQ2YVUcrg" name="CustProfileUpdated"/>
+          <subvertex xmi:type="uml:State" xmi:id="_-437EDQfEe2eCNQ2YVUcrg" name="ClerkProfileUpdated"/>
+          <subvertex xmi:type="uml:State" xmi:id="__TpykDQfEe2eCNQ2YVUcrg" name="LoanManaged"/>
+          <subvertex xmi:type="uml:State" xmi:id="__qDgYDQfEe2eCNQ2YVUcrg" name="NewRoleAdded"/>
+          <subvertex xmi:type="uml:State" xmi:id="_AC3B8DQgEe2eCNQ2YVUcrg" name="RoleAssigned"/>
+          <subvertex xmi:type="uml:State" xmi:id="_YEHbgDQgEe2eCNQ2YVUcrg" name="ActionDone"/>
+          <subvertex xmi:type="uml:Pseudostate" xmi:id="_6MmuUDQhEe2eCNQ2YVUcrg" name="Initial1"/>
+          <subvertex xmi:type="uml:FinalState" xmi:id="_6qe9IDQhEe2eCNQ2YVUcrg" name="FinalState1"/>
+        </region>
+      </ownedBehavior>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_roSfYDQYEe2eCNQ2YVUcrg" memberEnd="_roZ0IDQYEe2eCNQ2YVUcrg _roabMDQYEe2eCNQ2YVUcrg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_roXX4DQYEe2eCNQ2YVUcrg" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_roXX4TQYEe2eCNQ2YVUcrg" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_BF6ekDQZEe2eCNQ2YVUcrg" memberEnd="_BF6ekzQZEe2eCNQ2YVUcrg _BGDogDQZEe2eCNQ2YVUcrg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_BF6ekTQZEe2eCNQ2YVUcrg" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_BF6ekjQZEe2eCNQ2YVUcrg" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_DChVMDQZEe2eCNQ2YVUcrg" memberEnd="_DCijUDQZEe2eCNQ2YVUcrg _DCijUTQZEe2eCNQ2YVUcrg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_DCh8QDQZEe2eCNQ2YVUcrg" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_DCh8QTQZEe2eCNQ2YVUcrg" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+    </packagedElement>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_ehxtQEHbEe2WKrHEWOn1VQ">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_eh3z4EHbEe2WKrHEWOn1VQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="../UMLFairness/model.profile.uml#_34Z2UL1SEemhV-rmp0ri8g"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="../UMLFairness/model.profile.uml#_iG61EGzDEemlJ-dlSmJotw"/>
+    </profileApplication>
+  </uml:Model>
+  <UMLFairness:critical xmi:id="_gpluUEHbEe2WKrHEWOn1VQ" base_StructuredClassifier="__NqkgB4UEe2CkuHVUIYgKA">
+    <protectedData>(age,healthy)</protectedData>
+  </UMLFairness:critical>
+  <UMLFairness:indvidualFairness xmi:id="_oTU4IEHhEe2WKrHEWOn1VQ" base_BehavioredClassifier="_yLfaoB-0Ee2WWcUYuPhKoA">
+    <sensitiveDecisions>(hasFreeAccount)</sensitiveDecisions>
+  </UMLFairness:indvidualFairness>
+</xmi:XMI>
