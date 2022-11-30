@@ -27,24 +27,33 @@ The following list of requirements must be satisfied before the tool can be inst
 - Any release of PYTHON3 is also required. Installation instructions can be found [here](https://www.scaler.com/topics/python/install-python-on-linux/). After installing python3, verity that the installation was successful by running the command ```python3 --version```. You should see the version of the currently installed PYTHON3 printed in the console.
 # <section id="installation">Installation</section>
 After satisfying the requirements mentioned in the [requirements section](#requirements), complete the following steps to install the tool:
-- Clone this git repository and locate the file /target/mbfair-0-0.1.jar
-- The file is callable using the commands in the [Usage](#usage) section below
-- Copy the folders hugort-0_8a and pythonscripts in your project's root directory
-If you completed the previous steps successfully, you should be able to use the tool using the commands in the next section
+## Quick start
+To quickly get started with the tool, complete the following steps:
+- Clone this git repository.
+- locate the file <strong> target/mbfair-0-0.1.jar </strong> and use it as specified in the [usage section](#usage) or in the [artifact section](#using-artifacts).
+
+## Using tool as external library
+To include this tool in your project, complete the following steps:
+- Clone this git repository and locate the following:
+  - the jar file <strong>target/mbfair-0-0.1.jar</strong>. This file should be copied to a directory of your choice in your project.
+  - the folder <strong>hugort-0_8a</strong>. This folder should be copied in your java project root directory.
+  - the folder <strong>pythonscripts</strong>. This folder should be copied in your java project root directory.
+
+If you completed the previous steps successfully, you should be able to use the tool using the commands in the [usage section](#usage) or in the [artifact section](#using-artifacts).
 
 # <section id="usage"> Usage </section>
 ## 1. Generating initializations
-This first step is to generate initializations. You can do that using the following command
+The first step is to generate initializations. You can do that using the following command
 ```
-java -jar mbfair-0.0.1.jar -g -f="absolute-path-to-file"
+java -jar path-to-mbfair-0.0.1.jar -g -f="absolute-path-to-file"
 ```
-In the above command, replace the term <strong><ins>absolute-path-to-file</ins></strong> with the absolute path to your system model with Papyrus
+In the above command, replace the term <strong><ins>absolute-path-to-file</ins></strong> with the absolute path to your system model with Papyrus. You should specify the right path to the <strong><ins>mbfair-0.0.1.jar</ins></strong> file. 
 
 ## 2. Checking for fairness.
 
 Upon generating initializations, csv files will be automatically created by the tool. The tool uses these csv file. To specify protected characteristics and proxies of protected characteristics, modify the generated file <strong>initializations_table.csv</strong>. Consider the csv file as a table where the first row in the csv represented the protected characteristics and any subsequent row data represent the proxies of the corresponding protected characteristics.
 
-For example, consider that you have a use case with two protected characteristics - char1 and char2. Char1 has one two proxies Char1_prox_1 and Char1_prox_2. Char2 has one proxy Char2_prox_1. This information will be represented in the csv as follows
+For example, consider that you have a use case with two protected characteristics - char1 and char2. Char1 has two proxies Char1_prox_1 and Char1_prox_2. Char2 has one proxy Char2_prox_1. This information will be represented in the csv as follows
 ```
 Char1,Char2
 Char1_prox_1,Char2_prox_1
@@ -53,18 +62,18 @@ Char1_prox_2,
 
 After modifying the file, save the file and run the following command
 ```
-java -jar target/mbfair-0.0.1.jar -r -f="absolute-path-to-file"
+java -jar path-to-mbfair-0.0.1.jar -r -f="absolute-path-to-file"
 ```
-Replace the string absolute-path-to-file as in step one
+Replace the string absolute-path-to-file as in step one and path-to-mbfair-0.0.1.jar accordingly.
 
 The model runs and the results of the check are printed in the console
 
 # <section id="using-artifacts">Using artifacts</section>
 This section is intended to serve as a guide for using the [provided artifacts](#resources). The tool must have [successfully installed](#installation) to follow on with this section. We have provided three artifacts to serve as hands-on examples. The following steps can be completed to run an artifact:
 - Locate the UML file in the artifact of interest and get the absolute path to the file.
-- Generate initialization using the command below while replacing "absolute-path-to-file" in the command by the absolute path to UML file.
+- Generate initialization using the command below while replacing "absolute-path-to-file" in the command by the absolute path to UML file and path-to-mbfair-0.0.1.jar accordingly.
     ```
-    java -jar mbfair-0.0.1.jar -g -f="absolute-path-to-file"
+    java -jar path-to-mbfair-0.0.1.jar -g -f="absolute-path-to-file"
     ```
 - The initializations will be automatically generated and stored in the file <strong>initializations_table.csv</strong> in the project directory.
   - One has to then specify the protected characteristics and proxies of protected characteristics. For this, the file <strong>protected_characteristics.csv</strong> has to be modified.
@@ -89,9 +98,9 @@ This section is intended to serve as a guide for using the [provided artifacts](
       ```
       It is noteworthy here that healthy and age are protected characteristics while both income and healthy are proxies for age.
   
-- After modifying and saving the file <strong>initializations_table.csv</strong>, the following command is to be executed while replacing "absolute-path-to-file" in the command by the absolute path to UML file.
+- After modifying and saving the file <strong><ins>initializations_table.csv</ins></strong>, the following command is to be executed while replacing "absolute-path-to-file" in the command by the absolute path to UML file and <strong><ins>path-to-mbfair-0.0.1.jar</strong></ins> accordingly.
   ```
-  java -jar target/mbfair-0.0.1.jar -r -f="absolute-path-to-file"
+  java -jar path-to-mbfair-0.0.1.jar -r -f="absolute-path-to-file"
   ```
   At this point, one only has to wait for the tool to run. The result of the analysis is printed in the console upon completion of execution.
 
