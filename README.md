@@ -43,7 +43,9 @@ If you completed the previous steps successfully, you should be able to use the 
 * Open our project package in your local IntelliJ IDEA.
 ### Step 1. Generating initializations
 This first step is to generate initializations. You can do that using the following command
-``` java -jar mbfair-0.0.1.jar -g -f="absolute-path-to-file" ```
+``` 
+java -jar mbfair-0.0.1.jar -g -f="absolute-path-to-file" 
+```
 In the above command, replace the term <strong><ins>absolute-path-to-file</ins></strong> with the absolute path to your system model with Papyrus
 
 ### Result of Step 1: 
@@ -59,7 +61,9 @@ Char1_prox_2,
 ```
 
 After modifying the file, run the following command.
-``` java -jar target/mbfair-0.0.1.jar -r -f="absolute-path-to-file" ```
+``` 
+java -jar target/mbfair-0.0.1.jar -r -f="absolute-path-to-file" 
+```
 Replace the string absolute-path-to-file as in Step 1
 
 ### Result of Step 2:
