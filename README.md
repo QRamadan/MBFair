@@ -23,8 +23,7 @@ The artifacts of each each case study contains:
 # How to install
 
 ## Prerequisite 
-We recommend using [IntelliJ IDEA 2022.2.2](https://www.jetbrains.com/idea/download/#section=windows), with
-installed [Maven](https://www.jetbrains.com/help/idea/convert-a-regular-project-into-a-maven-project.html#develop_with_maven) plug-in.
+We recommend using [IntelliJ IDEA 2022.2.2](https://www.jetbrains.com/idea/download/#section=windows).
 
 # <section id="requirements">Requirements</section>
 The following list of requirements must be satisfied before the tool can be installed
