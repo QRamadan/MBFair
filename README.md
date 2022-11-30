@@ -6,7 +6,7 @@ In this file, we present the artifact used in our paper. The submission includes
 - The MBFair tool.
 - The UML models of three case studies namely, the Bank Management System based on the description of a decision-making process in a [banking system](https://www.hypovereinsbank.de/hvb/privatkunden/services-und-marktinformationen/kundenprogramm-valyou), the Delivery Management System based on the incedent describtion of [Amazon's delivery-free service](https://www.bloomberg.com/graphics/2016-amazon-same-day/), and the Loan Management System based on [business process model](https://link.springer.com/chapter/10.1007/978-3-319-92901-9_19) from an [event log](https://www.win.tue.nl/bpi/doku.php?id=2012:challenge) recording the loan management process of a Dutch financial institute.
 
-# <section id="resources"> Recources </section>
+# <section id="resources"> Resources </section>
 
 - Profile: [The UMLfair Profile](https://github.com/confFair/project/blob/master/profile.zip)
 - Source code of our MBFair tool
@@ -19,7 +19,7 @@ The artifacts of each case study contains:
 - A (.xlsx) file: the dataset of the system which used to uncover proxies for protected data.
 
 To use the artifacts as a demo, see the section [Using Artificats](#using-artifacts)
-# <section id="requirements">Requirements</section>
+# <section id="requirements">Installation requirements</section>
 The following list of requirements must be satisfied before the tool can be installed
 - A modeled finite state system using [Eclipse Papyrus](https://www.eclipse.org/papyrus/)
 - The [Spin Model Checker](https://spinroot.com/spin/whatispin.html) must be installed. Installation steps are available [here](https://spinroot.com/spin/Man/README.html#S1). After installing the spin model checker, verify that the model checker is callable from the command line using the command ```spin -V``` . You should have the version of the model checker printed in the console after executing the command on the command line or terminal
