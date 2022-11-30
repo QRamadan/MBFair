@@ -19,28 +19,28 @@ The artifacts of each case study contains:
 - A (.xlsx) file: the dataset of the system which used to uncover proxies for protected data.
 
 To use the artifacts as a demo, see the section [Using Artificats](#using-artifacts)
-## <section id="requirements">Requirements</section>
+# <section id="requirements">Requirements</section>
 The following list of requirements must be satisfied before the tool can be installed
 - A modeled finite state system using [Eclipse Papyrus](https://www.eclipse.org/papyrus/)
 - The [Spin Model Checker](https://spinroot.com/spin/whatispin.html) must be installed. Installation steps are available [here](https://spinroot.com/spin/Man/README.html#S1). After installing the spin model checker, verify that the model checker is callable from the command line using the command ```spin -V``` . You should have the version of the model checker printed in the console after executing the command on the command line or terminal
 - Any java version greater than 11 is required. Various java version and installation instructions can be found [here](https://docs.oracle.com/en/java/javase/index.html). After installing java, verify that the installation was successful using the command ```java --version```. You should see the version of the currently installed JAVA printed in the console.
 - Any release of PYTHON3 is also required. Installation instructions can be found [here](https://www.scaler.com/topics/python/install-python-on-linux/). After installing python3, verity that the installation was successful by running the command ```python3 --version```. You should see the version of the currently installed PYTHON3 printed in the console.
-## <section id="installation">Installation</section>
+# <section id="installation">Installation</section>
 After satisfying the requirements mentioned in the [requirements section](#requirements), complete the following steps to install the tool:
 - Clone this git repository and locate the file /target/mbfair-0-0.1.jar
 - The file is callable using the commands in the [Usage](#usage) section below
 - Copy the folders hugort-0_8a and pythonscripts in your project's root directory
 If you completed the previous steps successfully, you should be able to use the tool using the commands in the next section
 
-## <section id="usage"> Usage </section>
-### 1. Generating initializations
+# <section id="usage"> Usage </section>
+## 1. Generating initializations
 This first step is to generate initializations. You can do that using the following command
 ```
 java -jar mbfair-0.0.1.jar -g -f="absolute-path-to-file"
 ```
 In the above command, replace the term <strong><ins>absolute-path-to-file</ins></strong> with the absolute path to your system model with Papyrus
 
-### 2. Checking for fairness.
+## 2. Checking for fairness.
 
 Upon generating initializations, csv files will be automatically created by the tool. The tool uses these csv file. To specify protected characteristics and proxies of protected characteristics, modify the generated file <strong>initializations_table.csv</strong>. Consider the csv file as a table where the first row in the csv represented the protected characteristics and any subsequent row data represent the proxies of the corresponding protected characteristics.
 
@@ -59,15 +59,15 @@ Replace the string absolute-path-to-file as in step one
 
 The model runs and the results of the check are printed in the console
 
-## <section id="using-artifacts">Using artifacts</section>
-This section is intended to serve as a guide for using the [provided artifacts](#resources). The tool must have [successfully installed](#installation) to follow on with this section. The following steps can be completed to run the artifacts:
+# <section id="using-artifacts">Using artifacts</section>
+This section is intended to serve as a guide for using the [provided artifacts](#resources). The tool must have [successfully installed](#installation) to follow on with this section. We have provided three artifacts to serve as hands-on examples. The following steps can be completed to run an artifact:
 - Locate the UML file in the artifact of interest and get the absolute path to the file.
 - Generate initialization using the command below while replacing "absolute-path-to-file" in the command by the absolute path to UML file.
     ```
     java -jar mbfair-0.0.1.jar -g -f="absolute-path-to-file"
     ```
 - The initializations will be automatically generated and stored in the file <strong>initializations_table.csv</strong> in the project directory.
-  - One has to then specify the protected characteristics and proxies of protected characteristics. For this, the file <strong>protected_characteristics.csv</strong> has to be modified. 
+  - One has to then specify the protected characteristics and proxies of protected characteristics. For this, the file <strong>protected_characteristics.csv</strong> has to be modified.
     - for the delivery system artifact, replace the file with the following content
       ```
       CustomerProfile_ethnicity,CustomerProfile_age
